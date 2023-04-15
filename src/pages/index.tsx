@@ -1,14 +1,5 @@
-import Head from 'next/head'
+import Home from "../components/Home"
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>SIML.AI</title>
-        <meta name="description" content="Landing page for SIML.AI" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </>
-  )
+export default function Index() {
+    return <Home />
 }

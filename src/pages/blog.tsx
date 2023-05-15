@@ -4,8 +4,11 @@ import Page from "../components/storyblok-components/Page";
 import Grid from "../components/storyblok-components/Grid";
 import Teaser from "../components/storyblok-components/Teaser";
 import styled from 'styled-components';
+import Header from "../components/blog-components/Header";
+import Layout from "@/components/Layout";
 
 const BlogWrapper = styled.main`
+  background-color: #0D101B;
 `;
  
 const components = {
@@ -26,13 +29,10 @@ export default function Blog(props: any) {
 
   return (
     <BlogWrapper>
-      <header>
-        <h1>
-          { props.story ? props.story.name : 'My Site' }
-        </h1>
-      </header>
-
-      <StoryblokComponent blok={story.content} />
+      <Layout>
+            <Header/>
+            {/* <StoryblokComponent blok={story.content} /> */}
+      </Layout>
     </BlogWrapper>
   )
 }

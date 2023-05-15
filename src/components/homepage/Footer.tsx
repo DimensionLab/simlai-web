@@ -12,12 +12,19 @@ const FooterWrapper = styled.footer`
   gap: 2rem;
   text-align: center;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
   .copyright-socials {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-content: center;
     gap: 0.5rem;
+    padding: 0 1rem 0 1rem;
 
     .copyright {
       display: flex;
@@ -29,7 +36,12 @@ const FooterWrapper = styled.footer`
       display: flex;
       flex-direction: row;
       column-gap: 0.5rem;
-      align-self: center;
+      width: 100%;
+      justify-content: center;
+
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+      }
 
       img {
         width: 1.5rem;
@@ -41,6 +53,11 @@ const FooterWrapper = styled.footer`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 0 1rem 0 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
 
     .product {
       display: flex;
@@ -55,7 +72,7 @@ const FooterWrapper = styled.footer`
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        align-items: flex-start;
+        align-items: start;
 
         a {
           text-decoration: none;

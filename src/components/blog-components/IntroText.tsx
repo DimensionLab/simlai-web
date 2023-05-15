@@ -43,7 +43,7 @@ const IntroTextWrapper = styled.main`
   }
 `;
 
-const Main = () => {
+const IntroText = () => {
   return (
     <IntroTextWrapper>
       <div className="container">
@@ -54,4 +54,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default IntroText;

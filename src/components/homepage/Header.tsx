@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
@@ -36,7 +37,7 @@ const Header = () => {
     <HeaderWrapper>
       <div className="title">SIML.AI</div>
       <div className="blog">
-        <a href="/blog">Blog</a>
+        <Link href={"/blog"} >Blog</Link>
       </div>
     </HeaderWrapper>
   );

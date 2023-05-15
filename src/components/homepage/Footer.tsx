@@ -36,6 +36,32 @@ const FooterWrapper = styled.footer`
       }
     }
   }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .title-product {
+        color: grey;
+      }
+      .items-product {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
 `;
 
 const Footer = () => {

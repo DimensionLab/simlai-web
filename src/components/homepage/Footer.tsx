@@ -48,11 +48,35 @@ const FooterWrapper = styled.footer`
       gap: 0.5rem;
 
       .title-product {
+        display: flex;
         color: grey;
       }
       .items-product {
         display: flex;
         flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+
+    .company {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .title-company {
+        display: flex;
+        color: grey;
+      }
+      .items-company {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 0.5rem;
 
         a {
@@ -61,6 +85,7 @@ const FooterWrapper = styled.footer`
         }
       }
     }
+
   }
 `;
 

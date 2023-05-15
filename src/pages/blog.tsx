@@ -6,9 +6,16 @@ import Teaser from "../components/storyblok-components/Teaser";
 import styled from 'styled-components';
 import Header from "../components/blog-components/Header";
 import Layout from "@/components/Layout";
+import IntroText from "../components/blog-components/IntroText";
 
 const BlogWrapper = styled.main`
-  background-color: #0D101B;
+  background-color: #222530;
+
+  .placeholder {
+    background-color: gray;
+    width: 100%;
+    height: 100vh;
+  }
 `;
  
 const components = {
@@ -31,7 +38,9 @@ export default function Blog(props: any) {
     <BlogWrapper>
       <Layout>
             <Header/>
+            <IntroText/>
             {/* <StoryblokComponent blok={story.content} /> */}
+            <div className="placeholder"></div>
       </Layout>
     </BlogWrapper>
   )

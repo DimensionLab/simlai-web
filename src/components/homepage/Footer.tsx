@@ -5,11 +5,11 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // padding: 2rem 0.5rem 2rem 0.5rem;
+  padding: 4rem 0 4rem 0;
   background-color: #131314;
-  // width: 100%;
+  width: 100%;
   color: #fff;
-  gap: 1rem;
+  gap: 2rem;
   text-align: center;
 
   .copyright-socials {
@@ -30,6 +30,10 @@ const FooterWrapper = styled.footer`
       flex-direction: row;
       column-gap: 0.5rem;
       align-self: center;
+
+      img {
+        width: 1.5rem;
+      }
     }
   }
 `;

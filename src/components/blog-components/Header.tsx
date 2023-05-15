@@ -4,12 +4,16 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 2rem 0;
   background-color: #131314;
   width: 100%;
   color: #fff;
   gap: 1rem;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
 
   .home {
     font-size: 1.5rem;
@@ -27,7 +31,10 @@ const HeaderWrapper = styled.header`
   }
   .contact {
     font-size: 1.5rem;
-    padding-right: 4rem;
+
+    @media (min-width: 768px) {
+      padding-right: 4rem;
+    }
 
     a {
       text-decoration: none;

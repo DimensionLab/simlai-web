@@ -10,16 +10,26 @@ const FooterWrapper = styled.footer`
   width: 100%;
   color: #fff;
   gap: 1rem;
+  text-align: center;
 
   .copyright-socials {
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-content: center;
+    gap: 0.5rem;
+
+    .copyright {
+      display: flex;
+      justify-self: center;
+      font-size: 0.8rem;
+      color: grey;
+    }
     .socials {
       display: flex;
       flex-direction: row;
       column-gap: 0.5rem;
+      align-self: center;
     }
   }
 `;
@@ -28,7 +38,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <div className="copyright-socials">
-        <div className="copyright">(C) 2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
+        <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
         <div className="socials">
           <div className="twitter-container">
             <a href="">

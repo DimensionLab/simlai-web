@@ -5,9 +5,9 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  // padding: 2rem 0.5rem 2rem 0.5rem;
   background-color: #131314;
-  width: 100%;
+  // width: 100%;
   color: #fff;
   gap: 1rem;
   text-align: center;

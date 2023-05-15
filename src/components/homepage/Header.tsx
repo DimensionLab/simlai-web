@@ -14,7 +14,7 @@ const HeaderWrapper = styled.header`
   .title {
     font-size: 1.5rem;
     align-self: flex-start;
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
 `;
 

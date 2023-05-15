@@ -113,12 +113,12 @@ const Footer = () => {
         <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
         <div className="socials">
           <div className="twitter-container">
-            <a href="">
+            <a href="https://twitter.com/siml_ai">
               <img src="assets/facebook-logo.svg" alt="" />
             </a>
           </div>
           <div className="facebook-container">
-            <a href="">
+            <a href="https://www.facebook.com/learnedsimulators/">
               <img src="assets/twitter-logo.svg" alt="" />
             </a>
           </div>
@@ -136,9 +136,9 @@ const Footer = () => {
         <div className="company">
           <div className="title-company">Company</div>
           <div className="items-company">
-            <a href="">Terms & Conditions</a>
-            <a href="">DimensionLab</a>
-            <a href="">LinkedIn</a>
+            <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
+            <a href="https://web-git-main-dimensionlab.vercel.app/">DimensionLab</a>
+            <a href="https://www.linkedin.com/company/dimensionlab/">LinkedIn</a>
           </div>
         </div>
       </div>

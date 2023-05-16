@@ -8,6 +8,7 @@ import Header from "../components/blog-components/Header";
 import Layout from "@/components/Layout";
 import IntroText from "../components/blog-components/IntroText";
 import Footer from "@/components/homepage/Footer";
+import Article from "../components/storyblok-components/Article";
 
 const BlogWrapper = styled.main`
   background-color: #222530;
@@ -24,6 +25,7 @@ const components = {
   grid: Grid,
   teaser: Teaser,
   page: Page,
+  article: Article,
 };
 
 storyblokInit({

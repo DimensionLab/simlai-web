@@ -5,7 +5,25 @@ import {
   useStoryblokState,
   getStoryblokApi,
   StoryblokComponent,
+  storyblokInit,
+  apiPlugin,
 } from '@storyblok/react';
+import Feature from '@/components/storyblok-components/Feature';
+import Grid from '@/components/storyblok-components/Grid';
+import Teaser from '@/components/storyblok-components/Teaser';
+
+const components = {
+  feature: Feature,
+  grid: Grid,
+  teaser: Teaser,
+  page: Page,
+};
+
+storyblokInit({
+  accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
+  use: [apiPlugin],
+  components,
+});
 
 export default function Page({ story  }) {
   story = useStoryblokState(story);

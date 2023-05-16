@@ -7,6 +7,7 @@ import {
   StoryblokComponent,
   storyblokInit,
   apiPlugin,
+  StoryData,
 } from '@storyblok/react';
 import Feature from '@/components/storyblok-components/Feature';
 import Grid from '@/components/storyblok-components/Grid';
@@ -14,6 +15,7 @@ import Teaser from '@/components/storyblok-components/Teaser';
 import Article from '@/components/storyblok-components/Article';
 import Header from '@/components/blog-components/Header';
 import Footer from '@/components/homepage/Footer';
+import { GetStaticPropsContext } from 'next';
 
 const components = {
   feature: Feature,
@@ -29,7 +31,11 @@ storyblokInit({
   components,
 });
 
-export default function Page({ story  }) {
+interface PageProps {
+  story: StoryData<any>;
+}
+
+export default function Page({ story  }: PageProps) {
   story = useStoryblokState(story);
 
   return (
@@ -48,8 +54,8 @@ export default function Page({ story  }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  let slug = params.slug ? params.slug.join('/') : 'blog';
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  let slug = Array.isArray(params?.slug) ? params?.slug.join('/') : 'blog';
 
   let sbParams = {
     version: 'draft', // or 'published'

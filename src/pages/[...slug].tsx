@@ -12,6 +12,8 @@ import Feature from '@/components/storyblok-components/Feature';
 import Grid from '@/components/storyblok-components/Grid';
 import Teaser from '@/components/storyblok-components/Teaser';
 import Article from '@/components/storyblok-components/Article';
+import Header from '@/components/blog-components/Header';
+import Footer from '@/components/homepage/Footer';
 
 const components = {
   feature: Feature,
@@ -38,7 +40,9 @@ export default function Page({ story  }) {
       </Head>
 
       <Layout>
+        <Header/>
         <StoryblokComponent blok={story.content} />
+        <Footer/>
       </Layout>
     </div>
   );

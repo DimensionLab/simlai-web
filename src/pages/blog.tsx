@@ -9,14 +9,37 @@ import Layout from "@/components/Layout";
 import IntroText from "../components/blog-components/IntroText";
 import Footer from "@/components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
+import Link from "next/link";
 
 const BlogWrapper = styled.main`
-  background-color: #222530;
-
   .placeholder {
-    background-color: gray;
+    background-color: #1f2021;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+    @media (min-width: 768px){
+      flex-direction: row;
+    }
+
+    a{ 
+      text-decoration: none;
+      color: white;
+      border: 2px solid white;
+      padding: 1rem;
+      transition: 0.6s;
+      border-radius: 10px;
+
+      &:hover {
+        color: black;
+        background-color: white;
+      }
+    }
   }
 `;
  
@@ -43,7 +66,11 @@ export default function Blog(props: any) {
             <Header/>
             <IntroText/>
             {/* <StoryblokComponent blok={story.content} /> */}
-            <div className="placeholder"></div>
+            <div className="placeholder">
+              <Link href={"blog/article-1"}>Article 1</Link>
+              <Link href={"blog/article-2"}>Article 2</Link>
+              <Link href={"blog/article-3"}>Article 3</Link>
+            </div>
             <Footer/>
       </Layout>
     </BlogWrapper>

@@ -81,9 +81,15 @@ export async function getStaticPaths() {
 
   let paths: any = [];
   Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'blog') {
+    if (data.links[linkKey].is_folder) {
       return;
     }
+
+    // !!! this was previous version of the check, the second part resulted in
+    //     build error, bcs 2 pages were trying to generate /blog
+    // if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'blog') {
+    //   return;
+    // }
 
     const slug = data.links[linkKey].slug;
     let splittedSlug = slug.split('/');

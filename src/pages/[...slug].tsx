@@ -55,7 +55,12 @@ export default function Page({ story  }: PageProps) {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  let slug = Array.isArray(params?.slug) ? params?.slug.join('/') : 'blog';
+  let slug: string;
+  if (Array.isArray(params?.slug)) {
+    slug = params?.slug.join('/') || '';
+  } else {
+    throw new Error('Slug is required');
+  }
 
   let sbParams = {
     version: 'draft', // or 'published'

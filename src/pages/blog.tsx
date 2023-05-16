@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Header from "../components/blog-components/Header";
 import Layout from "@/components/Layout";
 import IntroText from "../components/blog-components/IntroText";
+import Footer from "@/components/homepage/Footer";
 
 const BlogWrapper = styled.main`
   background-color: #222530;
@@ -41,6 +42,7 @@ export default function Blog(props: any) {
             <IntroText/>
             {/* <StoryblokComponent blok={story.content} /> */}
             <div className="placeholder"></div>
+            <Footer/>
       </Layout>
     </BlogWrapper>
   )

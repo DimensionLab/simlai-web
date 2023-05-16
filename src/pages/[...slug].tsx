@@ -11,12 +11,14 @@ import {
 import Feature from '@/components/storyblok-components/Feature';
 import Grid from '@/components/storyblok-components/Grid';
 import Teaser from '@/components/storyblok-components/Teaser';
+import Article from '@/components/storyblok-components/Article';
 
 const components = {
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
   page: Page,
+  Article: Article,
 };
 
 storyblokInit({
@@ -69,7 +71,7 @@ export async function getStaticPaths() {
 
   let paths: any = [];
   Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
+    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'blog') {
       return;
     }
 

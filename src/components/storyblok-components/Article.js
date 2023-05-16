@@ -56,7 +56,7 @@ const Article = ( { blok } ) => {
             {render(blok.content)}
           </div>
           <div className='img-container'>
-            <img src={blok.image.filename} alt={blok.image.alt}/>
+            {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} />}
           </div>
         </div>
       </div>

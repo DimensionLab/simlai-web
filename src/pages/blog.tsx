@@ -11,6 +11,7 @@ import Footer from "@/components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import Link from "next/link";
 import AllArticles from "../components/storyblok-components/AllArticles";
+import { useEffect } from "react";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -63,6 +64,14 @@ export default function Blog(props: any) {
   const story = props.story;
   console.log(story.content);
 
+  useEffect(() => {
+    return () => {
+      window.onpopstate = function(event) {
+        window.location.reload();
+      };
+    };
+  }, []);
+
   return (
     <BlogWrapper>
       <Layout>
@@ -82,22 +91,20 @@ export default function Blog(props: any) {
 }
 
 export async function getStaticProps() {
-  // home is the default slug for the homepage in Storyblok
   let slug = "blog";
- 
-  // load the draft version
+
   let sbParams: { version: 'draft' | 'published'} = {
     version: 'draft',
   };
- 
+
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
- 
+
   return {
     props: {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
     },
-    revalidate: 3600, // revalidate every hour
+    revalidate: 3600,
   };
 }

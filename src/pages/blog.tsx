@@ -69,11 +69,11 @@ export default function Blog(props: any) {
             <Header/>
             <IntroText/>
             {/* <StoryblokComponent blok={story.content} /> */}
-            <div className="placeholder">
+            {/* <div className="placeholder">
               <Link href={"blog/article-1"}>Article 1</Link>
               <Link href={"blog/article-2"}>Article 2</Link>
               <Link href={"blog/article-3"}>Article 3</Link>
-            </div>
+            </div> */}
             <StoryblokComponent blok={story.content} />
             <Footer/>
       </Layout>

@@ -12,11 +12,16 @@ const AllArticlesWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+    padding: 2rem 0 2rem 0;
+    justify-items: center;
+    max-width: 800px;
     
     .article-container {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      width: 100%;
+      padding: 0 0.5rem 0 0.5rem;
+      width: 70%;
+      gap: 2rem;
     }
   }
 `;

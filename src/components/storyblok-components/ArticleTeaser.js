@@ -6,18 +6,38 @@ const ArticleTeaserWrapper = styled.div`
   .blog-teaser-container {
     display: flex;
     flex-direction: column;
-    .image-container {
-      img {
-        width: 10rem;
-      }
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 100%;
+    transition: 0.6s;
+
+    &:hover{
+      transform: scale(1.03);
+      border: 3px solid blue;
     }
-    h1 {
-      font-size: 2rem;
-    }
-    .text-content-container {
-      font-size: 1rem;
+    
+    a {
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      padding-bottom: 1rem;
+      .image-container {
+        display: flex;
+        img {
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .text-content-container {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 `;
@@ -27,7 +47,7 @@ const ArticleTeaser = ({ Article }) => {
     <ArticleTeaserWrapper>
       <div className="blog-teaser-container">
         <Link href={`/blog/${Article.slug}`}>
-          <div className="content-in-link-container">
+          <a className="content-in-link-container">
             <div className="image-container">
               <img src={Article.image.filename} alt="blog"/>
             </div>
@@ -35,7 +55,7 @@ const ArticleTeaser = ({ Article }) => {
             <div className="text-content-container">
               {render(Article.teaser)}
             </div>
-          </div>
+          </a>
         </Link>
       </div>
     </ArticleTeaserWrapper>

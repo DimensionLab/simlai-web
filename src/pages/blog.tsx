@@ -10,6 +10,7 @@ import IntroText from "../components/blog-components/IntroText";
 import Footer from "@/components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import Link from "next/link";
+import AllArticles from "../components/storyblok-components/AllArticles";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -49,6 +50,7 @@ const components = {
   teaser: Teaser,
   page: Page,
   article: Article,
+  'all-articles': AllArticles,
 };
 
 storyblokInit({
@@ -59,6 +61,7 @@ storyblokInit({
 
 export default function Blog(props: any) {
   const story = props.story;
+  console.log(story.content);
 
   return (
     <BlogWrapper>
@@ -71,6 +74,7 @@ export default function Blog(props: any) {
               <Link href={"blog/article-2"}>Article 2</Link>
               <Link href={"blog/article-3"}>Article 3</Link>
             </div>
+            <StoryblokComponent blok={story.content} />
             <Footer/>
       </Layout>
     </BlogWrapper>

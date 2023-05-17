@@ -1,0 +1,27 @@
+import Link from "next/link";
+import { render } from 'storyblok-rich-text-react-renderer';
+import styled from "styled-components";
+
+const ArticleTeaserWrapper = styled.div`
+
+`;
+
+const ArticleTeaser = ({ Article }) => {
+  return (
+    <ArticleTeaserWrapper>
+      <div className="blog-teaser-container">
+        <Link href={`/blog/${Article.slug}`}>
+          <div className="image-container">
+            <img src={Article.image.filename} alt="blog"/>
+          </div>
+          <h1>{Article.title}</h1>
+          <div className="text-content-container">
+            {render(Article.teaser)}
+          </div>
+        </Link>
+      </div>
+    </ArticleTeaserWrapper>
+  );
+};
+
+export default ArticleTeaser;

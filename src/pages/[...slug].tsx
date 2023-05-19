@@ -46,7 +46,7 @@ export default function Page({ story  }: PageProps) {
       </Head>
 
       <Layout>
-        <Header/>
+        <Header isArticle={true}/>
         <StoryblokComponent blok={story.content} />
         <Footer/>
       </Layout>

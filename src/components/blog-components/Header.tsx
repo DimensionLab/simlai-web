@@ -45,14 +45,32 @@ const HeaderWrapper = styled.header`
       }
     }
   }
+
+  .blog {
+    font-size: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        border-bottom: 2px solid white;
+      }
+    }
+  }
 `;
 
-const Header = () => {
+const Header = ({ isArticle }: { isArticle: boolean }) => {
   return (
     <HeaderWrapper>
       <div className="home">
         <a href="../">Home</a>
       </div>
+      {isArticle && (
+        <div className="blog">
+          <a href="../blog/">Blog</a>
+        </div>
+      )}
       <div className="contact">
         <a href="">Contact</a>
       </div>

@@ -11,7 +11,7 @@ import Footer from "@/components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import Link from "next/link";
 import AllArticles from "../components/storyblok-components/AllArticles";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -75,7 +75,7 @@ export default function Blog(props: any) {
   return (
     <BlogWrapper>
       <Layout>
-            <Header/>
+            <Header isArticle={false}/>      
             <IntroText/>
             {/* <StoryblokComponent blok={story.content} /> */}
             {/* <div className="placeholder">

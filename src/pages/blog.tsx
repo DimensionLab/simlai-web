@@ -63,27 +63,34 @@ storyblokInit({
 export default function Blog(props: any) {
   const story = props.story;
   console.log(story.content);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    return () => {
-      window.onpopstate = function(event) {
-        window.location.reload();
-      };
-    };
-  }, []);
+    if(story == false) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [story]);
+
+  // useEffect(() => {
+  //   return () => {
+  //     window.onpopstate = function(event) {
+  //       window.location.reload();
+  //     };
+  //   };
+  // }, []);
 
   return (
     <BlogWrapper>
       <Layout>
             <Header isArticle={false}/>      
             <IntroText/>
-            {/* <StoryblokComponent blok={story.content} /> */}
-            {/* <div className="placeholder">
-              <Link href={"blog/article-1"}>Article 1</Link>
-              <Link href={"blog/article-2"}>Article 2</Link>
-              <Link href={"blog/article-3"}>Article 3</Link>
-            </div> */}
-            <StoryblokComponent blok={story.content} />
+            {loading ? (
+              <div className="loading">Loading...</div>
+            ): (
+              <StoryblokComponent blok={story.content} />
+            )}
             <Footer/>
       </Layout>
     </BlogWrapper>

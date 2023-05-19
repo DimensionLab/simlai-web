@@ -23,14 +23,22 @@ const AllArticlesWrapper = styled.div`
       width: 70%;
       gap: 2rem;
     }
+    
+    .loading {
+      height: 60vh;
+      font-size: 2rem;
+      color: white;
+    }
   }
 `;
 
 const AllArticles = ({ blok }) => {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getArticles = async () => {
+      setIsLoading(true);
       const storyblokApi = getStoryblokApi();
       const { data } = await storyblokApi.get(`cdn/stories`, {
         version: "draft",
@@ -42,6 +50,7 @@ const AllArticles = ({ blok }) => {
         Article.content.slug = Article.slug;
         return Article;
       }));
+      setIsLoading(false);
     };
     getArticles();
   }, []);
@@ -49,11 +58,15 @@ const AllArticles = ({ blok }) => {
   return (
     <AllArticlesWrapper>
       <div className="container">
-        <div className="article-container" {...storyblokEditable(blok)}>
-          { articles[0] && articles.map((Article) => (
-            <ArticleTeaser Article={Article.content} key={Article.uuid} />
-          ))}
-        </div>
+        {isLoading ?(
+          <div className="loading">Loading...</div>
+        ):(
+          <div className="article-container" {...storyblokEditable(blok)}>
+              {articles.map((Article) => (
+                <ArticleTeaser Article={Article.content} key={Article.uuid} />
+              ))}
+          </div>
+        )}
       </div>
     </AllArticlesWrapper>
   )

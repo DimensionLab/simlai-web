@@ -43,6 +43,14 @@ const BlogWrapper = styled.main`
       }
     }
   }
+
+  .loading {
+    height: 60vh;
+    font-size: 2rem;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+  }
 `;
  
 const components = {
@@ -60,58 +68,41 @@ storyblokInit({
   components,
 });
 
-export default function Blog(props: any) {
-  const story = props.story;
-  console.log(story.content);
-  const [loading, setLoading] = useState(false);
+export default function Blog() {
+  const [story, setStory] = useState<{content: any, id: number} | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if(story == false) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-    }
-  }, [story]);
+    const fetchStory = async () => {
+      setIsLoading(true);
+      let slug = "blog";
 
-  // useEffect(() => {
-  //   return () => {
-  //     window.onpopstate = function(event) {
-  //       window.location.reload();
-  //     };
-  //   };
-  // }, []);
+      let sbParams: { version: 'draft' | 'published'} = {
+        version: 'draft',
+      };
+
+      const storyblokApi = getStoryblokApi();
+      let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+
+      setStory(data ? data.story : false);
+      setIsLoading(false);
+    };
+
+    fetchStory();
+  }, []);
 
   return (
     <BlogWrapper>
       <Layout>
-            <Header isArticle={false}/>      
-            <IntroText/>
-            {loading ? (
-              <div className="loading">Loading...</div>
-            ): (
-              <StoryblokComponent blok={story.content} />
-            )}
-            <Footer/>
+        <Header isArticle={false}/>      
+        <IntroText/>
+        {isLoading || !story ? (
+          <div className="loading">Loading...</div>
+        ): (
+          <StoryblokComponent blok={story.content} />
+        )}
+        <Footer/>
       </Layout>
     </BlogWrapper>
   )
-}
-
-export async function getStaticProps() {
-  let slug = "blog";
-
-  let sbParams: { version: 'draft' | 'published'} = {
-    version: 'draft',
-  };
-
-  const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-
-  return {
-    props: {
-      story: data ? data.story : false,
-      key: data ? data.story.id : false,
-    },
-    revalidate: 3600,
-  };
 }

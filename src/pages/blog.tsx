@@ -73,30 +73,51 @@ export default function Blog() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    return () => {
+      window.onpopstate = function(event) {
+        window.location.reload();
+      };
+    };
+  }, []);
+  
+
+  useEffect(() => {
+    console.log("inside useEffect on Blog");
     const fetchStory = async () => {
       setIsLoading(true);
       let slug = "blog";
-
+  
       let sbParams: { version: 'draft' | 'published'} = {
-        version: 'draft',
+          version: 'draft',
       };
-
+  
       const storyblokApi = getStoryblokApi();
       let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-
-      setStory(data ? data.story : false);
+  
+      setStory(data ? data.story : null);
       setIsLoading(false);
     };
-
+  
     fetchStory();
+  
+    const handlePopState = () => {
+      fetchStory();
+    };
+  
+    window.addEventListener('popstate', handlePopState);
+  
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, []);
+  
 
   return (
     <BlogWrapper>
       <Layout>
         <Header isArticle={false}/>      
         <IntroText/>
-        {isLoading || !story ? (
+        {isLoading || !story?.content ? (
           <div className="loading">Loading...</div>
         ): (
           <StoryblokComponent blok={story.content} />

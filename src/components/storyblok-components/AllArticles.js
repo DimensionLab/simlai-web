@@ -22,12 +22,7 @@ const AllArticlesWrapper = styled.div`
       padding: 0 0.5rem 0 0.5rem;
       width: 70%;
       gap: 2rem;
-    }
-    
-    .loading {
-      height: 60vh;
-      font-size: 2rem;
-      color: white;
+      min-height: 60vh;
     }
   }
 `;
@@ -58,15 +53,11 @@ const AllArticles = ({ blok }) => {
   return (
     <AllArticlesWrapper>
       <div className="container">
-        {isLoading ?(
-          <div className="loading">Loading...</div>
-        ):(
-          <div className="article-container" {...storyblokEditable(blok)}>
-              {articles.map((Article) => (
-                <ArticleTeaser Article={Article.content} key={Article.uuid} />
-              ))}
-          </div>
-        )}
+        <div className="article-container" {...storyblokEditable(blok)}>
+          {articles[0] && articles.map((Article) => (
+            <ArticleTeaser Article={Article.content} key={Article.uuid} />
+          ))}
+        </div>
       </div>
     </AllArticlesWrapper>
   )

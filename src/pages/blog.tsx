@@ -52,6 +52,15 @@ const BlogWrapper = styled.main`
     align-self: center;
     justify-self: center;
   }
+
+  .skeleton-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
 `;
  
 const components = {
@@ -121,7 +130,11 @@ export default function Blog() {
         <Header isArticle={false}/>      
         <IntroText/>
         {isLoading || !story?.content ? (
-          <ArticleLoadingSkeleton/>
+          <div className="skeleton-container">
+            <ArticleLoadingSkeleton/>
+            <ArticleLoadingSkeleton/>
+            <ArticleLoadingSkeleton/>
+          </div>
         ): (
           <StoryblokComponent blok={story.content} />
         )}

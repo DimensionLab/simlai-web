@@ -6,7 +6,9 @@ const ArticleTeaserWrapper = styled.div`
   .blog-teaser-container {
     display: flex;
     flex-direction: column;
-    border: 3px solid white;
+    // border: 3px solid white;
+    background-color: #0D101B;
+    padding: 1rem;
     border-radius: 10px;
     width: 100%;
     transition: 0.6s;

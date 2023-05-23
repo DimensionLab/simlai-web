@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const ArticleLoadingSkeletonWrapper = styled.div`
-  min-height: 70vh;
+  // min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  // padding-top: 2rem;
   max-width: 800px;
   width: 100%;
 
@@ -20,7 +20,7 @@ const ArticleLoadingSkeletonWrapper = styled.div`
 
     .image-container {
       width: 100%;
-      min-height: 40vh;
+      min-height: 35vh;
       background-color: red;
       border-radius: 10px;
     }

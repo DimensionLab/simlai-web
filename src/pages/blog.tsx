@@ -9,7 +9,6 @@ import Layout from "@/components/Layout";
 import IntroText from "../components/blog-components/IntroText";
 import Footer from "@/components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
-import Link from "next/link";
 import AllArticles from "../components/storyblok-components/AllArticles";
 import { useEffect, useState } from "react";
 
@@ -45,7 +44,8 @@ const BlogWrapper = styled.main`
   }
 
   .loading {
-    height: 60vh;
+    padding: 5rem;
+    height: 80vh;
     font-size: 2rem;
     display: flex;
     align-self: center;

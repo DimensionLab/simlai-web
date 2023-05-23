@@ -62,12 +62,6 @@ const components = {
   'all-articles': AllArticles,
 };
 
-storyblokInit({
-  accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
-  use: [apiPlugin],
-  components,
-});
-
 export default function Blog() {
   const [story, setStory] = useState<{content: any, id: number} | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -78,6 +72,14 @@ export default function Blog() {
         window.location.reload();
       };
     };
+  }, []);
+  
+  useEffect(() => {
+    storyblokInit({
+      accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
+      use: [apiPlugin],
+      components,
+    });
   }, []);
   
 

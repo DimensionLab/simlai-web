@@ -11,6 +11,7 @@ import Footer from "@/components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
 import { useEffect, useState } from "react";
+import ArticleLoadingSkeleton from "@/components/blog-components/ArticleLoadingSkeleton";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -120,10 +121,11 @@ export default function Blog() {
         <Header isArticle={false}/>      
         <IntroText/>
         {isLoading || !story?.content ? (
-          <div className="loading">Loading...</div>
+          <ArticleLoadingSkeleton/>
         ): (
           <StoryblokComponent blok={story.content} />
         )}
+        {/* <ArticleLoadingSkeleton/> */}
         <Footer/>
       </Layout>
     </BlogWrapper>

@@ -61,6 +61,7 @@ const BlogWrapper = styled.main`
     align-content: center;
     gap: 2rem;
     padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 `;
  

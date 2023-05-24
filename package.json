@@ -16,12 +16,14 @@
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "^12.1.0",
+    "prismjs": "^1.29.0",
     "react": "^17.0.2",
     "react-dom": "17.0.2",
     "storyblok-rich-text-react-renderer": "^2.8.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/prismjs": "^1.26.0",
     "@types/styled-components": "^5.1.26",
     "styled-components": "^5.3.9"
   }

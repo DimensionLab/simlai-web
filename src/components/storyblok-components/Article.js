@@ -1,5 +1,8 @@
 import { render } from 'storyblok-rich-text-react-renderer';
 import styled from 'styled-components';
+import 'prismjs/themes/prism-twilight.css';
+import Prism from 'prismjs';
+import { useEffect } from "react";
 
 const ArticleWrapper = styled.article`
   padding-top: 2rem;
@@ -46,6 +49,10 @@ const ArticleWrapper = styled.article`
 `;
 
 const Article = ( { blok } ) => {
+    useEffect(() => {
+      Prism.highlightAll();
+  }, [blok.content]);
+  
   return (
     <ArticleWrapper>
       <div className='container'>

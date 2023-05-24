@@ -7,15 +7,17 @@ const ArticleTeaserWrapper = styled.div`
     display: flex;
     flex-direction: column;
     // border: 3px solid white;
+    border: 3px solid transparent;
     background-color: #0D101B;
-    padding: 1rem;
+    // padding: 1rem;
+    padding: 0;
     border-radius: 10px;
     width: 100%;
     transition: 0.6s;
 
     &:hover{
-      transform: scale(1.03);
-      border: 3px solid blue;
+      // transform: scale(1.03);
+      border: 3px solid white;
     }
     
     a {

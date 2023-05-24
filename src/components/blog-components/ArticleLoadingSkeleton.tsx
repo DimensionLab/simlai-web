@@ -16,7 +16,7 @@ const ArticleLoadingSkeletonWrapper = styled.div`
     border-radius: 10px;
     row-gap: 1rem;
     background-color: #0D101B;
-    padding: 1rem;
+    // padding: 1rem;
 
     .image-container {
       width: 100%;

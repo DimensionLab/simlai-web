@@ -58,6 +58,7 @@ const BlogWrapper = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     gap: 2rem;
     padding-top: 2rem;
   }

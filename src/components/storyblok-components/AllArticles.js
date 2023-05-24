@@ -8,10 +8,12 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const AllArticlesWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   .container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 100%;
+    width: 70%;
     padding: 2rem 0 2rem 0;
     justify-items: center;
     max-width: 800px;
@@ -20,7 +22,8 @@ const AllArticlesWrapper = styled.div`
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       padding: 0 0.5rem 0 0.5rem;
-      width: 70%;
+      // width: 70%;
+      width: 100%;
       gap: 2rem;
       min-height: 60vh;
     }

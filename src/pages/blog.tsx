@@ -1,6 +1,6 @@
 import { storyblokInit, apiPlugin, getStoryblokApi, StoryblokComponent } from "@storyblok/react";
 import Feature from "../components/storyblok-components/Feature";
-import Page from "../components/storyblok-components/Page";
+import Page from "@/components/storyblok-components/Page";
 import Grid from "../components/storyblok-components/Grid";
 import Teaser from "../components/storyblok-components/Teaser";
 import styled from 'styled-components';

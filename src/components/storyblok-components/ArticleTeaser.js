@@ -31,7 +31,7 @@ const ArticleTeaserWrapper = styled.div`
         display: flex;
         img {
           width: 100%;
-          max-height: 320px;
+          max-height: 480px;
           border-radius: 10px;
         }
       }

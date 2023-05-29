@@ -20,7 +20,7 @@ const ArticleLoadingSkeletonWrapper = styled.div`
 
     .image-container {
       width: 100%;
-      min-height: 35vh;
+      min-height: 30vh;
       background-color: red;
       border-radius: 10px;
     }

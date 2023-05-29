@@ -27,12 +27,16 @@ const ArticleTeaserWrapper = styled.div`
       color: white;
       text-align: center;
       padding-bottom: 1rem;
+
       .image-container {
         display: flex;
+        overflow: hidden;
         img {
           width: 100%;
           max-height: 480px;
           border-radius: 10px;
+          object-fit: cover;
+          object-position: center;
         }
       }
       h1 {

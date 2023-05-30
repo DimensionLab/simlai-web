@@ -13,13 +13,17 @@
     "@types/node": "18.15.11",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2",
+    "autoprefixer": "^10.4.14",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "^12.1.0",
+    "postcss": "^8.4.24",
     "prismjs": "^1.29.0",
     "react": "^17.0.2",
     "react-dom": "17.0.2",
     "storyblok-rich-text-react-renderer": "^2.8.0",
+    "tailwindcss": "^3.3.2",
+    "twin.macro": "^3.3.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {

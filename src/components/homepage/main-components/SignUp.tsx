@@ -48,6 +48,7 @@ const SignUpWrapper = styled.div`
         flex-row
         w-full
         justify-between
+        gap-x-2
       `}
 
       input {

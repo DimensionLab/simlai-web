@@ -8,7 +8,7 @@ const IntroWrapper = styled.div`
     flex
     justify-start
     self-start
-    px-3
+    // px-3
     py-5
     flex
     flex-col
@@ -18,6 +18,7 @@ const IntroWrapper = styled.div`
   img {
     ${tw`
       w-[60%]
+      px-4
     `}
   }
 
@@ -26,6 +27,7 @@ const IntroWrapper = styled.div`
       flex
       flex-col
       w-full
+      items-center
     `}
 
     img {
@@ -37,12 +39,10 @@ const IntroWrapper = styled.div`
       ${tw`
         flex
         flex-row
-        gap-x-2
-        justify-center
       `}
       img{
         ${tw`
-          w-3
+          w-10
         `}
       }
     }

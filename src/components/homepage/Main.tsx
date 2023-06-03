@@ -3,6 +3,7 @@ import tw from "twin.macro"
 import Intro from "./main-components/Intro";
 import SignUp from "./main-components/SignUp";
 import Features from "./main-components/Features";
+import Product from "./main-components/Product";
 
 const MainWrapper = styled.main`
   ${tw`
@@ -24,6 +25,7 @@ const Main = () => {
       <Intro/>
       <SignUp/>
       <Features/>
+      <Product/>
     </MainWrapper>
   );
 };

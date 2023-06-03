@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import tw from "twin.macro"
+import Intro from "./main-components/Intro";
 
 const MainWrapper = styled.main`
   ${tw`
     text-3xl
     container
+    bg-[#0D101B]
+    w-full
   `}
   display: grid;
   grid-auto-flow: row;
@@ -16,9 +19,7 @@ const MainWrapper = styled.main`
 const Main = () => {
   return (
     <MainWrapper>
-      {Array.from({ length: 4 }, (_, i) => (
-        <div key={i}>Section {i + 1}</div>
-      ))}
+      <Intro/>
     </MainWrapper>
   );
 };

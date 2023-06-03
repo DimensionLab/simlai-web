@@ -1,10 +1,13 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import tw from 'twin.macro';
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    background-color: black;
+    ${tw`
+      bg-[#0D101B]
+    `}
     color: #fff;
     font-family: Arial, sans-serif;
 

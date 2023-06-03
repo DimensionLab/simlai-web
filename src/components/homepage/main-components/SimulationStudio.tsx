@@ -64,17 +64,17 @@ const ModelEngineerWrapper = styled.div`
 
 const ModelEngineer = () => {
   const data = [
-    ["Datasets management", "Construct large datasets from classical simulation exports or physical sensors that collect precise measurements from real-world experiments."],
-    ['Building blocks', "Quickly develop the model architecture for the simulators’ desired capabilities and physical constraints. Customizable to the bone through code editor."],
-    ["High performance computing, automated", "One-click A100 GPUs. Train and aggressively optimize learnable simulators in high-performance, GPU-powered cloud or HPC centers without the need to deal with the complexities of managing the cloud infrastructure."]
+    ["Superfast", " Simulations are computed by inferring trained neural network models, achieving speedups of <strong>1,000-100,000x</strong> compared to classical simulation software running on GPUs."],
+    ['Interactive "in-site" visualization', "The time it takes to compute one timestep even of highly irregular simulation domain is in low tens of milliseconds, resulting in real-time visualization of simulating physical phenomena."],
+    ["Unreal rendering performance", "High-fidelity visualization rendering is achieved by leveraging the powerful Unreal Engine under the hood."]
   ]
 
   return (
     <ModelEngineerWrapper>
       <img src="assets/simlai/product-image1.svg" alt="" />
       <div className="header">
-        <div className="title">Model Engineer</div>
-        <div className="description">Train and optimize extremely fast physics simulators using deep learning techniques through web-based Model Engineer application.</div>
+        <div className="title">Simulation Studio</div>
+        <div className="description">Hybrid web and native application for solving engineering and scientific problems leveraging pre-trained and optimized learned simulators.</div>
       </div>
       <div className="features-container">
         {data.map((feature, index) => (
@@ -85,7 +85,7 @@ const ModelEngineer = () => {
           </div>
         ))}
       </div>
-      <img src="assets/simlai/model-engineer-alpha.svg" alt="" />
+      <img src="assets/simlai/model-engineer-release-date.svg" alt="" />
     </ModelEngineerWrapper>
   );
 }

@@ -8,6 +8,7 @@ import ModelEngineer from "./main-components/ModelEngineer";
 import SimulationStudio from "./main-components/SimulationStudio";
 import Message from "./main-components/Message";
 import TryPlatform from "./main-components/TryPlatform";
+import Funding from "./main-components/Funding";
 
 const MainWrapper = styled.main`
   ${tw`
@@ -34,6 +35,7 @@ const Main = () => {
       <SimulationStudio/>
       <Message/>
       <TryPlatform/>
+      <Funding/>
     </MainWrapper>
   );
 };

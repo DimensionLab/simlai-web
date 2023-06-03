@@ -1,33 +1,32 @@
 import Link from "next/link";
 import styled from "styled-components";
+import tw from "twin.macro";
 
 const HeaderWrapper = styled.header`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 0;
-  background-color: #131314;
-  width: 100%;
-  color: #fff;
-  gap: 1rem;
+  ${tw`
+    flex
+    flex-row
+    gap-x-2
+    justify-between
+    w-full
+    px-3
+    py-14
+    bg-[#0D101B]
+  `}
 
-  .title {
-    font-size: 1.5rem;
-    align-self: flex-start;
-    padding-left: 1rem;
+  .logo {
+    img {
+      ${tw`
+        w-8
+      `}
+    }
   }
-  .blog {
-    font-size: 1.5rem;
-    padding-right: 4rem;
 
-    a {
-      text-decoration: none;
-      color: white;
-
-      &:hover {
-        border-bottom: 2px solid white;
-      }
+  .hamburger-menu {
+    img {
+      ${tw`
+        w-8
+      `}
     }
   }
 `;
@@ -35,9 +34,11 @@ const HeaderWrapper = styled.header`
 const Header = () => {
   return (
     <HeaderWrapper>
-      <div className="title">SIML.AI</div>
-      <div className="blog">
-        <Link href={"/blog"} >Blog</Link>
+      <div className="logo">
+        <img src="assets/simlai/simlai-logo.svg" alt="" />
+      </div>
+      <div className="hamburger-menu">
+        <img src="assets/simlai/hamburger-menu.svg" alt="" />
       </div>
     </HeaderWrapper>
   );

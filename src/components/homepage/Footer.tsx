@@ -1,116 +1,128 @@
 import styled from 'styled-components';
+import tw from 'twin.macro';
 
 const FooterWrapper = styled.footer`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 0 4rem 0;
-  background-color: #131314;
-  width: 100%;
-  color: #fff;
-  gap: 2rem;
-  text-align: center;
+  ${tw`
+    flex
+    flex-col
+    bg-[#222530]
+    w-full
+    px-8
+    mt-4
+    py-10
+  `}
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+  .header-siml {
+    ${tw`
+      flex
+      flex-row
+      gap-x-4
+    `}
+    
+    #logo {
+      ${tw`
+        w-6
+      `}
+    }
+    #text {
+      ${tw`
+        w-20
+      `}
+    }
   }
 
-  .copyright-socials {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-content: center;
-    gap: 0.5rem;
-    padding: 0 1rem 0 1rem;
+  .socials {
+    ${tw`
+      flex
+      flex-row
+      gap-x-6
+      w-full
+      h-full
+      mt-6
+      mb-6
+    `}
 
-    .copyright {
-      display: flex;
-      justify-self: center;
-      font-size: 0.8rem;
-      color: grey;
-    }
-    .socials {
-      display: flex;
-      flex-direction: row;
-      column-gap: 0.5rem;
-      width: 100%;
-      justify-content: center;
-
-      @media (min-width: 768px) {
-        justify-content: flex-start;
-      }
-
+    a {
       img {
-        width: 1.5rem;
+        ${tw`
+          w-6
+          aspect-auto
+        `}
       }
     }
   }
 
   .links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 1rem 0 1rem;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
-
+    ${tw`
+      flex
+      flex-col
+      gap-y-8
+    `}
     .product {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
+      ${tw`
+        flex
+        flex-col
+        gap-y-2
+      `}
       .title-product {
-        display: flex;
-        color: grey;
+        ${tw`
+          text-sm
+          text-[#61646F]
+        `}
       }
       .items-product {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: start;
-
-        a {
-          text-decoration: none;
-          color: white;
-        }
+        ${tw`
+          flex
+          flex-col
+        `}
       }
     }
-
     .company {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
+      ${tw`
+        flex
+        flex-col
+        gap-y-2
+      `}
       .title-company {
-        display: flex;
-        color: grey;
+        ${tw`
+          text-sm
+          text-[#61646F]
+        `}
       }
       .items-company {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-
-        a {
-          text-decoration: none;
-          color: white;
-        }
+        ${tw`
+          flex
+          flex-col
+        `}
       }
     }
 
+    .legal {
+      ${tw`
+        flex
+        flex-row
+        gap-x-6
+        my-6
+      `}
+    }
+  }
+
+  .copyright {
+    ${tw`
+      text-[#61646F]
+      text-sm
+    `}
   }
 `;
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      <div className="copyright-socials">
-        <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
+      <div className="header-siml">
+        <img src="assets/simlai/simlai-logo.svg" alt="" id='logo'/>
+        <img src="assets/simlai/simlai-title.svg" alt="" id='text'/>
+      </div>
+      <div className="socials">
         <div className="socials">
           <div className="twitter-container">
             <a href="https://twitter.com/siml_ai">
@@ -120,6 +132,21 @@ const Footer = () => {
           <div className="facebook-container">
             <a href="https://www.facebook.com/learnedsimulators/">
               <img src="assets/twitter-logo.svg" alt="" />
+            </a>
+          </div>
+          <div className="instagram-container">
+            <a href="">
+              <img src="assets/simlai/ig-logo.svg" alt="" />
+            </a>
+          </div>
+          <div className="linkedin-container">
+            <a href="asset">
+              <img src="assets/simlai/li-logo.svg" alt="" />
+            </a>
+          </div>
+          <div className="medium-container">
+            <a href="">
+              <img src="assets/simlai/medium-logo.svg" alt="" />
             </a>
           </div>
         </div>
@@ -136,12 +163,17 @@ const Footer = () => {
         <div className="company">
           <div className="title-company">Company</div>
           <div className="items-company">
-            <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
+            <a href="https://www.siml.ai/terms-and-conditions">Careers</a>
+            <a href="">Contact</a>
             <a href="https://web-git-main-dimensionlab.vercel.app/">DimensionLab</a>
-            <a href="https://www.linkedin.com/company/dimensionlab/">LinkedIn</a>
           </div>
         </div>
+        <div className="legal">
+          <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
+          <a href="https://www.dimensionlab.org/privacy-policy.html">Privacy Policy</a>
+        </div>
       </div>
+      <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
     </FooterWrapper>
   );
 };

@@ -4,6 +4,7 @@ import Intro from "./main-components/Intro";
 import SignUp from "./main-components/SignUp";
 import Features from "./main-components/Features";
 import Product from "./main-components/Product";
+import ModelEngineer from "./main-components/ModelEngineer";
 
 const MainWrapper = styled.main`
   ${tw`
@@ -26,6 +27,7 @@ const Main = () => {
       <SignUp/>
       <Features/>
       <Product/>
+      <ModelEngineer/>
     </MainWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const ModelEngineerWrapper = styled.div`
+const SimulationStudioWrapper = styled.div`
   ${tw`
     flex
     flex-col
@@ -62,7 +62,7 @@ const ModelEngineerWrapper = styled.div`
   }
 `;
 
-const ModelEngineer = () => {
+const SimulationStudio = () => {
   const data = [
     ["Superfast", " Simulations are computed by inferring trained neural network models, achieving speedups of <strong>1,000-100,000x</strong> compared to classical simulation software running on GPUs."],
     ['Interactive "in-site" visualization', "The time it takes to compute one timestep even of highly irregular simulation domain is in low tens of milliseconds, resulting in real-time visualization of simulating physical phenomena."],
@@ -70,8 +70,8 @@ const ModelEngineer = () => {
   ]
 
   return (
-    <ModelEngineerWrapper>
-      <img src="assets/simlai/product-image1.svg" alt="" />
+    <SimulationStudioWrapper>
+      <img src="assets/simlai/simulation-studio-image.svg" alt="" />
       <div className="header">
         <div className="title">Simulation Studio</div>
         <div className="description">Hybrid web and native application for solving engineering and scientific problems leveraging pre-trained and optimized learned simulators.</div>
@@ -86,8 +86,8 @@ const ModelEngineer = () => {
         ))}
       </div>
       <img src="assets/simlai/model-engineer-release-date.svg" alt="" />
-    </ModelEngineerWrapper>
+    </SimulationStudioWrapper>
   );
 }
 
-export default ModelEngineer;
+export default SimulationStudio;

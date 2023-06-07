@@ -10,6 +10,12 @@ const FooterWrapper = styled.footer`
     px-8
     mt-4
     py-10
+
+    xl:grid
+    xl:grid-cols-2
+    xl:h-full
+    xl:pb-12
+    xl:px-12
   `}
 
   .header-siml {
@@ -57,6 +63,9 @@ const FooterWrapper = styled.footer`
       flex
       flex-col
       gap-y-8
+
+      xl:grid
+      xl:grid-cols-2
     `}
     .product {
       ${tw`
@@ -68,12 +77,14 @@ const FooterWrapper = styled.footer`
         ${tw`
           text-sm
           text-[#61646F]
+          xl:w-full
         `}
       }
       .items-product {
         ${tw`
           flex
           flex-col
+          xl:w-full
         `}
       }
     }
@@ -87,12 +98,14 @@ const FooterWrapper = styled.footer`
         ${tw`
           text-sm
           text-[#61646F]
+          xl:w-full
         `}
       }
       .items-company {
         ${tw`
           flex
           flex-col
+          xl:w-full
         `}
       }
     }
@@ -118,36 +131,38 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <div className="header-siml">
-        <img src="assets/simlai/simlai-logo.svg" alt="" id='logo'/>
-        <img src="assets/simlai/simlai-title.svg" alt="" id='text'/>
-      </div>
-      <div className="socials">
+      <div className="left">
+        <div className="header-siml">
+          <img src="assets/simlai/simlai-logo.svg" alt="" id='logo'/>
+          <img src="assets/simlai/simlai-title.svg" alt="" id='text'/>
+        </div>
         <div className="socials">
-          <div className="twitter-container">
-            <a href="https://twitter.com/siml_ai">
-              <img src="assets/facebook-logo.svg" alt="" />
-            </a>
-          </div>
-          <div className="facebook-container">
-            <a href="https://www.facebook.com/learnedsimulators/">
-              <img src="assets/twitter-logo.svg" alt="" />
-            </a>
-          </div>
-          <div className="instagram-container">
-            <a href="">
-              <img src="assets/simlai/ig-logo.svg" alt="" />
-            </a>
-          </div>
-          <div className="linkedin-container">
-            <a href="asset">
-              <img src="assets/simlai/li-logo.svg" alt="" />
-            </a>
-          </div>
-          <div className="medium-container">
-            <a href="">
-              <img src="assets/simlai/medium-logo.svg" alt="" />
-            </a>
+          <div className="socials">
+            <div className="twitter-container">
+              <a href="https://twitter.com/siml_ai">
+                <img src="assets/facebook-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="facebook-container">
+              <a href="https://www.facebook.com/learnedsimulators/">
+                <img src="assets/twitter-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="instagram-container">
+              <a href="">
+                <img src="assets/simlai/ig-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="linkedin-container">
+              <a href="asset">
+                <img src="assets/simlai/li-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="medium-container">
+              <a href="">
+                <img src="assets/simlai/medium-logo.svg" alt="" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

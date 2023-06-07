@@ -5,6 +5,10 @@ const FeaturesWrapper = styled.div`
   ${tw`
     py-10
     px-4
+
+    xl:grid
+    xl:grid-cols-2
+    xl:gap-x-40
   `}
 
   .container {
@@ -14,6 +18,7 @@ const FeaturesWrapper = styled.div`
       items-center
       gap-y-8
       my-10
+      justify-center
     `}
 
     .image {
@@ -33,6 +38,7 @@ const FeaturesWrapper = styled.div`
         flex-col
         gap-y-3
         mb-6
+        w-full
       `}
 
       .title {

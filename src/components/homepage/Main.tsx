@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import tw from "twin.macro"
-import Intro from "./main-components/Intro";
 import SignUp from "./main-components/SignUp";
 import Features from "./main-components/Features";
 import Product from "./main-components/Product";
@@ -9,6 +8,7 @@ import SimulationStudio from "./main-components/SimulationStudio";
 import Message from "./main-components/Message";
 import TryPlatform from "./main-components/TryPlatform";
 import Funding from "./main-components/Funding";
+import IntroParent from "./main-components/IntroParent";
 
 const MainWrapper = styled.main`
   ${tw`
@@ -27,7 +27,7 @@ const MainWrapper = styled.main`
 const Main = () => {
   return (
     <MainWrapper>
-      <Intro/>
+      <IntroParent/>
       <SignUp/>
       <Features/>
       <Product/>

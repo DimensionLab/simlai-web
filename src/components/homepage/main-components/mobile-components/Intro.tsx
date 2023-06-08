@@ -56,10 +56,11 @@ const IntroWrapper = styled.div`
       ${tw`
         flex
         flex-row
+        gap-x-2
       `}
       img{
         ${tw`
-          w-10
+          w-2
         `}
       }
     }

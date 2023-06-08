@@ -13,6 +13,7 @@ const IntroParent = () => {
   const tailwindDesktopBreakpoint = 1280;
 
   useEffect(() => {
+    setWidth(window.innerWidth);
 
     const handleResize = () => {
       setWidth(window.innerWidth);

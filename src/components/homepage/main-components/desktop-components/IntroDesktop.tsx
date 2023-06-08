@@ -95,6 +95,38 @@ const IntroDesktopWrapper = styled.div`
       }
     }
     .right-side {
+      ${tw`
+        relative
+      `}
+      #static { 
+        ${tw`
+          z-0
+        `}
+      }
+
+      .rotate {
+        ${tw`
+          absolute
+          bottom-5
+        `}
+      }
+
+      #rotate1 {
+        ${tw`
+          z-10
+        `}
+      }
+      #rotate2 {
+        ${tw`
+          z-20
+        `}
+      }
+      #rotate3 {
+        ${tw`
+          z-30
+        `}
+      }
+
       img {}
     }
   }
@@ -122,10 +154,10 @@ const IntroDesktop = () => {
           </div>
         </div>
         <div className="right-side">
-          <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" />
-          <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" />
-          <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" />
-          <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" />
+          <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
+          <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate" id="rotate1"/>
+          <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate"id="rotate2"/>
+          <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate" id="rotate3"/>
         </div>
       </div>
     </IntroDesktopWrapper>

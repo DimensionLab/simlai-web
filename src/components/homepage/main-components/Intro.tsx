@@ -15,11 +15,28 @@ const IntroWrapper = styled.div`
     gap-y-10
   `}
 
-  img {
+  .headline-logo {
     ${tw`
-      w-[60%]
-      px-4
+      xl:flex
+      xl:flex-row
     `}
+
+    #logo-picture {
+      ${tw`
+        hidden
+        xl:flex
+        w-32
+      `}  
+    }
+
+    img {
+      ${tw`
+        w-[60%]
+        px-4
+  
+        xl:w-96
+      `}
+    }
   }
 
   .slider {
@@ -54,7 +71,10 @@ const Intro = () => {
 
   return (
     <IntroWrapper>
-      <img src="assets/simlai/simlai-title.svg" alt="" />
+      <div className="headline-logo">
+        <img src="assets/simlai/simlai-logo.svg" alt="" id="logo-picture"/>
+        <img src="assets/simlai/simlai-title.svg" alt="" />
+      </div>
       {/* <ImageSlider/>  */}
       <div className="slider">
         <img src="assets/simlai/intro-slider-images/image1.svg" alt="" />

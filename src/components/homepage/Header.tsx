@@ -64,6 +64,8 @@ const HeaderWrapper = styled.header`
         border-2
         border-transparent
         hover:border-b-[#6B50FF]
+        xl:py-4
+        xl:pt-3
       `}
     }
 

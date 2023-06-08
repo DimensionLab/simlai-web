@@ -61,10 +61,10 @@ const FeaturesWrapper = styled.div`
 
 const Features = () => {
   const data = [
-    ["assets/simlai/placeholder-feature.svg", "Physics & AI", "SIML.ai combines state-of-the-art machine learning with physics simulation."],
-    ["assets/simlai/placeholder-feature.svg", "Fast", "AI-based simulators responds to your input in real-time, which means interactive visualization."],
-    ["assets/simlai/placeholder-feature.svg", "Web-based", "No need to install anything or be limited to specific platforms. Everything happens through web interface."],
-    ["assets/simlai/placeholder-feature.svg", "Painless scalability", "Our platform deals with the complexities of setting up cloud or HPC infrastructure for you."],
+    ["assets/simlai/feature1.svg", "Physics & AI", "SIML.ai combines state-of-the-art machine learning with physics simulation."],
+    ["assets/simlai/feature2.svg", "Fast", "AI-based simulators responds to your input in real-time, which means interactive visualization."],
+    ["assets/simlai/feature3.svg", "Web-based", "No need to install anything or be limited to specific platforms. Everything happens through web interface."],
+    ["assets/simlai/feature4.svg", "Painless scalability", "Our platform deals with the complexities of setting up cloud or HPC infrastructure for you."],
   ];
 
   return (

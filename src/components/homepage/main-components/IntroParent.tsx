@@ -1,20 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FunctionComponent } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Intro from "./mobile-components/Intro";
-import IntroDesktop from "./desktop-components/IntroDesktop";
 
 const IntroParentWrapper = styled.div`
-
+  .loading {
+    ${tw`
+      w-full
+      min-h-[50vh]
+    `}
+    img {
+      ${tw`
+        w-96
+      `}
+    }
+  }
 `;
 
 const IntroParent = () => {
   const [width, setWidth] = useState(0);
+  const [Component, setComponent] = useState<FunctionComponent | null>(null);
   const tailwindDesktopBreakpoint = 1280;
 
   useEffect(() => {
     setWidth(window.innerWidth);
-
     const handleResize = () => {
       setWidth(window.innerWidth);
     }
@@ -26,11 +34,34 @@ const IntroParent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (width > tailwindDesktopBreakpoint) {
+      import("./desktop-components/IntroDesktop").then((module) => {
+        setComponent(() => module.default);
+      });
+    } else {
+      import("./mobile-components/Intro").then((module) => {
+        setComponent(() => module.default);
+      });
+    }
+  }, [width]);
+
+  if (!Component) {
+    // return (
+    //   <IntroParentWrapper>
+    //     <div className="loading">
+    //       <img src="assets/simlai/simlai-logo.svg" alt=""/>
+    //     </div>
+    // </IntroParentWrapper>
+    // )
+    return null;
+  }
+
   return (
     <IntroParentWrapper>
-      {width > tailwindDesktopBreakpoint ? (<IntroDesktop/>) : (<Intro/>)}
+      <Component />
     </IntroParentWrapper>
-  )
-}
+  );
+};
 
 export default IntroParent;

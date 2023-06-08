@@ -8,6 +8,7 @@ const SignUpWrapper = styled.div`
     gap-y-6
     overflow-hidden
     break-words
+    xl:hidden
   `}
 
   .title {

@@ -2,6 +2,10 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const IntroDesktopWrapper = styled.div`
+  ${tw`
+    xl:my-12
+  `}
+
   .all-container {
     ${tw`
       flex

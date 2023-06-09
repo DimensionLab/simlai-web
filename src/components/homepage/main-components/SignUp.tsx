@@ -48,6 +48,9 @@ const SignUpWrapper = styled.div`
         flex
         flex-row
         w-full
+        md:w-3/4
+        lg:w-3/4
+        xl:w-full
         justify-between
         gap-x-2
       `}
@@ -68,6 +71,7 @@ const SignUpWrapper = styled.div`
           bg-[#6B50FF]
           p-4
           rounded
+          w-1/4
         `}
       }
     }

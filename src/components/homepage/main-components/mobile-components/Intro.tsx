@@ -10,7 +10,6 @@ const IntroWrapper = styled.div`
     self-start
     // px-3
     py-5
-    flex
     flex-col
     gap-y-10
   `}
@@ -49,7 +48,7 @@ const IntroWrapper = styled.div`
 
     img {
       ${tw`
-        w-full
+        w-[96rem]
       `}
     }
     .buttons {

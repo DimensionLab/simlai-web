@@ -8,6 +8,7 @@ const IntroDesktopWrapper = styled.div`
       flex-row
       mb-20
       gap-x-44
+      px-12
     `}
     .left-side {
       ${tw`

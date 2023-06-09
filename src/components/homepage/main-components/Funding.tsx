@@ -5,6 +5,7 @@ const FundingWrapper = styled.div`
   ${tw`
     w-full
     px-4
+    my-5
   `}
   
   .container {
@@ -12,8 +13,7 @@ const FundingWrapper = styled.div`
     flex
     flex-col
     gap-y-10
-    pt-20
-    pb-20
+    py-24
     bg-[linear-gradient(90deg, #C063F9 0%, #59137D 100%)]
     rounded-xl
     w-full
@@ -23,6 +23,7 @@ const FundingWrapper = styled.div`
       ${tw`
         font-black
         text-4xl
+        xl:text-6xl
       `}
     }
   
@@ -30,6 +31,7 @@ const FundingWrapper = styled.div`
       ${tw`
         text-xl
         w-[90%]
+        xl:text-2xl
       `}
     }
   
@@ -37,6 +39,7 @@ const FundingWrapper = styled.div`
       ${tw`
         flex
         w-full
+        xl:mt-4
       `}
   
       button {
@@ -48,7 +51,7 @@ const FundingWrapper = styled.div`
           px-6
           py-3
           text-center
-          
+          xl:text-2xl
         `}
       }
     }

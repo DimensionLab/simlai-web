@@ -24,10 +24,13 @@ const FeaturesWrapper = styled.div`
     .image {
       ${tw`
         w-full
+        flex
+        justify-center
       `}
       img {
         ${tw`
           w-full
+          xl:max-w-md
         `}
       }
     }
@@ -39,6 +42,7 @@ const FeaturesWrapper = styled.div`
         gap-y-3
         mb-6
         w-full
+        max-w-md
       `}
 
       .title {

@@ -17,7 +17,7 @@ const FeaturesWrapper = styled.div`
       flex-col
       items-center
       gap-y-8
-      my-10
+      my-24
       justify-center
     `}
 
@@ -42,13 +42,15 @@ const FeaturesWrapper = styled.div`
         gap-y-3
         mb-6
         w-full
-        max-w-md
+        xl:max-w-md
       `}
 
       .title {
         ${tw`
           font-black
           text-3xl
+          max-md:text-2xl
+          max-xl:text-5xl
         `}
       }
 
@@ -57,6 +59,9 @@ const FeaturesWrapper = styled.div`
           text-sm
           w-3/4
           text-[#EBEDFA]
+          max-sm:text-sm
+          max-xl:text-2xl
+          max-xl:w-full
         `}
       }
     }

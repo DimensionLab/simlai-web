@@ -61,7 +61,8 @@ const ModelEngineerWrapper = styled.div`
           flex
           flex-col
           gap-y-4
-          w-[80%]
+          w-full
+          md:w-[80%]
         `}
     
         .card {

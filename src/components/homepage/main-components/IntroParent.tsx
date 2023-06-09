@@ -8,17 +8,6 @@ const Intro = dynamic(() => import('./mobile-components/Intro'), { ssr: false })
 const IntroDesktop = dynamic(() => import('./desktop-components/IntroDesktop'), { ssr: false });
 
 const IntroParentWrapper = styled.div`
-  .loading {
-    ${tw`
-      w-full
-      min-h-[50vh]
-    `}
-    img {
-      ${tw`
-        w-96
-      `}
-    }
-  }
 `;
 
 const IntroParent = () => {

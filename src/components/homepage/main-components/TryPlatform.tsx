@@ -19,6 +19,7 @@ const TryPlatformWrapper = styled.div`
     ${tw`
       font-black
       text-4xl
+      xl:text-6xl
     `}
   }
 
@@ -26,6 +27,7 @@ const TryPlatformWrapper = styled.div`
     ${tw`
       text-xl
       w-[90%]
+      xl:text-2xl
     `}
   }
 
@@ -39,6 +41,7 @@ const TryPlatformWrapper = styled.div`
     .label {
       ${tw`
         text-sm
+        xl:text-lg
       `}
     }
 
@@ -49,6 +52,7 @@ const TryPlatformWrapper = styled.div`
         w-full
         justify-between
         gap-x-2
+        xl:w-2/3
       `}
 
       input {
@@ -67,6 +71,7 @@ const TryPlatformWrapper = styled.div`
           bg-[#6B50FF]
           p-4
           rounded
+          w-1/4
         `}
       }
     }

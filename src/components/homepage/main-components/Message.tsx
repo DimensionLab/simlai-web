@@ -6,15 +6,31 @@ const MessageWrapper = styled.div`
     bg-[linear-gradient(90deg, #4B8AFF 0%, #6B50FF 100%)]
     w-full
     px-6
-    py-10
-    text-3xl
-  `}
+    py-12
+    xl:py-28
+    text-2xl
+    flex
+    justify-center
+    w-3/4
+    xl:mt-24
+    mb-4
+
+    `}
+    .text {
+      ${tw`
+        xl:text-6xl
+        xl:w-1/2
+        max-xl:max-w-2xl
+      `}
+    }
 `;
 
 const Message = () => {
   return (
     <MessageWrapper>
-      We believe in the democratization of scientific-grade simulation tools by making it easy for anyone to develop <br/>physics-based simulations and deploy them in their workflows, regardless of their technical skills.
+      <div className="text">
+        We believe in the democratization of scientific-grade simulation tools by making it easy for anyone to develop <br/>physics-based simulations and deploy them in their workflows, regardless of their technical skills.
+      </div>
     </MessageWrapper>
   )
 }

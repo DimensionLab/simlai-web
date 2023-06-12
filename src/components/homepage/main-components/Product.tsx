@@ -84,7 +84,7 @@ const ProductWrapper = styled.div`
 
       strong {
         ${tw`
-          font-normal
+          font-thin
           text-[#8B7CFF]
         `}
       }

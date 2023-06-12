@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SIML.AI</title>
-        <meta name="description" content="Landing page for SIML.AI" />
+        <title>Siml.ai</title>
+        <meta name="description" content="Landing page for Siml.ai" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="assets/simlai/simlai-logo.svg" />
       </Head>
 
       <Layout>

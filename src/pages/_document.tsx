@@ -31,7 +31,26 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <style>
+            {`
+              @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(/inter/Inter-Regular.woff2) format('woff2');
+              }
+              @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(/inter/Inter-SemiBold.woff2) format('woff2');
+              }
+            `}
+          </style>
+        </Head>
         <body>
           <Main />
           <NextScript />

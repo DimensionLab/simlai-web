@@ -19,7 +19,7 @@ const TryPlatformWrapper = styled.div`
     ${tw`
       font-black
       text-4xl
-      xl:text-6xl
+      xl:text-7xl
     `}
   }
 

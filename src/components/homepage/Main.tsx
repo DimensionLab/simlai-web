@@ -30,6 +30,7 @@ const MainWrapper = styled.main`
     flex
     flex-col
     items-center
+    font-inter
   `}
 
   .width-limited {

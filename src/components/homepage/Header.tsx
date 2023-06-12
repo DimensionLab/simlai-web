@@ -15,6 +15,8 @@ const HeaderWrapper = styled.header`
     xl:pr-0
     bg-[#0D101B]
     xl:pb-20
+    font-inter
+    font-black
   `}
 
   .logo {

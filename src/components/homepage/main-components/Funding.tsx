@@ -65,7 +65,7 @@ const Funding = () => {
         <div className="title">Interested <br/> in funding us?</div>
         <div className="subtitle">Drop us an email <br/> and we&apos;ll send you our pitchdeck.</div>
         <div className="btn">
-          <button>CONTACT US</button>
+          <button><a href="mailto:hello@dimensionlab.org">CONTACT US</a></button>
         </div>
       </div>
     </FundingWrapper>

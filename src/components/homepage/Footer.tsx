@@ -164,7 +164,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="linkedin-container">
-                <a href="asset">
+                <a href="https://www.linkedin.com/company/dimensionlab">
                   <img src="assets/simlai/li-logo.svg" alt="" />
                 </a>
               </div>
@@ -180,17 +180,17 @@ const Footer = () => {
           <div className="product">
             <div className="title-product">Product</div>
             <div className="items-product">
-              <a href="">Features</a>
-              <a href="">Model Engineer</a>
-              <a href="">Simulation Studio</a>
+              <a href="#features">Features</a>
+              <a href="#model-engineer">Model Engineer</a>
+              <a href="#simulation-studio">Simulation Studio</a>
             </div>
           </div>
           <div className="company">
             <div className="title-company">Company</div>
             <div className="items-company">
-              <a href="https://www.siml.ai/terms-and-conditions">Careers</a>
-              <a href="">Contact</a>
-              <a href="https://web-git-main-dimensionlab.vercel.app/">DimensionLab</a>
+              <a href="">Careers</a>
+              <a href="mailto:hello@dimensionlab.org">Contact</a>
+              <a href="https://dimensionlab-web.vercel.app/">DimensionLab</a>
             </div>
           </div>
           <div className="legal">

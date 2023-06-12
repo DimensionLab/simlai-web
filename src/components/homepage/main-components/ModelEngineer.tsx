@@ -97,7 +97,7 @@ const ModelEngineer = () => {
   ]
 
   return (
-    <ModelEngineerWrapper>
+    <ModelEngineerWrapper id="model-engineer">
       <img src="assets/simlai/product-image1.svg" alt="" />
       <div className="text-container">
         <div className="title">Model Engineer</div>

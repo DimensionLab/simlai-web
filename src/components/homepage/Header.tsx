@@ -90,12 +90,12 @@ const Header = () => {
         <img src="assets/simlai/hamburger-menu.svg" alt="" />
       </div>
       <div className="bar">
-        <Link href={""}>FEATURES</Link>
-        <Link href={""}>MODEL ENGINEER</Link>
-        <Link href={""}>SIMULATION STUDIO</Link>
-        <Link href={""}>INVESTORS</Link>
+        <Link href={"#features"}>FEATURES</Link>
+        <Link href={"#model-engineer"}>MODEL ENGINEER</Link>
+        <Link href={"#simulation-studio"}>SIMULATION STUDIO</Link>
+        <Link href={""}>PRICING</Link>
         <Link href={""}>CAREERS</Link>
-        <Link href={""}>
+        <Link href={"/blog"}>
           <a id="last-link">BLOG</a>
         </Link>
         <button>JOIN</button>

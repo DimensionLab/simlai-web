@@ -77,7 +77,7 @@ const Features = () => {
   ];
 
   return (
-    <FeaturesWrapper>
+    <FeaturesWrapper id="features">
       {data.map((feature, index) => (
         <div key={index} className="container">
           <div className="image">

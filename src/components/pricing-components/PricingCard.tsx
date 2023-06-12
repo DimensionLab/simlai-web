@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -33,6 +34,9 @@ const PricingCardWrapper = styled.div`
       `}
     }
     .price-container {
+      ${tw`
+        xl:w-[80%]
+      `}
       span {}
       #number {
         ${tw`
@@ -61,28 +65,61 @@ const PricingCardWrapper = styled.div`
         w-[50%]
         text-xs
         text-[#7C7F8B]
+        xl:hidden
       `}
     }
   }
 `;
 
-const PricingCard = () => {
+interface PricingProps {
+  title: String,
+  price: String,
+  storage: String,
+  access: String,
+  simulators: String,
+  isEnterprise: boolean,
+}
+
+const PricingCard = (props: PricingProps) => {
+  const [isEnterprise, setIsEnterprise] = useState(false);
+
+  useEffect(() => {
+    setIsEnterprise(props.isEnterprise);
+  }, [isEnterprise]);
+
   return (
     <PricingCardWrapper>
-      <div className="card">
-        <h1>STARTER</h1>
-        <hr/>
-        <div className="price-container">
-          <span>$</span>
-          <span id="number">199</span>
-          <span> / month</span>
+      {!isEnterprise ? (
+        <div className="card">
+          <h1>{props.title}</h1>
+          <hr/>
+          <div className="price-container">
+            <span>$</span>
+            <span id="number">{props.price}</span>
+            <span> / month</span>
+          </div>
+          <div className="storage">{props.storage}</div>
+          <div className="access">{props.access}</div>
+          <div className="simulators">{props.simulators}</div>
+          <button id="choose-plan">CHOOSE PLAN</button>
+          <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
         </div>
-        <div className="storage">50GB SSD storage included* <br/> Store datasets of up to 25GB**</div>
-        <div className="access">Access to Tier 2 computing resources with up to 2 GPUs per server instance</div>
-        <div className="simulators">Up to 10 simulators in Model Engineer** <br/>Up to 10 simulators in Simulation Studio** <br/>Compute credits included***</div>
-        <button id="choose-plan">CHOOSE PLAN</button>
-        <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
-      </div>
+      ) : (
+        <div className="card">
+          <h1>ENTERPRISE</h1>
+          <hr/>
+          <div className="price-container">
+            <span id="number">Have a bigger challenge to solve?</span>
+          </div>
+          <div className="storage">All features from Pro</div>
+          <div className="access">Custom computing resources with tens of GPUs</div>
+          <div className="simulators">24/7 support</div>
+          <div className="simulators">Custom simulator development</div>
+          <button id="choose-plan">CHOOSE PLAN</button>
+          <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
+        </div>
+      )}
+      
     </PricingCardWrapper>
   )
 }

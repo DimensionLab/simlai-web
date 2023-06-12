@@ -85,6 +85,29 @@ const PricingWrapper = styled.div`
 `
 
 const Pricing = () => {
+  const pricingProps = [
+    [
+      "STARTER",
+      "199",
+      "50GB SSD storage included* Store datasets of up to 25GB**",
+      "Access to Tier 2 computing resources with up to 2 GPUs per server instance",
+      "Up to 10 simulators in Model Engineer** Up to 10 simulators in Simulation Studio** Compute credits included***"
+    ],
+    [
+      "STANDARD",
+      "599",
+      "250GB SSD storage included* Store datasets of up to 100GB**",
+      "Access to Tier 3 computing resources with up to 4 GPUs per server instance",
+      "Up to 20 simulators in Model Engineer** Up to 20 simulators in Simulation Studio** Compute credits included***"
+    ],
+    [
+      "PRO",
+      "999",
+      "1TB SSD storage included* Store datasets of up to 100GB**",
+      "Access to Tier 4 computing resources with up to 8 GPUs per server instance",
+      "Unlimited simulators in Model Engineer** Unlimited simulators in Simulation Studio** Compute credits included***"
+    ]
+  ]
   return (
     <PricingWrapper>
       <Header/>
@@ -98,10 +121,10 @@ const Pricing = () => {
           <button id="yearly">YEARLY</button>
         </div>
         <div className="cards-container">
-          <PricingCard/>
-          <PricingCard/>
-          <PricingCard/>
-          <PricingCard/>
+          <PricingCard title={pricingProps[0][0]} price={pricingProps[0][1]} storage={pricingProps[0][2]} access={pricingProps[0][3]} simulators={pricingProps[0][4]} isEnterprise={false}/>
+          <PricingCard title={pricingProps[1][0]} price={pricingProps[1][1]} storage={pricingProps[1][2]} access={pricingProps[1][3]} simulators={pricingProps[1][4]} isEnterprise={false}/>
+          <PricingCard title={pricingProps[2][0]} price={pricingProps[2][1]} storage={pricingProps[2][2]} access={pricingProps[2][3]} simulators={pricingProps[2][4]} isEnterprise={false}/>
+          <PricingCard title={"null"} price={"null"} storage={"null"} access={"null"} simulators={"null"} isEnterprise={true}/>
         </div>
       </div>
       <div className="width-limited" id="try-funding">

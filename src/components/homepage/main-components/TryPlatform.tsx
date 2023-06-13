@@ -13,6 +13,7 @@ const TryPlatformWrapper = styled.div`
     mx-4
     bg-[linear-gradient(90deg, #6B50FF 0%, #C063F9 100%)]
     rounded-xl
+    h-full
   `}
 
   .title {

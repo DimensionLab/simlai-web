@@ -19,18 +19,29 @@ const PricingWrapper = styled.div`
       // items-center
       px-4
       gap-y-4
+      xl:items-center
+      xl:w-[60%]
     `}
     h1 {
       ${tw`
         font-black
         text-3xl
+        xl:text-7xl
+        xl:w-full
+        xl:flex
+        xl:flex-col
+        // xl:items-center
       `}
     }
     p {
       ${tw`
         text-lg
-        w-[80%]
         text-[#B4B6C3]
+        xl:text-3xl
+        xl:w-full
+        xl:flex
+        xl:flex-col
+        // xl:ml-96
       `}
     }
   }
@@ -46,6 +57,7 @@ const PricingWrapper = styled.div`
         flex
         justify-center
         my-8
+        xl:text-4xl
       `}
       #monthly {
         ${tw`
@@ -79,6 +91,7 @@ const PricingWrapper = styled.div`
         xl:items-center
         // xl:w-full
         xl:justify-center
+        xl:max-w-[1800px]
 
         md:grid
         md:grid-cols-2
@@ -88,10 +101,16 @@ const PricingWrapper = styled.div`
 
   #try-funding {
     ${tw`
-      xl:grid
-      xl:grid-cols-2
-      xl:my-52
+      md:grid
+      md:grid-cols-2
+      md:my-24
+      md:mx-0
+      md:h-full
+
       xl:mx-52
+      xl:my-44
+      xl:max-w-[1800px]
+      xl:self-center
     `}
   }
 `

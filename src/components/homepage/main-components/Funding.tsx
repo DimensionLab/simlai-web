@@ -6,6 +6,7 @@ const FundingWrapper = styled.div`
     w-full
     px-4
     my-5
+    h-full
   `}
   
   .container {
@@ -18,6 +19,7 @@ const FundingWrapper = styled.div`
     rounded-xl
     w-full
     px-4
+    h-full
   `}
     .title {
       ${tw`

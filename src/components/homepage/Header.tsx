@@ -21,6 +21,8 @@ const HeaderWrapper = styled.header`
     ${tw`
       xl:flex
       xl:self-center
+      flex
+      self-center
     `}
     img {
       ${tw`
@@ -28,15 +30,39 @@ const HeaderWrapper = styled.header`
       `}
     }
   }
-
-  .hamburger-menu {
+  .right-side {
     ${tw`
-      xl:hidden
+      flex
+      gap-x-2
     `}
-    img {
+    button {
       ${tw`
-        w-8
+        text-lg
+        flex
+        bg-[#6B50FF]
+        px-[16px]
+        py-[11px]
+        rounded
+        xl:hidden
       `}
+
+      .text {
+        ${tw`
+          font-black
+        `}
+      }
+    }
+    .hamburger-menu {
+      ${tw`
+        xl:hidden
+        flex
+        self-center
+      `}
+      img {
+        ${tw`
+          w-8
+        `}
+      }
     }
   }
 
@@ -86,16 +112,21 @@ const Header = () => {
       <div className="logo">
         <img src="assets/simlai/simlai-logo.svg" alt="" />
       </div>
-      <div className="hamburger-menu">
-        <img src="assets/simlai/hamburger-menu.svg" alt="" />
+      <div className="right-side">
+        <button>
+          <div className="text">JOIN</div>
+        </button>
+        <div className="hamburger-menu">
+          <img src="assets/simlai/hamburger-menu.svg" alt="" />
+        </div>
       </div>
       <div className="bar">
-        <Link href={"#features"}>FEATURES</Link>
-        <Link href={"#model-engineer"}>MODEL ENGINEER</Link>
-        <Link href={"#simulation-studio"}>SIMULATION STUDIO</Link>
-        <Link href={""}>PRICING</Link>
+        <Link href={"../#features"}>FEATURES</Link>
+        <Link href={"../#model-engineer"}>MODEL ENGINEER</Link>
+        <Link href={"../#simulation-studio"}>SIMULATION STUDIO</Link>
+        <Link href={"/pricing"}>PRICING</Link>
         <Link href={""}>CAREERS</Link>
-        <Link href={"/blog"}>
+        <Link href={"../blog"}>
           <a id="last-link">BLOG</a>
         </Link>
         <button>JOIN</button>

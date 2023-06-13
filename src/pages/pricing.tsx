@@ -35,6 +35,11 @@ const PricingWrapper = styled.div`
     }
   }
   .pricing-tabs {
+    ${tw`
+      xl:flex
+      xl:flex-col
+      xl:items-center
+    `}
     .btn-monthly-yearly {
       ${tw`
         px-4
@@ -67,9 +72,16 @@ const PricingWrapper = styled.div`
         flex-col
         gap-y-6
         my-6
+        items-center
         xl:grid
         xl:grid-cols-4
         xl:mx-24
+        xl:items-center
+        // xl:w-full
+        xl:justify-center
+
+        md:grid
+        md:grid-cols-2
       `}
     }
   }

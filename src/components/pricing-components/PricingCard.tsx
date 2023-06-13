@@ -3,9 +3,13 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const PricingCardWrapper = styled.div`
- ${tw`
-  px-4
- `}
+  ${tw`
+    px-4
+    flex
+    flex-col
+    w-full
+    h-full
+  `}
   .card {
     ${tw`
       flex
@@ -17,11 +21,12 @@ const PricingCardWrapper = styled.div`
       gap-y-6
       text-center
     `}
+    height: 100%;  // added this to ensure the cards take full height available
+
     h1 {
       ${tw`
         font-black
         text-2xl
-        w-full
         text-center
       `}
     }
@@ -35,22 +40,26 @@ const PricingCardWrapper = styled.div`
     }
     .price-container {
       ${tw`
-        xl:w-[80%]
+        flex-grow
+        // xl:w-[80%]
       `}
-      span {}
-      #number {
-        ${tw`
-          text-4xl
-        `}
-      }
     }
-    .storage {}
+    .storage {
+      ${tw`
+        flex-grow
+      `}
+    }
     .access {
       ${tw`
+        flex-grow
         w-[70%]
       `}
     }
-    .simulator {}
+    .simulator {
+      ${tw`
+        flex-grow
+      `}
+    }
     #choose-plan {
       ${tw`
         bg-[#6B50FF]
@@ -109,7 +118,7 @@ const PricingCard = (props: PricingProps) => {
           <h1>ENTERPRISE</h1>
           <hr/>
           <div className="price-container">
-            <span id="number">Have a bigger challenge to solve?</span>
+            <span id="challenge">Have a bigger challenge to solve?</span>
           </div>
           <div className="storage">All features from Pro</div>
           <div className="access">Custom computing resources with tens of GPUs</div>

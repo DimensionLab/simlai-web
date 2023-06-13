@@ -7,6 +7,8 @@ const FooterWrapper = styled.footer`
     bg-[#222530]
     flex
     justify-center
+    text-white
+    pb-2
   `}
 
   .all-container {

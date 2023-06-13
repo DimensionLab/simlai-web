@@ -10,6 +10,9 @@ const PricingWrapper = styled.div`
   ${tw`
     flex
     flex-col
+    bg-[#0D101B]
+    text-white
+    font-sans
   `}
 
   .headline {
@@ -21,6 +24,7 @@ const PricingWrapper = styled.div`
       gap-y-4
       xl:items-center
       xl:w-[60%]
+      text-white
     `}
     h1 {
       ${tw`
@@ -58,6 +62,7 @@ const PricingWrapper = styled.div`
         justify-center
         my-8
         xl:text-4xl
+        text-white
       `}
       #monthly {
         ${tw`
@@ -92,6 +97,7 @@ const PricingWrapper = styled.div`
         // xl:w-full
         xl:justify-center
         xl:max-w-[1800px]
+        text-white
 
         md:grid
         md:grid-cols-2
@@ -110,6 +116,7 @@ const PricingWrapper = styled.div`
       xl:mx-52
       xl:my-44
       xl:max-w-[1800px]
+      text-white
       xl:self-center
     `}
   }

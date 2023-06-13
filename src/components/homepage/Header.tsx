@@ -121,12 +121,12 @@ const Header = () => {
         </div>
       </div>
       <div className="bar">
-        <Link href={"#features"}>FEATURES</Link>
-        <Link href={"#model-engineer"}>MODEL ENGINEER</Link>
-        <Link href={"#simulation-studio"}>SIMULATION STUDIO</Link>
+        <Link href={"../#features"}>FEATURES</Link>
+        <Link href={"../#model-engineer"}>MODEL ENGINEER</Link>
+        <Link href={"../#simulation-studio"}>SIMULATION STUDIO</Link>
         <Link href={"/pricing"}>PRICING</Link>
         <Link href={""}>CAREERS</Link>
-        <Link href={"/blog"}>
+        <Link href={"../blog"}>
           <a id="last-link">BLOG</a>
         </Link>
         <button>JOIN</button>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled, { StyledComponent } from "styled-components";
 import tw from "twin.macro";
 
@@ -72,6 +73,45 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
         //doesnt work for some reason
       }
     }
+    .content {
+      ${tw`
+        flex
+        flex-col
+      `}
+      .text-links {
+        ${tw`
+          flex
+          flex-col
+          w-full
+          text-lg
+          font-bold
+          text-[#989BA7]
+        `}
+      }
+      .socials {
+        ${tw`
+          flex
+          flex-row
+          gap-x-4
+          w-full
+          h-full
+          my-6
+          px-10
+          justify-between
+        `}
+    
+        a {
+          img {
+            ${tw`
+              w-6
+              aspect-auto
+            `}
+          }
+        }
+      }
+      .tos-privacy {}
+      .copyright {}
+    }
   }
 `;
 
@@ -89,6 +129,57 @@ const DropdownMenu = (props: DropdownProps ) => {
             <button>JOIN</button>
             <img src="assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
           </div>
+        </div>
+        <div className="content">
+          <div className="text-links">
+            <Link href={"../#features"}>
+              <a onClick={(e) => { props.onClose(); }}>FEATURES</a>
+            </Link>
+            <Link href={"../#model-engineer"}>
+              <a onClick={(e) => { props.onClose(); }}>MODEL ENGINEER</a>
+            </Link>
+            <Link href={"../#simulation-studio"}>
+              <a onClick={(e) => { props.onClose(); }}>SIMULATION STUDIO</a>
+            </Link>
+            <Link href={"/pricing"}>
+              <a onClick={(e) => { props.onClose(); }}>PRICING</a>
+            </Link>
+            <Link href={""}>
+              <a onClick={(e) => { props.onClose(); }}>CAREERS</a>
+            </Link>
+            <Link href={"../blog"}>
+              <a id="last-link" onClick={(e) => { props.onClose(); }}>BLOG</a>
+            </Link>
+          </div>
+          <div className="socials">
+            <div className="twitter-container">
+              <a href="https://twitter.com/siml_ai">
+                <img src="assets/facebook-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="facebook-container">
+              <a href="https://www.facebook.com/learnedsimulators/">
+                <img src="assets/twitter-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="instagram-container">
+              <a href="">
+                <img src="assets/simlai/ig-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="linkedin-container">
+              <a href="https://www.linkedin.com/company/dimensionlab">
+                <img src="assets/simlai/li-logo.svg" alt="" />
+              </a>
+            </div>
+            <div className="medium-container">
+              <a href="">
+                <img src="assets/simlai/medium-logo.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div className="tos-privacy"></div>
+          <div className="copyright"></div>
         </div>
       </div>
     </DropdownMenuWrapper>

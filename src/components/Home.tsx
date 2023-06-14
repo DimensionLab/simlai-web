@@ -3,8 +3,15 @@ import Layout from "./Layout";
 import Header from "./homepage/Header";
 import Main from "./homepage/Main";
 import Footer from "./homepage/Footer";
+import { useState } from "react";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       <Head>
@@ -15,9 +22,9 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Header/>
-        <Main/>
-        <Footer/>
+        <Header open={isOpen} onClose={handleOpen}/>
+        <Main open={isOpen}/>
+        <Footer open={isOpen}/>
       </Layout>
     </>
   );

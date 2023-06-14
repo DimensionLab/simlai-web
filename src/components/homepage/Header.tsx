@@ -41,8 +41,8 @@ const HeaderWrapper = styled.header`
         text-lg
         flex
         bg-[#6B50FF]
-        px-[16px]
-        py-[11px]
+        px-4
+        py-2
         rounded
         xl:hidden
       `}
@@ -57,7 +57,7 @@ const HeaderWrapper = styled.header`
       ${tw`
         xl:hidden
         flex
-        self-center
+        // self-center
       `}
       img {
         ${tw`

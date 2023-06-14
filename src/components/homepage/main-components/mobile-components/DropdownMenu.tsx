@@ -21,14 +21,15 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
 
   .container {
     ${tw`
-      px-4
+      px-3
+      py-14
     `}
     .header {
       ${tw`
         flex
         flex-row
         justify-between
-        pt-8
+        // pt-8
       `}
       .logo-title {
         ${tw`
@@ -39,7 +40,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
         
         #logo {
           ${tw`
-            w-6
+            w-8
           `}
         }
         #title {
@@ -53,7 +54,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           flex
           flex-row
           items-center
-          gap-x-4
+          // gap-x-2
         `}
         button {
           ${tw`
@@ -63,6 +64,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
             text-white
             font-black
             rounded
+            text-lg
           `}
         }
         // #close-btn {
@@ -71,6 +73,14 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
         //   }
         // }
         //doesnt work for some reason
+        img {
+          ${tw`
+            w-10
+            h-full
+            self-center
+            flex
+          `}
+        }
       }
     }
     .content {

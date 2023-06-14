@@ -4,6 +4,7 @@ import Header from "./homepage/Header";
 import Main from "./homepage/Main";
 import Footer from "./homepage/Footer";
 import { useState } from "react";
+import DropdownMenu from "./homepage/main-components/mobile-components/DropdownMenu";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,12 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Header open={isOpen} onClose={handleOpen}/>
+        {!isOpen ? (
+          <Header open={isOpen} onClose={handleOpen}/>
+          // Main, Footer potentially could be here, but it works as it is now, so...
+        ) : (
+          <DropdownMenu open={isOpen} onClose={handleOpen}/>
+        )}
         <Main open={isOpen}/>
         <Footer open={isOpen}/>
       </Layout>

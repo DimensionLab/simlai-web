@@ -125,7 +125,6 @@ const Header = (props: HeaderProps) => {
         <div className="hamburger-menu" onClick={props.onClose}>
           <img src="assets/simlai/hamburger-menu.svg" alt="" />
         </div>
-        <DropdownMenu open={props.open} onClose={props.onClose}/>
       </div>
       <div className="bar">
         <Link href={"../#features"}>FEATURES</Link>
@@ -138,6 +137,7 @@ const Header = (props: HeaderProps) => {
         </Link>
         <button>JOIN</button>
       </div>
+      {/* <DropdownMenu open={props.open} onClose={props.onClose}/> */}
     </HeaderWrapper>
   );
 };

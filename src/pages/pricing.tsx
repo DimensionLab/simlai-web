@@ -147,7 +147,8 @@ const Pricing = () => {
   ]
   return (
     <PricingWrapper>
-      <Header/>
+      {/* implement this later */}
+      <Header open={false} onClose={ () => {} }/>
       <div className="headline">
         <h1>Our Plans and Pricing</h1>
         <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
@@ -168,7 +169,8 @@ const Pricing = () => {
         <TryPlatform/>
         <Funding/>
       </div>
-      <Footer/>
+      {/* implement to dynamically open close this */}
+      <Footer open={false}/>
     </PricingWrapper>
   );
 }

@@ -60,7 +60,7 @@ interface MainProps {
 
 const Main = (props: MainProps) => {
   return (
-    <MainWrapper style={ {display: props.open ? 'none' : 'block'} }>
+    <MainWrapper style={ {display: props.open ? 'none' : 'flex'} }>
       <div className="width-limited">
         <IntroParent/>
         <SignUp/>

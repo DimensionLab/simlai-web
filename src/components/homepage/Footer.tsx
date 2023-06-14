@@ -139,9 +139,13 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-const Footer = () => {
+interface FooterProps {
+  open: boolean;
+}
+
+const Footer = (props: FooterProps) => {
   return (
-    <FooterWrapper>
+    <FooterWrapper style={ {display: props.open ? 'none' : 'block'} }>
       <div className="all-container">
         <div className="left">
           <div className="header-siml">

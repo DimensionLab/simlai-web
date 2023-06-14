@@ -141,7 +141,7 @@ export default function Blog() {
           <StoryblokComponent blok={story.content} />
         )}
         {/* <ArticleLoadingSkeleton/> */}
-        <Footer/>
+        <Footer open={true}/>
       </Layout>
     </BlogWrapper>
   )

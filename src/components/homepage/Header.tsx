@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import tw from "twin.macro";
+import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
 
 const HeaderWrapper = styled.header`
   ${tw`
@@ -40,8 +41,8 @@ const HeaderWrapper = styled.header`
         text-lg
         flex
         bg-[#6B50FF]
-        px-[16px]
-        py-[11px]
+        px-4
+        py-2
         rounded
         xl:hidden
       `}
@@ -56,7 +57,7 @@ const HeaderWrapper = styled.header`
       ${tw`
         xl:hidden
         flex
-        self-center
+        // self-center
       `}
       img {
         ${tw`
@@ -106,7 +107,12 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const Header = () => {
+interface HeaderProps  {
+  open: boolean;
+  onClose: () => void;
+}
+
+const Header = (props: HeaderProps) => {
   return (
     <HeaderWrapper>
       <div className="logo">
@@ -116,7 +122,7 @@ const Header = () => {
         <button>
           <div className="text">JOIN</div>
         </button>
-        <div className="hamburger-menu">
+        <div className="hamburger-menu" onClick={props.onClose}>
           <img src="assets/simlai/hamburger-menu.svg" alt="" />
         </div>
       </div>
@@ -131,6 +137,7 @@ const Header = () => {
         </Link>
         <button>JOIN</button>
       </div>
+      {/* <DropdownMenu open={props.open} onClose={props.onClose}/> */}
     </HeaderWrapper>
   );
 };

@@ -48,7 +48,7 @@ export default function Page({ story  }: PageProps) {
       <Layout>
         <Header isArticle={true}/>
         <StoryblokComponent blok={story.content} />
-        <Footer/>
+        <Footer open={true}/>
       </Layout>
     </div>
   );

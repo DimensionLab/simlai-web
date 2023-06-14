@@ -5,6 +5,8 @@ import Footer from "@/components/homepage/Footer";
 import PricingCard from "@/components/pricing-components/PricingCard";
 import Funding from "@/components/homepage/main-components/Funding";
 import TryPlatform from "@/components/homepage/main-components/TryPlatform";
+import { useState } from "react";
+import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 
 const PricingWrapper = styled.div`
   ${tw`
@@ -145,31 +147,44 @@ const Pricing = () => {
       "Unlimited simulators in Model Engineer** Unlimited simulators in Simulation Studio** Compute credits included***"
     ]
   ]
+
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <PricingWrapper>
-      <Header/>
-      <div className="headline">
-        <h1>Our Plans and Pricing</h1>
-        <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
-      </div>
-      <div className="pricing-tabs">
-        <div className="btn-monthly-yearly">
-          <button id="monthly">MONTHLY</button>
-          <button id="yearly">YEARLY</button>
-        </div>
-        <div className="cards-container">
-          <PricingCard title={pricingProps[0][0]} price={pricingProps[0][1]} storage={pricingProps[0][2]} access={pricingProps[0][3]} simulators={pricingProps[0][4]} isEnterprise={false}/>
-          <PricingCard title={pricingProps[1][0]} price={pricingProps[1][1]} storage={pricingProps[1][2]} access={pricingProps[1][3]} simulators={pricingProps[1][4]} isEnterprise={false}/>
-          <PricingCard title={pricingProps[2][0]} price={pricingProps[2][1]} storage={pricingProps[2][2]} access={pricingProps[2][3]} simulators={pricingProps[2][4]} isEnterprise={false}/>
-          <PricingCard title={"null"} price={"null"} storage={"null"} access={"null"} simulators={"null"} isEnterprise={true}/>
-        </div>
-      </div>
-      <div className="width-limited" id="try-funding">
-        <TryPlatform/>
-        <Funding/>
-      </div>
-      <Footer/>
-    </PricingWrapper>
+    <>
+      {isOpen ? (
+          <PricingWrapper>
+            <Header open={isOpen} onClose={ handleOpen }/>
+            <div className="headline">
+              <h1>Our Plans and Pricing</h1>
+              <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
+            </div>
+            <div className="pricing-tabs">
+              <div className="btn-monthly-yearly">
+                <button id="monthly">MONTHLY</button>
+                <button id="yearly">YEARLY</button>
+              </div>
+              <div className="cards-container">
+                <PricingCard title={pricingProps[0][0]} price={pricingProps[0][1]} storage={pricingProps[0][2]} access={pricingProps[0][3]} simulators={pricingProps[0][4]} isEnterprise={false}/>
+                <PricingCard title={pricingProps[1][0]} price={pricingProps[1][1]} storage={pricingProps[1][2]} access={pricingProps[1][3]} simulators={pricingProps[1][4]} isEnterprise={false}/>
+                <PricingCard title={pricingProps[2][0]} price={pricingProps[2][1]} storage={pricingProps[2][2]} access={pricingProps[2][3]} simulators={pricingProps[2][4]} isEnterprise={false}/>
+                <PricingCard title={"null"} price={"null"} storage={"null"} access={"null"} simulators={"null"} isEnterprise={true}/>
+              </div>
+            </div>
+            <div className="width-limited" id="try-funding">
+              <TryPlatform/>
+              <Funding/>
+            </div>
+            <Footer open={!isOpen}/>
+          </PricingWrapper>
+        ) : (
+          <DropdownMenu open={!isOpen} onClose={handleOpen}/>
+        )}
+    </>
   );
 }
 

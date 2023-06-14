@@ -14,15 +14,20 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
     // absolute
     bg-[#0D101B]
     w-full
-    h-[100vh]
+    // h-[100vh]
     // left-0
     // top-0
+    h-full
   `}
 
   .container {
     ${tw`
       px-3
       py-14
+      flex
+      flex-col
+      h-full
+      justify-between
     `}
     .header {
       ${tw`
@@ -87,15 +92,20 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
       ${tw`
         flex
         flex-col
+        h-full
+        pt-24
+        px-6
+        
       `}
       .text-links {
         ${tw`
           flex
           flex-col
           w-full
-          text-lg
+          text-2xl
           font-bold
           text-[#989BA7]
+          gap-y-6
         `}
       }
       .socials {
@@ -108,6 +118,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           my-6
           px-10
           justify-between
+          py-12
         `}
     
         a {
@@ -119,8 +130,25 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           }
         }
       }
-      .tos-privacy {}
-      .copyright {}
+      .legal {
+        ${tw`
+          flex
+          flex-row
+          w-full
+          // justify-center
+          gap-x-6
+          // pl-8
+          pb-8
+        `}
+      }
+      .copyright {
+        ${tw`
+          text-[#61646F]
+          text-xs
+          // text-center
+          // pl-8
+        `}
+      }
     }
   }
 `;
@@ -188,8 +216,11 @@ const DropdownMenu = (props: DropdownProps ) => {
               </a>
             </div>
           </div>
-          <div className="tos-privacy"></div>
-          <div className="copyright"></div>
+          <div className="legal">
+            <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
+            <a href="https://www.dimensionlab.org/privacy-policy.html">Privacy Policy</a>
+          </div>
+          <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
         </div>
       </div>
     </DropdownMenuWrapper>

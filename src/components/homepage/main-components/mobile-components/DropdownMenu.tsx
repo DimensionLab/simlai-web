@@ -10,12 +10,12 @@ interface StyledDropdownProps {}
 
 const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, never> = styled.div<StyledDropdownProps>`
   ${tw`
-    absolute
+    // absolute
     bg-[#0D101B]
     w-full
-    h-full
-    left-0
-    top-0
+    h-[100vh]
+    // left-0
+    // top-0
   `}
 
   .container {
@@ -61,6 +61,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
             py-2
             text-white
             font-black
+            rounded
           `}
         }
         // #close-btn {

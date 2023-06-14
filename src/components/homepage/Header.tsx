@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Footer from "./Footer";
 import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
 
 const HeaderWrapper = styled.header`
@@ -109,15 +107,12 @@ const HeaderWrapper = styled.header`
   }
 `;
 
+interface HeaderProps  {
+  open: boolean;
+  onClose: () => void;
+}
 
-
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  }
-
+const Header = (props: HeaderProps) => {
   return (
     <HeaderWrapper>
       <div className="logo">
@@ -127,10 +122,10 @@ const Header = () => {
         <button>
           <div className="text">JOIN</div>
         </button>
-        <div className="hamburger-menu" onClick={toggleMenu}>
+        <div className="hamburger-menu" onClick={props.onClose}>
           <img src="assets/simlai/hamburger-menu.svg" alt="" />
         </div>
-        <DropdownMenu open={isOpen} onClose={toggleMenu}/>
+        <DropdownMenu open={props.open} onClose={props.onClose}/>
       </div>
       <div className="bar">
         <Link href={"../#features"}>FEATURES</Link>

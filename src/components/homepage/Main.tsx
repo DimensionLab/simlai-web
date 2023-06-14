@@ -54,9 +54,13 @@ const MainWrapper = styled.main`
 
 `;
 
-const Main = () => {
+interface MainProps {
+  open: boolean;
+}
+
+const Main = (props: MainProps) => {
   return (
-    <MainWrapper>
+    <MainWrapper style={ {display: props.open ? 'none' : 'block'} }>
       <div className="width-limited">
         <IntroParent/>
         <SignUp/>

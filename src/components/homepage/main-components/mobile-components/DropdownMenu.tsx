@@ -86,7 +86,7 @@ const DropdownMenu = (props: DropdownProps ) => {
           </div>
           <div className="join-close">
             <button>JOIN</button>
-            <img src="assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={onClose}/>
+            <img src="assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
           </div>
         </div>
       </div>

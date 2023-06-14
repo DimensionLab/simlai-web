@@ -1,12 +1,14 @@
-import styled from "styled-components";
+import styled, { StyledComponent } from "styled-components";
 import tw from "twin.macro";
 
 interface DropdownProps {
   open: boolean;
   onClose: () => void;
 }
-const DropdownMenuWrapper = styled.div<DropdownProps>`
-  display: ${props => props.open ? 'block' : 'none'};
+
+interface StyledDropdownProps {}
+
+const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, never> = styled.div<StyledDropdownProps>`
   ${tw`
     absolute
     bg-[#0D101B]
@@ -73,8 +75,9 @@ const DropdownMenuWrapper = styled.div<DropdownProps>`
 `;
 
 const DropdownMenu = (props: DropdownProps ) => {
+  const { open, onClose } = props;
   return (
-    <DropdownMenuWrapper open={props.open}>
+    <DropdownMenuWrapper style={{display: open ? 'block' : 'none'}}>
       <div className="container">
         <div className="header">
           <div className="logo-title">
@@ -83,7 +86,7 @@ const DropdownMenu = (props: DropdownProps ) => {
           </div>
           <div className="join-close">
             <button>JOIN</button>
-            <img src="assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
+            <img src="assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={onClose}/>
           </div>
         </div>
       </div>

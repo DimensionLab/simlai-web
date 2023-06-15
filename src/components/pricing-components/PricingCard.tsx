@@ -44,6 +44,7 @@ const PricingCardWrapper = styled.div`
         // xl:w-[80%]
         text-2xl
         font-light
+        px-4
       `}
 
       #number {

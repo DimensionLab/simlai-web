@@ -12,13 +12,14 @@ const IntroDesktopWrapper = styled.div`
       flex-row
       mb-20
       gap-x-44
-      // px-12
-      pl-12
+      px-12
+      // pl-12
     `}
     .left-side {
       ${tw`
         flex
         flex-col
+        w-1/2
         gap-y-10
       `}
       .logo-title {
@@ -103,63 +104,68 @@ const IntroDesktopWrapper = styled.div`
       }
     }
     .right-side {
-      .image-container {
-        ${tw`
-          relative
-          h-full
-          w-full
-          flex
-          flex-col
-        `}
-        .static-container {
-          ${tw`
-            h-full
-            w-full
-            relative
-            pb-24
-            pl-2
-          `}
-        }
-        .rotate-row {
-          ${tw`
-            absolute
-            flex
-            flex-row
-            h-full
-            justify-end
-          `}
+      ${tw`
+        w-1/2
+      `}
+      // .image-container {
+      //   ${tw`
+      //     relative
+      //     h-full
+      //     w-full
+      //     flex
+      //     flex-col
+      //   `}
+      //   .static-container {
+      //     ${tw`
+      //       h-full
+      //       w-full
+      //       relative
+      //       pb-24
+      //       pl-2
+      //     `}
+      //   }
+      //   .rotate-row {
+      //     ${tw`
+      //       absolute
+      //       flex
+      //       flex-row
+      //       h-full
+      //       justify-end
+      //     `}
 
-          img {
-            ${tw`
-              w-full
-              flex
-              self-end
-            `}
-          }
+      //     img {
+      //       ${tw`
+      //         w-full
+      //         flex
+      //         self-end
+      //       `}
+      //     }
 
-          #rotate1 {
-            ${tw`
-              w-96
-              pb-10
-              -mr-4
-            `}
-          }
-          #rotate2 {
-            ${tw`
-              w-96
-              -ml-32
-            `}
-          }
-          #rotate3 {
-            ${tw`
-              w-96
-              -ml-24
-              pb-12
-              pr-6
-            `}
-          }
-        }
-      }
+      //     #rotate1 {
+      //       ${tw`
+      //         w-96
+      //         pb-10
+      //         -mr-4
+      //       `}
+      //     }
+      //     #rotate2 {
+      //       ${tw`
+      //         w-96
+      //         -ml-32
+      //       `}
+      //     }
+      //     #rotate3 {
+      //       ${tw`
+      //         w-96
+      //         -ml-24
+      //         pb-12
+      //         pr-6
+      //       `}
+      //     }
+      //   }
+      // }
+
+      img {}
     }
   }
 `;
@@ -186,7 +192,8 @@ const IntroDesktop = () => {
           </div>
         </div>
         <div className="right-side">
-          <div className="image-container">
+          {/* this manual absolute-positioning is broken */}
+          {/* <div className="image-container">
             <div className="static-container">
               <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
             </div>
@@ -195,7 +202,8 @@ const IntroDesktop = () => {
               <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate"id="rotate2"/>
               <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate" id="rotate3"/>
             </div>
-          </div>
+          </div> */}
+          <img src="assets/simlai/desktop-intro-pics/image-composition.png" alt="" />
         </div>
       </div>
     </IntroDesktopWrapper>

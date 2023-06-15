@@ -53,17 +53,20 @@ const PricingCardWrapper = styled.div`
     .storage {
       ${tw`
         flex-grow
+        px-4
       `}
     }
     .access {
       ${tw`
         flex-grow
         w-[70%]
+        px-4
       `}
     }
-    .simulator {
+    .simulators {
       ${tw`
         flex-grow
+        px-4
       `}
     }
     #choose-plan {

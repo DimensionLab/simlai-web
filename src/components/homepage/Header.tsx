@@ -49,7 +49,7 @@ const HeaderWrapper = styled.header`
 
       .text {
         ${tw`
-          font-black
+          font-bold
         `}
       }
     }
@@ -76,6 +76,7 @@ const HeaderWrapper = styled.header`
       items-center
       text-sm
       text-gray-400
+      font-bold
     `}
 
     #last-link {
@@ -102,7 +103,7 @@ const HeaderWrapper = styled.header`
         px-10
         py-4
         text-white
-        font-black
+        font-bold
       `}
     }
   }

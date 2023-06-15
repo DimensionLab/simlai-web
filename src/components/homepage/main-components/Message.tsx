@@ -21,6 +21,7 @@ const MessageWrapper = styled.div`
         xl:text-5xl
         xl:max-w-4xl
         max-xl:max-w-3xl
+        font-light
       `}
     }
 `;

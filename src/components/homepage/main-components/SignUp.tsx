@@ -26,6 +26,7 @@ const SignUpWrapper = styled.div`
       px-4
       text-[#B4B6C3]
       break-normal
+      font-normal
     `}
   }
 

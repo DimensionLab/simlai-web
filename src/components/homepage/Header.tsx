@@ -74,7 +74,7 @@ const HeaderWrapper = styled.header`
       flex-row
       gap-x-4
       items-center
-      text-lg
+      text-sm
       text-gray-400
     `}
 

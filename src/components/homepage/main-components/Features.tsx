@@ -5,10 +5,14 @@ const FeaturesWrapper = styled.div`
   ${tw`
     py-10
     px-4
+    flex
+    flex-col
+    gap-y-12
 
     xl:grid
     xl:grid-cols-2
-    xl:gap-x-40
+    xl:gap-x-0
+    xl:mt-44
   `}
 
   .container {
@@ -16,8 +20,8 @@ const FeaturesWrapper = styled.div`
       flex
       flex-col
       items-center
-      gap-y-8
-      my-24
+      gap-y-6
+      // my-24
       justify-center
     `}
 

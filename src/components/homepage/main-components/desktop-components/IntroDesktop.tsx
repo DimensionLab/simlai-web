@@ -12,7 +12,8 @@ const IntroDesktopWrapper = styled.div`
       flex-row
       mb-20
       gap-x-44
-      px-12
+      // px-12
+      pl-12
     `}
     .left-side {
       ${tw`
@@ -105,70 +106,56 @@ const IntroDesktopWrapper = styled.div`
       .image-container {
         ${tw`
           relative
-          w-full
           h-full
-          grid
-          // overflow-hidden
+          w-full
+          flex
+          flex-col
         `}
-
-        grid-template-areas: 'image';
-
-        img {
+        .static-container {
           ${tw`
-
-          `}
-          grid-area: image;
-        }
-
-        #static {
-          z-index: 0;
-          ${tw`
-            flex
-            self-center
             h-full
             w-full
+            relative
+            pb-24
+            pl-2
           `}
         }
-
         .rotate-row {
-          grid-area: image;
           ${tw`
+            absolute
             flex
             flex-row
-            z-10
-            self-end
-            gap-x-0
+            h-full
+            justify-end
           `}
 
           img {
             ${tw`
-              object-contain
-              w-auto
-              h-full
+              w-full
+              flex
+              self-end
             `}
           }
 
           #rotate1 {
-            z-index: 10;
             ${tw`
-              flex
-              self-end
-              
+              w-96
+              pb-10
+              -mr-4
             `}
           }
           #rotate2 {
-            z-index: 20;
             ${tw`
-              flex
-              self-end
-              
+              w-96
+              -ml-32
             `}
           }
           #rotate3 {
-            z-index: 30;
             ${tw`
-              flex
-              self-end
+              w-96
+              -ml-24
+              pb-12
+              pr-6
             `}
           }
         }
@@ -200,7 +187,9 @@ const IntroDesktop = () => {
         </div>
         <div className="right-side">
           <div className="image-container">
-            <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
+            <div className="static-container">
+              <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
+            </div>
             <div className="rotate-row">
               <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate" id="rotate1"/>
               <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate"id="rotate2"/>

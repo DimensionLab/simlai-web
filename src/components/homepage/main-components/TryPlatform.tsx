@@ -7,7 +7,8 @@ const TryPlatformWrapper = styled.div`
     flex
     flex-col
     gap-y-10
-    px-4
+    max-sm:px-4
+    px-10
     pt-20
     pb-20
     mx-4

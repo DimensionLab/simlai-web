@@ -18,7 +18,8 @@ const FundingWrapper = styled.div`
     bg-[linear-gradient(90deg, #C063F9 0%, #59137D 100%)]
     rounded-xl
     w-full
-    px-4
+    max-sm:px-4
+    px-10
     h-full
   `}
     .title {

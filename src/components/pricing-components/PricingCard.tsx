@@ -43,6 +43,12 @@ const PricingCardWrapper = styled.div`
         flex-grow
         // xl:w-[80%]
       `}
+
+      #number {
+        ${tw`
+          text-3xl
+        `}
+      }
     }
     .storage {
       ${tw`

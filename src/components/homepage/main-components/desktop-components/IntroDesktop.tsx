@@ -107,65 +107,48 @@ const IntroDesktopWrapper = styled.div`
       ${tw`
         w-1/2
       `}
-      // .image-container {
-      //   ${tw`
-      //     relative
-      //     h-full
-      //     w-full
-      //     flex
-      //     flex-col
-      //   `}
-      //   .static-container {
-      //     ${tw`
-      //       h-full
-      //       w-full
-      //       relative
-      //       pb-24
-      //       pl-2
-      //     `}
-      //   }
-      //   .rotate-row {
-      //     ${tw`
-      //       absolute
-      //       flex
-      //       flex-row
-      //       h-full
-      //       justify-end
-      //     `}
+      .container {
+        ${tw`
+          relative
+        `}
 
-      //     img {
-      //       ${tw`
-      //         w-full
-      //         flex
-      //         self-end
-      //       `}
-      //     }
+        .static {
+          ${tw`
+            w-full
+          `}
+        }
 
-      //     #rotate1 {
-      //       ${tw`
-      //         w-96
-      //         pb-10
-      //         -mr-4
-      //       `}
-      //     }
-      //     #rotate2 {
-      //       ${tw`
-      //         w-96
-      //         -ml-32
-      //       `}
-      //     }
-      //     #rotate3 {
-      //       ${tw`
-      //         w-96
-      //         -ml-24
-      //         pb-12
-      //         pr-6
-      //       `}
-      //     }
-      //   }
-      // }
+        .rotate {
+          ${tw`
+            absolute
+            bottom-0
+          `}
+        }
 
-      img {}
+        .one {
+          ${tw`
+            w-[50%]
+            left-[-3%]
+            bottom-[-22%]
+          `}
+        }
+
+        .two {
+          ${tw`
+            w-[40%]
+            left-[30%]
+            bottom-[-30%]
+          `}
+        }
+
+        .three {
+          ${tw`
+            w-[50%]
+            right-[2%]
+            bottom-[-15%]
+          `}
+        }
+      }
     }
   }
 `;
@@ -193,17 +176,13 @@ const IntroDesktop = () => {
         </div>
         <div className="right-side">
           {/* this manual absolute-positioning is broken */}
-          {/* <div className="image-container">
-            <div className="static-container">
-              <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
-            </div>
-            <div className="rotate-row">
-              <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate" id="rotate1"/>
-              <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate"id="rotate2"/>
-              <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate" id="rotate3"/>
-            </div>
-          </div> */}
-          <img src="assets/simlai/desktop-intro-pics/image-composition.png" alt="" />
+          <div className="container">
+            <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" className="static"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate one"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate two"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate three"/>
+          </div>
+          {/* <img src="assets/simlai/desktop-intro-pics/image-composition.png" alt="" /> */}
         </div>
       </div>
     </IntroDesktopWrapper>

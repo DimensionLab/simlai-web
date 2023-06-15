@@ -145,7 +145,7 @@ interface FooterProps {
 
 const Footer = (props: FooterProps) => {
   return (
-    <FooterWrapper style={ {display: props.open ? 'none' : 'block'} }>
+    <FooterWrapper style={ {display: props.open ? 'none' : 'flex'} }>
       <div className="all-container">
         <div className="left">
           <div className="header-siml">

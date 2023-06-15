@@ -102,41 +102,76 @@ const IntroDesktopWrapper = styled.div`
       }
     }
     .right-side {
-      ${tw`
-        relative
-        z-0
-      `}
-      #static { 
+      .image-container {
         ${tw`
+          relative
+          w-full
+          h-full
+          grid
+          // overflow-hidden
         `}
-      }
-    
-      .rotate {
-        ${tw`
-          absolute
-          -bottom-24
-        `}
-      }
-    
-      #rotate1 {
-        ${tw`
-          z-30
-          right-4
-          -bottom-20
-        `}
-      }
-      #rotate2 {
-        ${tw`
-          z-30
-          left-44
-          -bottom-32
-        `}
-      }
-      #rotate3 {
-        ${tw`
-          z-20
-          -left-10
-        `}
+
+        grid-template-areas: 'image';
+
+        img {
+          ${tw`
+
+          `}
+          grid-area: image;
+        }
+
+        #static {
+          z-index: 0;
+          ${tw`
+            flex
+            self-center
+            h-full
+            w-full
+          `}
+        }
+
+        .rotate-row {
+          grid-area: image;
+          ${tw`
+            flex
+            flex-row
+            z-10
+            self-end
+            gap-x-0
+          `}
+
+          img {
+            ${tw`
+              object-contain
+              w-auto
+              h-full
+            `}
+          }
+
+          #rotate1 {
+            z-index: 10;
+            ${tw`
+              flex
+              self-end
+              
+            `}
+          }
+          #rotate2 {
+            z-index: 20;
+            ${tw`
+              flex
+              self-end
+              
+            `}
+          }
+          #rotate3 {
+            z-index: 30;
+            ${tw`
+              flex
+              self-end
+            `}
+          }
+        }
       }
     }
   }
@@ -164,10 +199,14 @@ const IntroDesktop = () => {
           </div>
         </div>
         <div className="right-side">
-          <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
-          <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate" id="rotate3"/>
-          <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate"id="rotate2"/>
-          <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate" id="rotate1"/>
+          <div className="image-container">
+            <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" id="static"/>
+            <div className="rotate-row">
+              <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate" id="rotate1"/>
+              <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate"id="rotate2"/>
+              <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate" id="rotate3"/>
+            </div>
+          </div>
         </div>
       </div>
     </IntroDesktopWrapper>

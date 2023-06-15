@@ -78,8 +78,8 @@ const ProductWrapper = styled.div`
 
     .text {
       ${tw`
-        text-3xl
-        w-2/3
+        text-2xl
+        w-[55%]
       `}
 
       strong {

@@ -18,9 +18,9 @@ const MessageWrapper = styled.div`
     `}
     .text {
       ${tw`
-        xl:text-6xl
-        xl:w-1/2
-        max-xl:max-w-2xl
+        xl:text-5xl
+        xl:max-w-4xl
+        max-xl:max-w-3xl
       `}
     }
 `;

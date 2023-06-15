@@ -44,7 +44,7 @@ const ModelEngineerWrapper = styled.div`
       .description {
         ${tw`
           text-[#EBEDFA]
-          font-thin
+          font-light
           xl:text-4xl
           flex
           flex-row
@@ -52,6 +52,7 @@ const ModelEngineerWrapper = styled.div`
 
         .desc-text {
           ${tw`
+            font-light
           `}
         }
       }
@@ -73,7 +74,7 @@ const ModelEngineerWrapper = styled.div`
           
           .title {
             ${tw`
-              font-black
+              font-bold
               text-xl
             `}
           }
@@ -81,6 +82,7 @@ const ModelEngineerWrapper = styled.div`
             ${tw`
               text-lg
               w-full
+              font-light
             `}
           }
         }        

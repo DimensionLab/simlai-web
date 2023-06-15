@@ -7,6 +7,8 @@ import Funding from "@/components/homepage/main-components/Funding";
 import TryPlatform from "@/components/homepage/main-components/TryPlatform";
 import { useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
+import Layout from "@/components/Layout";
+import Head from "next/head";
 
 const PricingWrapper = styled.div`
   ${tw`
@@ -70,7 +72,7 @@ const PricingWrapper = styled.div`
           bg-[#454853]
           rounded-l
           px-4
-          font-black
+          font-bold
           py-3
         `}
       }
@@ -79,7 +81,7 @@ const PricingWrapper = styled.div`
           bg-[#6B50FF]
           rounded-r
           px-4
-          font-black
+          font-bold
           py-3
         `}
       }
@@ -156,34 +158,45 @@ const Pricing = () => {
 
   return (
     <>
-      {isOpen ? (
-          <PricingWrapper>
-            <Header open={isOpen} onClose={ handleOpen }/>
-            <div className="headline">
-              <h1>Our Plans and Pricing</h1>
-              <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
-            </div>
-            <div className="pricing-tabs">
-              <div className="btn-monthly-yearly">
-                <button id="monthly">MONTHLY</button>
-                <button id="yearly">YEARLY</button>
+      <Head>
+          <title>Siml.ai</title>
+          <meta name="description" content="Landing page for Siml.ai" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="assets/simlai/simlai-logo.svg" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      </Head>
+      <Layout>
+        {isOpen ? (
+            <PricingWrapper>
+              <Header open={isOpen} onClose={ handleOpen }/>
+              <div className="headline">
+                <h1>Our Plans and Pricing</h1>
+                <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
               </div>
-              <div className="cards-container">
-                <PricingCard title={pricingProps[0][0]} price={pricingProps[0][1]} storage={pricingProps[0][2]} access={pricingProps[0][3]} simulators={pricingProps[0][4]} isEnterprise={false}/>
-                <PricingCard title={pricingProps[1][0]} price={pricingProps[1][1]} storage={pricingProps[1][2]} access={pricingProps[1][3]} simulators={pricingProps[1][4]} isEnterprise={false}/>
-                <PricingCard title={pricingProps[2][0]} price={pricingProps[2][1]} storage={pricingProps[2][2]} access={pricingProps[2][3]} simulators={pricingProps[2][4]} isEnterprise={false}/>
-                <PricingCard title={"null"} price={"null"} storage={"null"} access={"null"} simulators={"null"} isEnterprise={true}/>
+              <div className="pricing-tabs">
+                <div className="btn-monthly-yearly">
+                  <button id="monthly">MONTHLY</button>
+                  <button id="yearly">YEARLY</button>
+                </div>
+                <div className="cards-container">
+                  <PricingCard title={pricingProps[0][0]} price={pricingProps[0][1]} storage={pricingProps[0][2]} access={pricingProps[0][3]} simulators={pricingProps[0][4]} isEnterprise={false}/>
+                  <PricingCard title={pricingProps[1][0]} price={pricingProps[1][1]} storage={pricingProps[1][2]} access={pricingProps[1][3]} simulators={pricingProps[1][4]} isEnterprise={false}/>
+                  <PricingCard title={pricingProps[2][0]} price={pricingProps[2][1]} storage={pricingProps[2][2]} access={pricingProps[2][3]} simulators={pricingProps[2][4]} isEnterprise={false}/>
+                  <PricingCard title={"null"} price={"null"} storage={"null"} access={"null"} simulators={"null"} isEnterprise={true}/>
+                </div>
               </div>
-            </div>
-            <div className="width-limited" id="try-funding">
-              <TryPlatform/>
-              <Funding/>
-            </div>
-            <Footer open={!isOpen}/>
-          </PricingWrapper>
-        ) : (
-          <DropdownMenu open={!isOpen} onClose={handleOpen}/>
-        )}
+              <div className="width-limited" id="try-funding">
+                <TryPlatform/>
+                <Funding/>
+              </div>
+              <Footer open={!isOpen}/>
+            </PricingWrapper>
+          ) : (
+            <DropdownMenu open={!isOpen} onClose={handleOpen}/>
+          )}
+      </Layout>
     </>
   );
 }

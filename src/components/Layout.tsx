@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
       bg-[#0D101B]
     `}
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
 
     display: grid;
     grid-auto-flow: row;
@@ -25,6 +25,7 @@ const LayoutWrapper = styled.div`
 
   align-items: center;
   justify-items: center;
+  font-family: Inter, sans-serif;
 `;
 
 interface LayoutProps {

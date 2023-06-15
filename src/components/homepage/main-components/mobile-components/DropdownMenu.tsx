@@ -67,7 +67,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
             px-4
             py-2
             text-white
-            font-black
+            font-bold
             rounded
             text-lg
           `}

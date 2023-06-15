@@ -35,6 +35,7 @@ const FundingWrapper = styled.div`
         text-xl
         w-[90%]
         xl:text-2xl
+        font-normal
       `}
     }
   

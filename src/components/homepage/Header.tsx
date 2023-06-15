@@ -102,6 +102,7 @@ const HeaderWrapper = styled.header`
         px-10
         py-4
         text-white
+        font-black
       `}
     }
   }

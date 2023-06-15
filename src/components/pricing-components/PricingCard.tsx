@@ -25,7 +25,7 @@ const PricingCardWrapper = styled.div`
 
     h1 {
       ${tw`
-        font-black
+        font-semibold
         text-2xl
         text-center
       `}
@@ -42,11 +42,14 @@ const PricingCardWrapper = styled.div`
       ${tw`
         flex-grow
         // xl:w-[80%]
+        text-2xl
+        font-light
       `}
 
       #number {
         ${tw`
-          text-3xl
+          text-[40px]
+          font-light
         `}
       }
     }
@@ -75,7 +78,7 @@ const PricingCardWrapper = styled.div`
         px-6
         py-4
         rounded
-        font-black
+        font-bold
       `}
     }
     .description {

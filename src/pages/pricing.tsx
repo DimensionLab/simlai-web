@@ -72,7 +72,7 @@ const PricingWrapper = styled.div`
           bg-[#454853]
           rounded-l
           px-4
-          font-black
+          font-bold
           py-3
         `}
       }
@@ -81,7 +81,7 @@ const PricingWrapper = styled.div`
           bg-[#6B50FF]
           rounded-r
           px-4
-          font-black
+          font-bold
           py-3
         `}
       }

@@ -14,6 +14,16 @@ const Slider = () => {
     setImage(imgPaths[index]);
   }, [index])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % imgPaths.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   const nums = [1,2,3,4];
   const ballPath = "assets/simlai/intro-slider-images/unfocused-point.svg";
   const clickedBallPath = "assets/simlai/intro-slider-images/focused-point.svg";
@@ -26,9 +36,9 @@ const Slider = () => {
   return (
     <section className="w-full h-full px-4">
       <img src={image} alt="" className="w-full aspect-video"/>
-      <div className="flex flex-row w-full justify-center py-4 gap-x-6">
+      <div className="flex flex-row w-full justify-center py-4 gap-x-4">
         {nums.map((num) => 
-          <img src={num === (index + 1) ? clickedBallPath : ballPath} alt="" key={num} className="w-4" onClick={() => handleIndex(num)}/>
+          <img src={num === (index + 1) ? clickedBallPath : ballPath} alt="" key={num} className="w-2" onClick={() => handleIndex(num)}/>
         )}
       </div>
     </section>

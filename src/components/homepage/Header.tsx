@@ -34,7 +34,7 @@ const HeaderWrapper = styled.header`
   .right-side {
     ${tw`
       flex
-      gap-x-2
+      gap-x-[18px]
     `}
     button {
       ${tw`

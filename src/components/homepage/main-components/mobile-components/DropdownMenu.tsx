@@ -59,7 +59,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           flex
           flex-row
           items-center
-          // gap-x-2
+          gap-x-2.5
         `}
         button {
           ${tw`
@@ -116,7 +116,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           w-full
           h-full
           my-6
-          px-10
+          pr-8
           justify-between
           py-12
         `}
@@ -124,7 +124,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
         a {
           img {
             ${tw`
-              w-6
+              w-8
               aspect-auto
             `}
           }

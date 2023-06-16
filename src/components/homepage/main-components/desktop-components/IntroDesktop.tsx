@@ -43,7 +43,7 @@ const IntroDesktopWrapper = styled.div`
       }
       .title {
         ${tw`
-          font-black
+          font-bold
           text-5xl
         `}
       }

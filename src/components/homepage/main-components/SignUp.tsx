@@ -9,6 +9,8 @@ const SignUpWrapper = styled.div`
     overflow-hidden
     break-words
     xl:hidden
+    pb-16
+    pt-4
   `}
 
   .title {
@@ -36,6 +38,7 @@ const SignUpWrapper = styled.div`
       flex
       flex-col
       gap-y-2
+      pt-4
     `}
 
     .label {

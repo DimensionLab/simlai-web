@@ -56,8 +56,9 @@ const IntroDesktopWrapper = styled.div`
       .join-waitlist {
         .label {
           ${tw`
-            text-xl
+            text-xs
             text-[#D0D2DF]
+            pb-1
           `}
         }
         .email-button {

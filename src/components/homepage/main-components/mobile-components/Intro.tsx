@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import tw from "twin.macro";
-// import ImageSlider from "./intro-components/Slider";
+import Slider from "../intro-components/Slider";
 
 const IntroWrapper = styled.div`
   ${tw`
@@ -75,15 +75,15 @@ const Intro = () => {
         <img src="assets/simlai/simlai-logo.svg" alt="" id="logo-picture"/>
         <img src="assets/simlai/simlai-title.svg" alt="" />
       </div>
-      {/* <ImageSlider/>  */}
-      <div className="slider">
+      <Slider/>
+      {/* <div className="slider">
         <img src="assets/simlai/intro-slider-images/image1.svg" alt="" />
         <div className="buttons">
           {Array.from({ length: pics }).map((_, index) => (
           <img key={index} src="assets/simlai/intro-slider-images/unfocused-point.svg"/>
           ))}
         </div>
-      </div>
+      </div> */}
     </IntroWrapper>
   );
 }

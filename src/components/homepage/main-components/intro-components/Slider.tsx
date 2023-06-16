@@ -1,38 +1,38 @@
-// import { useState, useEffect } from 'react';
-// import tw from 'twin.macro';
-// import styled from 'styled-components';
-// import SwiperCore, { Pagination } from 'swiper';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/swiper-bundle.css';
+import { useState, useEffect } from "react";
 
-// // install Swiper modules
-// SwiperCore.use([Pagination]);
+const Slider = () => {
+  const imgPaths = [
+    "assets/simlai/intro-slider-images/slider1.jpg",
+    "assets/simlai/intro-slider-images/slider2.jpg",
+    "assets/simlai/intro-slider-images/slider3.jpeg",
+    "assets/simlai/intro-slider-images/slider4.jpeg"
+  ];
+  const [index, setIndex] = useState(0);
+  const [image, setImage] = useState(imgPaths[index]);
 
-// const ImageSlider = () => {
-//   const images = [
-//     'assets/simlai/intro-slider-images/image1.svg',
-//     'assets/simlai/intro-slider-images/image1.svg',
-//     'assets/simlai/intro-slider-images/image1.svg',
-//     'assets/simlai/intro-slider-images/image1.svg',
-//   ];
+  useEffect(() => {
+    setImage(imgPaths[index]);
+  }, [index])
 
-//   return (
-//     <Swiper
-//       spaceBetween={50}
-//       slidesPerView={1}
-//       pagination={{ clickable: true }}
-//     >
-//       {images.map((image, index) => (
-//         <SwiperSlide key={index}>
-//           <Image src={image} alt={`Slide ${index}`} />
-//         </SwiperSlide>
-//       ))}
-//     </Swiper>
-//   );
-// };
+  const nums = [1,2,3,4];
+  const ballPath = "assets/simlai/intro-slider-images/unfocused-point.svg";
+  const clickedBallPath = "assets/simlai/intro-slider-images/focused-point.svg";
 
-// const Image = styled.img`
-//   ${tw`object-cover w-full h-full`}
-// `;
+  
+  const handleIndex = (num: number) => {
+    setIndex(num - 1);
+  }
 
-// export default ImageSlider;
+  return (
+    <section className="w-full h-full px-4">
+      <img src={image} alt="" className="w-full aspect-video"/>
+      <div className="flex flex-row w-full justify-center py-4 gap-x-6">
+        {nums.map((num) => 
+          <img src={num === (index + 1) ? clickedBallPath : ballPath} alt="" key={num} className="w-4" onClick={() => handleIndex(num)}/>
+        )}
+      </div>
+    </section>
+  );
+}
+
+export default Slider;

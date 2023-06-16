@@ -1,38 +1,46 @@
-// import { useState, useEffect } from 'react';
-// import tw from 'twin.macro';
-// import styled from 'styled-components';
-// import SwiperCore, { Pagination } from 'swiper';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/swiper-bundle.css';
+import { useState, useEffect } from "react";
 
-// // install Swiper modules
-// SwiperCore.use([Pagination]);
+const Slider = () => {
+  const imgPaths = [
+    "assets/simlai/product-image1.svg",
+    "assets/simlai/simulation-studio-image.svg",
+  ];
+  const [index, setIndex] = useState(0);
+  const [image, setImage] = useState(imgPaths[index]);
 
-// const ImageSlider = () => {
-//   const images = [
-//     'assets/simlai/intro-slider-images/image1.svg',
-//     'assets/simlai/intro-slider-images/image1.svg',
-//     'assets/simlai/intro-slider-images/image1.svg',
-//     'assets/simlai/intro-slider-images/image1.svg',
-//   ];
+  useEffect(() => {
+    setImage(imgPaths[index]);
+  }, [index])
 
-//   return (
-//     <Swiper
-//       spaceBetween={50}
-//       slidesPerView={1}
-//       pagination={{ clickable: true }}
-//     >
-//       {images.map((image, index) => (
-//         <SwiperSlide key={index}>
-//           <Image src={image} alt={`Slide ${index}`} />
-//         </SwiperSlide>
-//       ))}
-//     </Swiper>
-//   );
-// };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % imgPaths.length);
+    }, 5000);
 
-// const Image = styled.img`
-//   ${tw`object-cover w-full h-full`}
-// `;
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
-// export default ImageSlider;
+  const nums = [1,2];
+  const ballPath = "assets/simlai/intro-slider-images/unfocused-point.svg";
+  const clickedBallPath = "assets/simlai/intro-slider-images/focused-point.svg";
+
+  
+  const handleIndex = (num: number) => {
+    setIndex(num - 1);
+  }
+
+  return (
+    <section className="w-full h-full px-4">
+      <img src={image} alt="" className="w-full aspect-video rounded-xl "/>
+      <div className="flex flex-row w-full justify-center py-4 gap-x-4">
+        {nums.map((num) => 
+          <img src={num === (index + 1) ? clickedBallPath : ballPath} alt="" key={num} className="w-2" onClick={() => handleIndex(num)}/>
+        )}
+      </div>
+    </section>
+  );
+}
+
+export default Slider;

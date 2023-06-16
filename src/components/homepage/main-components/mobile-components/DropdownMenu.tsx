@@ -102,11 +102,18 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           flex
           flex-col
           w-full
-          text-2xl
+          text-xl
           font-bold
           text-[#989BA7]
           gap-y-6
         `}
+
+        a {
+          ${tw`
+            hover:text-white
+            duration-300
+          `}
+        }
       }
       .socials {
         ${tw`

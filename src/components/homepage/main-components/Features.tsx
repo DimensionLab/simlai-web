@@ -51,7 +51,7 @@ const FeaturesWrapper = styled.div`
 
       .title {
         ${tw`
-          font-black
+          font-bold
           text-3xl
           max-md:text-2xl
           max-xl:text-5xl

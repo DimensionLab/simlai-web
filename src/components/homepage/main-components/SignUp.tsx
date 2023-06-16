@@ -14,7 +14,7 @@ const SignUpWrapper = styled.div`
   .title {
     ${tw`
       text-3xl
-      font-black
+      font-bold
       break-normal
       px-4
     `}
@@ -73,6 +73,7 @@ const SignUpWrapper = styled.div`
           p-4
           rounded
           w-1/4
+          font-bold
         `}
       }
     }
@@ -88,7 +89,7 @@ const SignUp = () => {
         <div className="label">Join private alpha waitlist</div>
         <div className="entry-container">
           <input type="email" name="" id="" placeholder="your@email.com"/>
-          <button>Join</button>
+          <button>JOIN</button>
         </div>
       </div>
     </SignUpWrapper>

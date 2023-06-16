@@ -91,6 +91,7 @@ const IntroDesktopWrapper = styled.div`
               h-[40px]
               text-[14px]
               flex
+              font-bold
               justify-center
             `}
 

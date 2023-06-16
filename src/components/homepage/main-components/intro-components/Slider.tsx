@@ -35,7 +35,7 @@ const Slider = () => {
 
   return (
     <section className="w-full h-full px-4">
-      <img src={image} alt="" className="w-full aspect-video"/>
+      <img src={image} alt="" className="w-full aspect-video rounded-xl border-[0.4rem] border-[#262649]"/>
       <div className="flex flex-row w-full justify-center py-4 gap-x-4">
         {nums.map((num) => 
           <img src={num === (index + 1) ? clickedBallPath : ballPath} alt="" key={num} className="w-2" onClick={() => handleIndex(num)}/>

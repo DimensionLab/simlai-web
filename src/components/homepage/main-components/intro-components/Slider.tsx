@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 
 const Slider = () => {
   const imgPaths = [
-    "assets/simlai/intro-slider-images/slider1.jpg",
-    "assets/simlai/intro-slider-images/slider2.jpg",
-    "assets/simlai/intro-slider-images/slider3.jpeg",
-    "assets/simlai/intro-slider-images/slider4.jpeg"
+    "assets/simlai/product-image1.svg",
+    "assets/simlai/simulation-studio-image.svg",
   ];
   const [index, setIndex] = useState(0);
   const [image, setImage] = useState(imgPaths[index]);
@@ -24,7 +22,7 @@ const Slider = () => {
     };
   }, []);
 
-  const nums = [1,2,3,4];
+  const nums = [1,2];
   const ballPath = "assets/simlai/intro-slider-images/unfocused-point.svg";
   const clickedBallPath = "assets/simlai/intro-slider-images/focused-point.svg";
 
@@ -35,7 +33,7 @@ const Slider = () => {
 
   return (
     <section className="w-full h-full px-4">
-      <img src={image} alt="" className="w-full aspect-video rounded-xl border-[0.4rem] border-[#262649]"/>
+      <img src={image} alt="" className="w-full aspect-video rounded-xl "/>
       <div className="flex flex-row w-full justify-center py-4 gap-x-4">
         {nums.map((num) => 
           <img src={num === (index + 1) ? clickedBallPath : ballPath} alt="" key={num} className="w-2" onClick={() => handleIndex(num)}/>

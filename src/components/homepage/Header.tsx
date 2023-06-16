@@ -100,8 +100,9 @@ const HeaderWrapper = styled.header`
     button {
       ${tw`
         bg-[#6B50FF]
-        px-10
-        py-4
+        px-6
+        h-full
+        py-2
         text-white
         font-bold
       `}

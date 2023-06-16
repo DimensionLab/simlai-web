@@ -16,6 +16,7 @@ const PricingWrapper = styled.div`
     flex-col
     bg-[#0D101B]
     text-white
+    w-full
   `}
 
   .headline {

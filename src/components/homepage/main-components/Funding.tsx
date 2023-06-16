@@ -24,7 +24,7 @@ const FundingWrapper = styled.div`
   `}
     .title {
       ${tw`
-        font-black
+        font-bold
         text-4xl
         xl:text-6xl
       `}

@@ -39,12 +39,13 @@ const TryPlatformWrapper = styled.div`
       flex
       flex-col
       gap-y-2
+      w-full
     `}
 
     .label {
       ${tw`
-        text-sm
-        xl:text-lg
+        text-xs
+        // xl:text-lg
       `}
     }
 
@@ -53,28 +54,31 @@ const TryPlatformWrapper = styled.div`
         flex
         flex-row
         w-full
-        justify-between
+        
         gap-x-2
-        xl:w-2/3
+        xl:w-3/4
       `}
 
       input {
         ${tw`
-          w-3/4
+          // w-3/4
           bg-white
           p-2
           text-lg
           rounded
           text-gray-500
+          w-3/4
         `}
       }
 
       button {
         ${tw`
           bg-[#6B50FF]
-          p-4
+          px-[16px]
+          py-[11px]
           rounded
-          w-1/4
+          // w-1/4
+          font-bold
         `}
       }
     }
@@ -90,7 +94,7 @@ const TryPlatform = () => {
         <div className="label">Join private alpha waitlist</div>
         <div className="entry-container">
           <input type="email" name="" id="" placeholder="your@email.com"/>
-          <button>Join</button>
+          <button>JOIN</button>
         </div>
       </div>
     </TryPlatformWrapper>

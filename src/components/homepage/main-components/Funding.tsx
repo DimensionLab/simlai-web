@@ -53,9 +53,12 @@ const FundingWrapper = styled.div`
           border
           rounded
           px-6
-          py-3
+          py-2
           text-center
-          xl:text-2xl
+          hover:bg-white
+          hover:text-black
+          duration-700
+          font-bold
         `}
       }
     }

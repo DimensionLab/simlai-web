@@ -119,14 +119,14 @@ const Header = (props: HeaderProps) => {
   return (
     <HeaderWrapper>
       <div className="logo">
-        <img src="assets/simlai/simlai-logo.svg" alt="" />
+        <img src="/assets/simlai/simlai-logo.svg" alt="" />
       </div>
       <div className="right-side">
         <button>
           <div className="text">JOIN</div>
         </button>
         <div className="hamburger-menu" onClick={props.onClose}>
-          <img src="assets/simlai/hamburger-menu.svg" alt="" />
+          <img src="/assets/simlai/hamburger-menu.svg" alt="" />
         </div>
       </div>
       <div className="bar">

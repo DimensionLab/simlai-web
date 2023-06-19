@@ -6,13 +6,13 @@ import Teaser from "../components/storyblok-components/Teaser";
 import styled from 'styled-components';
 import Header from "../components/homepage/Header";
 import Layout from "@/components/Layout";
-import IntroText from "../components/blog-components/IntroText";
 import Footer from "../components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
 import { useEffect, useState } from "react";
 import ArticleLoadingSkeleton from "@/components/blog-components/ArticleLoadingSkeleton";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
+import Search from "@/components/blog-components/Search";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -138,7 +138,7 @@ export default function Blog() {
       {isOpen ? (
         <section>
           <Header open={!isOpen} onClose={handleOpen}/>      
-          <IntroText/>
+          <Search/>
           {isLoading || !story?.content ? (
             <div className="skeleton-container">
               <ArticleLoadingSkeleton/>

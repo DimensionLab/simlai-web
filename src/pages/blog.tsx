@@ -4,14 +4,15 @@ import Page from "../components/storyblok-components/Page";
 import Grid from "../components/storyblok-components/Grid";
 import Teaser from "../components/storyblok-components/Teaser";
 import styled from 'styled-components';
-import Header from "../components/blog-components/Header";
+import Header from "../components/homepage/Header";
 import Layout from "@/components/Layout";
 import IntroText from "../components/blog-components/IntroText";
-import Footer from "@/components/homepage/Footer";
+import Footer from "../components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
 import { useEffect, useState } from "react";
 import ArticleLoadingSkeleton from "@/components/blog-components/ArticleLoadingSkeleton";
+import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -78,6 +79,12 @@ export default function Blog() {
   const [story, setStory] = useState<{content: any, id: number} | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  }
+
   useEffect(() => {
     return () => {
       window.onpopstate = function(event) {
@@ -127,22 +134,26 @@ export default function Blog() {
   
 
   return (
-    <BlogWrapper>
-      <Layout>
-        <Header isArticle={false}/>      
-        <IntroText/>
-        {isLoading || !story?.content ? (
-          <div className="skeleton-container">
-            <ArticleLoadingSkeleton/>
-            <ArticleLoadingSkeleton/>
-            <ArticleLoadingSkeleton/>
-          </div>
-        ): (
-          <StoryblokComponent blok={story.content} />
-        )}
-        {/* <ArticleLoadingSkeleton/> */}
-        <Footer open={true}/>
-      </Layout>
-    </BlogWrapper>
+    <Layout>
+      {isOpen ? (
+        <section>
+          <Header open={!isOpen} onClose={handleOpen}/>      
+          <IntroText/>
+          {isLoading || !story?.content ? (
+            <div className="skeleton-container">
+              <ArticleLoadingSkeleton/>
+              <ArticleLoadingSkeleton/>
+              <ArticleLoadingSkeleton/>
+            </div>
+          ): (
+            <StoryblokComponent blok={story.content} />
+          )}
+          {/* <ArticleLoadingSkeleton/> */}
+          <Footer open={!isOpen}/>
+        </section>
+      ) : (
+        <DropdownMenu open={!isOpen} onClose={handleOpen}/>
+      )}
+    </Layout>
   )
 }

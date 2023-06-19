@@ -149,34 +149,34 @@ const Footer = (props: FooterProps) => {
       <div className="all-container">
         <div className="left">
           <div className="header-siml">
-            <img src="assets/simlai/simlai-logo.svg" alt="" id='logo'/>
-            <img src="assets/simlai/simlai-title.svg" alt="" id='text'/>
+            <img src="/assets/simlai/simlai-logo.svg" alt="" id='logo'/>
+            <img src="/assets/simlai/simlai-title.svg" alt="" id='text'/>
           </div>
           <div className="socials">
             <div className="socials">
               <div className="twitter-container">
                 <a href="https://twitter.com/siml_ai">
-                  <img src="assets/facebook-logo.svg" alt="" />
+                  <img src="/assets/facebook-logo.svg" alt="" />
                 </a>
               </div>
               <div className="facebook-container">
                 <a href="https://www.facebook.com/learnedsimulators/">
-                  <img src="assets/twitter-logo.svg" alt="" />
+                  <img src="/assets/twitter-logo.svg" alt="" />
                 </a>
               </div>
               <div className="instagram-container">
                 <a href="">
-                  <img src="assets/simlai/ig-logo.svg" alt="" />
+                  <img src="/assets/simlai/ig-logo.svg" alt="" />
                 </a>
               </div>
               <div className="linkedin-container">
                 <a href="https://www.linkedin.com/company/dimensionlab">
-                  <img src="assets/simlai/li-logo.svg" alt="" />
+                  <img src="/assets/simlai/li-logo.svg" alt="" />
                 </a>
               </div>
               <div className="medium-container">
                 <a href="">
-                  <img src="assets/simlai/medium-logo.svg" alt="" />
+                  <img src="/assets/simlai/medium-logo.svg" alt="" />
                 </a>
               </div>
             </div>

@@ -13,9 +13,11 @@ import Feature from '@/components/storyblok-components/Feature';
 import Grid from '@/components/storyblok-components/Grid';
 import Teaser from '@/components/storyblok-components/Teaser';
 import Article from '@/components/storyblok-components/Article';
-import Header from '@/components/blog-components/Header';
+import Header from '../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
+import { useState } from 'react';
+import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 
 const components = {
   feature: Feature,
@@ -37,6 +39,11 @@ interface PageProps {
 
 export default function Page({ story  }: PageProps) {
   story = useStoryblokState(story);
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <div>
@@ -46,9 +53,15 @@ export default function Page({ story  }: PageProps) {
       </Head>
 
       <Layout>
-        <Header isArticle={true}/>
-        <StoryblokComponent blok={story.content} />
-        <Footer open={true}/>
+        {isOpen ? (
+          <section className='w-full'>
+            <Header open={!isOpen} onClose={handleOpen}/>
+            <StoryblokComponent blok={story.content} />
+            <Footer open={!isOpen}/>
+          </section>
+        ) : (
+          <DropdownMenu open={!isOpen} onClose={handleOpen}/>
+        )}
       </Layout>
     </div>
   );

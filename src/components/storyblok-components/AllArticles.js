@@ -5,30 +5,7 @@ import {
 } from "@storyblok/react";
 
 import { useState, useEffect } from "react";
-import styled from "styled-components";
-
-const AllArticlesWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  .container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: 70%;
-    padding: 2rem 0 2rem 0;
-    justify-items: center;
-    max-width: 800px;
-    
-    .article-container {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      padding: 0 0.5rem 0 0.5rem;
-      // width: 70%;
-      width: 100%;
-      gap: 2rem;
-      min-height: 60vh;
-    }
-  }
-`;
+import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 
 const AllArticles = ({ blok }) => {
   const [articles, setArticles] = useState([]);
@@ -54,15 +31,23 @@ const AllArticles = ({ blok }) => {
   }, []);
 
   return (
-    <AllArticlesWrapper>
+    <section>
       <div className="container">
-        <div className="article-container" {...storyblokEditable(blok)}>
-          {articles[0] && articles.map((Article) => (
+        <div className="article-container flex flex-col gap-y-8" {...storyblokEditable(blok)}>
+        {isLoading ? (
+          <>
+            <ArticleLoadingSkeleton />
+            <ArticleLoadingSkeleton />
+            <ArticleLoadingSkeleton />
+          </>
+        ) : (
+          articles.map((Article) => (
             <ArticleTeaser Article={Article.content} key={Article.uuid} />
-          ))}
+          ))
+        )}
         </div>
       </div>
-    </AllArticlesWrapper>
+    </section>
   )
 }
 

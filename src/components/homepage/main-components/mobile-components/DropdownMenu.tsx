@@ -167,12 +167,12 @@ const DropdownMenu = (props: DropdownProps ) => {
       <div className="container">
         <div className="header">
           <div className="logo-title">
-            <img src="assets/simlai/simlai-logo.svg" alt="simlai logo" id="logo"/>
-            <img src="assets/simlai/simlai-title.svg" alt="simlai brand name" id="title"/>
+            <img src="/assets/simlai/simlai-logo.svg" alt="simlai logo" id="logo"/>
+            <img src="/assets/simlai/simlai-title.svg" alt="simlai brand name" id="title"/>
           </div>
           <div className="join-close">
             <button>JOIN</button>
-            <img src="assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
+            <img src="/assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
           </div>
         </div>
         <div className="content">
@@ -199,27 +199,27 @@ const DropdownMenu = (props: DropdownProps ) => {
           <div className="socials">
             <div className="twitter-container">
               <a href="https://twitter.com/siml_ai">
-                <img src="assets/facebook-logo.svg" alt="" />
+                <img src="/assets/facebook-logo.svg" alt="" />
               </a>
             </div>
             <div className="facebook-container">
               <a href="https://www.facebook.com/learnedsimulators/">
-                <img src="assets/twitter-logo.svg" alt="" />
+                <img src="/assets/twitter-logo.svg" alt="" />
               </a>
             </div>
             <div className="instagram-container">
               <a href="">
-                <img src="assets/simlai/ig-logo.svg" alt="" />
+                <img src="/assets/simlai/ig-logo.svg" alt="" />
               </a>
             </div>
             <div className="linkedin-container">
               <a href="https://www.linkedin.com/company/dimensionlab">
-                <img src="assets/simlai/li-logo.svg" alt="" />
+                <img src="/assets/simlai/li-logo.svg" alt="" />
               </a>
             </div>
             <div className="medium-container">
               <a href="">
-                <img src="assets/simlai/medium-logo.svg" alt="" />
+                <img src="/assets/simlai/medium-logo.svg" alt="" />
               </a>
             </div>
           </div>

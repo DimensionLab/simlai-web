@@ -79,7 +79,7 @@ export default function Blog() {
   const [story, setStory] = useState<{content: any, id: number} | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);

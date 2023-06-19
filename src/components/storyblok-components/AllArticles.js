@@ -5,6 +5,7 @@ import {
 } from "@storyblok/react";
 
 import { useState, useEffect } from "react";
+import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 
 const AllArticles = ({ blok }) => {
   const [articles, setArticles] = useState([]);
@@ -33,9 +34,17 @@ const AllArticles = ({ blok }) => {
     <section>
       <div className="container">
         <div className="article-container flex flex-col gap-y-8" {...storyblokEditable(blok)}>
-          {articles[0] && articles.map((Article) => (
+        {isLoading ? (
+          <>
+            <ArticleLoadingSkeleton />
+            <ArticleLoadingSkeleton />
+            <ArticleLoadingSkeleton />
+          </>
+        ) : (
+          articles.map((Article) => (
             <ArticleTeaser Article={Article.content} key={Article.uuid} />
-          ))}
+          ))
+        )}
         </div>
       </div>
     </section>

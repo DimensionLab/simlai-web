@@ -103,7 +103,7 @@ export default function Blog() {
   
 
   useEffect(() => {
-    console.log("inside useEffect on Blog");
+    // console.log("inside useEffect on Blog");
     const fetchStory = async () => {
       setIsLoading(true);
       let slug = "blog";
@@ -139,22 +139,11 @@ export default function Blog() {
         <section className="w-full">
           <Header open={!isOpen} onClose={handleOpen}/>      
           <Search/>
-          {isLoading || !story?.content ? (
-            <div className="skeleton-container w-full py-4">
-              <ArticleLoadingSkeleton/>
-              <ArticleLoadingSkeleton/>
-              <ArticleLoadingSkeleton/>
-            </div>
-          ): (
-            <div className="w-full py-4">
+          <div className="w-full py-4">
+            {story?.content && 
               <StoryblokComponent blok={story.content} />
-            </div>
-          )}
-          {/* <div className="w-full flex flex-col py-6 gap-y-3">
-            <ArticleLoadingSkeleton/>
-            <ArticleLoadingSkeleton/>
-            <ArticleLoadingSkeleton/>
-          </div> */}
+            }
+          </div>
           <Footer open={!isOpen}/>
         </section>
       ) : (

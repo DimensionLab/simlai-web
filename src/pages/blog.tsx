@@ -150,7 +150,11 @@ export default function Blog() {
               <StoryblokComponent blok={story.content} />
             </div>
           )}
-          {/* <ArticleLoadingSkeleton/> */}
+          {/* <div className="w-full flex flex-col py-6 gap-y-3">
+            <ArticleLoadingSkeleton/>
+            <ArticleLoadingSkeleton/>
+            <ArticleLoadingSkeleton/>
+          </div> */}
           <Footer open={!isOpen}/>
         </section>
       ) : (

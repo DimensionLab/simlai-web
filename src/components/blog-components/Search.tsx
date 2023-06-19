@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <section className="w-full px-4">
+    <section className="w-full px-4 mb-8">
       <main className="w-full flex flex-col gap-y-4">
         <h1 className="font-bold text-[28px]">Blog</h1>
         <div className="flex flex-col gap-y-4">

@@ -136,11 +136,11 @@ export default function Blog() {
   return (
     <Layout>
       {isOpen ? (
-        <section>
+        <section className="w-full">
           <Header open={!isOpen} onClose={handleOpen}/>      
           <Search/>
           {isLoading || !story?.content ? (
-            <div className="skeleton-container">
+            <div className="skeleton-container w-full">
               <ArticleLoadingSkeleton/>
               <ArticleLoadingSkeleton/>
               <ArticleLoadingSkeleton/>

@@ -146,7 +146,9 @@ export default function Blog() {
               <ArticleLoadingSkeleton/>
             </div>
           ): (
-            <StoryblokComponent blok={story.content} />
+            <div className="w-full">
+              <StoryblokComponent blok={story.content} />
+            </div>
           )}
           {/* <ArticleLoadingSkeleton/> */}
           <Footer open={!isOpen}/>

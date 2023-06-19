@@ -24,7 +24,7 @@ const ArticleLoadingSkeleton = () => {
             <div className="flex w-full">
               <div className="w-full aspect-video object-cover rounded-t-xl skeleton"></div>
             </div>
-            <div className="h-1/2 flex flex-col w-full px-6 py-12 gap-y-6 bg-[#222530] rounded-b-xl ">
+            <div className="h-1/2 flex flex-col w-full px-6 py-14 gap-y-6 bg-[#222530] rounded-b-xl ">
               <h1 className="flex self-start w-full text-xl"></h1>
               <div className="flex w-full justify-between items-center">
                 <span className="text-sm text-[#7C7F8B] skeleton rounded w-44 h-6"></span>

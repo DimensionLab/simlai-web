@@ -139,15 +139,15 @@ export default function Blog() {
         <section className="w-full">
           <Header open={!isOpen} onClose={handleOpen}/>      
           <Search/>
-          <div className="w-full py-4">
+          <div className="w-full py-4 pb-12">
             {story?.content ? (
               <StoryblokComponent blok={story.content} />
             ) : (
-              <>
+              <div className="flex flex-col gap-y-8">
                 <ArticleLoadingSkeleton/>
                 <ArticleLoadingSkeleton/>
                 <ArticleLoadingSkeleton/>
-              </>
+              </div>
             )
             }
           </div>

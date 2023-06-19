@@ -3,7 +3,7 @@ import { render } from 'storyblok-rich-text-react-renderer';
 
 const ArticleTeaser = ({ Article }) => {
   return (
-    <section className="w-full">
+    <section className="w-full py-2">
       <div className="w-full px-4">
         <Link href={`/blog/${Article.slug}`}>
           <a className="w-full flex flex-col items-center h-full">

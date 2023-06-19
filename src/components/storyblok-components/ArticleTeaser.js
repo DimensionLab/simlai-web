@@ -1,73 +1,26 @@
 import Link from "next/link";
 import { render } from 'storyblok-rich-text-react-renderer';
-import styled from "styled-components";
-
-const ArticleTeaserWrapper = styled.div`
-  .blog-teaser-container {
-    display: flex;
-    flex-direction: column;
-    // border: 3px solid white;
-    border: 3px solid transparent;
-    background-color: #0D101B;
-    // padding: 1rem;
-    padding: 0;
-    border-radius: 10px;
-    width: 100%;
-    transition: 0.6s;
-
-    &:hover{
-      // transform: scale(1.03);
-      border: 3px solid white;
-    }
-    
-    a {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: white;
-      text-align: center;
-      padding-bottom: 1rem;
-
-      .image-container {
-        display: flex;
-        overflow: hidden;
-        img {
-          width: 100%;
-          max-height: 480px;
-          border-radius: 10px;
-          object-fit: cover;
-          object-position: center;
-        }
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      .text-content-container {
-        font-size: 1rem;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-`;
 
 const ArticleTeaser = ({ Article }) => {
   return (
-    <ArticleTeaserWrapper>
-      <div className="blog-teaser-container">
+    <section className="w-full">
+      <div className="w-full px-4">
         <Link href={`/blog/${Article.slug}`}>
-          <a className="content-in-link-container">
-            <div className="image-container">
-              <img src={Article.image.filename} alt="blog"/>
+          <a className="w-full flex flex-col items-center h-full">
+            <div className="flex w-full h-1/2">
+              <img src={Article.image.filename} alt="blog" className="h-1/2 rounded-t-xl"/>
             </div>
-            <h1>{Article.title}</h1>
-            <div className="text-content-container">
-              {render(Article.teaser)}
+            <div className="h-1/2 flex flex-col w-full px-6 py-6 gap-y-6 bg-[#222530] rounded-b-xl">
+              <h1 className="flex self-start w-full text-xl">{Article.title}</h1>
+              <div className="flex w-full justify-between items-center">
+                <span className="text-sm text-[#7C7F8B]">Model Engineer</span>
+                <img src="/assets/simlai/arrow-blog-teaser.svg"></img>
+              </div>
             </div>
           </a>
         </Link>
       </div>
-    </ArticleTeaserWrapper>
+    </section>
   );
 };
 

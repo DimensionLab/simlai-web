@@ -140,8 +140,15 @@ export default function Blog() {
           <Header open={!isOpen} onClose={handleOpen}/>      
           <Search/>
           <div className="w-full py-4">
-            {story?.content && 
+            {story?.content ? (
               <StoryblokComponent blok={story.content} />
+            ) : (
+              <>
+                <ArticleLoadingSkeleton/>
+                <ArticleLoadingSkeleton/>
+                <ArticleLoadingSkeleton/>
+              </>
+            )
             }
           </div>
           <Footer open={!isOpen}/>

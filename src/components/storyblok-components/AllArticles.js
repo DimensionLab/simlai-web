@@ -32,7 +32,7 @@ const AllArticles = ({ blok }) => {
   return (
     <section>
       <div className="container">
-        <div className="article-container flex flex-col gap-y-8 py-12" {...storyblokEditable(blok)}>
+        <div className="article-container flex flex-col gap-y-8" {...storyblokEditable(blok)}>
           {articles[0] && articles.map((Article) => (
             <ArticleTeaser Article={Article.content} key={Article.uuid} />
           ))}

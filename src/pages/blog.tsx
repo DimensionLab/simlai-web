@@ -140,13 +140,13 @@ export default function Blog() {
           <Header open={!isOpen} onClose={handleOpen}/>      
           <Search/>
           {isLoading || !story?.content ? (
-            <div className="skeleton-container w-full">
+            <div className="skeleton-container w-full py-4">
               <ArticleLoadingSkeleton/>
               <ArticleLoadingSkeleton/>
               <ArticleLoadingSkeleton/>
             </div>
           ): (
-            <div className="w-full">
+            <div className="w-full py-4">
               <StoryblokComponent blok={story.content} />
             </div>
           )}

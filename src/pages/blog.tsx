@@ -147,7 +147,7 @@ export default function Blog( props: any ) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let slug = "blog";
   let sbParams: { version: 'draft' | 'published'} = {
       version: 'draft',
@@ -160,5 +160,6 @@ export async function getServerSideProps() {
       story: data ? data.story : null,
       key: data ? data.story.id : null,
     },
+    revalidate: 3600,
   };
 }

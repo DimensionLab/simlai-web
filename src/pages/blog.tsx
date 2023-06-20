@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import ArticleLoadingSkeleton from "@/components/blog-components/ArticleLoadingSkeleton";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Search from "@/components/blog-components/Search";
+import Head from "next/head";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -66,6 +67,13 @@ const BlogWrapper = styled.main`
   }
 `;
  
+
+
+// interface BlogProps {
+  
+// }
+
+
 const components = {
   feature: Feature,
   grid: Grid,
@@ -75,87 +83,79 @@ const components = {
   'all-articles': AllArticles,
 };
 
-export default function Blog() {
-  const [story, setStory] = useState<{content: any, id: number} | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+storyblokInit({
+  accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
+  use: [apiPlugin],
+  components,
+});
+
+export default function Blog( props: any ) {
+  const story = props.story ? props.story : "daco";
+  console.log(story);
 
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(prevIsOpen => !prevIsOpen);
   }
-
-  useEffect(() => {
-    return () => {
-      window.onpopstate = function(event) {
-        window.location.reload();
-      };
-    };
-  }, []);
   
-  useEffect(() => {
-    storyblokInit({
-      accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
-      use: [apiPlugin],
-      components,
-    });
-  }, []);
-  
-
-  useEffect(() => {
-    // console.log("inside useEffect on Blog");
-    const fetchStory = async () => {
-      setIsLoading(true);
-      let slug = "blog";
-  
-      let sbParams: { version: 'draft' | 'published'} = {
-          version: 'draft',
-      };
-  
-      const storyblokApi = getStoryblokApi();
-      let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-  
-      setStory(data ? data.story : null);
-      setIsLoading(false);
-    };
-  
-    fetchStory();
-  
-    const handlePopState = () => {
-      fetchStory();
-    };
-  
-    window.addEventListener('popstate', handlePopState);
-  
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
-  
-
   return (
-    <Layout>
-      {isOpen ? (
-        <section className="w-full">
-          <Header open={!isOpen} onClose={handleOpen}/>      
-          <Search/>
-          <div className="w-full py-4 pb-12">
-            {story?.content ? (
-              <StoryblokComponent blok={story.content} />
-            ) : (
-              <div className="flex flex-col gap-y-8">
-                <ArticleLoadingSkeleton/>
-                <ArticleLoadingSkeleton/>
-                <ArticleLoadingSkeleton/>
+    <>
+      <Head>
+            <title>Siml.ai</title>
+            <meta name="description" content="Landing page for Siml.ai" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="assets/simlai/simlai-logo.svg" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      </Head>
+        
+      <Layout>
+          <section className="flex flex-col w-full">
+            <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col`}`}>
+              <Header open={!isOpen} onClose={handleOpen}/>      
+              <Search/>
+              <div className="w-full py-4 pb-12">
+                {/* {!isLoading && story?.content ? (
+                  <StoryblokComponent blok={story.content} />
+                ) : (
+                  <div className="flex flex-col gap-y-8">
+                    <ArticleLoadingSkeleton/>
+                    <ArticleLoadingSkeleton/>
+                    <ArticleLoadingSkeleton/>
+                  </div>
+                )
+                } */}
+              {(story.content) ? <StoryblokComponent blok={story.content}/> : <div>daco zle bro</div>}
+              {/* <StoryblokComponent blok={story.content}/> */}
               </div>
-            )
-            }
-          </div>
-          <Footer open={!isOpen}/>
-        </section>
-      ) : (
-        <DropdownMenu open={!isOpen} onClose={handleOpen}/>
-      )}
-    </Layout>
+
+              <Footer open={!isOpen}/>
+            </div>
+            
+            <div className={`w-full h-full ${isOpen ? `hidden` : `flex flex-col`}`}>
+              <DropdownMenu open={!isOpen} onClose={handleOpen}/>
+            </div>
+          </section>
+      </Layout>
+    </>
   )
+}
+
+
+export async function getServerSideProps() {
+  let slug = "blog";
+  let sbParams: { version: 'draft' | 'published'} = {
+      version: 'draft',
+  };
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  
+  return {
+    props: {
+      story: data ? data.story : null,
+      key: data ? data.story.id : null,
+    },
+  };
 }

@@ -90,7 +90,8 @@ storyblokInit({
 });
 
 export default function Blog( props: any ) {
-  const story = props.story ? props.story : "daco";
+  // const story = props.story ? props.story : "daco";
+  const [story, setStory] = useState(props.story);
   console.log(story);
 
   const [isOpen, setIsOpen] = useState(true);
@@ -99,6 +100,20 @@ export default function Blog( props: any ) {
     setIsOpen(prevIsOpen => !prevIsOpen);
   }
   
+  useEffect(() => {
+    if (story.content) {
+        localStorage.setItem("story", JSON.stringify(story));
+    } else {
+        const retrievedStory = JSON.parse(localStorage.getItem("story") || '{}');
+        setStory(retrievedStory);
+    }
+}, [story])
+
+  // const handleStoryContent = () => {
+  //   console.log(story.content);
+  //   return story.content;
+  // }
+
   return (
     <>
       <Head>
@@ -127,7 +142,7 @@ export default function Blog( props: any ) {
                   </div>
                 )
                 } */}
-              {(story.content) ? <StoryblokComponent blok={story.content}/> : <div>daco zle bro</div>}
+              <StoryblokComponent blok={story.content}/>
               {/* <StoryblokComponent blok={story.content}/> */}
               </div>
 

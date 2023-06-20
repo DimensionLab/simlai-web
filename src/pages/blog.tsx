@@ -97,22 +97,21 @@ export default function Blog( props: any ) {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
-    setIsOpen(prevIsOpen => !prevIsOpen);
+    setIsOpen(prevIsOpen =>  {
+      // it reloads the whole page after close button in DropdownMenu is clicked
+      // fixes bug when opened and closed DropdownMenu it produced error "Please provide blok property to StoryblokComponent"
+      if(!prevIsOpen) {
+        window.location.reload();
+      }
+
+      return !prevIsOpen;
+    });
+
   }
   
-  useEffect(() => {
-    if (story.content) {
-        localStorage.setItem("story", JSON.stringify(story));
-    } else {
-        const retrievedStory = JSON.parse(localStorage.getItem("story") || '{}');
-        setStory(retrievedStory);
-    }
-}, [story])
-
-  // const handleStoryContent = () => {
-  //   console.log(story.content);
-  //   return story.content;
-  // }
+  // useEffect(() => {   
+  //   window.location.reload();
+  // }, [isOpen])
 
   return (
     <>
@@ -132,18 +131,7 @@ export default function Blog( props: any ) {
               <Header open={!isOpen} onClose={handleOpen}/>      
               <Search/>
               <div className="w-full py-4 pb-12">
-                {/* {!isLoading && story?.content ? (
-                  <StoryblokComponent blok={story.content} />
-                ) : (
-                  <div className="flex flex-col gap-y-8">
-                    <ArticleLoadingSkeleton/>
-                    <ArticleLoadingSkeleton/>
-                    <ArticleLoadingSkeleton/>
-                  </div>
-                )
-                } */}
-              <StoryblokComponent blok={story.content}/>
-              {/* <StoryblokComponent blok={story.content}/> */}
+                <StoryblokComponent blok={story.content}/>
               </div>
 
               <Footer open={!isOpen}/>

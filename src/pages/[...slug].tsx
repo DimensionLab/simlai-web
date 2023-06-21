@@ -48,8 +48,13 @@ export default function Page({ story  }: PageProps) {
   return (
     <div>
       <Head>
-        <title>{story ? story.name : 'My Site'}</title>
-        <link rel="icon" href="/favicon.ico" />
+            <title>{story ? story.name : 'Siml.ai Blog Article'}</title>
+            <meta name="description" content="Landing page for Siml.ai" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="assets/simlai/simlai-logo.svg" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Head>
 
       <Layout>
@@ -108,7 +113,6 @@ export async function getStaticPaths() {
     const slug = data.links[linkKey].slug;
     let splittedSlug = slug.split('/');
     // console.log(splittedSlug);
-  
     paths.push({ params: { slug: splittedSlug } });
   });  
 

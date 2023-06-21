@@ -163,7 +163,7 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
 const DropdownMenu = (props: DropdownProps ) => {
   const { open, onClose } = props;
   return (
-    <DropdownMenuWrapper style={{display: open ? 'block' : 'none'}}>
+    <DropdownMenuWrapper style={{display: open ? 'flex' : 'none'}}>
       <div className="container">
         <div className="header">
           <div className="logo-title">

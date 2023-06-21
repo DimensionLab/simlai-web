@@ -109,9 +109,13 @@ export default function Blog( props: any ) {
 
   }
   
-  // useEffect(() => {   
-  //   window.location.reload();
-  // }, [isOpen])
+  useEffect(() => {
+    return () => {
+      window.onpopstate = function(event) {
+        window.location.reload();
+      };
+    };
+  }, []);
 
   return (
     <>

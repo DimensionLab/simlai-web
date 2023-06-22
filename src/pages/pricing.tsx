@@ -193,7 +193,7 @@ const Pricing = () => {
                     {pricingProps.map((props, index) => {
                       const [title, price, storage, access, simulators] = props;
                       const isEnterprise = index === 3;
-                      return <PricingCard title={title} price={price} storage={storage} access={access} simulators={simulators} isEnterprise={isEnterprise} />;
+                      return <PricingCard key={index} title={title} price={price} storage={storage} access={access} simulators={simulators} isEnterprise={isEnterprise} />;
                     })}
                   </div>
                   <div className="text-[#7C7F8B] w-full pl-28 hidden xl:flex">

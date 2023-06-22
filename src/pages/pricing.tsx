@@ -64,7 +64,7 @@ const PricingWrapper = styled.div`
         px-4
         flex
         justify-center
-        my-8
+        my-4
         xl:text-4xl
         text-white
       `}
@@ -177,6 +177,7 @@ const Pricing = () => {
                 <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
               </div>
               <div className="pricing-tabs">
+                <div className="flex w-full justify-center text-[#8B7CFF] text-xl font-bold pt-4">14-days trial!</div>
                 <div className="btn-monthly-yearly">
                   <button id="monthly">MONTHLY</button>
                   <button id="yearly">YEARLY</button>

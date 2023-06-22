@@ -100,6 +100,7 @@ interface PricingProps {
   access: String,
   simulators: String,
   isEnterprise: boolean,
+  isMonthly: boolean,
 }
 
 const PricingCard = (props: PricingProps) => {
@@ -118,7 +119,7 @@ const PricingCard = (props: PricingProps) => {
           <div className="price-container">
             <span>$</span>
             <span id="number">{props.price}</span>
-            <span> / month</span>
+            <span> / {props.isMonthly ? "month" : "year"}</span>
           </div>
           <div className="storage">{props.storage}</div>
           <div className="access">{props.access}</div>

@@ -5,7 +5,7 @@ import Footer from "@/components/homepage/Footer";
 import PricingCard from "@/components/pricing-components/PricingCard";
 import Funding from "@/components/homepage/main-components/Funding";
 import TryPlatform from "@/components/homepage/main-components/TryPlatform";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Layout from "@/components/Layout";
 import Head from "next/head";
@@ -70,7 +70,7 @@ const PricingWrapper = styled.div`
       `}
       #monthly {
         ${tw`
-          bg-[#454853]
+          // bg-[#454853]
           rounded-l
           px-4
           font-bold
@@ -79,7 +79,7 @@ const PricingWrapper = styled.div`
       }
       #yearly {
         ${tw`
-          bg-[#6B50FF]
+          // bg-[#6B50FF]
           rounded-r
           px-4
           font-bold
@@ -127,24 +127,34 @@ const PricingWrapper = styled.div`
 `
 
 const Pricing = () => {
+  const [isMonthly, setIsMonthly] = useState(true);
+  
+  const toggleIsMonthly = (whichButton: string) => {
+    
+    if ( whichButton === "monthly") {
+      setIsMonthly(true);
+    } else {
+      setIsMonthly(false);
+    }
+  }
   const pricingProps = [
     [
       "STARTER",
-      "199",
+      `${isMonthly ? "199" : "1,990"}`,
       "50GB SSD storage included* Store datasets of up to 25GB**",
       "Access to Tier 2 computing resources with up to 2 GPUs per server instance",
       "Up to 10 simulators in Model Engineer** Up to 10 simulators in Simulation Studio** Compute credits included***"
     ],
     [
       "STANDARD",
-      "599",
+      `${isMonthly ? "599" : "5,990"}`,
       "250GB SSD storage included* Store datasets of up to 100GB**",
       "Access to Tier 3 computing resources with up to 4 GPUs per server instance",
       "Up to 20 simulators in Model Engineer** Up to 20 simulators in Simulation Studio** Compute credits included***"
     ],
     [
       "PRO",
-      "999",
+      `${isMonthly ? "999" : "9,990"}`,
       "1TB SSD storage included* Store datasets of up to 100GB**",
       "Access to Tier 4 computing resources with up to 8 GPUs per server instance",
       "Unlimited simulators in Model Engineer** Unlimited simulators in Simulation Studio** Compute credits included***"
@@ -163,6 +173,7 @@ const Pricing = () => {
   const handleOpen = () => {
     setIsOpen(!isOpen);
   }
+
   return (
     <>
       <Head>
@@ -185,15 +196,15 @@ const Pricing = () => {
               <div className="pricing-tabs">
                 <div className="flex w-full justify-center text-[#8B7CFF] text-xl font-bold pt-4">14-days trial!</div>
                 <div className="btn-monthly-yearly">
-                  <button id="monthly">MONTHLY</button>
-                  <button id="yearly">YEARLY</button>
+                  <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`}`}>MONTHLY</button>
+                  <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`}`}>YEARLY</button>
                 </div>
                 <div>
                   <div className="cards-container">
                     {pricingProps.map((props, index) => {
                       const [title, price, storage, access, simulators] = props;
                       const isEnterprise = index === 3;
-                      return <PricingCard key={index} title={title} price={price} storage={storage} access={access} simulators={simulators} isEnterprise={isEnterprise} />;
+                      return <PricingCard key={index} title={title} price={price} storage={storage} access={access} simulators={simulators} isEnterprise={isEnterprise} isMonthly={isMonthly} />;
                     })}
                   </div>
                   <div className="text-[#7C7F8B] w-full pl-28 hidden xl:flex">

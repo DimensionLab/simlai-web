@@ -180,7 +180,7 @@ const Pricing = () => {
               <Header open={isOpen} onClose={ handleOpen }/>
               <div className="headline">
                 <h1>Our Plans and Pricing</h1>
-                <p>We have plans and prices <br/> that fit your business perfectly. <br/>Make your client site a success <br/>with our products.</p>
+                <p className="max-sm:w-[75%]">We have plans and prices that fit your business perfectly. Make your client site a success with our products.</p>
               </div>
               <div className="pricing-tabs">
                 <div className="flex w-full justify-center text-[#8B7CFF] text-xl font-bold pt-4">14-days trial!</div>

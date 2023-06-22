@@ -148,6 +148,13 @@ const Pricing = () => {
       "1TB SSD storage included* Store datasets of up to 100GB**",
       "Access to Tier 4 computing resources with up to 8 GPUs per server instance",
       "Unlimited simulators in Model Engineer** Unlimited simulators in Simulation Studio** Compute credits included***"
+    ],
+    [
+      "null",
+      "null",
+      "null",
+      "null",
+      "null",
     ]
   ]
 
@@ -156,7 +163,6 @@ const Pricing = () => {
   const handleOpen = () => {
     setIsOpen(!isOpen);
   }
-
   return (
     <>
       <Head>
@@ -184,10 +190,11 @@ const Pricing = () => {
                 </div>
                 <div>
                   <div className="cards-container">
-                    <PricingCard title={pricingProps[0][0]} price={pricingProps[0][1]} storage={pricingProps[0][2]} access={pricingProps[0][3]} simulators={pricingProps[0][4]} isEnterprise={false}/>
-                    <PricingCard title={pricingProps[1][0]} price={pricingProps[1][1]} storage={pricingProps[1][2]} access={pricingProps[1][3]} simulators={pricingProps[1][4]} isEnterprise={false}/>
-                    <PricingCard title={pricingProps[2][0]} price={pricingProps[2][1]} storage={pricingProps[2][2]} access={pricingProps[2][3]} simulators={pricingProps[2][4]} isEnterprise={false}/>
-                    <PricingCard title={"null"} price={"null"} storage={"null"} access={"null"} simulators={"null"} isEnterprise={true}/>
+                    {pricingProps.map((props, index) => {
+                      const [title, price, storage, access, simulators] = props;
+                      const isEnterprise = index === 3;
+                      return <PricingCard title={title} price={price} storage={storage} access={access} simulators={simulators} isEnterprise={isEnterprise} />;
+                    })}
                   </div>
                   <div className="text-[#7C7F8B] w-full pl-28 hidden xl:flex">
                     * upgradeable,          ** public and private,          *** worth the price of the plan

@@ -4,49 +4,7 @@ import 'prismjs/themes/prism-twilight.css';
 import Prism from 'prismjs';
 import { useEffect } from "react";
 
-const ArticleWrapper = styled.article`
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem 2rem 1rem;
-
-    .img-container {
-      display: flex;
-      justify-content: center;
-      img{
-        width: 100%;
-        border-radius: 10px;
-        max-width: 800px;
-      }
-    }
-    .article-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h1{
-        font-size: 2.5rem;
-      }
-      h2{
-        font-size: 1rem;
-        color: gray;
-      }
-      .article-text {
-        width: 100%;
-        text-align: left;
-        max-width: 800px;
-
-        img {
-          width: 100%;
-          max-width: 800px;
-          max-height: 480px;
-        }
-      }
-    }
-  }
-`;
+const ArticleWrapper = styled.article``;
 
 const Article = ( { blok } ) => {
     useEffect(() => {
@@ -55,15 +13,29 @@ const Article = ( { blok } ) => {
   
   return (
     <ArticleWrapper>
-      <div className='container'>
-        <div className='article-content'>
-          <h1>{blok.title}</h1>
-          <h2>{blok.subtitle}</h2>
+      <div className='w-full flex items-center justify-center'>
+        <div className='article-content flex flex-col gap-y-4 items-center w-[80%]'>
+          <h1 className="font-bold text-5xl max-w-3xl flex self-start">
+            {blok.title}
+          </h1>
+          <div className='flex w-1/4 self-start'>
+            <div className='w-full flex flex-col'>
+              <span className='text-sm text-[#454853]'>Date:</span>
+              <span className='text-sm text-[#7C7F8B]'>09.06.2023</span>
+            </div>
+            <div className='w-full flex flex-col'>
+              <span className='text-sm text-[#454853]'>Category:</span>
+              <span className='text-sm text-[#7C7F8B]'>Model Engineer</span>
+            </div>
+          </div>
+          {/* <h2>{blok.subtitle}</h2> */}
+          <div className='img-container'>
+            <BorderAroundMainImage>
+              {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl p-6' />}
+            </BorderAroundMainImage>
+          </div>
           <div className='article-text'>
             {render(blok.content)}
-          </div>
-          <div className='img-container'>
-            {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} />}
           </div>
         </div>
       </div>
@@ -72,3 +44,9 @@ const Article = ( { blok } ) => {
 };
 
 export default Article;
+
+const BorderAroundMainImage = styled.div`
+  img {
+    background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
+  }
+`

@@ -31,7 +31,7 @@ const Article = ( { blok } ) => {
           {/* <h2>{blok.subtitle}</h2> */}
           <div className='img-container'>
             <BorderAroundMainImage>
-              {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl p-6' />}
+              {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>
           </div>
           <div className='article-text'>
@@ -47,6 +47,9 @@ export default Article;
 
 const BorderAroundMainImage = styled.div`
   img {
-    background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
+    border: 5px solid rgba(59, 17, 81, 0.40);
   }
+  padding: 26px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
 `

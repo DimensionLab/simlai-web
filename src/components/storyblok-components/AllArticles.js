@@ -31,9 +31,9 @@ const AllArticles = ({ blok }) => {
   }, []);
 
   return (
-    <section>
-      <div className="container">
-        <div className="article-container flex flex-col gap-y-8" {...storyblokEditable(blok)}>
+    <section className="w-full flex items-center justify-center">
+      <div className="w-full">
+        <div className="article-container flex flex-col gap-y-8 xl:flex-row" {...storyblokEditable(blok)}>
         {isLoading ? (
           <>
             <ArticleLoadingSkeleton />

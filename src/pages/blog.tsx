@@ -130,12 +130,16 @@ export default function Blog( props: any ) {
       </Head>
         
       <Layout>
-          <section className="flex flex-col w-full">
-            <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col`}`}>
+          <section className="flex flex-col w-full h-full">
+            <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen}/>      
               <Search/>
-              <div className="w-full py-4 pb-12">
-                <StoryblokComponent blok={story.content}/>
+              <div className="w-full py-4 pb-12 flex items-center justify-center">
+                <div className="flex lg:w-[80%] flex-wrap gap-y-4 py-12">
+                  <StoryblokComponent blok={story.content}/>
+                  {/* duplict just to fill space */}
+                  <StoryblokComponent blok={story.content}/>
+                </div>
               </div>
 
               <Footer open={!isOpen}/>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -33,8 +34,8 @@ const FeaturesWrapper = styled.div`
       `}
       img {
         ${tw`
-          w-full
-          xl:max-w-md
+          // w-full
+          // xl:max-w-md
         `}
       }
     }
@@ -80,12 +81,23 @@ const Features = () => {
     ["assets/simlai/feature4.svg", "Painless scalability", "Our platform deals with the complexities of setting up cloud or HPC infrastructure for you."],
   ];
 
+  const [loaded, setLoaded] = useState(Array(data.length).fill(false));
+
+  const handleCounterLoaded = (index: number) => {
+    const newLoaded = [...loaded];
+    newLoaded[index] = true;
+    setLoaded(newLoaded);
+  }
+
   return (
     <FeaturesWrapper id="features">
       {data.map((feature, index) => (
         <div key={index} className="container">
           <div className="image">
-            <img src={feature[0]} alt={feature[1]} />
+            <img src={feature[0]} alt={feature[1]} onLoad={() => handleCounterLoaded(index)} className={loaded[index] ? `w-full xl:max-w-md` : `hidden`}/>
+            <div className={`${loaded[index] ? `hidden` : `w-full h-full flex items-center justify-center`}`}>
+              <img src="/assets/simlai/loading.gif" alt="" className={loaded[index] ? `hidden` : `flex justify-center items-center w-12 h-full`}/>
+            </div>
           </div>
           <div className="text">
             <div className="title">{feature[1]}</div>

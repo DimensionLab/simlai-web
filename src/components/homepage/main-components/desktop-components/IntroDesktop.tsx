@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -156,35 +157,57 @@ const IntroDesktopWrapper = styled.div`
 `;
 
 const IntroDesktop = () => {
+  const [loaded, setLoaded] = useState(false);
+  const [counterLoaded, setCounterLoaded] = useState(0);
+
+  const handleCounterLoaded = () => {
+    setCounterLoaded(prevCounterLoaded => {
+      const newCounterLoaded = prevCounterLoaded + 1;
+      if(newCounterLoaded === 6) {
+        setLoaded(true);
+      }
+      return newCounterLoaded;
+    });
+  }
   return (
     <IntroDesktopWrapper>
       <div className="all-container">
-        <div className="left-side">
-          <div className="logo-title">
-            <img src="assets/simlai/simlai-logo.svg" alt="" id="siml-logo"/>
-            <img src="assets/simlai/simlai-title.svg" alt="" id="siml-title"/>
-          </div>
-          <div className="title">Tame the physics <br/>of your projects in hours!</div>
-          <div className="subtitle">SIML.ai is a software platform for working <br/> with high-performance AI-based numerical simulators.</div>
-          <div className="join-waitlist">
-            <div className="label">Join private alpha waitlist</div>
-            <div className="email-button">
-              <input type="email" name="" id="" placeholder="your@email.com"/>
-              <button>
-                <div>JOIN</div>
-              </button>
+        <div className={`left-side ${loaded ? `` : `hidden`}`}>
+          <div className={`${loaded ? `` : `hidden`} flex flex-col gap-y-8`}>
+            <div className="logo-title">
+              <img src="assets/simlai/simlai-logo.svg" alt="" id="siml-logo" onLoad={handleCounterLoaded}/>
+              <img src="assets/simlai/simlai-title.svg" alt="" id="siml-title" onLoad={handleCounterLoaded}/>
+            </div>
+            <div className="title">Tame the physics <br/>of your projects in hours!</div>
+            <div className="subtitle">SIML.ai is a software platform for working <br/> with high-performance AI-based numerical simulators.</div>
+            <div className="join-waitlist">
+              <div className="label">Join private alpha waitlist</div>
+              <div className="email-button">
+                <input type="email" name="" id="" placeholder="your@email.com"/>
+                <button>
+                  <div>JOIN</div>
+                </button>
+              </div>
             </div>
           </div>
+          {!loaded && (
+            <div className="w-full h-full flex items-center justify-center">
+              <img src="/assets/simlai/loading.gif" alt="" />
+            </div>
+          )}
         </div>
         <div className="right-side">
-          {/* this manual absolute-positioning is broken */}
-          <div className="container">
-            <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" className="static"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate one"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate two"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate three"/>
+          <div className={`container ${loaded ? `` : `hidden`}`}>
+            <img src="assets/simlai/desktop-intro-pics/low-res/static.png" alt="" className="static" onLoad={handleCounterLoaded}/>
+            <img src="assets/simlai/desktop-intro-pics/low-res/rotate1.png" alt="" className="rotate one" onLoad={handleCounterLoaded}/>
+            <img src="assets/simlai/desktop-intro-pics/low-res/rotate2.png" alt="" className="rotate two" onLoad={handleCounterLoaded}/>
+            <img src="assets/simlai/desktop-intro-pics/low-res/rotate3.png" alt="" className="rotate three" onLoad={handleCounterLoaded}/>
           </div>
-          {/* <img src="assets/simlai/desktop-intro-pics/image-composition.png" alt="" /> */}
+          {!loaded && (
+            <div className="w-full h-full flex items-center justify-center">
+              <img src="/assets/simlai/loading.gif" alt="" />
+            </div>
+          )}
         </div>
       </div>
     </IntroDesktopWrapper>

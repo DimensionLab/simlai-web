@@ -13,12 +13,12 @@ const Article = ( { blok } ) => {
   
   return (
     <ArticleWrapper>
-      <div className='w-full flex items-center justify-center'>
+      <div className='w-full flex items-center justify-center pb-24'>
         <div className='article-content flex flex-col gap-y-24 items-center w-[80%]'>
           <h1 className="font-bold text-5xl max-w-3xl flex self-start">
             {blok.title}
           </h1>
-          <div className='flex w-1/4 self-start'>
+          <div className='flex w-1/4 self-start -mt-10 gap-x-10'>
             <div className='w-full flex flex-col'>
               <span className='text-sm text-[#454853]'>Date:</span>
               <span className='text-sm text-[#7C7F8B]'>09.06.2023</span>

@@ -51,9 +51,13 @@ const BorderAroundMainImage = styled.div`
   img {
     border: 5px solid rgba(59, 17, 81, 0.40);
   }
-  padding: 26px;
+  padding: 0.3rem;
   border-radius: 16px;
   background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
+
+  @media (min-width: 1024px) {
+    padding: 1.3rem;
+  }
 `
 
 const RichTextArticleContent = styled.article`

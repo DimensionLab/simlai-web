@@ -50,6 +50,8 @@ export default Article;
 const BorderAroundMainImage = styled.div`
   img {
     border: 5px solid rgba(59, 17, 81, 0.40);
+    object-fit: contain;
+    width: 100%;
   }
   padding: 0.3rem;
   border-radius: 16px;

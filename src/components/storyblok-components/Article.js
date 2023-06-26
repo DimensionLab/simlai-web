@@ -21,7 +21,7 @@ const Article = ( { blok } ) => {
           <div className='flex w-1/4 self-start -mt-10 gap-x-10'>
             <div className='w-full flex flex-col'>
               <span className='text-sm text-[#454853]'>Date:</span>
-              <span className='text-sm text-[#7C7F8B]'>09.06.2023</span>
+              <span className='text-sm text-[#7C7F8B]'>{blok.date}</span>
             </div>
             <div className='w-full flex flex-col'>
               <span className='text-sm text-[#454853]'>Category:</span>

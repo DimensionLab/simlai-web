@@ -15,7 +15,7 @@ const Article = ( { blok } ) => {
     <ArticleWrapper>
       <div className='w-full flex items-center justify-center pb-24'>
         <div className='article-content flex flex-col gap-y-24 items-center w-[80%]'>
-          <h1 className="font-bold text-5xl max-w-3xl flex self-start">
+          <h1 className="font-bold text-3xl lg:text-5xl max-w-3xl flex self-start">
             {blok.title}
           </h1>
           <div className='flex w-1/4 self-start -mt-10 gap-x-10'>
@@ -34,7 +34,7 @@ const Article = ( { blok } ) => {
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>
           </div>
-          <div className='article-text text-md w-full flex flex-col gap-y-10 items-center'>
+          <div className='article-text text-md w-full max-w-4xl flex flex-col gap-y-10 items-center'>
             <RichTextArticleContent>
               {render(blok.content)}
             </RichTextArticleContent>

@@ -71,6 +71,8 @@ const RichTextArticleContent = styled.article`
 
   img {
     border-radius: 10px;
+    background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
+    padding: 0.3rem;
   }
 
   a {

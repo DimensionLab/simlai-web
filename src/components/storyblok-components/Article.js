@@ -34,7 +34,7 @@ const Article = ( { blok } ) => {
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>
           </div>
-          <div className='article-text text-md w-[90%] flex flex-col gap-y-10 items-center'>
+          <div className='article-text text-md w-full flex flex-col gap-y-10 items-center'>
             <RichTextArticleContent>
               {render(blok.content)}
             </RichTextArticleContent>
@@ -59,7 +59,7 @@ const BorderAroundMainImage = styled.div`
 const RichTextArticleContent = styled.article`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   justify-items: center;
   gap: 3rem;
 
@@ -77,5 +77,12 @@ const RichTextArticleContent = styled.article`
     &:hover {
       border-bottom: 2px solid #6B50FF;
     }
+  }
+  
+  pre, code {
+    width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 `;

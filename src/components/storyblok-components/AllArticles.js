@@ -15,17 +15,17 @@ const AllArticles = ({ blok }) => {
     const getArticles = async () => {
       setIsLoading(true);
       const storyblokApi = getStoryblokApi();
-      const { data } = await storyblokApi.get(`cdn/stories`, {
-        version: "draft",
-        starts_with: 'blog/',
-        is_startpage: false
-      });
-
-      setArticles((prev) => data.stories.map((Article) => {
-        Article.content.slug = Article.slug;
-        return Article;
-      }));
-      setIsLoading(false);
+        const { data } = await storyblokApi.get(`cdn/stories`, {
+          version: "draft",
+          starts_with: 'blog/',
+          is_startpage: false
+        });
+  
+        setArticles((prev) => data.stories.map((Article) => {
+          Article.content.slug = Article.slug;
+          return Article;
+        }));
+        setIsLoading(false);
     };
     getArticles();
   }, []);
@@ -33,19 +33,21 @@ const AllArticles = ({ blok }) => {
   return (
     <section className="w-full flex items-center justify-center">
       <div className="w-full">
-        <div className="article-container flex flex-col gap-y-8 xl:flex-row" {...storyblokEditable(blok)}>
-        {isLoading ? (
-          <div className="w-full flex flex-col xl:flex-row items-center justify-center">
-            <ArticleLoadingSkeleton />
-            <ArticleLoadingSkeleton />
-            <ArticleLoadingSkeleton />
-            <ArticleLoadingSkeleton />
-          </div>
-        ) : (
-          articles.map((Article) => (
-            <ArticleTeaser Article={Article.content} key={Article.uuid} />
-          ))
-        )}
+        <div className="article-container flex flex-col gap-y-8 xl:flex-row">
+          {isLoading ? (
+            <div className="w-full flex flex-col xl:flex-row items-center justify-center">
+              <ArticleLoadingSkeleton />
+              <ArticleLoadingSkeleton />
+              <ArticleLoadingSkeleton />
+              <ArticleLoadingSkeleton />
+            </div>
+          ) : (
+            <div {...storyblokEditable(blok)}>
+              {blok && articles[0] && articles.map((Article) => (
+                <ArticleTeaser Article={Article.content} key={Article.uuid} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

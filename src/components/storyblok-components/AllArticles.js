@@ -42,7 +42,8 @@ const AllArticles = ({ blok }) => {
               <ArticleLoadingSkeleton />
             </div>
           ) : (
-            <div {...storyblokEditable(blok)}>
+            <div {...storyblokEditable(blok)}
+              className="w-full flex flex-col xl:flex-row items-center justify-center">
               {blok && articles[0] && articles.map((Article) => (
                 <ArticleTeaser Article={Article.content} key={Article.uuid} />
               ))}

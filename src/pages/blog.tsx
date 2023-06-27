@@ -14,6 +14,7 @@ import ArticleLoadingSkeleton from "@/components/blog-components/ArticleLoadingS
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Search from "@/components/blog-components/Search";
 import Head from "next/head";
+import StoryblokContainer from "@/components/blog-components/StoryblokContainer";
 
 const BlogWrapper = styled.main`
   .placeholder {
@@ -66,13 +67,6 @@ const BlogWrapper = styled.main`
     padding-bottom: 2rem;
   }
 `;
- 
-
-
-// interface BlogProps {
-  
-// }
-
 
 const components = {
   feature: Feature,
@@ -90,9 +84,7 @@ storyblokInit({
 });
 
 export default function Blog( props: any ) {
-  // const story = props.story ? props.story : "daco";
   const story = useStoryblokState(props.story)
-  console.log(story);
 
   const [isOpen, setIsOpen] = useState(true);
 
@@ -136,7 +128,7 @@ export default function Blog( props: any ) {
               <Search/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 py-12">
-                  <StoryblokComponent blok={story.content}/>
+                  <StoryblokContainer storyContent={story.content}/>
                 </div>
               </div>
 

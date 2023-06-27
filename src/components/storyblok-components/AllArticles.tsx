@@ -8,17 +8,8 @@ import { useState, useEffect } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import { AllArticlesStoryblok } from "../../../component-types-sb";
 
-interface Article { 
-  slug: string;
-  image: { filename: string };
-  title: string;
-  uuid: string;
-  content: {
-    slug: string;
-  };
-}
 
-const AllArticles = ({ blok }: AllArticlesStoryblok) => {
+const AllArticles = ({ blok }: any) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,7 +23,7 @@ const AllArticles = ({ blok }: AllArticlesStoryblok) => {
           is_startpage: false
         });
   
-        setArticles((prev) => data.stories.map((article: Article) => {
+        setArticles((prev) => data.stories.map((article: any) => {
           article.content.slug = article.slug;
           return article;
         }));
@@ -55,8 +46,8 @@ const AllArticles = ({ blok }: AllArticlesStoryblok) => {
           ) : (
             <div {...storyblokEditable(blok)}
               className="w-full flex flex-col xl:flex-row items-center justify-center">
-              {blok && articles[0] && articles.map((article: Article) => (
-                <ArticleTeaser {...article} key={article.uuid} />
+              {blok && articles[0] && articles.map((article: any) => (
+                <ArticleTeaser articleTeaserProps={article.content} key={article.uuid} />
               ))}
             </div>
           )}

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-sb-types": "storyblok-generate-ts source=./components.221839.json target=./component-types-sb"
   },
   "dependencies": {
     "@sentry/nextjs": "^7.56.0",
@@ -32,6 +33,7 @@
     "@types/prismjs": "^1.26.0",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.1.3",
+    "storyblok-generate-ts": "^1.15.0",
     "styled-components": "^5.3.11"
   }
 }

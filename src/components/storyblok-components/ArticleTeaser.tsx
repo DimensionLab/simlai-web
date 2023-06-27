@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { render } from 'storyblok-rich-text-react-renderer';
 
-const ArticleTeaser = ({ Article }) => {
+const ArticleTeaser = ({ Article }: any) => {
   return (
     <section className="w-full py-2">
       <div className="w-full px-4">

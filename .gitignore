@@ -37,3 +37,6 @@ next-env.d.ts
 
 # Sentry Auth Token
 .sentryclirc
+
+# json of components from storyblok
+components.221839.json

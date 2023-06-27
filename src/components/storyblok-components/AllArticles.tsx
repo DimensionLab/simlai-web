@@ -23,9 +23,9 @@ const AllArticles = ({ blok }: any) => {
           is_startpage: false
         });
   
-        setArticles((prev) => data.stories.map((article: any) => {
-          article.content.slug = article.slug;
-          return article;
+        setArticles((prev) => data.stories.map((Article: any) => {
+          Article.content.slug = Article.slug;
+          return Article;
         }));
         setIsLoading(false);
     };
@@ -46,8 +46,8 @@ const AllArticles = ({ blok }: any) => {
           ) : (
             <div {...storyblokEditable(blok)}
               className="w-full flex flex-col xl:flex-row items-center justify-center">
-              {blok && articles[0] && articles.map((article: any) => (
-                <ArticleTeaser articleTeaserProps={article.content} key={article.uuid} />
+              {blok && articles[0] && articles.map((Article: any) => (
+                <ArticleTeaser Article={Article.content} key={Article.uuid} />
               ))}
             </div>
           )}

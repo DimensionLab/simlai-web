@@ -135,9 +135,11 @@ const Header = (props: HeaderProps) => {
         <Link href={"../#simulation-studio"}>SIMULATION STUDIO</Link>
         <Link href={"/pricing"}>PRICING</Link>
         <Link href={""}>CAREERS</Link>
-        <Link href={"../blog"}>
-          <a id="last-link">BLOG</a>
-        </Link>
+        {/* Link is client-side navigation, when I use <a> instead, it request specific page from server -> refreshes (kind of solves missing blok property) */}
+        {/* <Link href={"../blog"}> */}
+          {/* <a id="last-link">BLOG</a> */}
+        <a href="../blog">BLOG</a>
+        {/* </Link> */}
         <button>JOIN</button>
       </div>
       {/* <DropdownMenu open={props.open} onClose={props.onClose}/> */}

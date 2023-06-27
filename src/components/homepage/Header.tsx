@@ -138,7 +138,7 @@ const Header = (props: HeaderProps) => {
         {/* Link is client-side navigation, when I use <a> instead, it request specific page from server -> refreshes (kind of solves missing blok property) */}
         {/* <Link href={"../blog"}> */}
           {/* <a id="last-link">BLOG</a> */}
-        <a href="../blog">BLOG</a>
+        <a href="../blog" id="last-link">BLOG</a>
         {/* </Link> */}
         <button>JOIN</button>
       </div>

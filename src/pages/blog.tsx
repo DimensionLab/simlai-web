@@ -1,4 +1,4 @@
-import { storyblokInit, apiPlugin, getStoryblokApi, StoryblokComponent } from "@storyblok/react";
+import { storyblokInit, apiPlugin, getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react";
 import Feature from "../components/storyblok-components/Feature";
 import Page from "../components/storyblok-components/Page";
 import Grid from "../components/storyblok-components/Grid";
@@ -91,7 +91,7 @@ storyblokInit({
 
 export default function Blog( props: any ) {
   // const story = props.story ? props.story : "daco";
-  const [story, setStory] = useState(props.story);
+  const story = useStoryblokState(props.story)
   console.log(story);
 
   const [isOpen, setIsOpen] = useState(true);
@@ -137,8 +137,6 @@ export default function Blog( props: any ) {
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 py-12">
                   <StoryblokComponent blok={story.content}/>
-                  {/* duplict just to fill space */}
-                  <StoryblokComponent blok={story.content}/>
                 </div>
               </div>
 
@@ -155,7 +153,7 @@ export default function Blog( props: any ) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let slug = "blog";
   let sbParams: { version: 'draft' | 'published'} = {
       version: 'draft',
@@ -168,6 +166,6 @@ export async function getStaticProps() {
       story: data ? data.story : null,
       key: data ? data.story.id : null,
     },
-    revalidate: 3600,
+    // revalidate: 3600,
   };
 }

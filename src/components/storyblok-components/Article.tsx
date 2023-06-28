@@ -14,7 +14,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
   
   return (
     <ArticleWrapper>
-      <div className='w-full flex items-center justify-center pb-24'>
+      <div className='w-full flex items-center justify-center pb-24 pt-24'>
         <div className='article-content flex flex-col gap-y-24 items-center w-[80%]'>
           <h1 className="font-bold text-3xl lg:text-5xl max-w-3xl flex self-start">
             {blok.title}
@@ -30,7 +30,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
             </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}
-          <div className='img-container w-[50%]'>
+          <div className='img-container xl:w-[50%]'>
             <BorderAroundMainImage>
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>

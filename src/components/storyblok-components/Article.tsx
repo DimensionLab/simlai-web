@@ -30,7 +30,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
             </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}
-          <div className='img-container'>
+          <div className='img-container w-[50%]'>
             <BorderAroundMainImage>
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>

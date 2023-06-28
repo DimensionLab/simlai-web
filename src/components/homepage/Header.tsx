@@ -11,7 +11,9 @@ const HeaderWrapper = styled.header`
     justify-between
     w-full
     px-3
-    py-14
+    // py-14
+    py-4
+    opacity-80
     xl:py-0
     xl:pr-0
     bg-[#0D101B]
@@ -117,7 +119,7 @@ interface HeaderProps  {
 
 const Header = (props: HeaderProps) => {
   return (
-    <HeaderWrapper>
+    <HeaderWrapper className="sticky top-0 left-0">
       <div className="logo">
         <img src="/assets/simlai/simlai-logo.svg" alt="" />
       </div>

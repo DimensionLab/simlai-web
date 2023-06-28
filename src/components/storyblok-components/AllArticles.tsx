@@ -7,6 +7,7 @@ import {
 import { useState, useEffect } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import { AllArticlesStoryblok } from "../../../component-types-sb";
+import NewestArticleTeaser from "./NewestArticleTeaser";
 
 
 const AllArticles = ({ blok }: any) => {
@@ -44,11 +45,16 @@ const AllArticles = ({ blok }: any) => {
               <ArticleLoadingSkeleton />
             </div>
           ) : (
-            <div {...storyblokEditable(blok)}
-              className="w-full flex flex-col xl:flex-row items-center justify-center">
-              {blok && articles[0] && articles.map((Article: any) => (
-                <ArticleTeaser Article={Article.content} key={Article.uuid} />
-              ))}
+            <div className="flex flex-col items-center justify-center">
+              <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
+                {blok && articles[0] && <NewestArticleTeaser Article={articles[0]}/>}
+              </div>
+              <div {...storyblokEditable(blok)}
+                className="w-full flex flex-col xl:flex-row items-center justify-center">
+                {blok && articles[0] && articles.map((Article: any) => (
+                  <ArticleTeaser Article={Article.content} key={Article.uuid} />
+                  ))}
+              </div>
             </div>
           )}
         </div>

@@ -23,7 +23,6 @@ const HeaderWrapper = styled.header`
       py-4
       xl:py-0
       xl:pr-0
-      xl:pb-20
     `}
 
     .logo {

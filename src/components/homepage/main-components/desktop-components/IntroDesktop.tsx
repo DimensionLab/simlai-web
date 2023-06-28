@@ -4,6 +4,7 @@ import tw from "twin.macro";
 const IntroDesktopWrapper = styled.div`
   ${tw`
     xl:my-12
+    xl:pt-20
   `}
 
   .all-container {

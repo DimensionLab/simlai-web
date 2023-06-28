@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import tw from "twin.macro";
 import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
+import { useEffect, useState } from "react";
 
 const HeaderWrapper = styled.header`
   ${tw`
@@ -20,7 +21,7 @@ const HeaderWrapper = styled.header`
       w-full
       px-3
       // py-14
-      py-4
+      pb-4
       xl:py-0
       xl:pr-0
     `}
@@ -124,11 +125,33 @@ interface HeaderProps  {
 }
 
 const Header = (props: HeaderProps) => {
+  const [isScrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 0;
+
+      if (show) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <HeaderWrapper className="sticky top-0 left-0">
-      <div className="all-container">
+      <div className={`all-container ${isScrolled ? `pt-4` : `pt-14`}`}>
         <div className="logo">
-          <img src="/assets/simlai/simlai-logo.svg" alt="" />
+          <a href="../">
+            <img src="/assets/simlai/simlai-logo.svg" alt="" />
+          </a>
         </div>
         <div className="right-side">
           <button>

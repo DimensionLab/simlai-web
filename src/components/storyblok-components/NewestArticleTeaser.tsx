@@ -1,6 +1,6 @@
 const NewestArticleTeaser = ( { Article }: any) => {
     return (
-        <section className="">
+        <section className="w-full">
             <article className="flex flex-row">
                 <div className="w-3/4 overflow-hidden flex">
                     <img src={Article.content.image.filename} alt={Article.content.image.alt} className="rounded-l-xl object-cover aspect-video w-full"/>

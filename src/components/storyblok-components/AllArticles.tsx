@@ -34,8 +34,8 @@ const AllArticles = ({ blok }: any) => {
   }, []);
 
   return (
-    <section className="w-full flex items-center justify-center">
-      <div className="w-full">
+    <section className="w-full flex items-center justify-center max-w-screen-xl">
+      <div className="w-full flex justify-center">
         <div className="article-container flex flex-col gap-y-8 xl:flex-row">
           {isLoading ? (
             <div className="w-full flex flex-col xl:flex-row items-center justify-center">

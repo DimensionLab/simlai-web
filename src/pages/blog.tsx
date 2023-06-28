@@ -127,7 +127,7 @@ export default function Blog( props: any ) {
               <Header open={!isOpen} onClose={handleOpen}/>      
               <Search/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
-                <div className="flex lg:w-[80%] flex-wrap gap-y-4 py-12">
+                <div className="flex lg:w-[80%] flex-wrap gap-y-4 py-12 justify-center">
                   <StoryblokContainer storyContent={story.content}/>
                 </div>
               </div>

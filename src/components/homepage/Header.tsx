@@ -6,7 +6,7 @@ import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
 const HeaderWrapper = styled.header`
   ${tw`
     w-full
-    bg-[rgba(13, 16, 27, 0.9)]
+    bg-[rgba(13, 16, 27, 0.95)]
   `}
 
   .container {

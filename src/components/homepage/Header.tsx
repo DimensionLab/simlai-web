@@ -7,9 +7,11 @@ const HeaderWrapper = styled.header`
   ${tw`
     w-full
     bg-[rgba(13, 16, 27, 0.95)]
+    z-30
+    flex
   `}
 
-  .container {
+  .all-container {
     ${tw`
       flex
       flex-row
@@ -125,7 +127,7 @@ interface HeaderProps  {
 const Header = (props: HeaderProps) => {
   return (
     <HeaderWrapper className="sticky top-0 left-0">
-      <div className="container">
+      <div className="all-container">
         <div className="logo">
           <img src="/assets/simlai/simlai-logo.svg" alt="" />
         </div>
@@ -137,7 +139,7 @@ const Header = (props: HeaderProps) => {
             <img src="/assets/simlai/hamburger-menu.svg" alt="" />
           </div>
         </div>
-        <div className="bar">
+        <div className="bar w-full justify-end">
           <Link href={"../#features"}>FEATURES</Link>
           <Link href={"../#model-engineer"}>MODEL ENGINEER</Link>
           <Link href={"../#simulation-studio"}>SIMULATION STUDIO</Link>

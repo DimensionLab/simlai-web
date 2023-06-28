@@ -12,6 +12,7 @@ const IntroWrapper = styled.div`
     py-5
     flex-col
     gap-y-10
+    pt-14
   `}
 
   .headline-logo {

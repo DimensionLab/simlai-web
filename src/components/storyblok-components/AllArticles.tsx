@@ -45,7 +45,7 @@ const AllArticles = ({ blok }: any) => {
               <ArticleLoadingSkeleton />
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-y-8">
               <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
                 {blok && articles[0] && <NewestArticleTeaser Article={articles[0]}/>}
               </div>

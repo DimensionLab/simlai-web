@@ -149,7 +149,9 @@ const Header = (props: HeaderProps) => {
     <HeaderWrapper className="sticky top-0 left-0">
       <div className={`all-container ${isScrolled ? `pt-4` : `pt-14`}`}>
         <div className="logo">
-          <img src="/assets/simlai/simlai-logo.svg" alt="" />
+          <a href="../">
+            <img src="/assets/simlai/simlai-logo.svg" alt="" />
+          </a>
         </div>
         <div className="right-side">
           <button>

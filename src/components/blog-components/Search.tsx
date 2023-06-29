@@ -11,10 +11,10 @@ const Search = () => {
   }
 
   return (
-    <section className="w-full px-4 mb-8 xl:px-24">
-      <main className="w-full flex flex-col gap-y-4 xl:gap-y-16">
+    <section className="w-full px-4 mb-8 xl:px-24 pt-12">
+      <main className="w-full flex flex-col gap-y-4 xl:gap-y-8">
         <h1 className="font-bold text-[28px] xl:text-4xl">Blog</h1>
-        <div className="flex flex-col gap-y-4 xl:flex-row xl:max-w-[50%] xl:gap-x-4">
+        <div className="flex flex-col gap-y-4 xl:flex-row xl:max-w-3xl xl:gap-x-4">
           <div className="flex flex-col gap-y-2 xl:w-[40%]">
             <label className="text-[#7C7F8B] text-xs">SEARCH BY KEYWORD</label>
             <input type="text" placeholder="Input text" className="bg-[#373A45] py-4 px-4 rounded text-sm text-[#7C7F8B]"/>

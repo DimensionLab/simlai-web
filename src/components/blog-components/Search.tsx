@@ -1,4 +1,15 @@
+import { useState } from "react";
+
 const Search = () => {
+  const [buttonText, setButtonText] = useState("Submit");
+
+  const handleSubmit = () => {
+    setButtonText("Not yet");
+    setTimeout(
+      () => setButtonText("Submit"), 2000
+    );
+  }
+
   return (
     <section className="w-full px-4 mb-8 xl:px-24">
       <main className="w-full flex flex-col gap-y-4 xl:gap-y-16">
@@ -15,7 +26,7 @@ const Search = () => {
               <img src="assets/simlai/dropdown-icon.svg" alt="" />
             </div>
           </div>
-          <button className="w-full bg-[#61646F] py-3.5 px-4 rounded xl:flex xl:items-center xl:justify-center xl:w-24 xl:self-end">Submit</button>
+          <button className="w-full bg-[#61646F] py-3.5 px-4 rounded xl:flex xl:items-center xl:justify-center xl:w-24 xl:self-end" onClick={handleSubmit}>{buttonText}</button>
         </div>
       </main>
     </section>

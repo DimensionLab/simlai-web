@@ -14,12 +14,12 @@ const Article = ( { blok }: ArticleStoryblok ) => {
   
   return (
     <ArticleWrapper>
-      <div className='w-full flex items-center justify-center pb-24 pt-24'>
-        <div className='article-content flex flex-col gap-y-24 items-center w-[80%]'>
-          <h1 className="font-bold text-3xl lg:text-5xl max-w-3xl flex self-start">
+      <div className='w-full flex items-center justify-center pb-24 pt-12 lg:pt-24'>
+        <div className='article-content flex flex-col gap-y-8 items-center w-[80%]'>
+          <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl max-w-3xl flex self-start">
             {blok.title}
           </h1>
-          <div className='flex w-1/4 self-start -mt-10 gap-x-10'>
+          <div className='grid w-full gap-y-4 pt-8 self-start -mt-10 gap-x-10 grid-cols-2 md:grid-cols-3 lg:w-1/2'>
             <div className='w-full flex flex-col'>
               <span className='text-sm text-[#454853]'>Date:</span>
               <span className='text-sm text-[#7C7F8B]'>{blok.date}</span>
@@ -28,9 +28,13 @@ const Article = ( { blok }: ArticleStoryblok ) => {
               <span className='text-sm text-[#454853]'>Category:</span>
               <span className='text-sm text-[#7C7F8B]'>Model Engineer</span>
             </div>
+            <div className='w-full flex flex-col'>
+              <span className='text-sm text-[#454853]'>Author:</span>
+              <span className='text-sm text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
+            </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}
-          <div className='img-container xl:w-[50%]'>
+          <div className='img-container xl:w-[50%] lg:py-10'>
             <BorderAroundMainImage>
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>
@@ -68,7 +72,7 @@ const RichTextArticleContent = styled.article`
   flex-direction: column;
   width: 100%;
   justify-items: center;
-  gap: 3rem;
+  gap: 1rem;
 
   img {
     border-radius: 10px;

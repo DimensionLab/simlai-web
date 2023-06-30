@@ -1,4 +1,4 @@
-import { storyblokInit, apiPlugin, getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react";
+import { storyblokInit, apiPlugin, getStoryblokApi, StoryblokComponent, useStoryblokState, StoryData } from "@storyblok/react";
 import Feature from "../components/storyblok-components/Feature";
 import Page from "../components/storyblok-components/Page";
 import Grid from "../components/storyblok-components/Grid";
@@ -84,30 +84,23 @@ storyblokInit({
 });
 
 export default function Blog( props: any ) {
-  const story = useStoryblokState(props.story)
+  const sbStory = useStoryblokState(props.story)
+  const [story, setStory] = useState(sbStory);
 
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
     setIsOpen(prevIsOpen =>  {
-      // it reloads the whole page after close button in DropdownMenu is clicked
-      // fixes bug when opened and closed DropdownMenu it produced error "Please provide blok property to StoryblokComponent"
-      if(!prevIsOpen) {
-        window.location.reload();
-      }
-
       return !prevIsOpen;
     });
-
   }
-  
+
   useEffect(() => {
-    return () => {
-      window.onpopstate = function(event) {
-        window.location.reload();
-      };
-    };
-  }, []);
+    setStory(sbStory);
+
+    // return () => setStory()
+  }, [sbStory]);
+  
 
   return (
     <>
@@ -128,10 +121,9 @@ export default function Blog( props: any ) {
               <Search/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 py-12 justify-center">
-                  <StoryblokContainer storyContent={story.content}/>
+                  <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>
                 </div>
               </div>
-
               <Footer open={!isOpen}/>
             </div>
             
@@ -156,7 +148,7 @@ export async function getServerSideProps() {
   return {
     props: {
       story: data ? data.story : null,
-      key: data ? data.story.id : null,
+      keyID: data ? data.story.id : null,
     },
     // revalidate: 3600,
   };

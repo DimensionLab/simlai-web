@@ -22,11 +22,13 @@ const ArticleLoadingSkeleton = () => {
       <div className="w-full px-4">
           <a className="w-full flex flex-col items-center h-full">
             <div className="flex w-full">
-              <div className="w-full aspect-video object-cover rounded-t-xl skeleton"></div>
+              <div className="w-full aspect-video object-cover rounded-t-xl skeleton">
+                <img src="/assets/simlai/placeholder-solid-white.svg" alt="" className="skeleton aspect-video w-96 rounded-t-xl"/>
+              </div>
             </div>
             <div className="h-1/2 flex flex-col w-full px-6 py-14 gap-y-6 bg-[#222530] rounded-b-xl ">
               <h1 className="flex self-start w-full text-xl"></h1>
-              <div className="flex w-full justify-between items-center">
+              <div className="flex w-full justify-between items-center gap-x-2">
                 <span className="text-sm text-[#7C7F8B] skeleton rounded w-44 h-6"></span>
                 <div className="skeleton w-12 h-6 rounded"></div>
               </div>

@@ -38,7 +38,11 @@ const AllArticles = ({ blok }: any) => {
       <div className="w-full flex justify-center">
         <div className="article-container flex flex-col gap-y-8 xl:flex-row">
           {isLoading ? (
-            <div className="w-full flex flex-col xl:flex-row items-center justify-center">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-y-4 xl:grid-cols-4 items-center justify-center">
+              <ArticleLoadingSkeleton />
+              <ArticleLoadingSkeleton />
+              <ArticleLoadingSkeleton />
+              <ArticleLoadingSkeleton />
               <ArticleLoadingSkeleton />
               <ArticleLoadingSkeleton />
               <ArticleLoadingSkeleton />

@@ -2,7 +2,7 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { PageStoryblok } from "../../../component-types-sb";
  
 const Page = ({ blok }: PageStoryblok) => (
-  <main {...storyblokEditable(blok)}>
+  <main {...storyblokEditable(blok)} key={blok.uuid}>
     {blok.body && blok.body.map((nestedBlok: any) => (
       <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
     ))}

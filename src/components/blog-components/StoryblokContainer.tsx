@@ -3,11 +3,12 @@ import { useEffect } from "react";
 
 interface StoryblokContainerProps {
     storyContent: any;
+    keyID: any;
 }
 
 const StoryblokContainer = (props: StoryblokContainerProps) => {
     return (
-        <StoryblokComponent blok={props.storyContent}/>
+        <StoryblokComponent blok={props.storyContent} key={props.keyID}/>
     );
 }
 

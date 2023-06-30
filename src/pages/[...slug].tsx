@@ -16,15 +16,18 @@ import Article from '@/components/storyblok-components/Article';
 import Header from '../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
+import Page from '@/components/storyblok-components/Page';
+import AllArticles from '@/components/storyblok-components/AllArticles';
 
 const components = {
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
   page: Page,
-  Article: Article,
+  article: Article,
+  'all-articles': AllArticles,
 };
 
 storyblokInit({
@@ -35,10 +38,12 @@ storyblokInit({
 
 interface PageProps {
   story: StoryData<any>;
+  keyID: any;
 }
 
-export default function Page({ story  }: PageProps) {
+export default function BlogPost({ story, keyID }: PageProps) {
   story = useStoryblokState(story);
+  
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = () => {
@@ -61,7 +66,7 @@ export default function Page({ story  }: PageProps) {
         {isOpen ? (
           <section className='w-full'>
             <Header open={!isOpen} onClose={handleOpen}/>
-            <StoryblokComponent blok={story.content} />
+            <StoryblokComponent blok={story.content} key={keyID}/>
             <Footer open={!isOpen}/>
           </section>
         ) : (
@@ -90,7 +95,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   return {
     props: {
       story: data ? data.story : false,
-      key: data ? data.story.id : false,
+      keyID: data ? data.story.id : false,
     },
     revalidate: 3600,
   };

@@ -156,16 +156,17 @@ const Footer = (props: FooterProps) => {
             <div className="socials">
               <div className="twitter-container">
                 <a href="https://twitter.com/siml_ai">
-                  <img src="/assets/facebook-logo.svg" alt="" />
+                  <img src="/assets/twitter-logo.svg" alt="" />
                 </a>
               </div>
               <div className="facebook-container">
                 <a href="https://www.facebook.com/learnedsimulators/">
-                  <img src="/assets/twitter-logo.svg" alt="" />
+                  <img src="/assets/facebook-logo.svg" alt="" />
                 </a>
               </div>
               <div className="instagram-container">
-                <a href="">
+                {/* insert href="" with actual link to instagram when it'll exist */}
+                <a>
                   <img src="/assets/simlai/ig-logo.svg" alt="" />
                 </a>
               </div>
@@ -175,7 +176,8 @@ const Footer = (props: FooterProps) => {
                 </a>
               </div>
               <div className="medium-container">
-                <a href="">
+                {/* insert href="" with actual link to instagram when it'll exist */}
+                <a>
                   <img src="/assets/simlai/medium-logo.svg" alt="" />
                 </a>
               </div>
@@ -186,16 +188,18 @@ const Footer = (props: FooterProps) => {
           <div className="product">
             <div className="title-product">Product</div>
             <div className="items-product">
-              <a href="#features">Features</a>
-              <a href="#model-engineer">Model Engineer</a>
-              <a href="#simulation-studio">Simulation Studio</a>
+              <a href="../#features">Features</a>
+              <a href="../#model-engineer">Model Engineer</a>
+              <a href="../#simulation-studio">Simulation Studio</a>
             </div>
           </div>
           <div className="company">
             <div className="title-company">Company</div>
             <div className="items-company">
-              <a href="">Careers</a>
+              {/* insert href="" when carreers link will exist*/}
+              <a>Careers</a>
               <a href="mailto:hello@dimensionlab.org">Contact</a>
+              {/* change to production website url */}
               <a href="https://dimensionlab-web.vercel.app/">DimensionLab</a>
             </div>
           </div>

@@ -107,6 +107,7 @@ const Product = () => {
         </div>
         </div>
       <div className="extensive-text">
+        {/* change href="" for 'DimensionLab below to actual production URL */}
         <div className="text">
           Vast majority of technologies in the world come to life through months or years of extensive simulation during their development. <br/> <br/>
           High-performance computing, parallel processing and GPUs helped push the computation time from months to weeks. With the help of applied machine learning, we are seeing a reduction from weeks to days. We think that&apos;s not enough. <br/> <br/>

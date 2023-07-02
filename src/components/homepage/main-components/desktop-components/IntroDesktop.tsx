@@ -212,7 +212,7 @@ const IntroDesktop = () => {
                 placeholder="your@email.com"
               />
               <button className={handleResult()} disabled={success || fields.EMAIL === "" ? true : false}>
-                <div>{success ? "JOINED" : "JOIN"}</div>
+                <div>{loading ? "JOINING" : (success ? "JOINED" : "JOIN")}</div>
               </button>
 
               {/* {loading && 

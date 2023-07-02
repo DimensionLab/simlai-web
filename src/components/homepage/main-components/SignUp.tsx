@@ -65,7 +65,7 @@ const SignUpWrapper = styled.div`
           w-3/4
           bg-[#373A45]
           p-2
-          text-sm
+          text-lg
           rounded
           text-gray-500
         `}

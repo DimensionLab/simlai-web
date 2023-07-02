@@ -172,8 +172,8 @@ const Header = (props: HeaderProps) => {
           <Link href={"/pricing"}>
             <a className={`${props.whichSubpage === "pricing" ? `text-white` : ``}`}>PRICING</a>
           </Link>
-          <Link href={""}>CAREERS</Link>
-          {/* Link is client-side navigation, when I use <a> instead, it request specific page from server -> refreshes (kind of solves missing blok property) */}
+          {/* <Link href={""}>CAREERS</Link> */}
+          <a>CAREERS</a>
           <Link href={"../blog"}>
             <a id="last-link" className={`${props.whichSubpage === "blog" ? `border-2 border-b-[#6B50FF] text-white` : ``}`}>BLOG</a>
           </Link>

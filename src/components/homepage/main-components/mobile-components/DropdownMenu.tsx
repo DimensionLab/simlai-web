@@ -171,7 +171,9 @@ const DropdownMenu = (props: DropdownProps ) => {
             <img src="/assets/simlai/simlai-title.svg" alt="simlai brand name" id="title"/>
           </div>
           <div className="join-close">
-            <button>JOIN</button>
+            <a href="https://platform.siml.ai/">
+              <button>LOGIN</button>
+            </a>
             <img src="/assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
           </div>
         </div>

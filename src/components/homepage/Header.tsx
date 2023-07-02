@@ -44,7 +44,7 @@ const HeaderWrapper = styled.header`
         flex
         gap-x-[18px]
       `}
-      button {
+      a {
         ${tw`
           text-lg
           flex
@@ -105,7 +105,7 @@ const HeaderWrapper = styled.header`
         `}
       }
 
-      button {
+      .button {
         ${tw`
           bg-[#6B50FF]
           px-6
@@ -113,6 +113,8 @@ const HeaderWrapper = styled.header`
           py-2
           text-white
           font-bold
+          flex
+          items-center
         `}
       }
     }
@@ -154,9 +156,9 @@ const Header = (props: HeaderProps) => {
           </a>
         </div>
         <div className="right-side">
-          <button>
-            <div className="text">JOIN</div>
-          </button>
+          <a href="https://platform.siml.ai/">
+            <div className="text">LOGIN</div>
+          </a>
           <div className="hamburger-menu" onClick={props.onClose}>
             <img src="/assets/simlai/hamburger-menu.svg" alt="" />
           </div>
@@ -172,7 +174,7 @@ const Header = (props: HeaderProps) => {
             {/* <a id="last-link">BLOG</a> */}
           <a href="../blog" id="last-link">BLOG</a>
           {/* </Link> */}
-          <button>JOIN</button>
+          <a className="button" href="https://platform.siml.ai/">LOGIN</a>
         </div>
         {/* <DropdownMenu open={props.open} onClose={props.onClose}/> */}
       </div>

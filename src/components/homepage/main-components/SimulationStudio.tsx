@@ -100,7 +100,9 @@ const ModelEngineer = () => {
 
   return (
     <ModelEngineerWrapper id="simulation-studio">
-      <img src="assets/simlai/simulation-studio-image.svg" alt="" />
+      <ImageWrapper>
+        <img src="assets/simlai/simulation-studio-image.png" alt="" className=""/>
+      </ImageWrapper>
       <div className="text-container">
         <div className="title">Simulation Studio</div>
         <div className="subtitle-container">
@@ -127,3 +129,22 @@ const ModelEngineer = () => {
 }
 
 export default ModelEngineer;
+
+const ImageWrapper = styled.div`
+  background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
+  border-radius: 0.8rem;
+  padding: 0.4rem;
+  
+  @media (min-width: 1024px) {
+    padding: 1.3rem;
+  }
+
+  img {
+    border: 5px solid rgba(59, 17, 81, 0.40);
+    border-radius: 0.8rem;
+
+    @media(min-width: 1024px) {
+      border: 10px solid rgba(59, 17, 81, 0.40);
+    }
+  }
+`

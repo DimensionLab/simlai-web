@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import tw from "twin.macro";
+import { useFormFields, useMailChimpForm } from "use-mailchimp-form";
 
 const SignUpWrapper = styled.div`
   ${tw`
@@ -72,10 +73,11 @@ const SignUpWrapper = styled.div`
 
       button {
         ${tw`
-          bg-[#6B50FF]
+          // bg-[#6B50FF]
           p-4
           rounded
           w-1/4
+          text-sm
           font-bold
         `}
       }
@@ -84,17 +86,57 @@ const SignUpWrapper = styled.div`
 `;
 
 const SignUp = () => {
+  const url = "https://dimensionlab.us17.list-manage.com/subscribe/post?u=fbb1d9b2d270a31e90eb9ca9f&id=d5c8cb4590&f_id=00a060e0f0";
+
+  const {
+    loading, 
+    error, 
+    success, 
+    message, 
+    handleSubmit
+  } = useMailChimpForm(url);
+  
+  const { fields, handleFieldChange } = useFormFields( {
+    EMAIL: "",
+  });
+
+  const handleResult = () => {
+    if (success) {
+      return `bg-lime-600`;
+    }
+    if (error) {
+      return `bg-red-500`;
+    }
+    if (loading) {
+      return `bg-orange-500`;
+    }
+
+    return `bg-[#6B50FF]`;
+  }
+
   return (
     <SignUpWrapper>
       <div className="title">Tame the physics <br/> of your projects in hours!</div>
       <div className="subtitle">SIML.ai is a software platform for working with high-performance AI-based numerical simulators.</div>
-      <div className="signup-container">
-        <div className="label">Join private alpha waitlist</div>
+      <form className="signup-container" onSubmit={event => {
+        event.preventDefault();
+        handleSubmit(fields)
+      }}>
+        <div className="label">Join our newsletter</div>
         <div className="entry-container">
-          <input type="email" name="" id="" placeholder="your@email.com"/>
-          <button>JOIN</button>
+          <input 
+            type="email" 
+            name="" 
+            id="EMAIL" 
+            autoFocus
+            value={fields.EMAIL}
+            onChange={handleFieldChange}
+            placeholder="your@email.com"/>
+          <button className={handleResult()} disabled={success || fields.EMAIL === "" ? true : false}>
+            <div>{loading ? "JOINING" : (success ? "JOINED" : "JOIN")}</div>
+          </button>
         </div>
-      </div>
+      </form>
     </SignUpWrapper>
   );
 }

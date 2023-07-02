@@ -73,11 +73,16 @@ const TryPlatformWrapper = styled.div`
 
       button {
         ${tw`
-          bg-[#6B50FF]
-          px-[16px]
-          py-[11px]
+          flex
+          text-lg
+          border
           rounded
-          // w-1/4
+          px-6
+          py-2
+          text-center
+          hover:bg-white
+          hover:text-black
+          duration-700
           font-bold
         `}
       }
@@ -88,13 +93,15 @@ const TryPlatformWrapper = styled.div`
 const TryPlatform = () => {
   return (
     <TryPlatformWrapper>
-      <div className="title">Be the first <br/> to try the platform!</div>
-      <div className="subtitle">Help us test the product, send feedback and get free access for a month after we launch!</div>
+      <div className="title">Join our community Discord server!</div>
+      <div className="subtitle">We’re giving out free 1 month discounts to early adopters - ask around in our community Discord!</div>
       <div className="signup-container">
-        <div className="label">Join private alpha waitlist</div>
+        {/* <div className="label">Join private alpha waitlist</div> */}
         <div className="entry-container">
-          <input type="email" name="" id="" placeholder="your@email.com"/>
-          <button>JOIN</button>
+          {/* <input type="email" name="" id="" placeholder="your@email.com"/> */}
+          <a href="https://discord.gg/UxQyC9PEqt">
+            <button>JOIN OUR DISCORD</button>
+          </a>
         </div>
       </div>
     </TryPlatformWrapper>

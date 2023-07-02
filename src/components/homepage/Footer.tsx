@@ -200,7 +200,7 @@ const Footer = (props: FooterProps) => {
               <a>Careers</a>
               <a href="mailto:hello@dimensionlab.org">Contact</a>
               {/* change to production website url */}
-              <a href="https://dimensionlab-web.vercel.app/">DimensionLab</a>
+              <a href="https://dimensionlab.org">DimensionLab</a>
             </div>
           </div>
           <div className="legal">

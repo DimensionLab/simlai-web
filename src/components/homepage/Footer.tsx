@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
@@ -188,9 +189,9 @@ const Footer = (props: FooterProps) => {
           <div className="product">
             <div className="title-product">Product</div>
             <div className="items-product">
-              <a href="../#features">Features</a>
-              <a href="../#model-engineer">Model Engineer</a>
-              <a href="../#simulation-studio">Simulation Studio</a>
+              <Link href="../#features">Features</Link>
+              <Link href="../#model-engineer">Model Engineer</Link>
+              <Link href="../#simulation-studio">Simulation Studio</Link>
             </div>
           </div>
           <div className="company">

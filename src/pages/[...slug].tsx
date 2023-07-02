@@ -65,7 +65,7 @@ export default function BlogPost({ story, keyID }: PageProps) {
       <Layout>
         {isOpen ? (
           <section className='w-full'>
-            <Header open={!isOpen} onClose={handleOpen}/>
+            <Header open={!isOpen} onClose={handleOpen} whichSubpage="article"/>
             <StoryblokComponent blok={story.content} key={keyID}/>
             <Footer open={!isOpen}/>
           </section>

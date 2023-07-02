@@ -188,7 +188,7 @@ const Pricing = () => {
       <Layout>
         {isOpen ? (
             <PricingWrapper>
-              <Header open={isOpen} onClose={ handleOpen }/>
+              <Header open={isOpen} onClose={ handleOpen } whichSubpage="pricing"/>
               <div className="headline pt-12">
                 <h1>Our Plans and Pricing</h1>
                 <p className="max-sm:w-[75%]">We have plans and prices that fit your business perfectly. Make your client site a success with our products.</p>

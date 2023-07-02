@@ -117,7 +117,7 @@ export default function Blog( props: any ) {
       <Layout>
           <section className="flex flex-col w-full h-full">
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
-              <Header open={!isOpen} onClose={handleOpen}/>      
+              <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
               <Search/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 lg:py-12 justify-center">

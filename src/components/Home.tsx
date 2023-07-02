@@ -28,7 +28,7 @@ export default function Home() {
 
       <Layout>
         {!isOpen ? (
-          <Header open={isOpen} onClose={handleOpen}/>
+          <Header open={isOpen} onClose={handleOpen} whichSubpage=""/>
           // Main, Footer potentially could be here, but it works as it is now, so...
         ) : (
           <DropdownMenu open={isOpen} onClose={handleOpen}/>

@@ -124,7 +124,9 @@ const PricingCard = (props: PricingProps) => {
           <div className="storage">{props.storage}</div>
           <div className="access">{props.access}</div>
           <div className="simulators">{props.simulators}</div>
-          <button id="choose-plan">CHOOSE PLAN</button>
+          <a href="https://platform.siml.ai/model-engineer/billing">
+            <button id="choose-plan">CHOOSE PLAN</button>
+          </a>
           <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
         </div>
       ) : (
@@ -138,7 +140,9 @@ const PricingCard = (props: PricingProps) => {
           <div className="access">Custom computing resources with tens of GPUs</div>
           <div className="simulators">24/7 support</div>
           <div className="simulators">Custom simulator development</div>
-          <button id="choose-plan">CHOOSE PLAN</button>
+          <a href="https://platform.siml.ai/model-engineer/billing">
+            <button id="choose-plan">CHOOSE PLAN</button>
+          </a>
           <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
         </div>
       )}

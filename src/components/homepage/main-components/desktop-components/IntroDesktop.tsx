@@ -228,10 +228,10 @@ const IntroDesktop = () => {
         </div>
         <div className="right-side">
           <div className="container">
-            <img src="assets/simlai/desktop-intro-pics/static.svg" alt="" className="static"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate1.svg" alt="" className="rotate one"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate2.svg" alt="" className="rotate two"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate3.svg" alt="" className="rotate three"/>
+            <img src="assets/simlai/desktop-intro-pics/static.png" alt="" className="static"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate1.png" alt="" className="rotate one"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate2.png" alt="" className="rotate two"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate3.png" alt="" className="rotate three"/>
           </div>
         </div>
       </div>

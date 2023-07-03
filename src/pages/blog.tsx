@@ -135,7 +135,7 @@ export default function Blog( props: any ) {
 export async function getStaticProps() {
   let slug = "blog";
   let sbParams: { version: 'draft' | 'published'} = {
-      version: 'draft',
+      version: 'published',
   };
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);

@@ -93,7 +93,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       story: data ? data.story : false,
       keyID: data ? data.story.id : false,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 }
 

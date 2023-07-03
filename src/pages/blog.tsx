@@ -145,6 +145,6 @@ export async function getStaticProps() {
       story: data ? data.story : null,
       keyID: data ? data.story.id : null,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 }

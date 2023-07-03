@@ -105,7 +105,7 @@ export default function Blog( props: any ) {
   return (
     <>
       <Head>
-        <title>Blog | Siml.ai</title>
+        <title>Siml.ai - Blog</title>
         <meta name="description" content="Read the latest articles from Siml.ai blog!" />
         <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
       </Head>

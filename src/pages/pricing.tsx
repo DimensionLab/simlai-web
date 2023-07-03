@@ -177,7 +177,7 @@ const Pricing = () => {
   return (
     <>
       <Head>
-        <title>Pricing | Siml.ai</title>
+        <title>Siml.ai - Pricing</title>
         <meta name="description" content="Pricing page on Siml.ai" />
         <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
       </Head>

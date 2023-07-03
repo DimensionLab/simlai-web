@@ -53,7 +53,7 @@ export default function BlogPost({ story, keyID }: PageProps) {
   return (
     <div>
       <Head>
-            <title>{story ? `${story.name} | Siml.ai` : 'Blog Article | Siml.ai'}</title>
+            <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
             <meta name="description" content="Article on Siml.ai Blog" />
             <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
       </Head>

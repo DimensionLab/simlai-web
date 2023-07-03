@@ -17,6 +17,7 @@ export default function Home() {
     <>
       <Head>
           <title>Siml.ai</title>
+          <meta property="og:image" content="/assets/simlai/simlai-logo.svg"/>
           <meta name="description" content="Platform for fast AI-driven physics simulations" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

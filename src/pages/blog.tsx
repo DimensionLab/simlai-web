@@ -107,6 +107,7 @@ export default function Blog( props: any ) {
       <Head>
         <title>Blog | Siml.ai</title>
         <meta name="description" content="Siml.ai Blog" />
+        <meta property="og:image" content="/assets/simlai/simlai-logo.svg"/>
       </Head>
       <Layout>
           <section className="flex flex-col w-full h-full">

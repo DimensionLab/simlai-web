@@ -63,7 +63,8 @@ const ProductWrapper = styled.div`
         ${tw`
           xl:text-5xl
           xl:leading-tight
-          text-4xl
+          text-3xl
+          md:text-4xl
           font-thin
           w-full
         `}

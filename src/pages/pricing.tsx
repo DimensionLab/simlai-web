@@ -197,8 +197,8 @@ const Pricing = () => {
               <div className="pricing-tabs">
                 <div className="flex w-full justify-center text-[#8B7CFF] text-xl font-bold pt-4">14-days trial!</div>
                 <div className="btn-monthly-yearly">
-                  <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`}`}>MONTHLY</button>
-                  <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`}`}>YEARLY</button>
+                  <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`}`}>MONTHLY</button>
+                  <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`}`}>YEARLY</button>
                 </div>
                 <div>
                   <div className="cards-container">

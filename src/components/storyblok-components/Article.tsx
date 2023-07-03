@@ -98,4 +98,8 @@ const RichTextArticleContent = styled.article`
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
+  p {
+    color: white;
+  }
 `;

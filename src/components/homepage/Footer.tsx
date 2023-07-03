@@ -198,7 +198,7 @@ const Footer = (props: FooterProps) => {
             <div className="title-company">Company</div>
             <div className="items-company">
               {/* insert href="" when carreers link will exist*/}
-              <a>Careers</a>
+              {/* <a>Careers</a> */}
               <a href="mailto:hello@dimensionlab.org">Contact</a>
               {/* change to production website url */}
               <a href="https://dimensionlab.org">DimensionLab</a>

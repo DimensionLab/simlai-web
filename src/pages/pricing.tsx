@@ -27,8 +27,13 @@ const PricingWrapper = styled.div`
       px-4
       gap-y-4
       xl:items-center
-      xl:w-[60%]
+      // xl:w-[60%]
+      xl:max-w-[1800px]
+      xl:mb-24
+      xl:mt-12
       text-white
+      w-full
+      self-center
     `}
     h1 {
       ${tw`

@@ -85,7 +85,8 @@ const ProductWrapper = styled.div`
     .text {
       ${tw`
         text-xl
-        w-[55%]
+        // w-[55%]
+        w-full
       `}
 
       strong {

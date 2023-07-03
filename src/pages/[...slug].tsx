@@ -82,7 +82,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   }
 
   let sbParams = {
-    version: 'draft', // or 'published'
+    version: 'published', // or 'published'
   };
 
   const storyblokApi = getStoryblokApi();
@@ -93,14 +93,14 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
       story: data ? data.story : false,
       keyID: data ? data.story.id : false,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 }
 
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get('cdn/links/', {
-    version: 'draft',
+    version: 'published',
   });
 
   let paths: any = [];

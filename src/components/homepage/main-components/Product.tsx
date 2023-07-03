@@ -8,20 +8,22 @@ const ProductWrapper = styled.div`
     gap-y-16
     // items-center
     px-4
+    xl:px-40
     mb-24
     w-full
-    // justify-between
+    justify-between
     gap-x-8
     xl:my-44
   `}
   
   .leftside {
     ${tw`
-      xl:w-1/2
+      // xl:w-1/2
       w-full
       flex
       items-start
-      xl:justify-end
+      xl:justify-start
+      // xl:pl-24
     `}
 
     .items {
@@ -32,7 +34,7 @@ const ProductWrapper = styled.div`
         justify-center
         // w-full
         items-center
-        xl:w-2/3
+        // xl:w-2/3
       `}
       .header {
         ${tw`
@@ -60,7 +62,9 @@ const ProductWrapper = styled.div`
       .description {
         ${tw`
           xl:text-5xl
-          text-4xl
+          xl:leading-tight
+          text-3xl
+          md:text-4xl
           font-thin
           w-full
         `}
@@ -71,14 +75,16 @@ const ProductWrapper = styled.div`
   .extensive-text {
     ${tw`
       max-xl:hidden
-      w-1/2
+      // w-1/2
       flex
       // justify-center
+      w-full
+      justify-end
     `}
 
     .text {
       ${tw`
-        text-2xl
+        text-xl
         w-[55%]
       `}
 

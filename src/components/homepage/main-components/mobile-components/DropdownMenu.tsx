@@ -124,7 +124,8 @@ const DropdownMenuWrapper: StyledComponent<"div", any, StyledDropdownProps, neve
           h-full
           my-6
           pr-8
-          justify-between
+          justify-start
+          gap-x-8
           py-12
         `}
     
@@ -191,39 +192,39 @@ const DropdownMenu = (props: DropdownProps ) => {
             <Link href={"/pricing"}>
               <a onClick={(e) => { props.onClose(); }}>PRICING</a>
             </Link>
-            <Link href={""}>
+            {/* <Link href={""}>
               <a onClick={(e) => { props.onClose(); }}>CAREERS</a>
-            </Link>
+            </Link> */}
             <Link href={"../blog"}>
               <a id="last-link" onClick={(e) => { props.onClose(); }}>BLOG</a>
             </Link>
           </div>
           <div className="socials">
-            <div className="twitter-container">
-              <a href="https://twitter.com/siml_ai">
+            <div className="facebook-container">
+              <a href="https://www.facebook.com/learnedsimulators/">
                 <img src="/assets/facebook-logo.svg" alt="" />
               </a>
             </div>
-            <div className="facebook-container">
-              <a href="https://www.facebook.com/learnedsimulators/">
+            <div className="twitter-container">
+              <a href="https://twitter.com/siml_ai">
                 <img src="/assets/twitter-logo.svg" alt="" />
               </a>
             </div>
-            <div className="instagram-container">
+            {/* <div className="instagram-container">
               <a href="">
                 <img src="/assets/simlai/ig-logo.svg" alt="" />
               </a>
-            </div>
+            </div> */}
             <div className="linkedin-container">
               <a href="https://www.linkedin.com/company/dimensionlab">
                 <img src="/assets/simlai/li-logo.svg" alt="" />
               </a>
             </div>
-            <div className="medium-container">
+            {/* <div className="medium-container">
               <a href="">
                 <img src="/assets/simlai/medium-logo.svg" alt="" />
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="legal">
             <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>

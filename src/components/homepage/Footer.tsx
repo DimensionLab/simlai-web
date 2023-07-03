@@ -165,23 +165,21 @@ const Footer = (props: FooterProps) => {
                   <img src="/assets/facebook-logo.svg" alt="" />
                 </a>
               </div>
-              <div className="instagram-container">
-                {/* insert href="" with actual link to instagram when it'll exist */}
+              {/* <div className="instagram-container">
                 <a>
                   <img src="/assets/simlai/ig-logo.svg" alt="" />
                 </a>
-              </div>
+              </div> */}
               <div className="linkedin-container">
                 <a href="https://www.linkedin.com/company/dimensionlab">
                   <img src="/assets/simlai/li-logo.svg" alt="" />
                 </a>
               </div>
-              <div className="medium-container">
-                {/* insert href="" with actual link to instagram when it'll exist */}
+              {/* <div className="medium-container">
                 <a>
                   <img src="/assets/simlai/medium-logo.svg" alt="" />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -198,15 +196,13 @@ const Footer = (props: FooterProps) => {
             <div className="title-company">Company</div>
             <div className="items-company">
               {/* insert href="" when carreers link will exist*/}
-              <a>Careers</a>
+              {/* <a>Careers</a> */}
               <a href="mailto:hello@dimensionlab.org">Contact</a>
               {/* change to production website url */}
               <a href="https://dimensionlab.org">DimensionLab</a>
+              <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
+              <a href="https://www.dimensionlab.org/privacy-policy.html" className='pb-6'>Privacy Policy</a> 
             </div>
-          </div>
-          <div className="legal">
-            <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
-            <a href="https://www.dimensionlab.org/privacy-policy.html">Privacy Policy</a>
           </div>
         </div>
         <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>

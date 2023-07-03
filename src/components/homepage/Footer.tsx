@@ -165,23 +165,21 @@ const Footer = (props: FooterProps) => {
                   <img src="/assets/facebook-logo.svg" alt="" />
                 </a>
               </div>
-              <div className="instagram-container">
-                {/* insert href="" with actual link to instagram when it'll exist */}
+              {/* <div className="instagram-container">
                 <a>
                   <img src="/assets/simlai/ig-logo.svg" alt="" />
                 </a>
-              </div>
+              </div> */}
               <div className="linkedin-container">
                 <a href="https://www.linkedin.com/company/dimensionlab">
                   <img src="/assets/simlai/li-logo.svg" alt="" />
                 </a>
               </div>
-              <div className="medium-container">
-                {/* insert href="" with actual link to instagram when it'll exist */}
+              {/* <div className="medium-container">
                 <a>
                   <img src="/assets/simlai/medium-logo.svg" alt="" />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

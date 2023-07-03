@@ -177,13 +177,9 @@ const Pricing = () => {
   return (
     <>
       <Head>
-          <title>Siml.ai</title>
-          <meta name="description" content="Landing page for Siml.ai" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="assets/simlai/simlai-logo.svg" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <title>Siml.ai - Pricing</title>
+        <meta name="description" content="Pricing page on Siml.ai" />
+        <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
       </Head>
       <Layout>
         {isOpen ? (

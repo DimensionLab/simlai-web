@@ -152,7 +152,7 @@ const Pricing = () => {
     ],
     [
       "STANDARD",
-      `${isMonthly ? "599" : "5,990"}`,
+      `${isMonthly ? "499" : "4,990"}`,
       "250GB SSD storage included. Store datasets of up to 100GB",
       "Access up to Tier 4 computing resources",
       "Up to 20 simulators in Model Engineer. Up to 20 simulators in Simulation Studio"

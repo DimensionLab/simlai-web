@@ -117,7 +117,7 @@ const PricingCard = (props: PricingProps) => {
           <h1>{props.title}</h1>
           <hr/>
           <div className="price-container">
-            <span>$</span>
+            <span>€</span>
             <span id="number">{props.price}</span>
             <span> / {props.isMonthly ? "month" : "year"}</span>
           </div>

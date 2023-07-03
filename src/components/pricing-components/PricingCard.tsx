@@ -127,7 +127,7 @@ const PricingCard = (props: PricingProps) => {
           <a href="https://platform.siml.ai/model-engineer/billing">
             <button id="choose-plan">CHOOSE PLAN</button>
           </a>
-          <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
+          {/* <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div> */}
         </div>
       ) : (
         <div className="card">
@@ -143,7 +143,7 @@ const PricingCard = (props: PricingProps) => {
           <a href="https://platform.siml.ai/model-engineer/billing">
             <button id="choose-plan">CHOOSE PLAN</button>
           </a>
-          <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div>
+          {/* <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div> */}
         </div>
       )}
       

@@ -55,7 +55,7 @@ export default function BlogPost({ story, keyID }: PageProps) {
       <Head>
             <title>{story ? `${story.name} | Siml.ai` : 'Blog Article | Siml.ai'}</title>
             <meta name="description" content="Article on Siml.ai Blog" />
-            <meta property="og:image" content="/assets/simlai/simlai-logo.svg"/>
+            <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
       </Head>
 
       <Layout>

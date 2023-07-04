@@ -1,4 +1,5 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -41,6 +42,16 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-2TRPR38KHZ" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-2TRPR38KHZ');
+        `}
+        </Script>
       </Html>
     )
   }

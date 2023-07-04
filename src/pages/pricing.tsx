@@ -146,23 +146,23 @@ const Pricing = () => {
     [
       "STARTER",
       `${isMonthly ? "199" : "1,990"}`,
-      "50GB SSD storage included* Store datasets of up to 25GB**",
-      "Access to Tier 2 computing resources with up to 2 GPUs per server instance",
-      "Up to 10 simulators in Model Engineer** Up to 10 simulators in Simulation Studio** Compute credits included***"
+      "50GB SSD storage included. Store datasets of up to 25GB",
+      "Access up to Tier 2 computing resources",
+      "Up to 10 simulators in Model Engineer"
     ],
     [
       "STANDARD",
-      `${isMonthly ? "599" : "5,990"}`,
-      "250GB SSD storage included* Store datasets of up to 100GB**",
-      "Access to Tier 3 computing resources with up to 4 GPUs per server instance",
-      "Up to 20 simulators in Model Engineer** Up to 20 simulators in Simulation Studio** Compute credits included***"
+      `${isMonthly ? "499" : "4,990"}`,
+      "250GB SSD storage included. Store datasets of up to 100GB",
+      "Access up to Tier 4 computing resources",
+      "Up to 20 simulators in Model Engineer. Up to 20 simulators in Simulation Studio"
     ],
     [
       "PRO",
       `${isMonthly ? "999" : "9,990"}`,
-      "1TB SSD storage included* Store datasets of up to 100GB**",
-      "Access to Tier 4 computing resources with up to 8 GPUs per server instance",
-      "Unlimited simulators in Model Engineer** Unlimited simulators in Simulation Studio** Compute credits included***"
+      "1TB SSD storage included. Store datasets of up to 250GB",
+      "Access up to Tier 6 computing resources",
+      "Unlimited simulators in Model Engineer. Unlimited simulators in Simulation Studio"
     ],
     [
       "null",
@@ -197,8 +197,8 @@ const Pricing = () => {
               <div className="pricing-tabs">
                 <div className="flex w-full justify-center text-[#8B7CFF] text-xl font-bold pt-4">14-days trial!</div>
                 <div className="btn-monthly-yearly">
-                  <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`}`}>MONTHLY</button>
-                  <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`}`}>YEARLY</button>
+                  <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`}`}>MONTHLY</button>
+                  <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`}`}>YEARLY</button>
                 </div>
                 <div>
                   <div className="cards-container">
@@ -208,9 +208,9 @@ const Pricing = () => {
                       return <PricingCard key={index} title={title} price={price} storage={storage} access={access} simulators={simulators} isEnterprise={isEnterprise} isMonthly={isMonthly} />;
                     })}
                   </div>
-                  <div className="text-[#7C7F8B] w-full pl-28 hidden xl:flex">
+                  {/* <div className="text-[#7C7F8B] w-full pl-28 hidden xl:flex">
                     * upgradeable,          ** public and private,          *** worth the price of the plan
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="width-limited" id="try-funding">

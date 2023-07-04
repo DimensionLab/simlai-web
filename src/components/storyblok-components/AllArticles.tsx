@@ -19,7 +19,7 @@ const AllArticles = ({ blok }: any) => {
       setIsLoading(true);
       const storyblokApi = getStoryblokApi();
         const { data } = await storyblokApi.get(`cdn/stories`, {
-          version: "draft",
+          version: "published",
           starts_with: 'blog/',
           is_startpage: false
         });
@@ -54,7 +54,7 @@ const AllArticles = ({ blok }: any) => {
                 {blok && articles[0] && <NewestArticleTeaser article={articles[0]}/>}
               </div>
               <div {...storyblokEditable(blok)}
-                className="w-full flex flex-col xl:flex-row items-center justify-center">
+                className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
                 {blok && articles[0] && articles.map((article: any) => (
                   <ArticleTeaser article={article.content} key={article.uuid} />
                   ))}

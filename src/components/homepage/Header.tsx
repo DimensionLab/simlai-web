@@ -169,6 +169,7 @@ const Header = (props: HeaderProps) => {
           <Link href={"../#features"}>FEATURES</Link>
           <Link href={"../#model-engineer"}>MODEL ENGINEER</Link>
           <Link href={"../#simulation-studio"}>SIMULATION STUDIO</Link>
+          <a href={"https://docs.siml.ai"}>DOCS</a>
           <Link href={"/pricing"}>
             <a className={`${props.whichSubpage === "pricing" ? `text-white` : ``}`}>PRICING</a>
           </Link>

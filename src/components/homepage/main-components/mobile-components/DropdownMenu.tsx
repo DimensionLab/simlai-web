@@ -189,6 +189,9 @@ const DropdownMenu = (props: DropdownProps ) => {
             <Link href={"../#simulation-studio"}>
               <a onClick={(e) => { props.onClose(); }}>SIMULATION STUDIO</a>
             </Link>
+            <Link href={"https://docs.siml.ai"}>
+              <a id="last-link" onClick={(e) => { props.onClose(); }}>DOCS</a>
+            </Link>
             <Link href={"/pricing"}>
               <a onClick={(e) => { props.onClose(); }}>PRICING</a>
             </Link>
@@ -198,6 +201,7 @@ const DropdownMenu = (props: DropdownProps ) => {
             <Link href={"../blog"}>
               <a id="last-link" onClick={(e) => { props.onClose(); }}>BLOG</a>
             </Link>
+            
           </div>
           <div className="socials">
             <div className="facebook-container">
@@ -230,7 +234,7 @@ const DropdownMenu = (props: DropdownProps ) => {
             <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
             <a href="https://www.dimensionlab.org/privacy-policy.html">Privacy Policy</a>
           </div>
-          <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
+          <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab s.r.o., creators of Siml.ai</div>
         </div>
       </div>
     </DropdownMenuWrapper>

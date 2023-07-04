@@ -201,7 +201,7 @@ const Footer = (props: FooterProps) => {
               <a href="mailto:hello@dimensionlab.org">Contact</a>
               {/* change to production website url */}
               <a href="https://dimensionlab.org">DimensionLab</a>
-              <a href="https://www.siml.ai/terms-and-conditions">Terms & Conditions</a>
+              <a href="https://www.dimensionlab.org/terms-and-conditions.html">Terms & Conditions</a>
               <a href="https://www.dimensionlab.org/privacy-policy.html" className='pb-6'>Privacy Policy</a> 
             </div>
           </div>

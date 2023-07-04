@@ -190,6 +190,7 @@ const Footer = (props: FooterProps) => {
               <Link href="../#features">Features</Link>
               <Link href="../#model-engineer">Model Engineer</Link>
               <Link href="../#simulation-studio">Simulation Studio</Link>
+              <a href="https://docs.siml.ai">Documentation</a>
             </div>
           </div>
           <div className="company">
@@ -205,7 +206,7 @@ const Footer = (props: FooterProps) => {
             </div>
           </div>
         </div>
-        <div className="copyright">©2021-2023 DimensionLab s.r.o., creators of SIML.ai</div>
+        <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab s.r.o., creators of Siml.ai</div>
       </div>
     </FooterWrapper>
   );

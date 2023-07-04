@@ -117,7 +117,7 @@ const SignUp = () => {
   return (
     <SignUpWrapper>
       <div className="title">Tame the physics <br/> of your projects in hours!</div>
-      <div className="subtitle">SIML.ai is a software platform for working with high-performance AI-based numerical simulators.</div>
+      <div className="subtitle">Siml.ai is a software platform for working with high-performance AI-based numerical simulators.</div>
       <form className="signup-container" onSubmit={event => {
         event.preventDefault();
         handleSubmit(fields)

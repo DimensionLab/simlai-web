@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-sb-types": "storyblok-generate-ts source=./components.221839.json target=./component-types-sb"
+    "generate-sb-types": "storyblok-generate-ts source=./components.221839.json target=./component-types-sb",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@sentry/nextjs": "^7.56.0",
@@ -20,6 +21,7 @@
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "^12.1.0",
+    "next-sitemap": "^4.1.8",
     "postcss": "^8.4.24",
     "prismjs": "^1.29.0",
     "react": "^17.0.2",

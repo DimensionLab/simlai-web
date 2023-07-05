@@ -21,6 +21,7 @@ module.exports = withSentryConfig(
 
     org: "dimensionlab",
     project: "simlai-landing-page",
+    authToken: process.env.SENTRY_AUTH_TOKEN,
   },
   {
     // For all available options, see:

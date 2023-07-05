@@ -2,19 +2,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const ProductWrapper = styled.div`
-  ${tw`
-    flex
-    flex-row
-    gap-y-16
-    // items-center
-    px-4
-    xl:px-40
-    mb-24
-    w-full
-    justify-between
-    gap-x-8
-    xl:my-44
-  `}
   
   .leftside {
     ${tw`
@@ -74,7 +61,7 @@ const ProductWrapper = styled.div`
 
   .extensive-text {
     ${tw`
-      max-xl:hidden
+      max-lg:hidden
       // w-1/2
       flex
       // justify-center
@@ -101,25 +88,27 @@ const ProductWrapper = styled.div`
 
 const Product = () => {
   return (
-    <ProductWrapper>
-      <div className="leftside">
-        <div className="items">
-          <div className="header">
-            <img src="assets/simlai/simlai-logo.svg" id="logo" alt="" />
-            <img src="assets/simlai/simlai-title.svg" id="title" alt="" />
+    <ProductWrapper className="flex w-full items-center justify-center">
+      <div className="flex max-w-6xl flex-col px-4 w-full lg:flex-row pb-16 lg:pb-24">
+        <div className="leftside">
+          <div className="items">
+            <div className="header">
+              <img src="assets/simlai/simlai-logo.svg" id="logo" alt="" />
+              <img src="assets/simlai/simlai-title.svg" id="title" alt="" />
+            </div>
+            <div className="description">
+              Software platform <br/> for high-performance <br/> AI-based numerical simulators.
+            </div>
           </div>
-          <div className="description">
-            Software platform <br/> for high-performance <br/> AI-based numerical simulators.
           </div>
-        </div>
-        </div>
-      <div className="extensive-text">
-        {/* change href="" for 'DimensionLab below to actual production URL */}
-        <div className="text">
-          Vast majority of technologies in the world come to life through months or years of extensive simulation during their development. <br/> <br/>
-          High-performance computing, parallel processing and GPUs helped push the computation time from months to weeks. With the help of applied machine learning, we are seeing a reduction from weeks to days. We think that&apos;s not enough. <br/> <br/>
-          At <strong><a href="https://dimensionlab.org">DimensionLab</a></strong>, we are building tools for engineers and researchers to tame the physics of their projects in hours. Collectively, they make up a cohesive platform we call Siml.ai. <br/> <br/>
-          Under the hood, Siml.ai consists of two parts - <strong><a href="#model-engineer">Model Engineer</a></strong> and <strong><a href="#simulation-studio">Simulation Studio</a></strong>.
+        <div className="extensive-text">
+          {/* change href="" for 'DimensionLab below to actual production URL */}
+          <div className="text">
+            Vast majority of technologies in the world come to life through months or years of extensive simulation during their development. <br/> <br/>
+            High-performance computing, parallel processing and GPUs helped push the computation time from months to weeks. With the help of applied machine learning, we are seeing a reduction from weeks to days. We think that&apos;s not enough. <br/> <br/>
+            At <strong><a href="https://dimensionlab.org">DimensionLab</a></strong>, we are building tools for engineers and researchers to tame the physics of their projects in hours. Collectively, they make up a cohesive platform we call Siml.ai. <br/> <br/>
+            Under the hood, Siml.ai consists of two parts - <strong><a href="#model-engineer">Model Engineer</a></strong> and <strong><a href="#simulation-studio">Simulation Studio</a></strong>.
+          </div>
         </div>
       </div>
     </ProductWrapper>

@@ -6,25 +6,10 @@ import Product from "./main-components/Product";
 import ModelEngineer from "./main-components/ModelEngineer";
 import SimulationStudio from "./main-components/SimulationStudio";
 import Message from "./main-components/Message";
-import TryPlatform from "./main-components/TryPlatform";
-import Funding from "./main-components/Funding";
 import IntroParent from "./main-components/IntroParent";
+import EngagementCardsParent from "./main-components/EngagementCardsParent";
 
 const MainWrapper = styled.main`
-  // .width-limitedd {
-  //   ${tw`
-  //     text-3xl
-  //     container
-  //     bg-[#0D101B]
-  //     w-full
-  // `}
-  // }
-  // display: grid;
-  // grid-auto-flow: row;
-  // align-items: center;
-  // justify-items: center;
-  // min-height: 90vh;
-
   ${tw`
     w-full
     flex
@@ -43,15 +28,6 @@ const MainWrapper = styled.main`
       w-full
     `}
   }
-
-  #try-funding {
-    ${tw`
-      xl:grid
-      xl:grid-cols-2
-      xl:my-52
-    `}
-  }
-
 `;
 
 interface MainProps {
@@ -72,10 +48,7 @@ const Main = (props: MainProps) => {
       <div className="not-width-limited">
         <Message/>
       </div>
-      <div className="width-limited" id="try-funding">
-        <TryPlatform/>
-        <Funding/>
-      </div>
+      <EngagementCardsParent/>
     </MainWrapper>
   );
 };

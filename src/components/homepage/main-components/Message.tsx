@@ -13,7 +13,7 @@ const MessageWrapper = styled.div`
     justify-center
     w-3/4
     xl:mt-24
-    mb-4
+    // mb-4
 
     `}
     .text {

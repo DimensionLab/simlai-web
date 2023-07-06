@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const ModelEngineerWrapper = styled.div`
+const SimulationStudioWrapper = styled.div`
   ${tw`
     flex
     flex-col
@@ -91,15 +91,15 @@ const ModelEngineerWrapper = styled.div`
   }
 `;
 
-const ModelEngineer = () => {
+const SimulationStudio = () => {
   const data = [
     ["Superfast", "<div>Simulations are computed by inferring trained neural network models, achieving speedups of <strong>1,000-100,000x</strong> compared to classical simulation software running on GPUs.</div>"],
-    ['Interactive "in-site" visualization', "The time it takes to compute one timestep even of highly irregular simulation domain is in low tens of milliseconds, resulting in real-time visualization of simulating physical phenomena."],
+    ['Interactive "in-situ" visualization', "The time it takes to compute one timestep even of highly irregular simulation domain is in low tens of milliseconds, resulting in real-time visualization of simulating physical phenomena."],
     ["Unreal rendering performance", "High-fidelity visualization rendering is achieved by leveraging the powerful Unreal Engine under the hood."]
   ]
 
   return (
-    <ModelEngineerWrapper id="simulation-studio">
+    <SimulationStudioWrapper id="simulation-studio">
       <ImageWrapper>
         <img src="assets/simlai/simulation-studio-image.png" alt="" className=""/>
       </ImageWrapper>
@@ -108,7 +108,7 @@ const ModelEngineer = () => {
         <div className="subtitle-container">
           <div className="description">
             <div className="desc-text">
-            Leverage trained AI simulator models for solving engineering and scientific problems, by constructing interactive, physics- and data-driven digital twins.
+            Leverage trained AI simulator models for solving engineering and scientific problems, by constructing interactive, physics and data-driven digital twins.
             </div>
           </div>
           <div className="features-container">
@@ -122,13 +122,11 @@ const ModelEngineer = () => {
           </div>
         </div>
       </div>
-      {/* this needs to be separate elements, not just image, because it has link 'waitlist' in it */}
-      {/* <img src="assets/simlai/model-engineer-alpha.svg" alt="" id="waitlist"/> */}
-    </ModelEngineerWrapper>
+    </SimulationStudioWrapper>
   );
 }
 
-export default ModelEngineer;
+export default SimulationStudio;
 
 const ImageWrapper = styled.div`
   background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);

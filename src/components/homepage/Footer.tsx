@@ -185,7 +185,7 @@ const Footer = (props: FooterProps) => {
         </div>
         <div className="links">
           <div className="product">
-            <div className="title-product">Product</div>
+            <div className="title-product">PRODUCT</div>
             <div className="items-product">
               <Link href="../#features">Features</Link>
               <Link href="../#model-engineer">Model Engineer</Link>
@@ -194,7 +194,7 @@ const Footer = (props: FooterProps) => {
             </div>
           </div>
           <div className="company">
-            <div className="title-company">Company</div>
+            <div className="title-company">COMPANY</div>
             <div className="items-company">
               {/* insert href="" when carreers link will exist*/}
               {/* <a>Careers</a> */}

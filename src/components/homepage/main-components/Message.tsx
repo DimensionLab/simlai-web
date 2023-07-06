@@ -14,11 +14,12 @@ const MessageWrapper = styled.div`
     w-3/4
     xl:mt-24
     // mb-4
+    xl:leading-[50px]
 
     `}
     .text {
       ${tw`
-        xl:text-5xl
+        xl:text-[42px]
         xl:max-w-4xl
         max-xl:max-w-3xl
         font-light
@@ -30,7 +31,7 @@ const Message = () => {
   return (
     <MessageWrapper>
       <div className="text">
-        We believe in the democratization of scientific-grade simulation tools by making it easy for anyone to develop <br/>physics-based simulations and deploy them in their workflows, regardless of their technical skills.
+        We believe in the democratization of scientific-grade simulation tools by making it easy for anyone to develop physics-based simulations and deploy them in their workflows, regardless of their technical skills.
       </div>
     </MessageWrapper>
   )

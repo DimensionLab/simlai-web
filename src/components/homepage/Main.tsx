@@ -3,8 +3,6 @@ import tw from "twin.macro"
 import SignUp from "./main-components/SignUp";
 import Features from "./main-components/Features";
 import Product from "./main-components/Product";
-import ModelEngineer from "./main-components/ModelEngineer";
-import SimulationStudio from "./main-components/SimulationStudio";
 import Message from "./main-components/Message";
 import IntroParent from "./main-components/IntroParent";
 import EngagementCardsParent from "./main-components/EngagementCardsParent";
@@ -39,7 +37,7 @@ const Main = (props: MainProps) => {
 
   const txtDataModelEngineer = [
     ["Datasets management", "Construct large datasets from classical simulation exports or physical sensors that collect precise measurements from real-world experiments."],
-    ['Building blocks', "Quickly develop the model architecture for the simulators’ desired capabilities and physical constraints. Customizable to the bone through code editor."],
+    ['Building blocks', "Quickly develop the model architecture for the simulators&apos;s desired capabilities and physical constraints. Customizable to the bone through code editor."],
     ["High performance computing, automated", "One-click A100 GPUs. Train and aggressively optimize learnable simulators in high-performance, GPU-powered cloud or HPC centers without the need to deal with the complexities of managing the cloud infrastructure."]
   ];
 
@@ -56,8 +54,6 @@ const Main = (props: MainProps) => {
         <SignUp/>
         <Features/>
         <Product/>
-        <ModelEngineer/>
-        <SimulationStudio/>
         <ShowcaseCard
           imgPath={"/assets/simlai/model-engineer.png"}
           title={"Model Engineer"}

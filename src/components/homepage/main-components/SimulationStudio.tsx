@@ -108,7 +108,7 @@ const ModelEngineer = () => {
         <div className="subtitle-container">
           <div className="description">
             <div className="desc-text">
-              Train and optimize extremely fast physics simulators using deep learning techniques through web-based Model Engineer application.
+            Leverage trained AI simulator models for solving engineering and scientific problems, by constructing interactive, physics- and data-driven digital twins.
             </div>
           </div>
           <div className="features-container">

@@ -17,8 +17,8 @@ const ShowcaseCard = (props: ShowcaseCardProps) => {
                 <section className="flex flex-col pt-20 max-w-5xl">
                     <h1 className="text-4xl font-black pb-12 lg:text-7xl">{props.title}</h1>
                     <div className="flex flex-col gap-y-8 lg:flex-row lg:gap-x-6">
-                        <h2 className="text-3xl font-normal lg:text-5xl lg:w-[45%] md:font-light">{props.subtitle}</h2>
-                        <div className="flex flex-col gap-y-6 lg:w-[55%]">
+                        <h2 className="text-3xl font-normal lg:text-4xl lg:w-[50%] md:font-light">{props.subtitle}</h2>
+                        <div className="flex flex-col gap-y-6 lg:w-[50%]">
                             {props.txtData.map((data, index) => {
                                 return (
                                     <div key={index}>

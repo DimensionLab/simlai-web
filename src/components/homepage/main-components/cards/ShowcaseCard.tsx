@@ -9,21 +9,21 @@ interface ShowcaseCardProps {
 
 const ShowcaseCard = (props: ShowcaseCardProps) => {
     return (
-        <section className="w-full flex items-center justify-center">
-            <main className="w-full flex flex-col px-4 py-16">
+        <section className="w-full flex items-center justify-center pb-16">
+            <main className="w-full flex flex-col px-4 py-16 items-center">
                 <ImageWrapper>
                     <img src={props.imgPath} alt={props.title} />
                 </ImageWrapper>
-                <section className="flex flex-col pt-20">
-                    <h1 className="text-4xl font-black pb-12">{props.title}</h1>
-                    <div className="flex flex-col gap-y-8">
-                        <h2 className="text-3xl font-normal">{props.subtitle}</h2>
-                        <div className="flex flex-col gap-y-6">
+                <section className="flex flex-col pt-20 max-w-5xl">
+                    <h1 className="text-4xl font-black pb-12 lg:text-7xl">{props.title}</h1>
+                    <div className="flex flex-col gap-y-8 lg:flex-row lg:gap-x-6">
+                        <h2 className="text-3xl font-normal lg:text-5xl lg:w-[45%] md:font-light">{props.subtitle}</h2>
+                        <div className="flex flex-col gap-y-6 lg:w-[55%]">
                             {props.txtData.map((data, index) => {
                                 return (
                                     <div key={index}>
                                         <h3 className="font-bold text-xl">{data[0]}</h3>
-                                        <span className="text-[16px]">{data[1]}</span>
+                                        <span className="text-[16px]" dangerouslySetInnerHTML={ {__html: data[1]} }></span>
                                     </div>
                                 );
                             })}

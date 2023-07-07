@@ -34,7 +34,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
             </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}
-          <div className='img-container xl:w-[50%] lg:py-10'>
+          <div className='img-container w-full max-w-4xl lg:py-10'>
             <BorderAroundMainImage>
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>
@@ -53,6 +53,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
 export default Article;
 
 const BorderAroundMainImage = styled.div`
+  width: 100%;
   img {
     border: 5px solid rgba(59, 17, 81, 0.40);
     object-fit: contain;

@@ -3,12 +3,11 @@ import tw from "twin.macro";
 import Header from "@/components/homepage/Header";
 import Footer from "@/components/homepage/Footer";
 import PricingCard from "@/components/pricing-components/PricingCard";
-import Funding from "@/components/homepage/main-components/Funding";
-import TryPlatform from "@/components/homepage/main-components/TryPlatform";
 import { useEffect, useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Layout from "@/components/Layout";
 import Head from "next/head";
+import EngagementCardsParent from "@/components/homepage/main-components/EngagementCardsParent";
 
 const PricingWrapper = styled.div`
   ${tw`
@@ -213,10 +212,7 @@ const Pricing = () => {
                   </div> */}
                 </div>
               </div>
-              <div className="width-limited" id="try-funding">
-                <TryPlatform/>
-                <Funding/>
-              </div>
+              <EngagementCardsParent/>
               <Footer open={!isOpen}/>
             </PricingWrapper>
           ) : (

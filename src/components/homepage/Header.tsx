@@ -82,7 +82,7 @@ const HeaderWrapper = styled.header`
         flex-row
         gap-x-4
         items-center
-        text-sm
+        text-xs
         text-gray-400
         font-bold
       `}

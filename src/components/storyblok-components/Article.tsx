@@ -16,7 +16,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
     <ArticleWrapper>
       <div className='w-full flex items-center justify-center pb-24 pt-12 lg:pt-24'>
         <div className='article-content flex flex-col gap-y-8 items-center w-[80%]'>
-          <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl max-w-3xl flex self-start">
+          <h1 className="font-bold text-4xl lg:text-5xl max-w-3xl flex self-start">
             {blok.title}
           </h1>
           <div className='grid w-full pt-8 self-start -mt-10 gap-x-4 grid-cols-3 max-w-md'>

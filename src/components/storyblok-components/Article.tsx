@@ -79,6 +79,13 @@ const RichTextArticleContent = styled.article`
     border-radius: 10px;
     background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
     padding: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px){
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 
   a {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const PricingCardWrapper = styled.div`
+const PricingCardWrapper = styled.div<{ lineColor: string }>`
   ${tw`
     px-4
     flex
@@ -34,9 +34,10 @@ const PricingCardWrapper = styled.div`
       ${tw`
         w-full
         border-2
-        border-[#00BAC5]
         mb-4
       `}
+
+      border-color: ${props => props.lineColor};
     }
     .price-container {
       ${tw`
@@ -106,12 +107,32 @@ interface PricingProps {
 const PricingCard = (props: PricingProps) => {
   const [isEnterprise, setIsEnterprise] = useState(false);
 
+  const lineColor = [
+    `#00BAC5`,
+    `#4B8AFF`,
+    `#8B7CFF`,
+    `#D28DF7`
+  ]
+
+  const whichLineColor = () => {
+    switch (props.title) {
+      case "STARTER":
+        return lineColor[0];
+      case "STANDARD":
+        return lineColor[1];
+      case "PRO":
+        return lineColor[2];
+      default:
+        return lineColor[3];
+    }
+  };
+
   useEffect(() => {
     setIsEnterprise(props.isEnterprise);
   }, [isEnterprise]);
 
   return (
-    <PricingCardWrapper>
+    <PricingCardWrapper lineColor={whichLineColor()}>
       {!isEnterprise ? (
         <div className="card">
           <h1>{props.title}</h1>

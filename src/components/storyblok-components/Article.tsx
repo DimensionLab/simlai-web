@@ -19,18 +19,18 @@ const Article = ( { blok }: ArticleStoryblok ) => {
           <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl max-w-3xl flex self-start">
             {blok.title}
           </h1>
-          <div className='grid w-full gap-y-4 pt-8 self-start -mt-10 gap-x-10 grid-cols-2 md:grid-cols-3 lg:w-1/2'>
+          <div className='grid w-full pt-8 self-start -mt-10 gap-x-4 grid-cols-3 max-w-md'>
             <div className='w-full flex flex-col'>
-              <span className='text-sm text-[#454853]'>Date:</span>
-              <span className='text-sm text-[#7C7F8B]'>{blok.date}</span>
+              <span className='text-[10px] text-[#454853]'>Date:</span>
+              <span className='text-[10px] text-[#7C7F8B]'>{blok.date}</span>
             </div>
             <div className='w-full flex flex-col'>
-              <span className='text-sm text-[#454853]'>Category:</span>
-              <span className='text-sm text-[#7C7F8B]'>Model Engineer</span>
+              <span className='text-[10px] text-[#454853]'>Category:</span>
+              <span className='text-[10px] text-[#7C7F8B]'>Model Engineer</span>
             </div>
             <div className='w-full flex flex-col'>
-              <span className='text-sm text-[#454853]'>Author:</span>
-              <span className='text-sm text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
+              <span className='text-[10px] text-[#454853]'>Author:</span>
+              <span className='text-[10px] text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
             </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}

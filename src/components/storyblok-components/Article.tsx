@@ -11,7 +11,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
     useEffect(() => {
       Prism.highlightAll();
   }, [blok.content]);
-  
+
   return (
     <ArticleWrapper>
       <div className='w-full flex items-center justify-center pb-24 pt-12 lg:pt-24'>
@@ -26,7 +26,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
             </div>
             <div className='w-full flex flex-col'>
               <span className='text-[10px] text-[#454853]'>Category:</span>
-              <span className='text-[10px] text-[#7C7F8B]'>Model Engineer</span>
+              <span className='text-[10px] text-[#7C7F8B]'>{blok.category}</span>
             </div>
             <div className='w-full flex flex-col'>
               <span className='text-[10px] text-[#454853]'>Author:</span>

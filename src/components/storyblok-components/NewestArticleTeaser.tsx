@@ -20,7 +20,7 @@ const NewestArticleTeaser = ( { article }: any) => {
                                 <span className="skeleton rounded-xl">displayed here instead of</span>
                             </h1>
                             <div className="flex w-full justify-between items-center">
-                                <span className={`text-sm ${loaded ? `text-[#7C7F8B]` : `skeleton w-3/4 text-transparent rounded-xl`}`}>Model Engineer</span>
+                                <span className={`text-sm ${loaded ? `text-[#7C7F8B]` : `skeleton w-3/4 text-transparent rounded-xl`}`}>{article.content.category}</span>
                                 <img src="/assets/simlai/arrow-blog-teaser.svg"></img>
                             </div>
                         </div>

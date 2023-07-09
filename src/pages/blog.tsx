@@ -107,7 +107,7 @@ export default function Blog( props: any ) {
       <Head>
         <title>Siml.ai - Blog</title>
         <meta name="description" content="Read the latest articles from Siml.ai blog!" />
-        <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
+        <meta property="og:image" content="https://siml.ai/assets/simlai/simlai-logo.svg"/>
       </Head>
       <Layout>
           <section className="flex flex-col w-full h-full">

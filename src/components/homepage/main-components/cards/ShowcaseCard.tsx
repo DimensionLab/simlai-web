@@ -12,7 +12,7 @@ const ShowcaseCard = (props: ShowcaseCardProps) => {
         <section className="w-full flex items-center justify-center pb-16">
             <main className="w-full flex flex-col px-4 py-16 items-center">
                 <ImageWrapper>
-                    <img src={props.imgPath} alt={props.title} />
+                    <img src={props.imgPath} alt={props.title} id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}/>
                 </ImageWrapper>
                 <section className="flex flex-col pt-20 max-w-5xl">
                     <h1 className="text-4xl font-black pb-12 lg:text-7xl">{props.title}</h1>

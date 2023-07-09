@@ -16,25 +16,25 @@ const Article = ( { blok }: ArticleStoryblok ) => {
     <ArticleWrapper>
       <div className='w-full flex items-center justify-center pb-24 pt-12 lg:pt-24'>
         <div className='article-content flex flex-col gap-y-8 items-center w-[80%]'>
-          <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl max-w-3xl flex self-start">
+          <h1 className="font-bold text-4xl lg:text-5xl max-w-3xl flex self-start">
             {blok.title}
           </h1>
-          <div className='grid w-full gap-y-4 pt-8 self-start -mt-10 gap-x-10 grid-cols-2 md:grid-cols-3 lg:w-1/2'>
+          <div className='grid w-full pt-8 self-start -mt-10 gap-x-4 grid-cols-3 max-w-md'>
             <div className='w-full flex flex-col'>
-              <span className='text-sm text-[#454853]'>Date:</span>
-              <span className='text-sm text-[#7C7F8B]'>{blok.date}</span>
+              <span className='text-[10px] text-[#454853]'>Date:</span>
+              <span className='text-[10px] text-[#7C7F8B]'>{blok.date}</span>
             </div>
             <div className='w-full flex flex-col'>
-              <span className='text-sm text-[#454853]'>Category:</span>
-              <span className='text-sm text-[#7C7F8B]'>{blok.category}</span>
+              <span className='text-[10px] text-[#454853]'>Category:</span>
+              <span className='text-[10px] text-[#7C7F8B]'>{blok.category}</span>
             </div>
             <div className='w-full flex flex-col'>
-              <span className='text-sm text-[#454853]'>Author:</span>
-              <span className='text-sm text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
+              <span className='text-[10px] text-[#454853]'>Author:</span>
+              <span className='text-[10px] text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
             </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}
-          <div className='img-container xl:w-[50%] lg:py-10'>
+          <div className='img-container w-full max-w-4xl lg:py-10'>
             <BorderAroundMainImage>
               {blok.image && blok.image.filename && <img src={blok.image.filename} alt={blok.image.alt || ''} className='rounded-xl' />}
             </BorderAroundMainImage>
@@ -53,6 +53,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
 export default Article;
 
 const BorderAroundMainImage = styled.div`
+  width: 100%;
   img {
     border: 5px solid rgba(59, 17, 81, 0.40);
     object-fit: contain;
@@ -78,6 +79,13 @@ const RichTextArticleContent = styled.article`
     border-radius: 10px;
     background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
     padding: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px){
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 
   a {

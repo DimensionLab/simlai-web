@@ -12,8 +12,8 @@ const Features = () => {
   ];
 
   return (
-    <FeaturesWrapper id="features" className="w-full flex items-center justify-center">
-      <div className="w-full grid-cols-1 grid items-center justify-center px-4 gap-y-20 pt-6 pb-28 lg:grid-cols-2 lg:gap-x-8 h-full lg:py-44 max-w-6xl xl:gap-x-44">
+    <FeaturesWrapper className="w-full flex items-center justify-center">
+      <div  id="features" className="w-full grid-cols-1 grid items-center justify-center px-4 gap-y-20 pt-6 pb-28 lg:grid-cols-2 lg:gap-x-8 h-full lg:py-44 max-w-6xl xl:gap-x-44">
         {data.map((feature, index) => (
           <div key={index} className="flex flex-col gap-y-6">
             <div className="w-full h-full object-cover">

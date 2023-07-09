@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Head>
           <title>Siml.ai - Platform for fast AI-driven physics simulations</title>
-          <meta property="og:image" content="https://simlai-web.vercel.app/assets/simlai/simlai-logo.svg"/>
+          <meta property="og:image" content="https://sim.ai/assets/simlai/simlai-logo.svg"/>
           <meta name="description" content="Platform for fast AI-driven physics simulations" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

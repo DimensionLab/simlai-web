@@ -4,7 +4,7 @@ import tw from "twin.macro";
 
 const PricingCardWrapper = styled.div<{ lineColor: string }>`
   ${tw`
-    px-4
+    // px-4
     flex
     flex-col
     w-full

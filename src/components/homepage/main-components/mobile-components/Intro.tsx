@@ -73,8 +73,8 @@ const Intro = () => {
   return (
     <IntroWrapper>
       <div className="headline-logo">
-        <img src="assets/simlai/simlai-logo.svg" alt="" id="logo-picture"/>
-        <img src="assets/simlai/simlai-title.svg" alt="" />
+        <img src="assets/simlai/simlai-logo.svg" alt="siml.ai logo" id="logo-picture"/>
+        <img src="assets/simlai/simlai-title.svg" alt="siml.ai title" />
       </div>
       <Slider/>
       {/* <div className="slider">

@@ -35,7 +35,7 @@ const Slider = () => {
   return (
     <section className="w-full h-full px-4">
       <ImageWrapper>
-        <img src={image} alt="" className="w-full aspect-video rounded-xl "/>
+        <img src={image} alt="slider photo" className="w-full aspect-video rounded-xl "/>
       </ImageWrapper>
       <div className="flex flex-row w-full justify-center py-4 gap-x-4">
         {nums.map((num) => 

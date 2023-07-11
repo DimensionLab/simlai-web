@@ -93,8 +93,8 @@ const Product = () => {
         <div className="leftside">
           <div className="items">
             <div className="header">
-              <img src="assets/simlai/simlai-logo.svg" id="logo" alt="" />
-              <img src="assets/simlai/simlai-title.svg" id="title" alt="" />
+              <img src="assets/simlai/simlai-logo.svg" id="logo" alt="siml.ai logo" />
+              <img src="assets/simlai/simlai-title.svg" id="title" alt="siml.ai title" />
             </div>
             <div className="description">
               Software platform <br/> for high-performance <br/> AI-based numerical simulators.

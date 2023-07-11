@@ -175,7 +175,7 @@ const DropdownMenu = (props: DropdownProps ) => {
             <a href="https://platform.siml.ai/">
               <button>LOGIN</button>
             </a>
-            <img src="/assets/simlai/close-dropdown.svg" alt="" id="close-btn" onClick={props.onClose}/>
+            <img src="/assets/simlai/close-dropdown.svg" alt="close button" id="close-btn" onClick={props.onClose}/>
           </div>
         </div>
         <div className="content">
@@ -206,12 +206,12 @@ const DropdownMenu = (props: DropdownProps ) => {
           <div className="socials">
             <div className="facebook-container">
               <a href="https://www.facebook.com/learnedsimulators/">
-                <img src="/assets/facebook-logo.svg" alt="" />
+                <img src="/assets/facebook-logo.svg" alt="facebook logo" />
               </a>
             </div>
             <div className="twitter-container">
               <a href="https://twitter.com/siml_ai">
-                <img src="/assets/twitter-logo.svg" alt="" />
+                <img src="/assets/twitter-logo.svg" alt="twitter logo" />
               </a>
             </div>
             {/* <div className="instagram-container">
@@ -221,7 +221,7 @@ const DropdownMenu = (props: DropdownProps ) => {
             </div> */}
             <div className="linkedin-container">
               <a href="https://www.linkedin.com/company/dimensionlab">
-                <img src="/assets/simlai/li-logo.svg" alt="" />
+                <img src="/assets/simlai/li-logo.svg" alt="linkedin logo" />
               </a>
             </div>
             {/* <div className="medium-container">

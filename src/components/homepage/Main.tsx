@@ -18,7 +18,7 @@ const MainWrapper = styled.main`
 
   .width-limited {
     ${tw`
-      container
+      // container
     `}
   }
 
@@ -49,8 +49,8 @@ const Main = (props: MainProps) => {
 
   return (
     <MainWrapper style={ {display: props.open ? 'none' : 'flex'} }>
-      <div className="width-limited">
         <IntroParent/>
+      <div className="width-limited max-w-5xl">
         <SignUp/>
         <Features/>
         <Product/>

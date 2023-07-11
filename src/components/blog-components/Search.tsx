@@ -28,7 +28,7 @@ const Search = () => {
             <label className="text-[#7C7F8B] text-xs pb-2">FILTER BY CATEGORY</label>
             <div className="bg-[#373A45] py-4 px-4 rounded-t text-sm text-white flex justify-between items-center">
               <span>News</span>
-              <img src="assets/simlai/dropdown-icon.svg" alt="" onClick={handleCategoryOpened}/>
+              <img src="assets/simlai/dropdown-icon.svg" alt="dropdown icon" onClick={handleCategoryOpened}/>
             </div>
             <span className={`${categoryOpened ? `flex` : `hidden` } bg-[#373A45] py-4 px-4 rounded-b text-sm text-white flex justify-between items-center border-t-2 border-stone-900`}>Simulation Studio</span>
             <span className={`${categoryOpened ? `flex` : `hidden` } bg-[#373A45] py-4 px-4 rounded-b text-sm text-white flex justify-between items-center border-t-2 border-stone-900`}>Model Engineer</span>

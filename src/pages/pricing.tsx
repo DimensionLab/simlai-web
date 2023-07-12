@@ -90,6 +90,10 @@ const Pricing = () => {
     setIsOpen(!isOpen);
   }
 
+  const pricingCards = Object.values(pricingCardData.tier);
+  const firstRowCards = pricingCards.slice(0, 3);
+  const secondRowCards = pricingCards.slice(3);
+
   return (
     <>
       <Head>
@@ -113,14 +117,25 @@ const Pricing = () => {
                     <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`} rounded-r px-4 font-bold py-3`}>YEARLY</button>
                   </div>
                   <div>
-                    <div className="grid gap-y-6 grid-cols-1 sm:grid-cols-2 sm:gap-x-6 xl:grid-cols-5">
-                      {Object.values(pricingCardData.tier).map((tierData, index) => (
-                        <PricingCard
-                          key={index}
-                          data={tierData}
-                          isMonthly={isMonthly}
-                        />
-                      ))}
+                    <div className="grid grid-cols-1 gap-y-4 w-full xl:grid-cols-10 xl:justify-center xl:gap-x-4">
+                      <div className="grid gap-y-4 md:grid-cols-3 md:gap-x-4 xl:col-span-6">
+                        {firstRowCards.map((tierData, index) => (
+                          <PricingCard
+                            key={index}
+                            data={tierData}
+                            isMonthly={isMonthly}
+                          />
+                        ))}
+                      </div>
+                      <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 max-xl:md:px-32 xl:col-span-4">
+                        {secondRowCards.map((tierData, index) => (
+                          <PricingCard
+                            key={index}
+                            data={tierData}
+                            isMonthly={isMonthly}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

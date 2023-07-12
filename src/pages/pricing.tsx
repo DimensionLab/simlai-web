@@ -127,7 +127,7 @@ const Pricing = () => {
                           />
                         ))}
                       </div>
-                      <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 max-xl:md:px-36 xl:col-span-4">
+                      <div className="grid gap-y-4 md:grid-cols-2 md:gap-x-4 max-xl:md:px-28 max-xl:lg:px-36 xl:col-span-4">
                         {secondRowCards.map((tierData, index) => (
                           <PricingCard
                             key={index}

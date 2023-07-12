@@ -73,6 +73,7 @@ const RichTextArticleContent = styled.article`
   flex-direction: column;
   width: 100%;
   justify-items: center;
+  justify-content: center;
   gap: 1rem;
 
   img {
@@ -109,5 +110,9 @@ const RichTextArticleContent = styled.article`
 
   p {
     color: white;
+
+    img {
+      width: 100%;
+    }
   }
 `;

@@ -53,6 +53,9 @@ const AllArticles = ({ blok }: any) => {
               <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
                 {blok && articles[0] && <NewestArticleTeaser article={articles[0]}/>}
               </div>
+              <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
+                {blok && articles[1] && <NewestArticleTeaser article={articles[1]}/>}
+              </div>
               <div {...storyblokEditable(blok)}
                 className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
                 {blok && articles[0] && articles.map((article: any) => (

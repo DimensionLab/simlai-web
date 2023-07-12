@@ -23,7 +23,7 @@ const ArticleLoadingSkeleton = () => {
           <a className="w-full flex flex-col items-center h-full">
             <div className="flex w-full">
               <div className="w-full aspect-video object-cover rounded-t-xl skeleton">
-                <img src="/assets/simlai/placeholder-solid-white.svg" alt="" className="skeleton aspect-video w-96 rounded-t-xl"/>
+                <img src="/assets/simlai/placeholder-solid-white.svg" alt="placeholder solid white" className="skeleton aspect-video w-96 rounded-t-xl"/>
               </div>
             </div>
             <div className="h-1/2 flex flex-col w-full px-6 py-14 gap-y-6 bg-[#222530] rounded-b-xl ">

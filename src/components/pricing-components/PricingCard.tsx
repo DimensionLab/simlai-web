@@ -4,7 +4,7 @@ import tw from "twin.macro";
 
 const PricingCardWrapper = styled.div<{ lineColor: string }>`
   ${tw`
-    px-4
+    // px-4
     flex
     flex-col
     w-full
@@ -16,7 +16,7 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
       flex-col
       items-center
       bg-[#222530]
-      rounded-xl
+      rounded-md
       py-6
       gap-y-6
       text-center
@@ -26,7 +26,7 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
     h1 {
       ${tw`
         font-semibold
-        text-2xl
+        text-lg
         text-center
       `}
     }
@@ -55,24 +55,12 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
         `}
       }
     }
-    .storage {
-      ${tw`
-        flex-grow
-        px-4
-      `}
-    }
-    .access {
-      ${tw`
-        flex-grow
-        w-[70%]
-        px-4
-      `}
-    }
-    .simulators {
-      ${tw`
-        flex-grow
-        px-4
-      `}
+
+    ul {
+      a {
+        color: #6B50FF;
+        font-weight: 700;
+      }
     }
     #choose-plan {
       ${tw`
@@ -95,17 +83,19 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
 `;
 
 interface PricingProps {
-  title: String,
-  price: String,
-  storage: String,
-  access: String,
-  simulators: String,
-  isEnterprise: boolean,
-  isMonthly: boolean,
+  data: {
+    title: string;
+    hasTrial: boolean;
+    price: string;
+    items: string[];
+    isEnterprise: boolean;
+  },
+  isMonthly: boolean
 }
 
 const PricingCard = (props: PricingProps) => {
   const [isEnterprise, setIsEnterprise] = useState(false);
+  const data = props.data;
 
   const lineColor = [
     `#00BAC5`,
@@ -115,7 +105,7 @@ const PricingCard = (props: PricingProps) => {
   ]
 
   const whichLineColor = () => {
-    switch (props.title) {
+    switch (data.title) {
       case "STARTER":
         return lineColor[0];
       case "STANDARD":
@@ -128,45 +118,49 @@ const PricingCard = (props: PricingProps) => {
   };
 
   useEffect(() => {
-    setIsEnterprise(props.isEnterprise);
+    setIsEnterprise(data.isEnterprise);
   }, [isEnterprise]);
+
+  const handleTitle = () => {
+    if (data.title === "FREE" ) {
+      return `ALWAYS`;
+    }
+    else if(data.isEnterprise) {
+      return ``;
+    } else {
+      return `€`;
+    }
+  }
 
   return (
     <PricingCardWrapper lineColor={whichLineColor()}>
-      {!isEnterprise ? (
-        <div className="card">
-          <h1>{props.title}</h1>
-          <hr/>
-          <div className="price-container">
-            <span>€</span>
-            <span id="number">{props.price}</span>
-            <span> / {props.isMonthly ? "month" : "year"}</span>
-          </div>
-          <div className="storage">{props.storage}</div>
-          <div className="access">{props.access}</div>
-          <div className="simulators">{props.simulators}</div>
-          <a href="https://platform.siml.ai/model-engineer/billing">
-            <button id="choose-plan">CHOOSE PLAN</button>
-          </a>
-          {/* <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div> */}
+      <div className="card">
+        <div className="flex flex-row items-center justify-between w-full px-4">
+          <h1>{data.title}</h1>
+          {data.isEnterprise || data.title ==="FREE" ? `` : (
+            <label className="bg-[#454853] text-xs rounded-3xl px-2 py-1">14-DAYS TRIAL</label>
+          )}
         </div>
-      ) : (
-        <div className="card">
-          <h1>ENTERPRISE</h1>
-          <hr/>
-          <div className="price-container">
-            <span id="challenge">Have a bigger challenge to solve?</span>
-          </div>
-          <div className="storage">All features from Pro</div>
-          <div className="access">Custom computing resources with tens of GPUs</div>
-          <div className="simulators">24/7 support</div>
-          <div className="simulators">Custom simulator development</div>
-          <a href="https://platform.siml.ai/model-engineer/billing">
-            <button id="choose-plan">CHOOSE PLAN</button>
-          </a>
-          {/* <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div> */}
+        <hr/>
+        <div className="price-container">
+          <span className={`${data.title === "FREE" ? `pr-2` : ``}`}>{handleTitle()}</span>
+          <span id="number">{data.price}</span>
+          <span className={`${data.title === "FREE" ? `hidden` : ``}`}> 
+          {data.isEnterprise ? "Have a bigger challenge to solve?" : (
+            `/ ${props.isMonthly ? "month" : "year"}`
+          )}
+          </span>
         </div>
-      )}
+        <ul className="w-full px-8 flex flex-col gap-y-4 h-full text-xs list-disc">
+          {data.items.map((item, index) => (
+            <li key={index} className="w-full text-left list-item" dangerouslySetInnerHTML={ {__html: item} }></li>
+          ))}
+        </ul>
+        <a href="https://platform.siml.ai/model-engineer/billing">
+          <button id="choose-plan">CHOOSE PLAN</button>
+        </a>
+        {/* <div className="description">* upgradeable, ** public and private, *** worth the price of the plan</div> */}
+      </div>
       
     </PricingCardWrapper>
   )

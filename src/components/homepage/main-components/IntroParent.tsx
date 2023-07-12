@@ -23,7 +23,7 @@ const IntroParent = () => {
   }, []);
 
   return (
-    <IntroParentWrapper>
+    <IntroParentWrapper className="max-w-[1400px]">
       {isDesktop ? (<IntroDesktop/>) : (<Intro/>)}
     </IntroParentWrapper>
   );

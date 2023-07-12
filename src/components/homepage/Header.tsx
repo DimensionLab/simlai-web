@@ -154,7 +154,7 @@ const Header = (props: HeaderProps) => {
       <div className={`all-container ${isScrolled ? `pt-4` : `pt-14`}`}>
         <div className="logo">
           <a href="../">
-            <img src="/assets/simlai/simlai-logo.svg" alt="" />
+            <img src="/assets/simlai/simlai-logo.svg" alt="siml.ai logo" />
           </a>
         </div>
         <div className="right-side">
@@ -162,7 +162,7 @@ const Header = (props: HeaderProps) => {
             <div className="text">LOGIN</div>
           </a>
           <div className="hamburger-menu" onClick={props.onClose}>
-            <img src="/assets/simlai/hamburger-menu.svg" alt="" />
+            <img src="/assets/simlai/hamburger-menu.svg" alt="hamburger menu icon" />
           </div>
         </div>
         <div className="bar w-full justify-end">

@@ -191,8 +191,8 @@ const IntroDesktop = () => {
       <div className="all-container">
         <div className="left-side">
           <div className="logo-title">
-            <img src="assets/simlai/simlai-logo.svg" alt="" id="siml-logo"/>
-            <img src="assets/simlai/simlai-title.svg" alt="" id="siml-title"/>
+            <img src="assets/simlai/simlai-logo.svg" alt="siml.ai logo" id="siml-logo"/>
+            <img src="assets/simlai/simlai-title.svg" alt="siml.ai title" id="siml-title"/>
           </div>
           <div className="title">Tame the physics <br/>of your projects in hours!</div>
           <div className="subtitle">Siml.ai is a software platform for working <br/> with high-performance AI-based numerical simulators.</div>
@@ -228,10 +228,10 @@ const IntroDesktop = () => {
         </div>
         <div className="right-side">
           <div className="container">
-            <img src="assets/simlai/desktop-intro-pics/static.png" alt="" className="static"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate1.png" alt="" className="rotate one"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate2.png" alt="" className="rotate two"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate3.png" alt="" className="rotate three"/>
+            <img src="assets/simlai/desktop-intro-pics/static.png" alt="model engineer screenshot" className="static"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate1.png" alt="screenshot from siml" className="rotate one"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate2.png" alt="screenshot from siml" className="rotate two"/>
+            <img src="assets/simlai/desktop-intro-pics/rotate3.png" alt="screenshot from siml" className="rotate three"/>
           </div>
         </div>
       </div>

@@ -89,7 +89,7 @@ const ProductWrapper = styled.div`
 const Product = () => {
   return (
     <ProductWrapper className="flex w-full items-center justify-center">
-      <div className="flex max-w-6xl flex-col px-4 w-full lg:flex-row pb-16 lg:pb-24">
+      <div className="flex max-w-5xl flex-col px-4 w-full lg:flex-row pb-16 lg:pb-24">
         <div className="leftside">
           <div className="items">
             <div className="header">

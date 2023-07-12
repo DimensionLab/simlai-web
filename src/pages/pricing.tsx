@@ -26,7 +26,7 @@ const Pricing = () => {
         hasTrial: false,
         price: "FREE",
         items: [
-          "Up to 3 public simulators in Model Engineer",
+          "<div>Up to 3 public simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
           "Access limited to one Tier 1 computing resource",
           "",
           "",
@@ -42,7 +42,7 @@ const Pricing = () => {
           "50GB SSD storage included",
           "Store datasets of up to 25GB",
           "Access up to Tier 2 computing resources",
-          "<div>Up to 10 simulators in <strong>Model Engineer</strong></div>",
+          "<div>Up to 10 simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
           ""
         ],
         isEnterprise: false
@@ -55,8 +55,8 @@ const Pricing = () => {
           "250GB SSD storage included",
           "Store datasets of up to 100GB",
           "Access up to Tier 4 computing resources",
-          "<div>Up to 20 simulators in <strong>Model Engineer</strong></div>",
-          "<div>Up to 20 simulators in <strong>Simulation Studio</strong></div>"
+          "<div>Up to 20 simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
+          "<div>Up to 20 simulators in <a href='../#simulation-studio'>Simulation Studio</a></div>"
         ],
         isEnterprise: false
       },
@@ -68,8 +68,8 @@ const Pricing = () => {
           "1TB SSD storage included",
           "Store datasets of up to 250GB",
           "Access of up to Tier 6 computing resources",
-          "<div>Unlimited simulators in <strong>Model Engineer</strong></div>",
-          "<div>Unlimited simulators in <strong>Simulation Studio</strong></div>"
+          "<div>Unlimited simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
+          "<div>Unlimited simulators in <a href='../#simulation-studio'>Simulation Studio</a></div>"
         ],
         isEnterprise: false
       },

@@ -55,24 +55,12 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
         `}
       }
     }
-    .storage {
-      ${tw`
-        flex-grow
-        px-4
-      `}
-    }
-    .access {
-      ${tw`
-        flex-grow
-        w-[70%]
-        px-4
-      `}
-    }
-    .simulators {
-      ${tw`
-        flex-grow
-        px-4
-      `}
+
+    ul {
+      a {
+        color: #6B50FF;
+        font-weight: 700;
+      }
     }
     #choose-plan {
       ${tw`
@@ -161,7 +149,7 @@ const PricingCard = (props: PricingProps) => {
         </div>
         <ul className="w-full px-4 flex flex-col justify-between h-full">
           {data.items.map((item, index) => (
-            <li key={index} className="w-full">{item}</li>
+            <li key={index} className="w-full" dangerouslySetInnerHTML={ {__html: item} }></li>
           ))}
         </ul>
         <a href="https://platform.siml.ai/model-engineer/billing">

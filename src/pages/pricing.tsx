@@ -28,9 +28,6 @@ const Pricing = () => {
         items: [
           "<div>Up to 3 public simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
           "Access limited to one Tier 1 computing resource",
-          "",
-          "",
-          ""
         ],
         isEnterprise: false
       },
@@ -43,7 +40,6 @@ const Pricing = () => {
           "Store datasets of up to 25GB",
           "Access up to Tier 2 computing resources",
           "<div>Up to 10 simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
-          ""
         ],
         isEnterprise: false
       },
@@ -82,7 +78,6 @@ const Pricing = () => {
           "Custom computing resources with tens of GPUs",
           "24/7 support",
           "Custom simulator development",
-          ""
         ],
         isEnterprise: true
       }

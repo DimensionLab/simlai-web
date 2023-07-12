@@ -16,7 +16,7 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
       flex-col
       items-center
       bg-[#222530]
-      rounded-xl
+      rounded-md
       py-6
       gap-y-6
       text-center
@@ -26,7 +26,7 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
     h1 {
       ${tw`
         font-semibold
-        text-2xl
+        text-lg
         text-center
       `}
     }
@@ -135,7 +135,12 @@ const PricingCard = (props: PricingProps) => {
   return (
     <PricingCardWrapper lineColor={whichLineColor()}>
       <div className="card">
-        <h1>{data.title}</h1>
+        <div className="flex flex-row items-center justify-between w-full px-4">
+          <h1>{data.title}</h1>
+          {data.isEnterprise || data.title ==="FREE" ? `` : (
+            <label className="bg-[#454853] text-xs rounded-3xl px-2 py-1">14-DAYS TRIAL</label>
+          )}
+        </div>
         <hr/>
         <div className="price-container">
           <span className={`${data.title === "FREE" ? `pr-2` : ``}`}>{handleTitle()}</span>
@@ -143,13 +148,12 @@ const PricingCard = (props: PricingProps) => {
           <span className={`${data.title === "FREE" ? `hidden` : ``}`}> 
           {data.isEnterprise ? "Have a bigger challenge to solve?" : (
             `/ ${props.isMonthly ? "month" : "year"}`
-            
           )}
           </span>
         </div>
-        <ul className="w-full px-4 flex flex-col justify-between h-full">
+        <ul className="w-full px-8 flex flex-col gap-y-4 h-full text-xs list-disc">
           {data.items.map((item, index) => (
-            <li key={index} className="w-full" dangerouslySetInnerHTML={ {__html: item} }></li>
+            <li key={index} className="w-full text-left list-item" dangerouslySetInnerHTML={ {__html: item} }></li>
           ))}
         </ul>
         <a href="https://platform.siml.ai/model-engineer/billing">

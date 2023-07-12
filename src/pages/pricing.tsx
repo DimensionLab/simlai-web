@@ -116,7 +116,7 @@ const Pricing = () => {
                     <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`} rounded-l px-4 font-bold py-3`}>MONTHLY</button>
                     <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`} rounded-r px-4 font-bold py-3`}>YEARLY</button>
                   </div>
-                  <div>
+                  <div className="w-full">
                     <div className="grid grid-cols-1 gap-y-4 w-full xl:grid-cols-10 xl:justify-center xl:gap-x-4">
                       <div className="grid gap-y-4 md:grid-cols-3 md:gap-x-4 xl:col-span-6">
                         {firstRowCards.map((tierData, index) => (

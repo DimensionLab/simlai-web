@@ -94,6 +94,10 @@ const Pricing = () => {
   const firstRowCards = pricingCards.slice(0, 3);
   const secondRowCards = pricingCards.slice(3);
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  }
+
   return (
     <>
       <Head>
@@ -137,6 +141,23 @@ const Pricing = () => {
                         ))}
                       </div>
                     </div>
+                  </div>
+                  <div className="pt-12 pb-8 flex flex-col gap-y-4 lg:flex-row lg:gap-x-6 items-center">
+                    <span className="lg:w-[60%]">
+                      We&apos;re also giving out 
+                      <strong> 100% discount for 1 month </strong> 
+                      for everybody who completes our 
+                      <strong> Siml.ai Early Adopter Survey </strong>
+                      - you can get more information in our community Discord, which you can join 
+                      <a href="https://discord.gg/UxQyC9PEqt" className="text-[#8B7CFF]"> here</a>.
+                    </span>
+                    <form className="lg:w-[40%]" onSubmit={handleSubmit}>
+                      <label className="text-xs text-[#D0D2DF]">Apply your Siml.ai Early Adopter discount code:</label>
+                      <div className="flex gap-x-3">
+                        <input type="text" placeholder="Enter discount code" className="w-3/4 bg-[#373A45] p-2 text-lg rounded text-gray-500"/>
+                        <button className="p-4 rounded w-1/4 text-sm font-bold bg-[#6B50FF]">APPLY</button>
+                      </div>
+                    </form>
                   </div>
                 </div>
                 <EngagementCardsParent/>

@@ -46,6 +46,8 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
         text-2xl
         font-light
         px-4
+        flex
+        w-full
       `}
 
       #number {
@@ -146,7 +148,7 @@ const PricingCard = (props: PricingProps) => {
         </div>
         <hr/>
         <div className="price-container">
-          <span className={`${data.title === "FREE" ? `pr-2` : ``}`}>{handleTitle()}</span>
+          <span className={`${data.title === "FREE" ? `pr-2 pl-4` : `pl-4`}`}>{handleTitle()}</span>
           <span id="number">{data.price}</span>
           <span className={`${data.title === "FREE" ? `hidden` : ``}`}> 
           {data.isEnterprise ? "Have a bigger challenge to solve?" : (

@@ -41,11 +41,15 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
     }
     .price-container {
       ${tw`
-        flex-grow
+        // flex-grow
+        items-end
         // xl:w-[80%]
         text-2xl
         font-light
         px-4
+        flex
+        w-full
+        justify-start
       `}
 
       #number {
@@ -58,15 +62,15 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
 
     ul {
       a {
-        color: #6B50FF;
-        font-weight: 700;
+        color: #A69DFF;
+        font-weight: 400;
       }
     }
     #choose-plan {
       ${tw`
         bg-[#6B50FF]
         px-6
-        py-4
+        py-3
         rounded
         font-bold
       `}
@@ -98,6 +102,7 @@ const PricingCard = (props: PricingProps) => {
   const data = props.data;
 
   const lineColor = [
+    `#6DBC39`,
     `#00BAC5`,
     `#4B8AFF`,
     `#8B7CFF`,
@@ -106,14 +111,16 @@ const PricingCard = (props: PricingProps) => {
 
   const whichLineColor = () => {
     switch (data.title) {
+      case "FREE":
+        return lineColor[0]
       case "STARTER":
-        return lineColor[0];
-      case "STANDARD":
         return lineColor[1];
-      case "PRO":
+      case "STANDARD":
         return lineColor[2];
-      default:
+      case "PRO":
         return lineColor[3];
+      default:
+        return lineColor[4];
     }
   };
 
@@ -143,17 +150,21 @@ const PricingCard = (props: PricingProps) => {
         </div>
         <hr/>
         <div className="price-container">
-          <span className={`${data.title === "FREE" ? `pr-2` : ``}`}>{handleTitle()}</span>
+          <span className={`${data.title === "FREE" ? `pr-2 pl-4` : `pl-4`} ${data.title === "FREE" ? `text-[16px]` : `text-2xl`} flex h-full items-end`}>
+            <div className="flex h-full justify-end items-end -mb-[6px]">
+              {handleTitle()}
+            </div>
+          </span>
           <span id="number">{data.price}</span>
-          <span className={`${data.title === "FREE" ? `hidden` : ``}`}> 
+          <span className={`${data.title === "FREE" ? `hidden` : ``} ${data.isEnterprise ? `text-left text-[16px] leading-5` : ``} ${data.isEnterprise ? `xl:-mt-[1px]` : `-mb-[6px]`}`}> 
           {data.isEnterprise ? "Have a bigger challenge to solve?" : (
             `/ ${props.isMonthly ? "month" : "year"}`
           )}
           </span>
         </div>
-        <ul className="w-full px-8 flex flex-col gap-y-4 h-full text-xs list-disc">
+        <ul className={`w-full px-8 flex flex-col gap-y-4 h-full text-xs list-disc ${data.isEnterprise ? `xl:-mt-[7px]` : ``}`}>
           {data.items.map((item, index) => (
-            <li key={index} className="w-full text-left list-item" dangerouslySetInnerHTML={ {__html: item} }></li>
+            <li key={index} className={`w-full text-left list-item`} dangerouslySetInnerHTML={ {__html: item} }></li>
           ))}
         </ul>
         <a href="https://platform.siml.ai/model-engineer/billing">

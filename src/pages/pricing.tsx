@@ -27,7 +27,7 @@ const Pricing = () => {
         price: "FREE",
         items: [
           "<div>Up to 3 public simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
-          "Access limited to one Tier 1 computing resources",
+          "Access limited to one Tier 1 computing resource",
         ],
         isEnterprise: false
       },
@@ -111,8 +111,8 @@ const Pricing = () => {
                   <p className="text-[#B4B6C3] font-normal text-xl lg:line-clamp-2">We have plans and prices that fit your business perfectly. <br/> Make your client site a success with our products.</p>
                 </div>
                 <div className="flex flex-col w-full items-center">
-                  <div className="font-bold text-[#8B7CFF] text-2xl w-full flex justify-center py-6">14-days trial!</div>
-                  <div className="flex flex-row pb-16">
+                  {/* <div className="font-bold text-[#8B7CFF] text-2xl w-full flex justify-center py-6">14-days trial!</div> */}
+                  <div className="flex flex-row py-16 text-xs">
                     <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`} rounded-l px-4 font-bold py-3`}>MONTHLY</button>
                     <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`} rounded-r px-4 font-bold py-3`}>YEARLY</button>
                   </div>
@@ -126,7 +126,7 @@ const Pricing = () => {
                             isMonthly={isMonthly}
                           />
                         ))}
-                        <div className="flex flex-col gap-y-4 lg:gap-x-6 items-center max-xl:justify-end pb-[24px] xl:col-span-5 xl:flex-row xl:justify-center xl:py-12">
+                        <div className="flex flex-col gap-y-4 lg:gap-x-6 items-center max-xl:justify-end pb-[24px] xl:col-span-5 xl:flex-row xl:justify-center xl:py-12 lg:px-4">
                           <span className="xl:w-[60%]">
                             We&apos;re also giving out 
                             <strong> 100% discount for 1 month </strong> 

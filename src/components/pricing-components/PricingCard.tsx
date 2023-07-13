@@ -41,11 +41,15 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
     }
     .price-container {
       ${tw`
-        flex-grow
+        // flex-grow
+        items-end
         // xl:w-[80%]
         text-2xl
         font-light
         px-4
+        flex
+        w-full
+        justify-start
       `}
 
       #number {
@@ -58,15 +62,15 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
 
     ul {
       a {
-        color: #6B50FF;
-        font-weight: 700;
+        color: #A69DFF;
+        font-weight: 400;
       }
     }
     #choose-plan {
       ${tw`
         bg-[#6B50FF]
         px-6
-        py-4
+        py-3
         rounded
         font-bold
       `}
@@ -146,9 +150,13 @@ const PricingCard = (props: PricingProps) => {
         </div>
         <hr/>
         <div className="price-container">
-          <span className={`${data.title === "FREE" ? `pr-2` : ``}`}>{handleTitle()}</span>
+          <span className={`${data.title === "FREE" ? `pr-2 pl-4` : `pl-4`} ${data.title === "FREE" ? `text-[16px]` : `text-2xl`} flex h-full items-end`}>
+            <div className="flex h-full justify-end items-end -mb-[6px]">
+              {handleTitle()}
+            </div>
+          </span>
           <span id="number">{data.price}</span>
-          <span className={`${data.title === "FREE" ? `hidden` : ``}`}> 
+          <span className={`${data.title === "FREE" ? `hidden` : ``} ${data.isEnterprise ? `text-left text-[16px] leading-5` : ``}`}> 
           {data.isEnterprise ? "Have a bigger challenge to solve?" : (
             `/ ${props.isMonthly ? "month" : "year"}`
           )}

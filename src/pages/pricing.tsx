@@ -116,9 +116,9 @@ const Pricing = () => {
                     <button id="monthly" onClick={() => toggleIsMonthly("monthly")} className={`${isMonthly ? `bg-[#6B50FF]` : `bg-[#454853]`} rounded-l px-4 font-bold py-3`}>MONTHLY</button>
                     <button id="yearly" onClick={() => toggleIsMonthly("yearly")} className={`${isMonthly ? `bg-[#454853]` : `bg-[#6B50FF]`} rounded-r px-4 font-bold py-3`}>YEARLY</button>
                   </div>
-                  <div className="w-full">
-                    <div className="grid grid-cols-1 gap-y-4 w-full xl:grid-cols-1 xl:justify-center xl:gap-x-4">
-                      <div className="grid gap-y-4 lg:grid-cols-3 lg:gap-x-4 xl:grid-cols-5">
+                  <div className="w-full flex flex-col items-center">
+                    <div className="grid grid-cols-1 gap-y-4 w-full xl:grid-cols-1 xl:justify-center xl:gap-x-4 ">
+                      <div className="grid gap-y-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-4 xl:grid-cols-5 w-full">
                         {Object.values(pricingCardData.tier).map((tierData, index) => (
                           <PricingCard
                             key={index}
@@ -126,7 +126,7 @@ const Pricing = () => {
                             isMonthly={isMonthly}
                           />
                         ))}
-                        <div className="flex flex-col gap-y-4 lg:gap-x-6 items-center max-xl:justify-end pb-[24px] xl:col-span-5 xl:flex-row xl:justify-center xl:py-12 lg:px-4">
+                        <div className="flex flex-col gap-y-4 lg:gap-x-6 items-center max-xl:justify-end pb-[24px] xl:col-span-5 xl:flex-row xl:justify-center xl:py-12 sm:px-4">
                           <span className="xl:w-[60%]">
                             We&apos;re also giving out 
                             <strong> 100% discount for 1 month </strong> 
@@ -136,7 +136,7 @@ const Pricing = () => {
                             <a href="https://discord.gg/UxQyC9PEqt" className="text-[#8B7CFF]"> here</a>.
                           </span>
                           <form className="flex flex-col w-full xl:h-full xl:w-[40%]" onSubmit={handleSubmit}>
-                            <label className="text-xs text-[#D0D2DF] lg:pt-16 xl:pt-0">Apply your Siml.ai Early Adopter discount code:</label>
+                            <label className="text-xs text-[#D0D2DF] sm:pt-16 xl:pt-0">Apply your Siml.ai Early Adopter discount code:</label>
                             <div className="flex gap-x-2 flex-row w-full pt-2">
                               <input type="text" placeholder="Enter discount code" className=" bg-[#373A45] px-6 py-4 text-sm rounded text-gray-500 w-[70%]"/>
                               <button className="px-4 rounded text-lg font-bold bg-[#6B50FF] flex justify-center items-center w-[30%]">APPLY</button>

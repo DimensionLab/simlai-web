@@ -156,7 +156,7 @@ const PricingCard = (props: PricingProps) => {
             </div>
           </span>
           <span id="number">{data.price}</span>
-          <span className={`${data.title === "FREE" ? `hidden` : ``} ${data.isEnterprise ? `text-left text-[16px] leading-5` : ``}`}> 
+          <span className={`${data.title === "FREE" ? `hidden` : ``} ${data.isEnterprise ? `text-left text-[16px] leading-5` : ``} ${data.isEnterprise ? `` : `-mb-[6px]`}`}> 
           {data.isEnterprise ? "Have a bigger challenge to solve?" : (
             `/ ${props.isMonthly ? "month" : "year"}`
           )}

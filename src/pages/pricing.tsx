@@ -126,7 +126,7 @@ const Pricing = () => {
                             isMonthly={isMonthly}
                           />
                         ))}
-                        <div className="flex flex-col gap-y-4 lg:gap-x-6 items-center max-xl:justify-end px-4 pb-[24px] xl:col-span-5 xl:flex-row xl:justify-center xl:py-12">
+                        <div className="flex flex-col gap-y-4 lg:gap-x-6 items-center max-xl:justify-end pb-[24px] xl:col-span-5 xl:flex-row xl:justify-center xl:py-12">
                           <span className="xl:w-[60%]">
                             We&apos;re also giving out 
                             <strong> 100% discount for 1 month </strong> 

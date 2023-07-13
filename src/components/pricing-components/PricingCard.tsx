@@ -62,8 +62,8 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
 
     ul {
       a {
-        color: #6B50FF;
-        font-weight: 700;
+        color: #A69DFF;
+        font-weight: 400;
       }
     }
     #choose-plan {

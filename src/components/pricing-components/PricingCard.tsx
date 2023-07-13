@@ -70,7 +70,7 @@ const PricingCardWrapper = styled.div<{ lineColor: string }>`
       ${tw`
         bg-[#6B50FF]
         px-6
-        py-4
+        py-3
         rounded
         font-bold
       `}

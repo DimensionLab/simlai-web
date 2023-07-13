@@ -156,15 +156,15 @@ const PricingCard = (props: PricingProps) => {
             </div>
           </span>
           <span id="number">{data.price}</span>
-          <span className={`${data.title === "FREE" ? `hidden` : ``} ${data.isEnterprise ? `text-left text-[16px] leading-5` : ``} ${data.isEnterprise ? `` : `-mb-[6px]`}`}> 
+          <span className={`${data.title === "FREE" ? `hidden` : ``} ${data.isEnterprise ? `text-left text-[16px] leading-5` : ``} ${data.isEnterprise ? `xl:-mt-[1px]` : `-mb-[6px]`}`}> 
           {data.isEnterprise ? "Have a bigger challenge to solve?" : (
             `/ ${props.isMonthly ? "month" : "year"}`
           )}
           </span>
         </div>
-        <ul className="w-full px-8 flex flex-col gap-y-4 h-full text-xs list-disc">
+        <ul className={`w-full px-8 flex flex-col gap-y-4 h-full text-xs list-disc ${data.isEnterprise ? `xl:-mt-[7px]` : ``}`}>
           {data.items.map((item, index) => (
-            <li key={index} className="w-full text-left list-item" dangerouslySetInnerHTML={ {__html: item} }></li>
+            <li key={index} className={`w-full text-left list-item`} dangerouslySetInnerHTML={ {__html: item} }></li>
           ))}
         </ul>
         <a href="https://platform.siml.ai/model-engineer/billing">

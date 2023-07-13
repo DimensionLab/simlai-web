@@ -98,6 +98,7 @@ const PricingCard = (props: PricingProps) => {
   const data = props.data;
 
   const lineColor = [
+    `#6DBC39`,
     `#00BAC5`,
     `#4B8AFF`,
     `#8B7CFF`,
@@ -106,14 +107,16 @@ const PricingCard = (props: PricingProps) => {
 
   const whichLineColor = () => {
     switch (data.title) {
+      case "FREE":
+        return lineColor[0]
       case "STARTER":
-        return lineColor[0];
-      case "STANDARD":
         return lineColor[1];
-      case "PRO":
+      case "STANDARD":
         return lineColor[2];
-      default:
+      case "PRO":
         return lineColor[3];
+      default:
+        return lineColor[4];
     }
   };
 

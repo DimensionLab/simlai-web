@@ -27,7 +27,7 @@ const Pricing = () => {
         price: "FREE",
         items: [
           "<div>Up to 3 public simulators in <a href='../#model-engineer'>Model Engineer</a></div>",
-          "Access limited to one Tier 1 computing resources",
+          "Access limited to one Tier 1 computing resource",
         ],
         isEnterprise: false
       },

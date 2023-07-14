@@ -86,6 +86,7 @@ storyblokInit({
 export default function Blog( props: any ) {
   const sbStory = useStoryblokState(props.story)
   const [story, setStory] = useState(sbStory);
+  const [categories, setCategories] = useState<string[]>();
 
   const [isOpen, setIsOpen] = useState(true);
 
@@ -100,6 +101,20 @@ export default function Blog( props: any ) {
 
     // return () => setStory()
   }, [sbStory]);
+
+  useEffect(() => {
+    const getCategories = () => {
+      const stories = props.dataCategory.data.stories;
+      let categories: string[] = [];
+      stories.map((story: any) => {
+        categories.push(story.content.category);
+      });
+  
+      return categories;
+    }
+
+    setCategories(getCategories());
+  }, []);
   
 
   return (
@@ -113,7 +128,7 @@ export default function Blog( props: any ) {
           <section className="flex flex-col w-full h-full">
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
-              <Search/>
+              <Search categoryArr={categories}/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 lg:py-12 justify-center">
                   <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>
@@ -139,11 +154,18 @@ export async function getStaticProps() {
   };
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+
+  let dataForCategories = await storyblokApi.get(`cdn/stories`, {
+    version: "published",
+    starts_with: 'blog/',
+    is_startpage: false
+  });
   
   return {
     props: {
       story: data ? data.story : null,
       keyID: data ? data.story.id : null,
+      dataCategory: dataForCategories ? dataForCategories.data : null,
     },
     revalidate: 300,
   };

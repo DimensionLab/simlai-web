@@ -103,7 +103,7 @@ const Pricing = () => {
       </Head>
       <Layout>
         {isOpen ? (
-            <section className="flex flex-col bg-[#0D101B] text-white w-full items-center">
+            <section className="flex flex-col bg-[#0D101B] text-white w-full items-center min-h-screen justify-between">
               <Header open={isOpen} onClose={ handleOpen } whichSubpage="pricing"/>
               <section className="w-full flex flex-col px-4 max-w-[1400px]">
                 <div className="flex flex-col gap-y-3 pt-6">

@@ -12,25 +12,33 @@ const Article = ( { blok }: ArticleStoryblok ) => {
       Prism.highlightAll();
   }, [blok.content]);
 
+  // personal creative decision, if there's ":" in title, add new line
+  // i think it looks better, will see when it breaks
+  const handleTitle = () => {
+    let title = String(blok.title);
+    title = title.replace(/:/g, ':</br>');
+    return title;
+  }
+
   return (
     <ArticleWrapper>
       <div className='w-full flex items-center justify-center pb-24 pt-12 lg:pt-24'>
         <div className='article-content flex flex-col gap-y-8 items-center w-[80%]'>
-          <h1 className="font-bold text-4xl lg:text-5xl max-w-3xl flex self-start">
-            {blok.title}
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl max-w-5xl flex self-start" dangerouslySetInnerHTML={ {__html: handleTitle()} }>
+            {/* {blok.title} */}
           </h1>
-          <div className='grid w-full pt-8 self-start -mt-10 gap-x-4 grid-cols-3 max-w-md'>
+          <div className='grid w-full pt-8 self-start -mt-10 gap-x-0 grid-cols-3 max-w-md text-sm md:text-lg'>
             <div className='w-full flex flex-col'>
-              <span className='text-[10px] text-[#454853]'>Date:</span>
-              <span className='text-[10px] text-[#7C7F8B]'>{blok.date}</span>
+              <span className='text-[#454853]'>Date:</span>
+              <span className='text-[#7C7F8B]'>{blok.date}</span>
             </div>
             <div className='w-full flex flex-col'>
-              <span className='text-[10px] text-[#454853]'>Category:</span>
-              <span className='text-[10px] text-[#7C7F8B]'>{blok.category}</span>
+              <span className='text-[#454853]'>Category:</span>
+              <span className='text-[#7C7F8B]'>{blok.category}</span>
             </div>
             <div className='w-full flex flex-col'>
-              <span className='text-[10px] text-[#454853]'>Author:</span>
-              <span className='text-[10px] text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
+              <span className='text-[#454853]'>Author:</span>
+              <span className='text-[#7C7F8B]'>{blok.author ? `${blok.author}` : "DimensionLab"}</span>
             </div>
           </div>
           {/* <h2>{blok.subtitle}</h2> */}

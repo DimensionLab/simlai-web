@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SearchProps {
   categoryArr: string[] | undefined;
+  setSelected: any;
 }
 
-const Search = ( { categoryArr }: SearchProps ) => {
+const Search = ( { categoryArr, setSelected }: SearchProps ) => {
   const [buttonText, setButtonText] = useState("Submit");
   const [categoryOpened, setCategoryOpened] = useState(false);
+  const [defaultCategoryText, setDefaultCategoryText] = useState("Categories");
 
   const handleSubmit = () => {
     setButtonText("Not yet");
@@ -19,7 +21,12 @@ const Search = ( { categoryArr }: SearchProps ) => {
     setCategoryOpened(!categoryOpened);
   }
 
-  const restOfCategories = categoryArr?.slice(1);
+  const handleClick = (category: string) => {
+    console.log(`You've clicked on: ${category}`);
+    setCategoryOpened(false);
+    setDefaultCategoryText(category);
+    setSelected(category);
+  }
 
   return (
     <section className="w-full px-4 mb-8 xl:px-24 pt-12">
@@ -33,11 +40,11 @@ const Search = ( { categoryArr }: SearchProps ) => {
           <div className="flex flex-col xl:w-[40%] gap-y-0">
             <label className="text-[#7C7F8B] text-xs pb-2">FILTER BY CATEGORY</label>
             <div className="bg-[#373A45] py-4 px-4 rounded-t text-sm text-white flex justify-between items-center">
-              <span>{categoryArr ? categoryArr[0] : "Categories"}</span>
+              <span className={`text-[#7C7F8B]`}>{defaultCategoryText}</span>
               <img src="assets/simlai/dropdown-icon.svg" alt="dropdown icon" onClick={handleCategoryOpened}/>
             </div>
-            {restOfCategories?.map((category, index) => (
-              <span key={index} className={`${categoryOpened ? `flex` : `hidden` } bg-[#373A45] py-4 px-4 rounded-b text-sm text-white flex justify-between items-center border-t-2 border-stone-900`}>{category}</span>
+            {categoryArr?.map((category, index) => (
+              <span key={index} className={`${categoryOpened ? `flex` : `hidden` } bg-[#373A45] py-4 px-4 rounded-b text-sm text-white flex justify-between items-center border-t-2 border-stone-900 hover:cursor-pointer`} onClick={() => handleClick(category)}>{category}</span>
             ))}
           </div>
           <button className={`w-full bg-[#61646F] py-3.5 px-4 rounded  xl:items-center xl:justify-center xl:w-24 ${categoryOpened ? `hidden` : `xl:flex xl:self-end`}`} onClick={handleSubmit}>{buttonText}</button>

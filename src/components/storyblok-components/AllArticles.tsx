@@ -13,6 +13,9 @@ import NewestArticleTeaser from "./NewestArticleTeaser";
 const AllArticles = ({ blok }: any) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [category, setCategory] = useState<string>();
+
+  console.log(category)
 
   useEffect(() => {
     const getArticles = async () => {
@@ -32,6 +35,15 @@ const AllArticles = ({ blok }: any) => {
     };
     getArticles();
   }, []);
+
+  useEffect(() => {
+    const data = localStorage.getItem("selectedCategory");
+    if(data != "" && data) {
+      setCategory(data);
+      localStorage.removeItem("selectedCategory");
+    }
+    
+  }, [category])
 
   return (
     <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>

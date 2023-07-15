@@ -63,13 +63,11 @@ export default function Blog( props: any ) {
     setCategories(getCategories());
   }, []);
 
-  // useEffect(() => {
-  //   if(selectedCategory) {
-  //     localStorage.setItem("selectedCategory", selectedCategory);
-  //   } else {
-  //     localStorage.removeItem("selectedCategory");
-  //   }
-  // }, [selectedCategory])
+  useEffect(() => {
+    if(selectedCategory != "") {
+      localStorage.setItem("selectedCategory", selectedCategory);
+    }
+  }, [selectedCategory])
 
   return (
     <>

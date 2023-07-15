@@ -1,72 +1,18 @@
-import { storyblokInit, apiPlugin, getStoryblokApi, StoryblokComponent, useStoryblokState, StoryData } from "@storyblok/react";
+import { storyblokInit, apiPlugin, getStoryblokApi, useStoryblokState } from "@storyblok/react";
 import Feature from "../components/storyblok-components/Feature";
 import Page from "../components/storyblok-components/Page";
 import Grid from "../components/storyblok-components/Grid";
 import Teaser from "../components/storyblok-components/Teaser";
-import styled from 'styled-components';
 import Header from "../components/homepage/Header";
 import Layout from "@/components/Layout";
 import Footer from "../components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
 import { useEffect, useState } from "react";
-import ArticleLoadingSkeleton from "@/components/blog-components/ArticleLoadingSkeleton";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Search from "@/components/blog-components/Search";
 import Head from "next/head";
 import StoryblokContainer from "@/components/blog-components/StoryblokContainer";
-
-const BlogWrapper = styled.main`
-  .placeholder {
-    background-color: #1f2021;
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-
-    @media (min-width: 768px){
-      flex-direction: row;
-    }
-
-    a{ 
-      text-decoration: none;
-      color: white;
-      border: 2px solid white;
-      padding: 1rem;
-      transition: 0.6s;
-      border-radius: 10px;
-
-      &:hover {
-        color: black;
-        background-color: white;
-      }
-    }
-  }
-
-  .loading {
-    padding: 5rem;
-    height: 80vh;
-    font-size: 2rem;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .skeleton-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    gap: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-`;
 
 const components = {
   feature: Feature,
@@ -86,7 +32,8 @@ storyblokInit({
 export default function Blog( props: any ) {
   const sbStory = useStoryblokState(props.story)
   const [story, setStory] = useState(sbStory);
-  const [categories, setCategories] = useState<string[]>();
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   const [isOpen, setIsOpen] = useState(true);
 
@@ -104,7 +51,7 @@ export default function Blog( props: any ) {
 
   useEffect(() => {
     const getCategories = () => {
-      const stories = props.dataCategory.data.stories;
+      const stories = props.dataCategory.stories;
       let categories: string[] = [];
       stories.map((story: any) => {
         categories.push(story.content.category);
@@ -115,7 +62,14 @@ export default function Blog( props: any ) {
 
     setCategories(getCategories());
   }, []);
-  
+
+  // useEffect(() => {
+  //   if(selectedCategory) {
+  //     localStorage.setItem("selectedCategory", selectedCategory);
+  //   } else {
+  //     localStorage.removeItem("selectedCategory");
+  //   }
+  // }, [selectedCategory])
 
   return (
     <>
@@ -128,7 +82,7 @@ export default function Blog( props: any ) {
           <section className="flex flex-col w-full h-full">
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
-              <Search categoryArr={categories}/>
+              <Search categoryArr={categories} setSelected={setSelectedCategory}/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 lg:py-12 justify-center">
                   <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>

@@ -4,15 +4,18 @@ import {
   storyblokEditable
 } from "@storyblok/react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import { AllArticlesStoryblok } from "../../../component-types-sb";
 import NewestArticleTeaser from "./NewestArticleTeaser";
+import { BlogContext } from "@/pages/blog";
 
 
 const AllArticles = ({ blok }: any) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const selectedCategory = useContext(BlogContext);
+  const [categories, setCategories] = useState<string[]>([])
 
   useEffect(() => {
     const getArticles = async () => {
@@ -28,10 +31,19 @@ const AllArticles = ({ blok }: any) => {
           article.content.slug = article.slug;
           return article;
         }));
+
+        setCategories((prev) => data.stories.map((category: any) => {
+          console.log(category.content.category);
+          return category.content.category;
+        }))
         setIsLoading(false);
     };
     getArticles();
   }, []);
+
+  useEffect(() => {
+    console.log(selectedCategory);
+  }, [selectedCategory])
 
   return (
     <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>

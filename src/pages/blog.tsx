@@ -8,7 +8,7 @@ import Layout from "@/components/Layout";
 import Footer from "../components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Search from "@/components/blog-components/Search";
 import Head from "next/head";
@@ -22,6 +22,8 @@ const components = {
   article: Article,
   'all-articles': AllArticles,
 };
+
+export const BlogContext = createContext<string>("");
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
@@ -63,16 +65,8 @@ export default function Blog( props: any ) {
     setCategories(getCategories());
   }, []);
 
-  // useEffect(() => {
-  //   if(selectedCategory) {
-  //     localStorage.setItem("selectedCategory", selectedCategory);
-  //   } else {
-  //     localStorage.removeItem("selectedCategory");
-  //   }
-  // }, [selectedCategory])
-
   return (
-    <>
+    <BlogContext.Provider value={selectedCategory}>
       <Head>
         <title>Siml.ai - Blog</title>
         <meta name="description" content="Read the latest articles from Siml.ai blog!" />
@@ -96,7 +90,7 @@ export default function Blog( props: any ) {
             </div>
           </section>
       </Layout>
-    </>
+    </BlogContext.Provider>
   )
 }
 

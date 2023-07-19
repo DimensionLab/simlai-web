@@ -1,11 +1,12 @@
 import Header from "@/components/homepage/Header";
 import Footer from "@/components/homepage/Footer";
 import PricingCard from "@/components/pricing-components/PricingCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import EngagementCardsParent from "@/components/homepage/main-components/EngagementCardsParent";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -94,6 +95,16 @@ const Pricing = () => {
     e.preventDefault();
   }
 
+  const { isLoading, isAuthenticated, error, user, loginWithRedirect, logout } = useAuth0();
+  
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
+
+  useEffect(() => {
+    console.log(isAuthenticated);
+  }, [isAuthenticated]);
   return (
     <>
       <Head>

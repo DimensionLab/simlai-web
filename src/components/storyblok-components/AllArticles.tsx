@@ -6,9 +6,9 @@ import {
 
 import { useState, useEffect } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
-import { AllArticlesStoryblok } from "../../../component-types-sb";
 import NewestArticleTeaser from "./NewestArticleTeaser";
 
+const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
 const AllArticles = ({ blok }: any) => {
   const [articles, setArticles] = useState([]);
@@ -19,7 +19,7 @@ const AllArticles = ({ blok }: any) => {
       setIsLoading(true);
       const storyblokApi = getStoryblokApi();
         const { data } = await storyblokApi.get(`cdn/stories`, {
-          version: "published",
+          version: WHICH_VERSION,
           starts_with: 'blog/',
           is_startpage: false
         });

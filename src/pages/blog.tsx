@@ -83,6 +83,8 @@ storyblokInit({
   components,
 });
 
+const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
+
 export default function Blog( props: any ) {
   const sbStory = useStoryblokState(props.story)
   const [story, setStory] = useState(sbStory);
@@ -135,7 +137,7 @@ export default function Blog( props: any ) {
 export async function getStaticProps() {
   let slug = "blog";
   let sbParams: { version: 'draft' | 'published'} = {
-      version: 'published',
+      version: WHICH_VERSION,
   };
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);

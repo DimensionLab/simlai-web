@@ -16,7 +16,7 @@ import Article from '@/components/storyblok-components/Article';
 import Header from '../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
 import AllArticles from '@/components/storyblok-components/AllArticles';
@@ -40,6 +40,8 @@ interface PageProps {
   story: StoryData<any>;
   keyID: any;
 }
+
+const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
 export default function BlogPost({ story, keyID }: PageProps) {
   story = useStoryblokState(story);
@@ -82,7 +84,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   }
 
   let sbParams = {
-    version: 'published', // or 'published'
+    version: WHICH_VERSION,
   };
 
   const storyblokApi = getStoryblokApi();
@@ -100,7 +102,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get('cdn/links/', {
-    version: 'published',
+    version: WHICH_VERSION,
   });
 
   let paths: any = [];

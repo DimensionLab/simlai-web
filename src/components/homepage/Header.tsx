@@ -175,6 +175,9 @@ const Header = (props: HeaderProps) => {
           </Link>
           {/* <Link href={""}>CAREERS</Link> */}
           {/* <a>CAREERS</a> */}
+          <Link href={"../university"}>
+            <a className={`${props.whichSubpage === "university" ? `text-white` : ``}`}>LEARN</a>
+          </Link>
           <Link href={"../blog"}>
             <a id="last-link" className={`${props.whichSubpage === "blog" ? `border-2 border-b-[#6B50FF] text-white` : ``}`}>BLOG</a>
           </Link>

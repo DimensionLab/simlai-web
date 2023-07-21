@@ -16,7 +16,7 @@ import Article from '@/components/storyblok-components/Article';
 import Header from '../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
 import AllArticles from '@/components/storyblok-components/AllArticles';
@@ -41,6 +41,8 @@ interface PageProps {
   keyID: any;
 }
 
+const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
+
 export default function BlogPost({ story, keyID }: PageProps) {
   story = useStoryblokState(story);
   
@@ -54,8 +56,14 @@ export default function BlogPost({ story, keyID }: PageProps) {
     <div>
       <Head>
             <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
-            <meta name="description" content="Article on Siml.ai Blog" />
-            <meta property="og:image" content="https://siml.ai/assets/simlai/simlai-logo.svg"/>
+            <meta property="og:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+            <meta property="og:title" content={story ? `Siml.ai - ${story.name}` : `Siml.ai - Blog Article`}/>
+            <meta property="og:url" content="https://siml.ai/"/>
+            <meta property="twitter:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+            <meta property="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:site" content="@siml_ai" />
+            <meta name="description" content="Read this blog post on Siml.ai blog!" />
+            <meta property="og:description" content="Read this blog post on Siml.ai blog!"/>
       </Head>
 
       <Layout>
@@ -82,7 +90,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   }
 
   let sbParams = {
-    version: 'published', // or 'published'
+    version: WHICH_VERSION,
   };
 
   const storyblokApi = getStoryblokApi();
@@ -100,7 +108,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get('cdn/links/', {
-    version: 'published',
+    version: WHICH_VERSION,
   });
 
   let paths: any = [];

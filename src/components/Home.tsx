@@ -17,7 +17,13 @@ export default function Home() {
     <>
       <Head>
           <title>Siml.ai - Platform for fast AI-driven physics simulations</title>
-          <meta property="og:image" content="https://sim.ai/assets/simlai/simlai-logo.svg"/>
+          <meta property="og:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+          <meta property="og:title" content="Siml.ai - Platform for fast AI-driven physics simulations"/>
+          <meta property="twitter:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+          <meta property="twitter:card" content="summary_large_image"/>
+          <meta name="twitter:site" content="@siml_ai" />
+          <meta property="og:url" content="https://siml.ai/"/>
+          <meta property="og:description" content="Platform for fast AI-driven physics simulations" />
           <meta name="description" content="Platform for fast AI-driven physics simulations" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

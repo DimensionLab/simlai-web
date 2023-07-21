@@ -6,10 +6,10 @@ import {
 
 import { useState, useEffect, useContext } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
-import { AllArticlesStoryblok } from "../../../component-types-sb";
 import NewestArticleTeaser from "./NewestArticleTeaser";
 import { BlogContext } from "@/pages/blog";
 
+const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
 const AllArticles = ({ blok }: any) => {
   const [articles, setArticles] = useState([]);
@@ -22,7 +22,7 @@ const AllArticles = ({ blok }: any) => {
       setIsLoading(true);
       const storyblokApi = getStoryblokApi();
         const { data } = await storyblokApi.get(`cdn/stories`, {
-          version: "published",
+          version: WHICH_VERSION,
           starts_with: 'blog/',
           is_startpage: false
         });
@@ -67,6 +67,9 @@ const AllArticles = ({ blok }: any) => {
               </div>
               <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
                 {blok && articles[1] && <NewestArticleTeaser article={articles[1]}/>}
+              </div>
+              <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
+                {blok && articles[2] && <NewestArticleTeaser article={articles[2]}/>}
               </div>
               <div {...storyblokEditable(blok)}
                 className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">

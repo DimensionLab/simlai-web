@@ -31,6 +31,8 @@ storyblokInit({
   components,
 });
 
+const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
+
 export default function Blog( props: any ) {
   const sbStory = useStoryblokState(props.story)
   const [story, setStory] = useState(sbStory);
@@ -69,8 +71,14 @@ export default function Blog( props: any ) {
     <BlogContext.Provider value={selectedCategory}>
       <Head>
         <title>Siml.ai - Blog</title>
+        <meta property="og:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+        <meta property="og:title" content="Siml.ai - Blog"/>
+        <meta property="og:url" content="https://siml.ai/"/>
+        <meta property="twitter:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@siml_ai" />
         <meta name="description" content="Read the latest articles from Siml.ai blog!" />
-        <meta property="og:image" content="https://siml.ai/assets/simlai/simlai-logo.svg"/>
+        <meta property="og:description" content="Read the latest articles from Siml.ai blog!"/>
       </Head>
       <Layout>
           <section className="flex flex-col w-full h-full">
@@ -98,7 +106,7 @@ export default function Blog( props: any ) {
 export async function getStaticProps() {
   let slug = "blog";
   let sbParams: { version: 'draft' | 'published'} = {
-      version: 'published',
+      version: WHICH_VERSION,
   };
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);

@@ -98,8 +98,14 @@ const Pricing = () => {
     <>
       <Head>
         <title>Siml.ai - Pricing</title>
-        <meta name="description" content="Pricing page on Siml.ai" />
-        <meta property="og:image" content="https://siml.ai/assets/simlai/simlai-logo.svg"/>
+        <meta property="og:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+        <meta property="og:title" content="Siml.ai - Pricing"/>
+        <meta property="og:url" content="https://siml.ai/"/>
+        <meta property="twitter:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@siml_ai" />
+        <meta name="description" content="Review Siml.ai's pricing tiers for our advanced, AI-driven physics simulations." />
+        <meta property="og:description" content="Review Siml.ai's pricing tiers for our advanced, AI-driven physics simulations."/>
       </Head>
       <Layout>
         {isOpen ? (

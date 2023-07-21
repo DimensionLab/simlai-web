@@ -56,8 +56,14 @@ export default function BlogPost({ story, keyID }: PageProps) {
     <div>
       <Head>
             <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
-            <meta name="description" content="Article on Siml.ai Blog" />
-            <meta property="og:image" content="https://siml.ai/assets/simlai/simlai-logo.svg"/>
+            <meta property="og:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+            <meta property="og:title" content={story ? `Siml.ai - ${story.name}` : `Siml.ai - Blog Article`}/>
+            <meta property="og:url" content="https://siml.ai/"/>
+            <meta property="twitter:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
+            <meta property="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:site" content="@siml_ai" />
+            <meta name="description" content="Read this blog post on Siml.ai blog!" />
+            <meta property="og:description" content="Read this blog post on Siml.ai blog!"/>
       </Head>
 
       <Layout>

@@ -20,7 +20,7 @@ const AllArticles = (props: AllArticlesProps) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>();
 
   useEffect(() => {
     const getArticles = async () => {
@@ -67,18 +67,36 @@ const AllArticles = (props: AllArticlesProps) => {
                 <ArticleLoadingSkeleton />
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center gap-y-8">
-                <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
-                  {blok && articles[0] && articles.map((article: any, index: number) => (
-                    article.content.category == selectedCategory && <NewestArticleTeaser article={article} key={index}/>
-                  ))}
-                </div>
-                <div {...storyblokEditable(blok)}
-                  className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
-                  {blok && articles[0] && articles.map((article: any) => (
-                    article.content.category == selectedCategory && <ArticleTeaser article={article.content} key={article.uuid} />
-                  ))}
-                </div>
+              <div className="flex flex-col w-full items-center justify-center gap-y-8">
+                {selectedCategory ? (
+                  <>
+                    <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
+                      {blok && articles[0] && articles.map((article: any, index: number) => (
+                        article.content.category == selectedCategory && <NewestArticleTeaser article={article} key={index}/>
+                      ))}
+                    </div>
+                    <div {...storyblokEditable(blok)}
+                      className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
+                      {blok && articles[0] && articles.map((article: any) => (
+                        article.content.category == selectedCategory && <ArticleTeaser article={article.content} key={article.uuid} />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
+                      {blok && articles[0] && articles.map((article: any, index: number) => (
+                        <NewestArticleTeaser article={article} key={index}/>
+                      ))}
+                    </div>
+                    <div {...storyblokEditable(blok)}
+                      className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
+                      {blok && articles[0] && articles.map((article: any) => (
+                        <ArticleTeaser article={article.content} key={article.uuid} />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             )}
           </div>

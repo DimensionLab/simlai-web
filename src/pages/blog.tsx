@@ -8,7 +8,7 @@ import Layout from "@/components/Layout";
 import Footer from "../components/homepage/Footer";
 import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Search from "@/components/blog-components/Search";
 import Head from "next/head";
@@ -23,8 +23,6 @@ const components = {
   'all-articles': AllArticles,
 };
 
-export const BlogContext = createContext<string>("");
-
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_API_TOKEN,
   use: [apiPlugin],
@@ -37,7 +35,7 @@ export default function Blog( props: any ) {
   const sbStory = useStoryblokState(props.story)
   const [story, setStory] = useState(sbStory);
   const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("car");
 
   const [isOpen, setIsOpen] = useState(true);
 
@@ -68,7 +66,7 @@ export default function Blog( props: any ) {
   }, []);
 
   return (
-    <BlogContext.Provider value={selectedCategory}>
+    <>
       <Head>
         <title>Siml.ai - Blog</title>
         <meta property="og:image" content="https://siml.ai/assets/simlai/url-preview.png"/>
@@ -87,7 +85,7 @@ export default function Blog( props: any ) {
               <Search categoryArr={categories} setSelected={setSelectedCategory}/>
               <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 lg:py-12 justify-center">
-                  <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>
+                  <StoryblokContainer storyContent={story.content} keyID={props.keyID} categoryProp={selectedCategory}/>
                 </div>
               </div>
               <Footer open={!isOpen}/>
@@ -98,7 +96,7 @@ export default function Blog( props: any ) {
             </div>
           </section>
       </Layout>
-    </BlogContext.Provider>
+    </>
   )
 }
 

@@ -7,14 +7,18 @@ import {
 import { useState, useEffect, useContext } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import NewestArticleTeaser from "./NewestArticleTeaser";
-import { BlogContext } from "@/pages/blog";
 
 const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
-const AllArticles = ({ blok }: any) => {
+interface AllArticlesProps {
+  blok: any;
+}
+
+const AllArticles = (props: AllArticlesProps) => {
+  const blok = props.blok.blok;
+  const propCategory = props.blok.categoryProp;
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const selectedCategory = useContext(BlogContext);
   const [categories, setCategories] = useState<string[]>([])
 
   useEffect(() => {
@@ -33,7 +37,7 @@ const AllArticles = ({ blok }: any) => {
         }));
 
         setCategories((prev) => data.stories.map((category: any) => {
-          console.log(category.content.category);
+          // console.log(category.content.category);
           return category.content.category;
         }))
         setIsLoading(false);
@@ -42,8 +46,12 @@ const AllArticles = ({ blok }: any) => {
   }, []);
 
   useEffect(() => {
-    console.log(selectedCategory);
-  }, [selectedCategory])
+    // console.log('AA cat:', propCategory);
+    console.log(propCategory);
+  }, [])
+
+  console.log(props);
+  // console.log("AA cat: ", propCategory)
 
   return (
     <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>

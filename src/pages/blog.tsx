@@ -35,7 +35,7 @@ export default function Blog( props: any ) {
   const sbStory = useStoryblokState(props.story)
   const [story, setStory] = useState(sbStory);
   const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("car");
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   const [isOpen, setIsOpen] = useState(true);
 

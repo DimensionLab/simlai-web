@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface SearchProps {
   categoryArr: string[] | undefined;
@@ -22,7 +22,6 @@ const Search = ( { categoryArr, setSelected }: SearchProps ) => {
   }
 
   const handleClick = (category: string) => {
-    console.log(`You've clicked on: ${category}`);
     setCategoryOpened(false);
     setDefaultCategoryText(category);
     setSelected(category);

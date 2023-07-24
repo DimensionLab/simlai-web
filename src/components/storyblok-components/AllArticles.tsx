@@ -4,7 +4,7 @@ import {
   storyblokEditable
 } from "@storyblok/react";
 
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import NewestArticleTeaser from "./NewestArticleTeaser";
 
@@ -15,11 +15,9 @@ interface AllArticlesProps {
 }
 
 const AllArticles = (props: AllArticlesProps) => {
-  const blok = props.blok.blok;
-  const propCategory = props.blok.categoryProp;
+  const blok = props.blok;
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [categories, setCategories] = useState<string[]>([])
 
   useEffect(() => {
     const getArticles = async () => {
@@ -35,23 +33,10 @@ const AllArticles = (props: AllArticlesProps) => {
           article.content.slug = article.slug;
           return article;
         }));
-
-        setCategories((prev) => data.stories.map((category: any) => {
-          // console.log(category.content.category);
-          return category.content.category;
-        }))
         setIsLoading(false);
     };
     getArticles();
   }, []);
-
-  useEffect(() => {
-    // console.log('AA cat:', propCategory);
-    console.log(propCategory);
-  }, [])
-
-  console.log(props);
-  // console.log("AA cat: ", propCategory)
 
   return (
     <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>

@@ -48,7 +48,7 @@ const Search = ( { categoryArr, setSelected }: SearchProps ) => {
               ))}
             </div>
           </div>
-          <button className={`w-full hover:cursor-not-allowed bg-[#61646F] py-3.5 px-4 rounded  xl:items-center xl:justify-center xl:w-24 ${categoryOpened ? `hidden` : `xl:flex xl:self-end`}`} disabled>{buttonText}</button>
+          <button className={`w-full hover:cursor-not-allowed bg-[#61646F] py-3.5 px-4 rounded  xl:items-center xl:justify-center xl:w-24 xl:self-end`} disabled>{buttonText}</button>
         </div>
       </main>
     </section>

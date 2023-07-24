@@ -37,7 +37,7 @@ const AllArticles = (props: AllArticlesProps) => {
           return article;
         }));
 
-        let categoryArray: string[] = [];
+        let categoryArray: string[] = ["All"];
         data.stories.map((story: any) => {
           categoryArray.push(story.content.category)
         })
@@ -68,7 +68,7 @@ const AllArticles = (props: AllArticlesProps) => {
               </div>
             ) : (
               <div className="flex flex-col w-full items-center justify-center gap-y-8">
-                {selectedCategory ? (
+                {selectedCategory != "All" && selectedCategory ? (
                   <>
                     <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
                       {blok && articles[0] && articles.map((article: any, index: number) => (

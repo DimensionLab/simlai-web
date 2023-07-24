@@ -10,7 +10,12 @@ import NewestArticleTeaser from "./NewestArticleTeaser";
 
 const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
-const AllArticles = ({ blok }: any) => {
+interface AllArticlesProps {
+  blok: any;
+}
+
+const AllArticles = (props: AllArticlesProps) => {
+  const blok = props.blok;
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 

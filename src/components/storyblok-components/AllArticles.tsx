@@ -68,14 +68,10 @@ const AllArticles = (props: AllArticlesProps) => {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-y-8">
-                <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
-                  {blok && articles[0] && articles[0].content.category == selectedCategory && <NewestArticleTeaser article={articles[0]}/>}
-                </div>
-                <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
-                  {blok && articles[1] && articles[1].content.category == selectedCategory && <NewestArticleTeaser article={articles[1]}/>}
-                </div>
-                <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
-                  {blok && articles[2] && articles[2].content.category == selectedCategory && <NewestArticleTeaser article={articles[2]}/>}
+                <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
+                  {blok && articles[0] && articles.map((article: any, index: number) => (
+                    article.content.category == selectedCategory && <NewestArticleTeaser article={article} key={index}/>
+                  ))}
                 </div>
                 <div {...storyblokEditable(blok)}
                   className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">

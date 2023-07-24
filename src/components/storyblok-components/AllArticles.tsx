@@ -50,11 +50,11 @@ const AllArticles = (props: AllArticlesProps) => {
   }, []);
 
   return (
-    <>
+    <section className="w-full flex flex-col items-center py-12">
       <Search setSelected={setSelectedCategory} categoryArr={categories} />
       <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>
         <div className="w-full flex justify-center">
-          <div className="article-container flex flex-col gap-y-8 xl:flex-row">
+          <div className="article-container flex flex-col gap-y-8 xl:flex-row w-full">
             {isLoading ? (
               <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-y-4 xl:grid-cols-4 items-center justify-center">
                 <ArticleLoadingSkeleton />
@@ -102,7 +102,7 @@ const AllArticles = (props: AllArticlesProps) => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   )
 }
 

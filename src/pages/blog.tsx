@@ -67,11 +67,11 @@ export default function Blog( props: any ) {
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
               {/* <Search categoryArr={categories} setSelected={setSelectedCategory}/> */}
-              <div className="w-full py-4 pb-12 flex items-center justify-center">
+              <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>
+              {/* <div className="w-full py-4 pb-12 flex items-center justify-center">
                 <div className="flex lg:w-[80%] flex-wrap gap-y-4 lg:py-12 justify-center">
-                  <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>
                 </div>
-              </div>
+              </div> */}
               <Footer open={!isOpen}/>
             </div>
             

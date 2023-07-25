@@ -38,8 +38,12 @@ const AllArticles = (props: AllArticlesProps) => {
         }));
 
         let categoryArray: string[] = ["All"];
-        data.stories.map((story: any) => {
-          categoryArray.push(story.content.category)
+        data.stories.forEach((story: any) => {
+          // prevent duplicit categories in array
+          // only add new category if it isnt already in array
+          if(!categoryArray.includes(story.content.category.toString())) {
+            categoryArray.push(story.content.category.toString());
+          }
         })
 
         setCategories(categoryArray);

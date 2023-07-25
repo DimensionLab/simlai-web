@@ -37,7 +37,21 @@ const Search = ( { categoryArr, setSelected }: SearchProps ) => {
             </div>
             <div className={`${categoryOpened ? `absolute w-full mt-[4.7rem] max-sm:bg-black/80 pb-4` : ``}`}>
               {categoryArr?.map((category, index) => (
-                <span key={index} className={`${categoryOpened ? `flex` : `hidden` } bg-[#373A45] py-4 px-4 rounded-b text-sm text-white flex justify-between items-center border-t-2 border-stone-900 hover:cursor-pointer hover:bg-[#2B2F36] duration-300`} onClick={() => handleClick(category)}>{category}</span>
+                // hide row when dropdown is not open, 
+                // hide 'All' field when no category is selected (all are displayed anyway), 
+                // hide field in dropdown from options when its selected already (no duplicity)
+                <span 
+                  key={index} 
+                  className={`
+                    ${categoryOpened ? `flex` : `hidden` } 
+                    bg-[#373A45] py-4 px-4 rounded-b text-sm text-white flex justify-between items-center border-t-2 border-stone-900 hover:cursor-pointer hover:bg-[#2B2F36] duration-300 
+                    ${defaultCategoryText == "Categories" && category == "All" ? `hidden`: ``} 
+                    ${defaultCategoryText == category ? `hidden` : ``}
+                  `} 
+                  onClick={() => handleClick(category)}
+                  >
+                    {category}
+                  </span>
               ))}
             </div>
           </div>

@@ -10,13 +10,6 @@ const Search = ( { categoryArr, setSelected }: SearchProps ) => {
   const [categoryOpened, setCategoryOpened] = useState(false);
   const [defaultCategoryText, setDefaultCategoryText] = useState("Categories");
 
-  // const handleSubmit = () => {
-  //   setButtonText("Not yet");
-  //   setTimeout(
-  //     () => setButtonText("Submit"), 2000
-  //   );
-  // }
-
   const handleCategoryOpened = () => {
     setCategoryOpened(!categoryOpened);
   }

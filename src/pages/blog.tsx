@@ -10,7 +10,6 @@ import Article from "../components/storyblok-components/Article";
 import AllArticles from "../components/storyblok-components/AllArticles";
 import { useEffect, useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
-import Search from "@/components/blog-components/Search";
 import Head from "next/head";
 import StoryblokContainer from "@/components/blog-components/StoryblokContainer";
 
@@ -66,12 +65,7 @@ export default function Blog( props: any ) {
           <section className="flex flex-col w-full h-full">
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
-              {/* <Search categoryArr={categories} setSelected={setSelectedCategory}/> */}
               <StoryblokContainer storyContent={story.content} keyID={props.keyID}/>
-              {/* <div className="w-full py-4 pb-12 flex items-center justify-center">
-                <div className="flex lg:w-[80%] flex-wrap gap-y-4 lg:py-12 justify-center">
-                </div>
-              </div> */}
               <Footer open={!isOpen}/>
             </div>
             

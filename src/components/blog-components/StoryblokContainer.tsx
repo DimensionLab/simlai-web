@@ -1,5 +1,4 @@
 import { StoryblokComponent } from "@storyblok/react";
-import { useEffect } from "react";
 
 interface StoryblokContainerProps {
     storyContent: any;
@@ -8,7 +7,7 @@ interface StoryblokContainerProps {
 
 const StoryblokContainer = (props: StoryblokContainerProps) => {
     return (
-        <StoryblokComponent blok={props.storyContent} key={props.keyID}/>
+        <StoryblokComponent blok={props.storyContent} key={props.keyID} />
     );
 }
 

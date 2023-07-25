@@ -7,12 +7,20 @@ import {
 import { useState, useEffect } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import NewestArticleTeaser from "./NewestArticleTeaser";
+import Search from "../blog-components/Search";
 
 const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
-const AllArticles = ({ blok }: any) => {
+interface AllArticlesProps {
+  blok: any;
+}
+
+const AllArticles = (props: AllArticlesProps) => {
+  const blok = props.blok;
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>();
 
   useEffect(() => {
     const getArticles = async () => {
@@ -28,47 +36,76 @@ const AllArticles = ({ blok }: any) => {
           article.content.slug = article.slug;
           return article;
         }));
+
+        let categoryArray: string[] = ["All"];
+        data.stories.forEach((story: any) => {
+          // prevent duplicit categories in array
+          // only add new category if it isnt already in array
+          if(!categoryArray.includes(story.content.category.toString())) {
+            categoryArray.push(story.content.category.toString());
+          }
+        })
+
+        setCategories(categoryArray);
         setIsLoading(false);
     };
     getArticles();
+    console.log(categories)
   }, []);
 
   return (
-    <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>
-      <div className="w-full flex justify-center">
-        <div className="article-container flex flex-col gap-y-8 xl:flex-row">
-          {isLoading ? (
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-y-4 xl:grid-cols-4 items-center justify-center">
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-              <ArticleLoadingSkeleton />
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center gap-y-8">
-              <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
-                {blok && articles[0] && <NewestArticleTeaser article={articles[0]}/>}
+    <section className="w-full flex flex-col items-center py-12">
+      <Search setSelected={setSelectedCategory} categoryArr={categories} />
+      <section className="w-full flex items-center justify-center max-w-screen-xl" key={blok.uuid}>
+        <div className="w-full flex justify-center">
+          <div className="article-container flex flex-col gap-y-8 xl:flex-row w-full">
+            {isLoading ? (
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-y-4 xl:grid-cols-4 items-center justify-center">
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
+                <ArticleLoadingSkeleton />
               </div>
-              <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
-                {blok && articles[1] && <NewestArticleTeaser article={articles[1]}/>}
+            ) : (
+              <div className="flex flex-col w-full items-center justify-center gap-y-8">
+                {selectedCategory != "All" && selectedCategory ? (
+                  <>
+                    <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
+                      {blok && articles[0] && articles.map((article: any, index: number) => (
+                        article.content.category == selectedCategory && <NewestArticleTeaser article={article} key={index}/>
+                      ))}
+                    </div>
+                    <div {...storyblokEditable(blok)}
+                      className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
+                      {blok && articles[0] && articles.map((article: any) => (
+                        article.content.category == selectedCategory && <ArticleTeaser article={article.content} key={article.uuid} />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
+                      {blok && articles[0] && articles.map((article: any, index: number) => (
+                        <NewestArticleTeaser article={article} key={index}/>
+                      ))}
+                    </div>
+                    <div {...storyblokEditable(blok)}
+                      className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
+                      {blok && articles[0] && articles.map((article: any) => (
+                        <ArticleTeaser article={article.content} key={article.uuid} />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
-              <div {...storyblokEditable(blok)} className="hidden xl:flex w-full items-center justify-center">
-                {blok && articles[2] && <NewestArticleTeaser article={articles[2]}/>}
-              </div>
-              <div {...storyblokEditable(blok)}
-                className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
-                {blok && articles[0] && articles.map((article: any) => (
-                  <ArticleTeaser article={article.content} key={article.uuid} />
-                  ))}
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      </section>
     </section>
   )
 }

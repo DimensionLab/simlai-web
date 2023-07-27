@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
 import {
   useStoryblokState,
@@ -13,7 +13,7 @@ import Feature from '@/components/storyblok-components/Feature';
 import Grid from '@/components/storyblok-components/Grid';
 import Teaser from '@/components/storyblok-components/Teaser';
 import Article from '@/components/storyblok-components/Article';
-import Header from '../components/homepage/Header';
+import Header from '../../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
 import { useState } from 'react';
@@ -94,7 +94,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   };
 
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  let { data } = await storyblokApi.get(`cdn/stories/blog/${slug}`, sbParams);
 
   return {
     props: {

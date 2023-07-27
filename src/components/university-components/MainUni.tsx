@@ -1,16 +1,25 @@
 import styled from "styled-components";
+import AllUniversityPosts from "../storyblok-components/AllUniversityPosts";
 
-const MainUni = () => {
-    return (
-        <main className="flex flex-col justify-center items-left h-full w-full px-4 py-8 md:py-24 gap-y-4 max-w-4xl">
-            <h1 className="font-bold text-3xl md:text-5xl">Welcome to Siml.ai University!</h1>
-            <h2 className="font-light md:text-2xl md:pb-12">A place where you can learn everything about <strong className="font-bold">Siml.ai</strong> and find out how to utilize it for achieving incredible things!</h2>
+interface MainUniProps {
+  story: any;
+}
 
-            <ImageWrapper>
-                <iframe className="aspect-video w-full" src="https://www.youtube.com/embed/i-wpzS9ZsCs" title="NVIDIA Keynote at COMPUTEX 2023" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </ImageWrapper>
-        </main>
-    )
+const MainUni = (props: MainUniProps) => {
+  const sbStory = props.story;
+
+  return (
+      <main className="flex flex-col justify-center items-left h-full w-full px-4 py-8 md:py-24 gap-y-4 max-w-4xl">
+          <h1 className="font-bold text-3xl md:text-5xl">Welcome to Siml.ai University!</h1>
+          <h2 className="font-light md:text-2xl md:pb-12">A place where you can learn everything about <strong className="font-bold">Siml.ai</strong> and find out how to utilize it for achieving incredible things!</h2>
+
+          {/* <ImageWrapper>
+              <iframe className="aspect-video w-full" src="https://www.youtube.com/embed/i-wpzS9ZsCs" title="NVIDIA Keynote at COMPUTEX 2023" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+          </ImageWrapper> */}
+
+          <AllUniversityPosts story={sbStory}/>
+      </main>
+  )
 }
 
 export default MainUni;

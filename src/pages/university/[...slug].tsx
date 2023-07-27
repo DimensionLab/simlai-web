@@ -20,13 +20,14 @@ import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
 import AllUniversityPosts from '@/components/storyblok-components/AllUniversityPosts';
+import UniPost from '@/components/storyblok-components/UniPost';
 
 const components = {
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
   page: Page,
-  article: Article,
+  'uni-post': UniPost,
   'all-university-posts': AllUniversityPosts,
 };
 
@@ -55,7 +56,7 @@ export default function UniversityPost({ story, keyID }: PageProps) {
   return (
     <div>
       <Head>
-            <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
+            {/* <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
             <meta property="og:image" content={story.content.image.filename ? story.content.image.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
             <meta property="og:title" content={story ? `Siml.ai - ${story.name}` : `Siml.ai - Blog Article`}/>
             <meta property="og:url" content="https://siml.ai/"/>
@@ -63,7 +64,7 @@ export default function UniversityPost({ story, keyID }: PageProps) {
             <meta property="twitter:card" content="summary_large_image"/>
             <meta name="twitter:site" content="@siml_ai" />
             <meta name="description" content="Read this blog post on Siml.ai blog!" />
-            <meta property="og:description" content="Read this blog post on Siml.ai blog!"/>
+            <meta property="og:description" content="Read this blog post on Siml.ai blog!"/> */}
       </Head>
 
       <Layout>
@@ -113,13 +114,16 @@ export async function getStaticPaths() {
 
   let paths: any = [];
   Object.keys(data.links).forEach((linkKey) => {
-    if (
-      data.links[linkKey].is_folder || 
-      data.links[linkKey].slug === 'university' || 
-      data.links[linkKey].slug === 'university/') {
-        return;
-      }
     const slug = data.links[linkKey].slug;
+    
+    if(slug.includes('blog/') || slug.includes('university/')) {
+      return;
+    }
+
+    if(data.links[linkKey].is_folder) {
+      return;
+    }
+
     let splittedSlug = slug.split('/');
     // console.log(splittedSlug);
     paths.push({ params: { slug: splittedSlug } });

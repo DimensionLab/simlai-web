@@ -18,7 +18,11 @@ import { GetStaticPropsContext } from 'next';
 import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
-import UniPost from '@/components/storyblok-components/UniPost';
+import dynamic from 'next/dynamic';
+
+const UniPost = dynamic(() =>
+  import('../../components/storyblok-components/UniPost')
+);
 
 const components = {
   feature: Feature,
@@ -53,22 +57,22 @@ export default function UniversityPost({ story, keyID }: PageProps) {
   return (
     <div>
       <Head>
-            {/* <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
-            <meta property="og:image" content={story.content.image.filename ? story.content.image.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
-            <meta property="og:title" content={story ? `Siml.ai - ${story.name}` : `Siml.ai - Blog Article`}/>
+            <title>{story ? `Siml.ai University - ${story.name}` : 'Siml.ai - University Post'}</title>
+            <meta property="og:image" content={story.content.thumbnail.filename ? story.content.thumbnail.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
+            <meta property="og:title" content={story ? `Siml.ai - ${story.name}` : `Siml.ai - University Post`}/>
             <meta property="og:url" content="https://siml.ai/"/>
-            <meta property="twitter:image" content={story.content.image.filename ? story.content.image.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
+            <meta property="twitter:image" content={story.content.thumbnail.filename ? story.content.thumbnail.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
             <meta property="twitter:card" content="summary_large_image"/>
             <meta name="twitter:site" content="@siml_ai" />
-            <meta name="description" content="Read this blog post on Siml.ai blog!" />
-            <meta property="og:description" content="Read this blog post on Siml.ai blog!"/> */}
+            <meta name="description" content="Read this Siml.ai University post!" />
+            <meta property="og:description" content="Read this Siml.ai University post!"/>
       </Head>
 
       <Layout>
         {isOpen ? (
           <section className='w-full'>
             <Header open={!isOpen} onClose={handleOpen} whichSubpage="article"/>
-            <StoryblokComponent blok={story.content} key={keyID}/>
+            <UniPost blok={story.content} key={keyID}/>
             <Footer open={!isOpen}/>
           </section>
         ) : (

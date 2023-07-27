@@ -19,7 +19,6 @@ import { GetStaticPropsContext } from 'next';
 import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
-import AllArticles from '@/components/storyblok-components/AllArticles';
 
 const components = {
   feature: Feature,
@@ -27,7 +26,6 @@ const components = {
   teaser: Teaser,
   page: Page,
   article: Article,
-  'all-articles': AllArticles,
 };
 
 storyblokInit({

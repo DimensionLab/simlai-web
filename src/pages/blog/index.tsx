@@ -6,12 +6,15 @@ import Teaser from "../../components/storyblok-components/Teaser";
 import Header from "../../components/homepage/Header";
 import Layout from "@/components/Layout";
 import Footer from "../../components/homepage/Footer";
-import Article from "../../components/storyblok-components/Article";
-import AllArticles from "../../components/storyblok-components/AllArticles";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DropdownMenu from "@/components/homepage/main-components/mobile-components/DropdownMenu";
 import Head from "next/head";
-import StoryblokContainer from "@/components/blog-components/StoryblokContainer";
+import Article from "@/components/storyblok-components/Article";
+import dynamic from "next/dynamic";
+
+const AllArticles = dynamic(() =>
+  import('../../components/storyblok-components/AllArticles')
+);
 
 const components = {
   feature: Feature,
@@ -30,10 +33,8 @@ storyblokInit({
 
 const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
-export default function Blog( props: any ) {
+const Blog = ( props: any ) => {
   const sbStory = useStoryblokState(props.story)
-  // const [story, setStory] = useState(sbStory);
-  console.log(AllArticles)
 
   const [isOpen, setIsOpen] = useState(true);
 
@@ -42,12 +43,6 @@ export default function Blog( props: any ) {
       return !prevIsOpen;
     });
   }
-
-  // useEffect(() => {
-  //   setStory(sbStory);
-
-  //   // return () => setStory()
-  // }, [sbStory]);
 
   return (
     <>
@@ -66,7 +61,8 @@ export default function Blog( props: any ) {
           <section className="flex flex-col w-full h-full">
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
-              <StoryblokContainer storyContent={sbStory.content} keyID={props.keyID}/>
+              {/* <StoryblokContainer storyContent={sbStory.content} keyID={props.keyID}/> */}
+              <AllArticles blok={sbStory.content} />
               <Footer open={!isOpen}/>
             </div>
             
@@ -79,6 +75,7 @@ export default function Blog( props: any ) {
   )
 }
 
+export default Blog;
 
 export async function getStaticProps() {
   let slug = "blog";

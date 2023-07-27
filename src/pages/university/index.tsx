@@ -31,14 +31,14 @@ const components = {
 const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
 const University = (props: any) => {
-const [isOpen, setIsOpen] = useState(true);
-const sbStory = useStoryblokState(props.story);
+    const [isOpen, setIsOpen] = useState(true);
+    const sbStory = useStoryblokState(props.story);
 
-const handleOpen = () => {
-    setIsOpen(prevIsOpen =>  {
-    return !prevIsOpen;
-    });
-}
+    const handleOpen = () => {
+        setIsOpen(prevIsOpen =>  {
+        return !prevIsOpen;
+        });
+    }
     return (
         <>
             <Head>

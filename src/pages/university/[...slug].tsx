@@ -12,14 +12,12 @@ import {
 import Feature from '@/components/storyblok-components/Feature';
 import Grid from '@/components/storyblok-components/Grid';
 import Teaser from '@/components/storyblok-components/Teaser';
-import Article from '@/components/storyblok-components/Article';
 import Header from '../../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
 import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
-import AllUniversityPosts from '@/components/storyblok-components/AllUniversityPosts';
 import UniPost from '@/components/storyblok-components/UniPost';
 
 const components = {
@@ -28,7 +26,6 @@ const components = {
   teaser: Teaser,
   page: Page,
   'uni-post': UniPost,
-  'all-university-posts': AllUniversityPosts,
 };
 
 storyblokInit({

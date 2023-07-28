@@ -70,7 +70,7 @@ export default function UniversityPost({ story, keyID }: PageProps) {
 
       <Layout>
         {isOpen ? (
-          <section className='w-full'>
+          <section className='w-full h-full flex flex-col justify-between'>
             <Header open={!isOpen} onClose={handleOpen} whichSubpage="article"/>
             <UniPost blok={story.content} key={keyID}/>
             <Footer open={!isOpen}/>

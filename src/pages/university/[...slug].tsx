@@ -41,11 +41,12 @@ storyblokInit({
 interface PageProps {
   story: StoryData<any>;
   keyID: any;
+  video: any
 }
 
 const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
 
-export default function UniversityPost({ story, keyID }: PageProps) {
+export default function UniversityPost({ story, keyID, video }: PageProps) {
   story = useStoryblokState(story);
   
   const [isOpen, setIsOpen] = useState(true);
@@ -72,7 +73,7 @@ export default function UniversityPost({ story, keyID }: PageProps) {
         {isOpen ? (
           <section className='w-full h-full flex flex-col justify-between'>
             <Header open={!isOpen} onClose={handleOpen} whichSubpage="article"/>
-            <UniPost blok={story.content} key={keyID}/>
+            <UniPost blok={story.content} key={keyID} videoData={video}/>
             <Footer open={!isOpen}/>
           </section>
         ) : (
@@ -98,10 +99,20 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/university/${slug}`, sbParams);
 
+  const videoLinkUrl = data.story.content.video_link.url;
+
+  const videoData = await getVideoData(videoLinkUrl);
+
+  const videoDataJson = {
+    url: videoData.url,
+    title: videoData.title
+  }
+
   return {
     props: {
       story: data ? data.story : false,
       keyID: data ? data.story.id : false,
+      video: videoDataJson
     },
     revalidate: 300,
   };
@@ -134,4 +145,26 @@ export async function getStaticPaths() {
     paths: paths,
     fallback: 'blocking',
   };
+}
+
+const getVideoData = async (videoLinkUrl: string) => {
+  const response = await fetch(`https://www.youtube.com/oembed?url=${videoLinkUrl}`)
+  const data = await response.json();
+
+  const srcRegex = /src="([^"]+)"/;
+  const matches = data.html.match(srcRegex);
+  
+  let srcValue = "";
+  if (matches && matches.length >= 2) {
+      srcValue = matches[1];
+  } else {
+      console.log("No 'src' attribute found or the URL is invalid.");
+  }
+
+  const info = {
+      url: srcValue,
+      title: data.title
+  }
+
+  return info;
 }

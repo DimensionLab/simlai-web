@@ -1,48 +1,10 @@
 import { render } from 'storyblok-rich-text-react-renderer';
 import styled from 'styled-components';
 import 'prismjs/themes/prism-twilight.css';
-import Prism from 'prismjs';
-import { useEffect, useState } from "react";
 
 const ArticleWrapper = styled.article``;
 
-interface VideoType {
-    url: string,
-    title: string,
-}
-
-const UniPost = ( { blok }: any) => {
-    const [videoData, setVideoData] = useState<VideoType>()
-
-    useEffect(() => {
-      Prism.highlightAll();
-    }, [blok.content]);
-
-    useEffect(() => {
-        const getVideoData = async () => {
-            const response = await fetch(`https://www.youtube.com/oembed?url=${blok.video_link.url}`)
-            const data = await response.json();
-    
-            const srcRegex = /src="([^"]+)"/;
-            const matches = data.html.match(srcRegex);
-            
-            let srcValue = "";
-            if (matches && matches.length >= 2) {
-                srcValue = matches[1];
-            } else {
-                console.log("No 'src' attribute found or the URL is invalid.");
-            }
-    
-            const info = {
-                url: srcValue,
-                title: data.title
-            }
-    
-            setVideoData(info);
-        }
-
-        getVideoData();
-    }, []);
+const UniPost = ( { blok, videoData }: any) => {
 
   return (
     <ArticleWrapper>

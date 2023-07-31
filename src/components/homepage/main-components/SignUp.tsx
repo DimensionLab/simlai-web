@@ -128,7 +128,7 @@ const SignUp = () => {
             type="email" 
             name="" 
             id="EMAIL" 
-            autoFocus
+            // autoFocus
             value={fields.EMAIL}
             onChange={handleFieldChange}
             placeholder="your@email.com"/>

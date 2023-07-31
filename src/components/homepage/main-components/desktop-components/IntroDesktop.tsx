@@ -206,7 +206,6 @@ const IntroDesktop = () => {
                 type="email" 
                 name="" 
                 id="EMAIL" 
-                // autoFocus
                 value={fields.EMAIL}
                 onChange={handleFieldChange}
                 placeholder="your@email.com"
@@ -214,15 +213,6 @@ const IntroDesktop = () => {
               <button className={handleResult()} disabled={success || fields.EMAIL === "" ? true : false}>
                 <div>{loading ? "JOINING" : (success ? "JOINED" : "JOIN")}</div>
               </button>
-
-              {/* {loading && 
-                <div>Submitting...</div> } */}
-            
-              {/* {error && 
-                <div>{message}</div>} */}
-
-              {/* {success && 
-                <div className="flex items-center text-sm font-light ">{message}</div> } */}
             </div>
           </form>
         </div>

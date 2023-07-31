@@ -27,7 +27,7 @@ const Article = ( { blok }: ArticleStoryblok ) => {
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl max-w-5xl flex self-start" dangerouslySetInnerHTML={ {__html: handleTitle()} }>
             {/* {blok.title} */}
           </h1>
-          <div className='grid w-full pt-8 self-start -mt-10 gap-x-0 grid-cols-3 max-w-md text-sm md:text-lg'>
+          <div className='grid w-full pt-8 self-start -mt-10 gap-x-2 grid-cols-3 max-w-md text-sm md:text-lg'>
             <div className='w-full flex flex-col'>
               <span className='text-[#454853]'>Date:</span>
               <span className='text-[#7C7F8B]'>{blok.date}</span>

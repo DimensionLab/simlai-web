@@ -13,32 +13,28 @@ const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "pu
 
 interface AllArticlesProps {
   blok: any;
+  articlesArr: any[];
 }
 
 const AllArticles = (props: AllArticlesProps) => {
   const blok = props.blok;
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>();
 
+  const articlesArr = props.articlesArr;
+
   useEffect(() => {
     const getArticles = async () => {
       setIsLoading(true);
-      const storyblokApi = getStoryblokApi();
-        const { data } = await storyblokApi.get(`cdn/stories`, {
-          version: WHICH_VERSION,
-          starts_with: 'blog/',
-          is_startpage: false
-        });
-  
-        setArticles((prev) => data.stories.map((article: any) => {
+        setArticles((prev) => articlesArr.map((article: any) => {
           article.content.slug = article.slug;
           return article;
         }));
 
         let categoryArray: string[] = ["All"];
-        data.stories.forEach((story: any) => {
+        articlesArr.forEach((story: any) => {
           // prevent duplicit categories in array
           // only add new category if it isnt already in array
           if(!categoryArray.includes(story.content.category.toString())) {
@@ -50,7 +46,6 @@ const AllArticles = (props: AllArticlesProps) => {
         setIsLoading(false);
     };
     getArticles();
-    console.log(categories)
   }, []);
 
   return (

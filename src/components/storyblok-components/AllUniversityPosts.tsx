@@ -11,32 +11,15 @@ const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "pu
 
 interface AllUniversityPostsProps {
   story: any;
+  postsArr: any[];
 }
 
 const AllUniversityPosts = (props: AllUniversityPostsProps) => {
   const blok = props.story;
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const getArticles = async () => {
-      setIsLoading(true);
-      const storyblokApi = getStoryblokApi();
-        const { data } = await storyblokApi.get(`cdn/stories`, {
-          version: WHICH_VERSION,
-          starts_with: 'university/',
-          is_startpage: false
-        });
-  
-        setArticles((prev) => data.stories.map((article: any) => {
-          article.content.slug = article.slug;
-          return article;
-        }));
-
-        setIsLoading(false);
-    };
-    getArticles();
-  }, []);
+  const postsArr = props.postsArr;
 
   return (
     <section className="w-full flex flex-col items-center py-12">
@@ -58,8 +41,8 @@ const AllUniversityPosts = (props: AllUniversityPostsProps) => {
               <div className="flex flex-col w-full items-center justify-center gap-y-8">
                     <div {...storyblokEditable(blok)}
                       className="w-full flex flex-col xl:flex-row items-center justify-center">
-                      { articles.map((article: any) => (
-                        <UniTeaser uniPost={article.content} key={article.uuid} />
+                      { postsArr.map((post: any) => (
+                        <UniTeaser uniPost={post.content} key={post.uuid} />
                       ))}
                     </div>
               </div>

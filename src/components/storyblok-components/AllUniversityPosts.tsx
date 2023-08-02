@@ -7,8 +7,6 @@ import { useState, useEffect } from "react";
 import ArticleLoadingSkeleton from "../blog-components/ArticleLoadingSkeleton";
 import UniTeaser from "./UniTeaser";
 
-const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "published" : "draft";
-
 interface AllUniversityPostsProps {
   story: any;
   postsArr: any[];
@@ -16,10 +14,23 @@ interface AllUniversityPostsProps {
 
 const AllUniversityPosts = (props: AllUniversityPostsProps) => {
   const blok = props.story;
-  const [articles, setArticles] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [posts, setPosts] = useState<any[]>([]);
 
   const postsArr = props.postsArr;
+
+  useEffect(() => {
+    const configurePosts = () => {
+      setIsLoading(true);
+      setPosts((prev) => postsArr.map((post: any) => {
+        post.content.slug = post.slug;
+        return post;
+      }));
+      setIsLoading(false);
+    };
+
+    configurePosts();
+  }, []);
 
   return (
     <section className="w-full flex flex-col items-center py-12">
@@ -41,7 +52,7 @@ const AllUniversityPosts = (props: AllUniversityPostsProps) => {
               <div className="flex flex-col w-full items-center justify-center gap-y-8">
                     <div {...storyblokEditable(blok)}
                       className="w-full flex flex-col xl:flex-row items-center justify-center">
-                      { postsArr.map((post: any) => (
+                      { posts.map((post: any) => (
                         <UniTeaser uniPost={post.content} key={post.uuid} />
                       ))}
                     </div>

@@ -62,7 +62,7 @@ const Blog = ( props: any ) => {
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
               {/* <StoryblokContainer storyContent={sbStory.content} keyID={props.keyID}/> */}
-              <AllArticles blok={sbStory.content} />
+              <AllArticles blok={sbStory.content}  articlesArr={props.articlesArr}/>
               <Footer open={!isOpen}/>
             </div>
             
@@ -84,11 +84,20 @@ export async function getStaticProps() {
   };
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+
+  const allArticles = await storyblokApi.get(`cdn/stories`, {
+    version: WHICH_VERSION,
+    starts_with: 'blog/',
+    is_startpage: false
+  });
+
+  const articles: any[] = allArticles.data.stories;
   
   return {
     props: {
       story: data ? data.story : null,
       keyID: data ? data.story.id : null,
+      articlesArr: allArticles ? articles : null,
     },
     revalidate: 300,
   };

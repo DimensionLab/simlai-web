@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import 'prismjs/themes/prism-twilight.css';
 import Prism from 'prismjs';
 import { useEffect } from "react";
-import { ArticleStoryblok } from '../../../component-types-sb';
 
 const ArticleWrapper = styled.article``;
 
-const Article = ( { blok }: ArticleStoryblok ) => {
+const Article = ( { blok }: any ) => {
     useEffect(() => {
       Prism.highlightAll();
   }, [blok.content]);

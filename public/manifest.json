@@ -1,0 +1,13 @@
+{
+  "name": "Siml.ai - Platform for fast AI-driven physics simulations",
+  "short_name": "Siml.ai",
+  "icons": [
+    {
+      "src": "./assets/simlai/simlai-logo.svg",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone"
+}

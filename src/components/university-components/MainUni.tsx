@@ -3,6 +3,7 @@ import AllUniversityPosts from "../storyblok-components/AllUniversityPosts";
 
 interface MainUniProps {
   story: any;
+  postsArr: any[];
 }
 
 const MainUni = (props: MainUniProps) => {
@@ -17,28 +18,28 @@ const MainUni = (props: MainUniProps) => {
               <iframe className="aspect-video w-full" src="https://www.youtube.com/embed/i-wpzS9ZsCs" title="NVIDIA Keynote at COMPUTEX 2023" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
           </ImageWrapper> */}
 
-          <AllUniversityPosts story={sbStory}/>
+          <AllUniversityPosts story={sbStory} postsArr={props.postsArr} />
       </main>
   )
 }
 
 export default MainUni;
 
-const ImageWrapper = styled.div`
-  background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
-  border-radius: 0.8rem;
-  padding: 0.4rem;
+// const ImageWrapper = styled.div`
+//   background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
+//   border-radius: 0.8rem;
+//   padding: 0.4rem;
   
-  @media (min-width: 1024px) {
-    padding: 1.3rem;
-  }
+//   @media (min-width: 1024px) {
+//     padding: 1.3rem;
+//   }
 
-  iframe {
-    border: 5px solid rgba(59, 17, 81, 0.40);
-    border-radius: 0.8rem;
+//   iframe {
+//     border: 5px solid rgba(59, 17, 81, 0.40);
+//     border-radius: 0.8rem;
 
-    @media(min-width: 1024px) {
-      border: 10px solid rgba(59, 17, 81, 0.40);
-    }
-  }
-`
+//     @media(min-width: 1024px) {
+//       border: 10px solid rgba(59, 17, 81, 0.40);
+//     }
+//   }
+// `

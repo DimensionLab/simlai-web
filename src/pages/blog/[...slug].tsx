@@ -4,7 +4,6 @@ import Layout from '../../components/Layout';
 import {
   useStoryblokState,
   getStoryblokApi,
-  StoryblokComponent,
   storyblokInit,
   apiPlugin,
   StoryData,
@@ -18,11 +17,7 @@ import { GetStaticPropsContext } from 'next';
 import { useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
-import dynamic from 'next/dynamic';
-
-const Article = dynamic(() =>
-  import('../../components/storyblok-components/Article')
-);
+import Article from '../../components/storyblok-components/Article';
 
 const components = {
   feature: Feature,
@@ -72,8 +67,8 @@ export default function BlogPost({ story, keyID }: PageProps) {
         {isOpen ? (
           <section className='w-full flex flex-col justify-between h-full'>
             <Header open={!isOpen} onClose={handleOpen} whichSubpage="article"/>
-            <StoryblokComponent blok={story.content} key={keyID}/>
-            <Footer open={!isOpen}/>
+            <Article blok={story.content} key={keyID} />
+            <Footer open={!isOpen} key={keyID}/>
           </section>
         ) : (
           <DropdownMenu open={!isOpen} onClose={handleOpen}/>

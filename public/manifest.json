@@ -1,0 +1,40 @@
+{
+  "name": "Siml.ai - Platform for fast AI-driven physics simulations",
+  "short_name": "Siml.ai",
+  "icons":[
+  {
+    "src": "/assets/simlai/simlai-logo-160x160.png",
+    "sizes": "20x20",
+    "type": "image/png"
+  },
+  {
+    "src": "/assets/simlai/simlai-logo-160x160.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  },
+  {
+    "src": "/assets/simlai/simlai-logo-160x160.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  },
+  {
+    "src": "/assets/simlai/simlai-logo-160x160.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  },
+  {
+    "src": "/assets/simlai/simlai-logo-160x160.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "/assets/simlai/simlai-logo-160x160.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+],
+"start_url": "/",
+"display": "standalone",
+"background_color": "#ffffff",
+"theme_color": "#ffffff"
+}

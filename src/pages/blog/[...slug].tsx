@@ -14,7 +14,7 @@ import Teaser from '@/components/storyblok-components/Teaser';
 import Header from '../../components/homepage/Header';
 import Footer from '@/components/homepage/Footer';
 import { GetStaticPropsContext } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DropdownMenu from '@/components/homepage/main-components/mobile-components/DropdownMenu';
 import Page from '@/components/storyblok-components/Page';
 import Article from '../../components/storyblok-components/Article';
@@ -42,6 +42,7 @@ const WHICH_VERSION = process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? "pu
 
 export default function BlogPost({ story, keyID }: PageProps) {
   story = useStoryblokState(story);
+  const [currURL, setCurrURL] = useState('');
   
   const [isOpen, setIsOpen] = useState(true);
 
@@ -49,13 +50,18 @@ export default function BlogPost({ story, keyID }: PageProps) {
     setIsOpen(!isOpen);
   }
 
+  useEffect(() => {
+    const currURL = window.location.href;
+    setCurrURL(currURL);
+  }, []);
+
   return (
     <div>
       <Head>
             <title>{story ? `Siml.ai - ${story.name}` : 'Siml.ai - Blog Article'}</title>
             <meta property="og:image" content={story.content.image.filename ? story.content.image.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
             <meta property="og:title" content={story ? `Siml.ai - ${story.name}` : `Siml.ai - Blog Article`}/>
-            <meta property="og:url" content="https://siml.ai/"/>
+            <meta property="og:url" content={currURL}/>
             <meta property="twitter:image" content={story.content.image.filename ? story.content.image.filename : `https://siml.ai/assets/simlai/url-preview.png`}/>
             <meta property="twitter:card" content="summary_large_image"/>
             <meta name="twitter:site" content="@siml_ai" />

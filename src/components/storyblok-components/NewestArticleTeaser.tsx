@@ -13,12 +13,16 @@ const NewestArticleTeaser = ( { article }: any) => {
                             <img src="/assets/simlai/placeholder-solid-white.svg" alt="placeholder solid white image" className={`${loaded ? `hidden` : `flex rounded-l-xl object-cover aspect-video w-full skeleton`}`}/>
                         </div>
                         <div className="flex flex-col w-1/4 px-6 py-12 gap-y-6 bg-[#222530] rounded-r-xl justify-between">
-                            <h1 className={`${loaded ? `flex` : `hidden`} self-start w-full text-xl`}>{article.content.title}</h1>
-                            <h1 className={`${loaded ? `hidden` : `flex self-start w-full text-xl text-transparent rounded-xl gap-y-2 flex-col`}`}>
-                                <span className="skeleton rounded-xl">something random that is</span>
-                                <span className="skeleton rounded-xl">displayed here instead of</span>
-                                <span className="skeleton rounded-xl">displayed here instead of</span>
-                            </h1>
+                            <div>
+                                <h1 className={`${loaded ? `flex` : `hidden`} self-start w-full text-xl`}>{article.content.title}</h1>
+                                <h1 className={`${loaded ? `hidden` : `flex self-start w-full text-xl text-transparent rounded-xl gap-y-2 flex-col`}`}>
+                                    <span className="skeleton rounded-xl">something random that is</span>
+                                    <span className="skeleton rounded-xl">displayed here instead of</span>
+                                    <span className="skeleton rounded-xl">displayed here instead of</span>
+                                </h1>
+                                <h2 className={`${loaded ? `text-[#7C7F8B] text-sm pt-4` : `hidden`}`}>{article.content.date}</h2>
+                                <h2 className={`${!loaded ? `skeleton text-transparent` : `hidden`}`}>XX.XX.XX</h2>
+                            </div>
                             <div className="flex w-full justify-between items-center">
                                 <span className={`text-sm ${loaded ? `text-[#7C7F8B]` : `skeleton w-3/4 text-transparent rounded-xl`}`}>{article.content.category}</span>
                                 <img src="/assets/simlai/arrow-blog-teaser.svg" alt="arrow icon"/>

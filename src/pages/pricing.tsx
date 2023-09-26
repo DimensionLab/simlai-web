@@ -137,7 +137,7 @@ const Pricing = () => {
                             We&apos;re also giving out 
                             <strong> 100% discount for 1 month </strong> 
                             for everybody who completes our 
-                            <strong> Siml.ai Early Adopter Survey </strong>
+                            <a href="https://dmloc3fzh7g.typeform.com/to/LjYAfoxp" className="text-[#8B7CFF]"> Siml.ai Early Adopter Survey</a>
                             - you can get more information in our community Discord, which you can join 
                             <a href="https://discord.gg/UxQyC9PEqt" className="text-[#8B7CFF]"> here</a>.
                           </span>

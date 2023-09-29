@@ -206,7 +206,7 @@ const Footer = (props: FooterProps) => {
             </div>
           </div>
         </div>
-        <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab s.r.o., creators of Siml.ai</div>
+        <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab, creators of Siml.ai</div>
       </div>
     </FooterWrapper>
   );

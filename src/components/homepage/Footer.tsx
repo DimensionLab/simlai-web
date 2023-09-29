@@ -190,7 +190,7 @@ const Footer = (props: FooterProps) => {
               <Link href="../#features">Features</Link>
               <Link href="../#model-engineer">Model Engineer</Link>
               <Link href="../#simulation-studio">Simulation Studio</Link>
-              <a href="https://docs.siml.ai">Documentation</a>
+              <a href="https://docs.siml.ai" target='_blank'>Documentation</a>
             </div>
           </div>
           <div className="company">
@@ -200,9 +200,9 @@ const Footer = (props: FooterProps) => {
               {/* <a>Careers</a> */}
               <a href="mailto:hello@dimensionlab.org">Contact</a>
               {/* change to production website url */}
-              <a href="https://dimensionlab.org">DimensionLab</a>
-              <a href="https://www.dimensionlab.org/terms-and-conditions.html">Terms & Conditions</a>
-              <a href="https://www.dimensionlab.org/privacy-policy.html" className='pb-6'>Privacy Policy</a> 
+              <a href="https://dimensionlab.org" target='_blank'>DimensionLab</a>
+              <a href="https://www.dimensionlab.org/terms-and-conditions.html" target='_blank'>Terms & Conditions</a>
+              <a href="https://www.dimensionlab.org/privacy-policy.html" className='pb-6' target='_blank'>Privacy Policy</a> 
             </div>
           </div>
         </div>

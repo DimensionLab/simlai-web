@@ -141,13 +141,13 @@ const Pricing = () => {
                             - you can get more information in our community Discord, which you can join 
                             <a href="https://discord.gg/UxQyC9PEqt" className="text-[#8B7CFF]"> here</a>.
                           </span>
-                          <form className="flex flex-col w-full xl:h-full xl:w-[40%]" onSubmit={handleSubmit}>
+                          {/* <form className="flex flex-col w-full xl:h-full xl:w-[40%]" onSubmit={handleSubmit}>
                             <label className="text-xs text-[#D0D2DF] sm:pt-16 xl:pt-0">Apply your Siml.ai Early Adopter discount code:</label>
                             <div className="flex gap-x-2 flex-row w-full pt-2">
-                              <input type="text" placeholder="Enter discount code" className=" bg-[#373A45] px-6 py-4 text-sm rounded text-gray-500 w-[70%]"/>
-                              <button className="px-4 rounded text-lg font-bold bg-[#6B50FF] flex justify-center items-center w-[30%]">APPLY</button>
+                              <input type="text" placeholder="Enter discount code" className=" bg-[#373A45] px-6 py-4 text-sm rounded text-gray-500 w-[70%]" disabled/>
+                              <button className="px-4 rounded text-lg font-bold bg-[#6B50FF] flex justify-center items-center w-[30%]" disabled>APPLY</button>
                             </div>
-                          </form>
+                          </form> */}
                         </div>
                       </div>
                     </div>

@@ -83,17 +83,33 @@ const AllArticles = (props: AllArticlesProps) => {
                   </>
                 ) : (
                   <>
-                    <div {...storyblokEditable(blok)} className="hidden xl:flex flex-col gap-y-6 w-full items-center justify-center">
-                      {blok && articles[0] && articles.map((article: any, index: number) => (
-                        <NewestArticleTeaser article={article} key={index}/>
+                  <section className="hidden xl:flex xl:flex-col gap-y-4">
+                    <div {...storyblokEditable(blok)} className="flex flex-col gap-y-6 w-full items-center justify-center">
+                      {blok && articles[0] && 
+                        <NewestArticleTeaser article={articles[0]} key={0}/>
+                      }
+                    </div>
+                    <div {...storyblokEditable(blok)}
+                      className="w-full flex flex-col xl:flex-row items-center justify-center">
+                      {blok && articles[0] && articles.map((article: any, index) => (
+                        index > 0 && index < 3 && <ArticleTeaser article={article.content} key={article.uuid} />
                       ))}
                     </div>
                     <div {...storyblokEditable(blok)}
-                      className="w-full flex flex-col xl:flex-row items-center justify-center xl:hidden">
-                      {blok && articles[0] && articles.map((article: any) => (
+                      className="w-full flex flex-col xl:flex-row items-center justify-center">
+                      {blok && articles[0] && articles.map((article: any, index) => (
+                        index >= 3 && <ArticleTeaser article={article.content} key={article.uuid} />
+                      ))}
+                    </div>
+                  </section>
+                  <section className="flex xl:hidden">
+                    <div {...storyblokEditable(blok)}
+                      className="w-full flex flex-col xl:flex-row items-center justify-center flex-grow-0">
+                      {blok && articles[0] && articles.map((article: any, index) => (
                         <ArticleTeaser article={article.content} key={article.uuid} />
                       ))}
                     </div>
+                  </section>
                   </>
                 )}
               </div>

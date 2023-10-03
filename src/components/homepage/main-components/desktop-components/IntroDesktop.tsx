@@ -200,7 +200,7 @@ const IntroDesktop = () => {
             event.preventDefault();
             handleSubmit(fields);
           }}>
-            <div className="label">Join our newsletter</div>
+            <div className="label">Sign up for beta access</div>
             <div className="email-button">
               <input 
                 type="email" 

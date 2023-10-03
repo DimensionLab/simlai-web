@@ -5,6 +5,7 @@ interface ShowcaseCardProps {
     title: string,
     subtitle: string,
     txtData: string[][],
+    format: "img" | "video"
 }
 
 const ShowcaseCard = (props: ShowcaseCardProps) => {
@@ -12,7 +13,22 @@ const ShowcaseCard = (props: ShowcaseCardProps) => {
         <section className="w-full flex items-center justify-center pb-16">
             <main className="w-full flex flex-col px-4 py-16 items-center">
                 <ImageWrapper className="max-w-5xl">
-                    <img src={props.imgPath} alt={props.title} id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}/>
+                    {props.format === "img" && 
+                        <img 
+                            src={props.imgPath} 
+                            alt={props.title} 
+                            id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}
+                        />
+                    }
+                    {props.format === "video" && 
+                        <video 
+                            src={props.imgPath} 
+                            autoPlay={true} 
+                            loop={true} 
+                            id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}
+                            controls={false}
+                        />
+                    }
                 </ImageWrapper>
                 <section className="flex flex-col pt-20 max-w-5xl">
                     <h1 className="text-4xl font-black pb-12 lg:text-7xl">{props.title}</h1>
@@ -46,7 +62,7 @@ const ImageWrapper = styled.div`
     padding: 1.3rem;
   }
 
-  img {
+  img, video {
     border: 5px solid rgba(59, 17, 81, 0.40);
     border-radius: 0.8rem;
 

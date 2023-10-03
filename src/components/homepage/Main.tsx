@@ -59,12 +59,14 @@ const Main = (props: MainProps) => {
           title={"Model Engineer"}
           subtitle={"Train and optimize extremely fast physics simulators using deep learning techniques through web-based Model Engineer application."}
           txtData={txtDataModelEngineer}
+          format="img"
         />
         <ShowcaseCard 
-          imgPath={"/assets/simlai/simulation-studio-image.png"} 
+          imgPath={"/assets/simlai/simulation_studio_video.webm"} 
           title={"Simulation Studio"} 
           subtitle={"Leverage trained AI simulator models for solving engineering and scientific problems, by constructing interactive, physics and data-driven digital twins."} 
-          txtData={txtDataSimulationStudio}        
+          txtData={txtDataSimulationStudio}  
+          format="video"      
         />
       </div>
       <div className="not-width-limited">

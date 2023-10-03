@@ -55,11 +55,11 @@ const Main = (props: MainProps) => {
         <Features/>
         <Product/>
         <ShowcaseCard
-          imgPath={"/assets/simlai/model_engineer_cover_image.png"}
+          imgPath={"/assets/simlai/model_engineer_video.webm"}
           title={"Model Engineer"}
           subtitle={"Train and optimize extremely fast physics simulators using deep learning techniques through web-based Model Engineer application."}
           txtData={txtDataModelEngineer}
-          format="img"
+          format="video"
         />
         <ShowcaseCard 
           imgPath={"/assets/simlai/simulation_studio_video.webm"} 

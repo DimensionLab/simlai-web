@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Slider = () => {
   const imgPaths = [
-    "assets/simlai/model-engineer.png",
+    "assets/simlai/model_engineer_cover_image.png",
     "assets/simlai/simulation-studio-image.png",
   ];
   const [index, setIndex] = useState(0);

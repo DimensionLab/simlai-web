@@ -27,6 +27,8 @@ const ShowcaseCard = (props: ShowcaseCardProps) => {
                             loop={true} 
                             id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}
                             controls={false}
+                            muted={true}
+                            playsInline={true}
                         />
                     }
                 </ImageWrapper>

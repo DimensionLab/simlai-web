@@ -247,7 +247,7 @@ const DropdownMenu = (props: DropdownProps ) => {
             <a href="https://www.dimensionlab.org/terms-and-conditions.html">Terms & Conditions</a>
             <a href="https://www.dimensionlab.org/privacy-policy.html">Privacy Policy</a>
           </div>
-          <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab s.r.o., creators of Siml.ai</div>
+          <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab, creators of Siml.ai</div>
         </div>
       </div>
     </DropdownMenuWrapper>

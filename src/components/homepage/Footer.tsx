@@ -190,6 +190,11 @@ const Footer = (props: FooterProps) => {
                   <img src="/assets/reddit-logo.png" alt="reddit logo" className='rounded'/>
                 </a>
               </div>
+              <div className="instagram-container">
+                <a href="https://www.instagram.com/siml.ai/" target='_blank'>
+                  <img src="/assets/instagram-logo.png" alt="reddit logo" className='rounded bg-white p-1'/>
+                </a>
+              </div>
             </div>
           </div>
         </div>

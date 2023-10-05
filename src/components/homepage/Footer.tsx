@@ -161,7 +161,7 @@ const Footer = (props: FooterProps) => {
                 </a>
               </div>
               <div className="facebook-container">
-                <a href="https://www.facebook.com/learnedsimulators/" target='_blank'>
+                <a href="https://www.facebook.com/dl.simlai" target='_blank'>
                   <img src="/assets/facebook-logo.svg" alt="facebook logo" />
                 </a>
               </div>

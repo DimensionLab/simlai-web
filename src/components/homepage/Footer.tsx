@@ -156,12 +156,12 @@ const Footer = (props: FooterProps) => {
           <div className="socials">
             <div className="socials">
               <div className="twitter-container">
-                <a href="https://twitter.com/siml_ai">
+                <a href="https://twitter.com/siml_ai" target='_blank'>
                   <img src="/assets/twitter-logo.svg" alt="twitter logo" />
                 </a>
               </div>
               <div className="facebook-container">
-                <a href="https://www.facebook.com/learnedsimulators/">
+                <a href="https://www.facebook.com/dl.simlai" target='_blank'>
                   <img src="/assets/facebook-logo.svg" alt="facebook logo" />
                 </a>
               </div>
@@ -171,7 +171,7 @@ const Footer = (props: FooterProps) => {
                 </a>
               </div> */}
               <div className="linkedin-container">
-                <a href="https://www.linkedin.com/company/dimensionlab">
+                <a href="https://www.linkedin.com/company/dimensionlab" target='_blank'>
                   <img src="/assets/simlai/li-logo.svg" alt="linkedin logo" />
                 </a>
               </div>
@@ -180,6 +180,16 @@ const Footer = (props: FooterProps) => {
                   <img src="/assets/simlai/medium-logo.svg" alt="" />
                 </a>
               </div> */}
+              <div className="discord-container">
+                <a href="https://discord.gg/UxQyC9PEqt" target='_blank'>
+                  <img src="/assets/discord-logo.png" alt="discord logo" />
+                </a>
+              </div>
+              <div className="reddit-container">
+                <a href="https://www.reddit.com/r/simlai" target='_blank'>
+                  <img src="/assets/reddit-logo.png" alt="reddit logo" className='rounded'/>
+                </a>
+              </div>
             </div>
           </div>
         </div>

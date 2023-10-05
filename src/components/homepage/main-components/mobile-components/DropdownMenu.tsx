@@ -208,12 +208,12 @@ const DropdownMenu = (props: DropdownProps ) => {
           </div>
           <div className="socials">
             <div className="facebook-container">
-              <a href="https://www.facebook.com/learnedsimulators/">
+              <a href="https://www.facebook.com/dl.simlai" target="_blank">
                 <img src="/assets/facebook-logo.svg" alt="facebook logo" />
               </a>
             </div>
             <div className="twitter-container">
-              <a href="https://twitter.com/siml_ai">
+              <a href="https://twitter.com/siml_ai" target="_blank">
                 <img src="/assets/twitter-logo.svg" alt="twitter logo" />
               </a>
             </div>
@@ -223,7 +223,7 @@ const DropdownMenu = (props: DropdownProps ) => {
               </a>
             </div> */}
             <div className="linkedin-container">
-              <a href="https://www.linkedin.com/company/dimensionlab">
+              <a href="https://www.linkedin.com/company/dimensionlab" target="_blank">
                 <img src="/assets/simlai/li-logo.svg" alt="linkedin logo" />
               </a>
             </div>
@@ -232,12 +232,22 @@ const DropdownMenu = (props: DropdownProps ) => {
                 <img src="/assets/simlai/medium-logo.svg" alt="" />
               </a>
             </div> */}
+            <div className="discord-container">
+                <a href="https://discord.gg/UxQyC9PEqt" target='_blank'>
+                  <img src="/assets/discord-logo.png" alt="discord logo" />
+                </a>
+              </div>
+              <div className="reddit-container">
+                <a href="https://www.reddit.com/r/simlai" target='_blank'>
+                  <img src="/assets/reddit-logo.png" alt="reddit logo" className='rounded'/>
+                </a>
+              </div>
           </div>
           <div className="legal">
             <a href="https://www.dimensionlab.org/terms-and-conditions.html">Terms & Conditions</a>
             <a href="https://www.dimensionlab.org/privacy-policy.html">Privacy Policy</a>
           </div>
-          <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab s.r.o., creators of Siml.ai</div>
+          <div className="copyright">©2021-{new Date().getFullYear()} DimensionLab, creators of Siml.ai</div>
         </div>
       </div>
     </DropdownMenuWrapper>

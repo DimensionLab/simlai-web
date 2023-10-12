@@ -122,7 +122,7 @@ const SignUp = () => {
         event.preventDefault();
         handleSubmit(fields)
       }}>
-        <div className="label">Sign up for beta access</div>
+        <div className="label">Join our newsletter</div>
         <div className="entry-container">
           <input 
             type="email" 

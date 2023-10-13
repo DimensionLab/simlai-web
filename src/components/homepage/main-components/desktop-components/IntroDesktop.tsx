@@ -120,6 +120,9 @@ const IntroDesktopWrapper = styled.div`
           ${tw`
             w-full
           `}
+          background: linear-gradient(180deg, #8B7CFF 0%, #6B50FF 100%);
+          padding: 4px;
+          border-radius: 10px;
         }
 
         .rotate {
@@ -132,7 +135,7 @@ const IntroDesktopWrapper = styled.div`
         .one {
           ${tw`
             w-[50%]
-            left-[-3%]
+            left-[-7%]
             bottom-[-22%]
           `}
         }
@@ -148,7 +151,7 @@ const IntroDesktopWrapper = styled.div`
         .three {
           ${tw`
             w-[50%]
-            right-[2%]
+            right-[0%]
             bottom-[-15%]
           `}
         }
@@ -218,7 +221,7 @@ const IntroDesktop = () => {
         </div>
         <div className="right-side">
           <div className="container">
-            <img src="assets/simlai/desktop-intro-pics/static.png" alt="model engineer screenshot" className="static"/>
+            <img src="assets/simlai/model_engineer_cover_image.png" alt="model engineer screenshot" className="static"/>
             <img src="assets/simlai/desktop-intro-pics/rotate1.png" alt="screenshot from siml" className="rotate one"/>
             <img src="assets/simlai/desktop-intro-pics/rotate2.png" alt="screenshot from siml" className="rotate two"/>
             <img src="assets/simlai/desktop-intro-pics/rotate3.png" alt="screenshot from siml" className="rotate three"/>

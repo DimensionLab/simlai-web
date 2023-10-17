@@ -6,7 +6,9 @@ import { useEffect } from "react";
 
 const ArticleWrapper = styled.article``;
 
-const Article = ( { blok }: any ) => {
+const Article = ( props: any) => {
+  const { blok, keyID} = props;
+
     useEffect(() => {
       Prism.highlightAll();
   }, [blok.content]);
@@ -20,7 +22,7 @@ const Article = ( { blok }: any ) => {
   }
 
   return (
-    <ArticleWrapper>
+    <ArticleWrapper key={keyID * keyID}>
       <div className='w-full flex items-center justify-center pb-24 pt-12 lg:pt-24'>
         <div className='article-content flex flex-col gap-y-8 items-center w-[80%]'>
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl max-w-5xl flex self-start" dangerouslySetInnerHTML={ {__html: handleTitle()} }>

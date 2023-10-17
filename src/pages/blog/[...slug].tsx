@@ -73,8 +73,8 @@ export default function BlogPost({ story, keyID }: PageProps) {
         {isOpen ? (
           <section className='w-full flex flex-col justify-between h-full'>
             <Header open={!isOpen} onClose={handleOpen} whichSubpage="article"/>
-            <Article blok={story.content} key={keyID} />
-            <Footer open={!isOpen} key={keyID}/>
+            <Article blok={story.content} key={keyID} keyID={keyID}/>
+            <Footer open={!isOpen} key={keyID * 95845}/>
           </section>
         ) : (
           <DropdownMenu open={!isOpen} onClose={handleOpen}/>

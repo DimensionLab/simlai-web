@@ -62,7 +62,7 @@ const Blog = ( props: any ) => {
             <div className={`w-full h-full ${!isOpen ? `hidden` : `flex flex-col justify-between`}`}>
               <Header open={!isOpen} onClose={handleOpen} whichSubpage="blog"/>      
               {/* <StoryblokContainer storyContent={sbStory.content} keyID={props.keyID}/> */}
-              <AllArticles blok={sbStory.content}  articlesArr={props.articlesArr}/>
+              <AllArticles blok={sbStory.content}  articlesArr={props.articlesArr} key={props.keyID}/>
               <Footer open={!isOpen}/>
             </div>
             

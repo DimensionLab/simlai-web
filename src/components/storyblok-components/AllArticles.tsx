@@ -24,11 +24,14 @@ const AllArticles = (props: AllArticlesProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>();
 
   const articlesArr = props.articlesArr;
+  const sortedArticlesArrByPublishedDate = articlesArr.sort((a: any, b: any) => {
+    return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
+  });
 
   useEffect(() => {
     const getArticles = async () => {
       setIsLoading(true);
-        setArticles((prev) => articlesArr.map((article: any) => {
+        setArticles((prev) => sortedArticlesArrByPublishedDate.map((article: any) => {
           article.content.slug = article.slug;
           return article;
         }));

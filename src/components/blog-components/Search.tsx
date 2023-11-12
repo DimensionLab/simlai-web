@@ -25,10 +25,11 @@ const Search = ( { categoryArr, setSelected }: SearchProps ) => {
       <main className="w-full flex flex-col gap-y-4 xl:gap-y-8">
         <h1 className="font-bold text-[28px] xl:text-4xl">Blog</h1>
         <div className="flex flex-col gap-y-4 xl:flex-row max-w-3xl xl:gap-x-4">
-          <div className="flex flex-col gap-y-2 xl:w-[40%]">
+          {/* TODO: commented for now, until Search by keyword functionality isn't implemented */}
+          {/* <div className="flex flex-col gap-y-2 xl:w-[40%]">
             <label className="text-[#7C7F8B] text-xs">SEARCH BY KEYWORD</label>
             <input type="text" placeholder="Input text" className="bg-[#373A45] py-4 px-4 rounded text-sm text-[#7C7F8B] hover:cursor-not-allowed" disabled/>
-          </div>
+          </div> */}
           <div className="flex flex-col xl:w-[40%] gap-y-0 relative">
             <label className="text-[#7C7F8B] text-xs pb-2">FILTER BY CATEGORY</label>
             <div className="bg-[#373A45] py-4 px-4 rounded-t text-sm text-white flex justify-between items-center hover:cursor-pointer" onClick={handleCategoryOpened}>
@@ -55,7 +56,7 @@ const Search = ( { categoryArr, setSelected }: SearchProps ) => {
               ))}
             </div>
           </div>
-          <button className={`w-full hover:cursor-not-allowed bg-[#61646F] py-3.5 px-4 rounded  xl:items-center xl:justify-center xl:w-24 xl:self-end`} disabled>{buttonText}</button>
+          {/* <button className={`w-full hover:cursor-not-allowed bg-[#61646F] py-3.5 px-4 rounded  xl:items-center xl:justify-center xl:w-24 xl:self-end`} disabled>{buttonText}</button> */}
         </div>
       </main>
     </section>

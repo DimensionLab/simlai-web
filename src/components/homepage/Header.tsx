@@ -149,6 +149,17 @@ const Header = (props: HeaderProps) => {
     };
   }, []);
 
+  useEffect(() => {
+    // @ts-ignore
+    window._mfq = window._mfq || [];
+    (function() {
+      var mf = document.createElement("script");
+      mf.type = "text/javascript"; mf.defer = true;
+      mf.src = process.env.NEXT_PUBLIC_MOUSEFLOW_URL as string;
+      document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+  })
+
   return (
     <HeaderWrapper className="sticky top-0 left-0">
       <div className={`all-container ${isScrolled ? `pt-4` : `pt-14`}`}>

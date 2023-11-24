@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const HeaderWrapper = styled.header`
   ${tw`
@@ -130,6 +131,9 @@ interface HeaderProps  {
 
 const Header = (props: HeaderProps) => {
   const [isScrolled, setScrolled] = useState(false);
+  const [url, setUrl] = useState("");
+
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -160,6 +164,20 @@ const Header = (props: HeaderProps) => {
     })();
   })
 
+  useEffect(() => {
+    const url = window?.location?.href;
+
+    if (url.endsWith("features")) {
+      setUrl("features");
+    }
+    if (url.endsWith("model-engineer")) {
+      setUrl("model-engineer");
+    }
+    if (url.endsWith("simulation-studio")) {
+      setUrl("simulation-studio");
+    }
+  }, [router.asPath])
+
   return (
     <HeaderWrapper className="sticky top-0 left-0">
       <div className={`all-container ${isScrolled ? `pt-4` : `pt-14`}`}>
@@ -177,9 +195,15 @@ const Header = (props: HeaderProps) => {
           </div>
         </div>
         <div className="bar w-full justify-end">
-          <Link href={"../#features"}>FEATURES</Link>
-          <Link href={"../#model-engineer"}>MODEL ENGINEER</Link>
-          <Link href={"../#simulation-studio"}>SIMULATION STUDIO</Link>
+          <Link href={"../#features"}>
+            <a className={`${url === "features" ? "text-white" : ""}`}>FEATURES</a>
+          </Link>
+          <Link href={"../#model-engineer"}>
+            <a className={`${url === "model-engineer" ? "text-white" : ""}`}>MODEL ENGINEER</a>
+          </Link>
+          <Link href={"../#simulation-studio"}>
+            <a className={`${url === "simulation-studio" ? "text-white" : ""}`}>SIMULATION STUDIO</a>
+          </Link>
           <a href={"https://docs.siml.ai"} target="_blank">DOCS</a>
           <Link href={"/pricing"}>
             <a className={`${props.whichSubpage === "pricing" ? `text-white` : ``}`}>PRICING</a>

@@ -10,29 +10,9 @@ interface ShowcaseCardProps {
 
 const ShowcaseCard = (props: ShowcaseCardProps) => {
     return (
-        <section className="w-full flex items-center justify-center pb-16">
+        <section className="w-full flex items-center justify-center pb-16" id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}>
             <main className="w-full flex flex-col px-4 py-16 items-center">
-                <ImageWrapper className="max-w-5xl">
-                    {props.format === "img" && 
-                        <img 
-                            src={props.imgPath} 
-                            alt={props.title} 
-                            id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}
-                        />
-                    }
-                    {props.format === "video" && 
-                        <video 
-                            src={props.imgPath} 
-                            autoPlay={true} 
-                            loop={true} 
-                            id={`${props.imgPath.includes("simulation") ? `simulation-studio` : `model-engineer`}`}
-                            controls={false}
-                            muted={true}
-                            playsInline={true}
-                        />
-                    }
-                </ImageWrapper>
-                <section className="flex flex-col pt-20 max-w-5xl">
+                <section className="flex flex-col pb-20 max-w-5xl">
                     <h1 className="text-4xl font-black pb-12 lg:text-7xl">{props.title}</h1>
                     <div className="flex flex-col gap-y-8 lg:flex-row lg:gap-x-6">
                         <h2 className="text-3xl font-normal lg:text-4xl lg:w-[50%] md:font-light">{props.subtitle}</h2>
@@ -48,6 +28,24 @@ const ShowcaseCard = (props: ShowcaseCardProps) => {
                         </div>
                     </div>
                 </section>
+                <ImageWrapper className="max-w-5xl">
+                    {props.format === "img" && 
+                        <img 
+                            src={props.imgPath} 
+                            alt={props.title} 
+                        />
+                    }
+                    {props.format === "video" && 
+                        <video 
+                            src={props.imgPath} 
+                            autoPlay={true} 
+                            loop={true} 
+                            controls={false}
+                            muted={true}
+                            playsInline={true}
+                        />
+                    }
+                </ImageWrapper>
             </main>
         </section>
     )

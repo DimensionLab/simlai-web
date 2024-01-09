@@ -46,7 +46,7 @@ const IntroDesktopWrapper = styled.div`
       .title {
         ${tw`
           font-bold
-          text-5xl
+          text-4xl
         `}
       }
       .subtitle {
@@ -54,57 +54,6 @@ const IntroDesktopWrapper = styled.div`
           text-[#B4B6C3]
           text-xl
         `}
-      }
-      .join-waitlist {
-        .label {
-          ${tw`
-            text-xs
-            text-[#D0D2DF]
-            pb-1
-          `}
-        }
-        .email-button {
-          ${tw`
-            w-full
-            flex
-            justify-start
-            gap-x-2
-          `}
-          input {
-            ${tw`
-              w-3/4
-              px-[11px]
-              py-[16px]
-              bg-[#373A45]
-              // text-[#7C7F8B]
-              text-[14px]
-              w-[288px]
-              h-[40px]
-              rounded-[4px]
-            `}
-          }
-          button {
-            ${tw`
-              // bg-[#6B50FF]
-              rounded-[4px]
-              px-[11px]
-              py-[16px]
-              w-[66px]
-              h-[40px]
-              text-[14px]
-              flex
-              font-bold
-              justify-center
-            `}
-
-            div {
-              ${tw`
-                flex
-                self-center
-              `}
-            }
-          }
-        }
       }
     }
     .right-side {
@@ -161,34 +110,6 @@ const IntroDesktopWrapper = styled.div`
 `;
 
 const IntroDesktop = () => {
-  const url = "https://dimensionlab.us17.list-manage.com/subscribe/post?u=fbb1d9b2d270a31e90eb9ca9f&id=d5c8cb4590&f_id=00a060e0f0";
-
-  const {
-    loading, 
-    error, 
-    success, 
-    message, 
-    handleSubmit
-  } = useMailChimpForm(url);
-  
-  const { fields, handleFieldChange } = useFormFields( {
-    EMAIL: "",
-  });
-
-  const handleResult = () => {
-    if (success) {
-      return `bg-lime-600`;
-    }
-    if (error) {
-      return `bg-red-500`;
-    }
-    if (loading) {
-      return `bg-orange-500`;
-    }
-
-    return `bg-[#6B50FF]`;
-  }
-
   return (
     <IntroDesktopWrapper>
       <div className="all-container">
@@ -199,25 +120,11 @@ const IntroDesktop = () => {
           </div>
           <div className="title">Tame the physics <br/>of your projects in hours!</div>
           <div className="subtitle">Siml.ai is a software platform for working <br/> with high-performance AI-based numerical simulators.</div>
-          <form className="join-waitlist" onSubmit={event => {
-            event.preventDefault();
-            handleSubmit(fields);
-          }}>
-            <div className="label">Join our newsletter</div>
-            <div className="email-button">
-              <input 
-                type="email" 
-                name="" 
-                id="EMAIL" 
-                value={fields.EMAIL}
-                onChange={handleFieldChange}
-                placeholder="your@email.com"
-              />
-              <button className={handleResult()} disabled={success || fields.EMAIL === "" ? true : false}>
-                <div>{loading ? "JOINING" : (success ? "JOINED" : "JOIN")}</div>
-              </button>
-            </div>
-          </form>
+          <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center">
+            <a href="https://platform.siml.ai/" target="_blank">
+              <div className="font-bold text-2xl">Try out the platform now!</div>
+            </a>
+          </div>
           <div className="-mt-6 flex flex-row gap-x-2">
             <a href="https://www.producthunt.com/products/siml-ai?utm_source=badge-follow&utm_medium=badge&utm_souce=badge-siml&#0045;ai" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=555488&theme=dark" alt="Siml&#0046;ai - Software&#0032;platform&#0032;for&#0032;AI&#0045;driven&#0032;physics&#0032;simulations | Product Hunt" style={{width: "250px", height: "54px"}} width="250" height="54" /></a>
             <a href="https://theresanaiforthat.com/ai/siml-ai/?ref=embed" target="_blank"><img style={{width: "250px", height: "54px"}} src="https://media.theresanaiforthat.com/featured3.png" /></a>

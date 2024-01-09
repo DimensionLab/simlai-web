@@ -32,57 +32,6 @@ const SignUpWrapper = styled.div`
       font-normal
     `}
   }
-
-  .signup-container {
-    ${tw`
-      px-4
-      flex
-      flex-col
-      gap-y-2
-      pt-4
-    `}
-
-    .label {
-      ${tw`
-        text-sm
-      `}
-    }
-
-    .entry-container {
-      ${tw`
-        flex
-        flex-row
-        w-full
-        md:w-3/4
-        lg:w-3/4
-        xl:w-full
-        justify-between
-        gap-x-2
-      `}
-
-      input {
-        ${tw`
-          w-3/4
-          bg-[#373A45]
-          p-2
-          text-lg
-          rounded
-          text-gray-500
-        `}
-      }
-
-      button {
-        ${tw`
-          // bg-[#6B50FF]
-          p-4
-          rounded
-          w-1/4
-          text-sm
-          font-bold
-        `}
-      }
-    }
-  }
 `;
 
 const SignUp = () => {
@@ -118,24 +67,13 @@ const SignUp = () => {
     <SignUpWrapper>
       <div className="title">Tame the physics <br/> of your projects in hours!</div>
       <div className="subtitle">Siml.ai is a software platform for working with high-performance AI-based numerical simulators.</div>
-      <form className="signup-container" onSubmit={event => {
-        event.preventDefault();
-        handleSubmit(fields)
-      }}>
-        <div className="label">Join our newsletter</div>
-        <div className="entry-container">
-          <input 
-            type="email" 
-            name="" 
-            id="EMAIL" 
-            value={fields.EMAIL}
-            onChange={handleFieldChange}
-            placeholder="your@email.com"/>
-          <button className={handleResult()} disabled={success || fields.EMAIL === "" ? true : false}>
-            <div>{loading ? "JOINING" : (success ? "JOINED" : "JOIN")}</div>
-          </button>
+      <div className="px-4 max-w-2xl">
+        <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center">
+          <a href="https://platform.siml.ai/" target="_blank">
+            <div className="font-bold text-xl">Try out the platform now!</div>
+          </a>
         </div>
-      </form>
+      </div>
       <div className="flex flex-row gap-x-2 px-4 w-full">
         <a href="https://www.producthunt.com/products/siml-ai?utm_source=badge-follow&utm_medium=badge&utm_souce=badge-siml&#0045;ai" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=555488&theme=dark" alt="Siml&#0046;ai - Software&#0032;platform&#0032;for&#0032;AI&#0045;driven&#0032;physics&#0032;simulations | Product Hunt" style={{width: "250px", height: "54px"}} width="250" height="54" /></a>
         <a href="https://theresanaiforthat.com/ai/siml-ai/?ref=embed" target="_blank"><img style={{width: "250px", height: "54px"}} src="https://media.theresanaiforthat.com/featured3.png" /></a>

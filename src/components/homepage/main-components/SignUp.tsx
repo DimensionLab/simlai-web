@@ -32,57 +32,6 @@ const SignUpWrapper = styled.div`
       font-normal
     `}
   }
-
-  .signup-container {
-    ${tw`
-      px-4
-      flex
-      flex-col
-      gap-y-2
-      pt-4
-    `}
-
-    .label {
-      ${tw`
-        text-sm
-      `}
-    }
-
-    .entry-container {
-      ${tw`
-        flex
-        flex-row
-        w-full
-        md:w-3/4
-        lg:w-3/4
-        xl:w-full
-        justify-between
-        gap-x-2
-      `}
-
-      input {
-        ${tw`
-          w-3/4
-          bg-[#373A45]
-          p-2
-          text-lg
-          rounded
-          text-gray-500
-        `}
-      }
-
-      button {
-        ${tw`
-          // bg-[#6B50FF]
-          p-4
-          rounded
-          w-1/4
-          text-sm
-          font-bold
-        `}
-      }
-    }
-  }
 `;
 
 const SignUp = () => {
@@ -118,24 +67,6 @@ const SignUp = () => {
     <SignUpWrapper>
       <div className="title">Tame the physics <br/> of your projects in hours!</div>
       <div className="subtitle">Siml.ai is a software platform for working with high-performance AI-based numerical simulators.</div>
-      {/* <form className="signup-container" onSubmit={event => {
-        event.preventDefault();
-        handleSubmit(fields)
-      }}>
-        <div className="label">Join our newsletter</div>
-        <div className="entry-container">
-          <input 
-            type="email" 
-            name="" 
-            id="EMAIL" 
-            value={fields.EMAIL}
-            onChange={handleFieldChange}
-            placeholder="your@email.com"/>
-          <button className={handleResult()} disabled={success || fields.EMAIL === "" ? true : false}>
-            <div>{loading ? "JOINING" : (success ? "JOINED" : "JOIN")}</div>
-          </button>
-        </div>
-      </form> */}
       <div className="px-4 max-w-2xl">
         <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center">
           <a href="https://platform.siml.ai/" target="_blank">

@@ -122,7 +122,7 @@ const IntroDesktop = () => {
           <div className="subtitle">Siml.ai is a software platform for working <br/> with high-performance AI-based numerical simulators.</div>
           <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center">
             <a href="https://platform.siml.ai/" target="_blank">
-              <div className="font-bold text-2xl">Try the Platform!</div>
+              <div className="font-bold text-2xl">Try out the platform now!</div>
             </a>
           </div>
           <div className="-mt-6 flex flex-row gap-x-2">

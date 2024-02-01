@@ -216,8 +216,8 @@ const Header = (props: HeaderProps) => {
           <Link href={"../blog"}>
             <a className={`${props.whichSubpage === "blog" ? `border-2 border-b-[#6B50FF] text-white` : ``}`}>BLOG</a>
           </Link>
-          <Link href={"https://meetings-eu1.hubspot.com/michal-bujnak"}>
-            <a id="last-link">BOOK A DEMO</a>
+          <Link href={"https://meetings-eu1.hubspot.com/michal-bujnak"} target="_blank">
+            <a id="last-link" target="_blank">BOOK A DEMO</a>
           </Link>
           <a className="button" href="https://platform.siml.ai/">LOGIN</a>
         </div>

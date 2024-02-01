@@ -99,6 +99,13 @@ const Product = () => {
             <div className="description">
               Software platform <br/> for high-performance <br/> AI-based numerical simulators.
             </div>
+            <div className="px-4 max-w-2xl">
+              <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center">
+                <a href="https://platform.siml.ai/" target="_blank">
+                  <div className="font-bold text-xl">Try out the platform now!</div>
+                </a>
+              </div>
+            </div>
           </div>
           </div>
         <div className="extensive-text">

@@ -68,7 +68,7 @@ const SignUp = () => {
       <div className="title">Tame the physics <br/> of your projects in hours!</div>
       <div className="subtitle">Siml.ai is a software platform for working with high-performance AI-based numerical simulators.</div>
       <div className="px-4 max-w-2xl">
-        <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center">
+        <div className="bg-[#6B50FF] w-full rounded-lg px-4 py-3 text-center hover:scale-105 duration-300">
           <a href="https://platform.siml.ai/" target="_blank">
             <div className="font-bold text-xl">Try out the platform now!</div>
           </a>

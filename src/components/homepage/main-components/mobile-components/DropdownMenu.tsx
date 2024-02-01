@@ -202,7 +202,10 @@ const DropdownMenu = (props: DropdownProps ) => {
               <a onClick={(e) => { props.onClose(); }}>LEARN</a>
             </Link>
             <Link href={"../blog"}>
-              <a id="last-link" onClick={(e) => { props.onClose(); }}>BLOG</a>
+              <a onClick={(e) => { props.onClose(); }}>BLOG</a>
+            </Link>
+            <Link href="https://meetings-eu1.hubspot.com/michal-bujnak" target="_blank">
+              <a id="last-link" target="_blank" onClick={(e) => { props.onClose(); }}>BOOK A DEMO</a>
             </Link>
             
           </div>

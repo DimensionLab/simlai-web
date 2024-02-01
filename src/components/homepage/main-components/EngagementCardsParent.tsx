@@ -11,7 +11,7 @@ const EngagementCardsParent = () => {
             "linear-gradient(90deg, #6B50FF 0%, #C063F9 100%)"
         ],
         [
-            "Interested in funding us?",
+            "Invest in Siml.ai!",
             "Drop us an email and we will send you our pitchdeck.",
             "CONTACT US",
             "mailto:hello@dimensionlab.org",

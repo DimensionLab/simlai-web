@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { useFormFields, useMailChimpForm } from "use-mailchimp-form";
@@ -56,56 +57,12 @@ const IntroDesktopWrapper = styled.div`
         `}
       }
     }
-    .right-side {
-      ${tw`
-        w-1/2
-      `}
-      .container {
-        ${tw`
-          relative
-        `}
+  }
 
-        .static {
-          ${tw`
-            w-full
-          `}
-          background: linear-gradient(180deg, #8B7CFF 0%, #6B50FF 100%);
-          padding: 4px;
-          border-radius: 10px;
-        }
-
-        .rotate {
-          ${tw`
-            absolute
-            bottom-0
-          `}
-        }
-
-        .one {
-          ${tw`
-            w-[50%]
-            left-[-7%]
-            bottom-[-22%]
-          `}
-        }
-
-        .two {
-          ${tw`
-            w-[40%]
-            left-[30%]
-            bottom-[-30%]
-          `}
-        }
-
-        .three {
-          ${tw`
-            w-[50%]
-            right-[0%]
-            bottom-[-15%]
-          `}
-        }
-      }
-    }
+  .relative {
+    background: linear-gradient(180deg, #8B7CFF 0%, #6B50FF 100%);
+    padding: 6px;
+    border-radius: 10px;
   }
 `;
 
@@ -131,11 +88,17 @@ const IntroDesktop = () => {
           </div>
         </div>
         <div className="right-side">
-          <div className="container">
-            <img src="assets/simlai/model_engineer_cover_image.png" alt="model engineer screenshot" className="static"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate1.png" alt="screenshot from siml" className="rotate one"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate2.png" alt="screenshot from siml" className="rotate two"/>
-            <img src="assets/simlai/desktop-intro-pics/rotate3.png" alt="screenshot from siml" className="rotate three"/>
+          <div className="relative">
+            <Image src="/assets/simlai/model_engineer_cover_image.png" alt="model engineer screenshot" className="absolute" id="cover-img" width={960} height={640}/>
+            <div className="absolute -left-[7%] -bottom-[10%]">
+              <Image src="/assets/simlai/desktop-intro-pics/rotate1.png" alt="screenshot from siml" className="absolute" width={200*1.56} height={200}/>
+            </div>
+            <div className="absolute left-[25%] -bottom-[20%]">
+              <Image src="/assets/simlai/desktop-intro-pics/rotate2.png" alt="screenshot from siml" className="absolute" width={200*1.4} height={200}/>
+            </div>
+            <div className="absolute right-[1%] -bottom-[10%]">
+              <Image src="/assets/simlai/desktop-intro-pics/rotate3.png" alt="screenshot from siml" className="absolute" width={200*1.4} height={200}/>
+            </div>
           </div>
         </div>
       </div>

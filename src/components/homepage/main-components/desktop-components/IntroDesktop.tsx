@@ -59,10 +59,11 @@ const IntroDesktopWrapper = styled.div`
     }
   }
 
-  .relative {
+  .relative, .visual-editor-img {
     background: linear-gradient(180deg, #8B7CFF 0%, #6B50FF 100%);
     padding: 6px;
     border-radius: 10px;
+    display: flex;
   }
 `;
 
@@ -89,15 +90,15 @@ const IntroDesktop = () => {
         </div>
         <div className="right-side">
           <div className="relative">
-            <Image src="/assets/simlai/model_engineer_cover_image.png" alt="model engineer screenshot" className="absolute" id="cover-img" width={960} height={640}/>
-            <div className="absolute -left-[7%] -bottom-[10%]">
-              <Image src="/assets/simlai/desktop-intro-pics/rotate1.png" alt="screenshot from siml" className="absolute" width={200*1.56} height={200}/>
+            <Image src="/assets/simlai/simulation-studio-image.png" alt="model engineer screenshot" className="absolute" id="cover-img" width={960} height={640}/>
+            <div className="absolute -left-[7%] -bottom-[20%] visual-editor-img">
+              <Image src="/assets/simlai/model_engineer_cover_image.png" alt="screenshot from siml" className="absolute" width={300*1.56} height={300}/>
             </div>
-            <div className="absolute left-[25%] -bottom-[20%]">
+            <div className="absolute left-[45%] -bottom-[20%]">
               <Image src="/assets/simlai/desktop-intro-pics/rotate2.png" alt="screenshot from siml" className="absolute" width={200*1.4} height={200}/>
             </div>
-            <div className="absolute right-[1%] -bottom-[10%]">
-              <Image src="/assets/simlai/desktop-intro-pics/rotate3.png" alt="screenshot from siml" className="absolute" width={200*1.4} height={200}/>
+            <div className="absolute -right-[10%] -bottom-[10%]">
+              <Image src="/assets/simlai/desktop-intro-pics/rotate1.png" alt="screenshot from siml" className="absolute" width={200*1.4} height={200}/>
             </div>
           </div>
         </div>

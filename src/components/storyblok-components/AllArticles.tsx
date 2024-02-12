@@ -107,13 +107,13 @@ const AllArticles = (props: AllArticlesProps) => {
                     <div {...storyblokEditable(blok)}
                       className="w-full flex flex-col xl:flex-row items-center justify-center">
                       {blok && articles[0] && articles.map((article: any, index) => (
-                        index >= 6 && index < 9 && <ArticleTeaser article={article.content} key={article.uuid} /> // 6, 7, 8
+                        index >= 6 && index < 10 && <ArticleTeaser article={article.content} key={article.uuid} /> // 6, 7, 8
                       ))}
                     </div>
                     <div {...storyblokEditable(blok)}
                       className="w-full flex flex-col xl:flex-row items-center justify-center">
                       {blok && articles[0] && articles.map((article: any, index) => (
-                        index >= 9 && <ArticleTeaser article={article.content} key={article.uuid} /> // 9...
+                        index >= 10 && <ArticleTeaser article={article.content} key={article.uuid} /> // 9...
                       ))}
                     </div>
                   </section>

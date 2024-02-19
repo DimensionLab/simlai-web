@@ -2,7 +2,7 @@ export const Stats = () => {
   const data = [
     ["90%+ ", "costs saved"],
     ['500+ ', "hours saved"],
-    ["500+ ", "users"]
+    ["600+ ", "users"]
   ]
   return (
     <section className="flex flex-col w-full">

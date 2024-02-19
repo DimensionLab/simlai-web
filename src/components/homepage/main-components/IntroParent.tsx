@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 const Intro = dynamic(() => import('./mobile-components/Intro'), { ssr: false });
 const IntroDesktop = dynamic(() => import('./desktop-components/IntroDesktop'), { ssr: false });
 
-const IntroParentWrapper = styled.div`
+const IntroParentWrapper = styled.div<{ className: string, children: any }>`
 `;
 
 const IntroParent = () => {

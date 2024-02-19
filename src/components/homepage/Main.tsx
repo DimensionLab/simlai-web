@@ -9,7 +9,7 @@ import EngagementCardsParent from "./main-components/EngagementCardsParent";
 import ShowcaseCard from "./main-components/cards/ShowcaseCard";
 import { Stats } from "./main-components/Stats";
 
-const MainWrapper = styled.main`
+const MainWrapper = styled.main<{ style: { display: string }, children: any }>`
   ${tw`
     w-full
     flex

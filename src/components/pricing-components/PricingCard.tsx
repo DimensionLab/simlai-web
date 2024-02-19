@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const PricingCardWrapper = styled.div<{ lineColor: string }>`
+const PricingCardWrapper = styled.div<{ lineColor: string, children: any }>`
   ${tw`
     // px-4
     flex

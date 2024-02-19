@@ -99,7 +99,7 @@ const RichTextArticleContent = styled.article`
   }
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.div<{ className: string, children: any }>`
   background: linear-gradient(180deg, #C063F9 0%, #8B7CFF 100%);
   border-radius: 0.8rem;
   padding: 0.4rem;

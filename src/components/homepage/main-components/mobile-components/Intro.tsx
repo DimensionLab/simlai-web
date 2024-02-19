@@ -2,7 +2,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Slider from "../intro-components/Slider";
 
-const IntroWrapper = styled.div`
+const IntroWrapper = styled.div<{children: any}>`
   ${tw`
     w-full
     flex

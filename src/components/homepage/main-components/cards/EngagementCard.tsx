@@ -8,7 +8,7 @@ interface EngagementCardProps {
     bgColor: string,
 }
 
-const BgWrapper = styled.div<{ bgColor: string}>`
+const BgWrapper = styled.div<{ bgColor: string, children: any}>`
     background: ${props => props.bgColor};
     border-radius: 0.8rem;
     width: 100%;

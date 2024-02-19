@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-const FooterWrapper = styled.footer`
+const FooterWrapper = styled.footer<{ style: { display: string; }, children: any }>`
   ${tw`
     w-full
     bg-[#222530]

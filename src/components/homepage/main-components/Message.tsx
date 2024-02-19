@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const MessageWrapper = styled.div`
+const MessageWrapper = styled.div<{ children: any }>`
   ${tw`
     bg-[linear-gradient(90deg, #4B8AFF 0%, #6B50FF 100%)]
     w-full

@@ -5,7 +5,7 @@ import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.header<{ className: string, children: any }>`
   ${tw`
     w-full
     bg-[rgba(13, 16, 27, 0.95)]

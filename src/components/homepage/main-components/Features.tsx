@@ -2,7 +2,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { useFormFields, useMailChimpForm } from "use-mailchimp-form";
 
-const FeaturesWrapper = styled.div`
+const FeaturesWrapper = styled.div<{ className: string, children: any }>`
   .signup-container {
       ${tw`
         // px-4

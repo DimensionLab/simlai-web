@@ -1,8 +1,6 @@
-import Image from "next/image";
 import styled from "styled-components";
 
-const ArticleLoadingSkeletonWrapper = styled.div`
-
+const ArticleLoadingSkeletonWrapper = styled.div<{ className: string, children: any }>`
   .skeleton {
     animation: skeleton-loading 1s linear infinite alternate
   }
@@ -19,13 +17,12 @@ const ArticleLoadingSkeletonWrapper = styled.div`
 
 const ArticleLoadingSkeleton = () => {
   return (
-    <ArticleLoadingSkeletonWrapper>
-      <div className="w-full py-2">
-        <div className="w-full px-4">
+    <ArticleLoadingSkeletonWrapper className="w-full py-2">
+      <div className="w-full px-4">
           <a className="w-full flex flex-col items-center h-full">
             <div className="flex w-full">
               <div className="w-full aspect-video object-cover rounded-t-xl skeleton">
-                <Image src="/assets/simlai/placeholder-solid-white.svg" alt="placeholder solid white" className="skeleton aspect-video w-96 rounded-t-xl" />
+                <img src="/assets/simlai/placeholder-solid-white.svg" alt="placeholder solid white" className="skeleton aspect-video w-96 rounded-t-xl" />
               </div>
             </div>
             <div className="h-1/2 flex flex-col w-full px-6 py-14 gap-y-6 bg-[#222530] rounded-b-xl ">
@@ -36,7 +33,6 @@ const ArticleLoadingSkeleton = () => {
               </div>
             </div>
           </a>
-        </div>
       </div>
     </ArticleLoadingSkeletonWrapper>
   );

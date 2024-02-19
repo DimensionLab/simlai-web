@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const ProductWrapper = styled.div`
+const ProductWrapper = styled.div<{ className: string, children: any }>`
   
   .leftside {
     ${tw`

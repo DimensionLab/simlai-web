@@ -4,7 +4,7 @@ import 'prismjs/themes/prism-twilight.css';
 import Prism from 'prismjs';
 import { useEffect } from "react";
 
-const ArticleWrapper = styled.article``;
+const ArticleWrapper = styled.article<{ key: number, children: any }>``;
 
 const Article = ( props: any) => {
   const { blok, keyID} = props;

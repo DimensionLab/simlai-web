@@ -20,7 +20,7 @@ const EngagementCardsParent = () => {
 
   return (
     <section className="w-full flex flex-row justify-center items-center">
-      <main className="w-full flex flex-row py-4 gap-y-4 h-full max-md:max-w-lg md:grid-cols-2 gap-x-4 lg:gap-x-8 max-w-5xl sm:py-20 lg:py-32">
+      <main className="w-full flex flex-col md:flex-row py-4 gap-y-4 h-full max-md:max-w-lg md:grid-cols-2 gap-x-4 lg:gap-x-8 max-w-5xl sm:py-20 lg:py-32">
         {data.map((item, index) => {
           return (
             <EngagementCard

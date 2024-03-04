@@ -10,7 +10,7 @@ export default function TalkToTeam() {
     },
   ];
   return (
-    <section className="flex w-full justify-center px-4 gap-x-4 max-lg:pb-20 md:gap-x-64 pt-24">
+    <section className="flex flex-col max-md:gap-y-10 md:flex-row w-full justify-center items-center px-4 gap-x-4 max-lg:pb-20 md:gap-x-64 pt-24">
       {data.map((item, index) => (
         <a
           href={item.href}

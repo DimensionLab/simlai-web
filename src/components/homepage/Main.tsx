@@ -77,7 +77,7 @@ const Main = (props: MainProps) => {
         <Message/>
       </div>
       <EngagementCardsParent/>
-      <div className="px-4 max-w-2xl mb-24 max-sm:mt-10 min-lg:-mt-10 mx-auto">
+      <div className="px-4 max-w-2xl mb-24 max-sm:mt-10 min-lg:-mt-10">
         <div className="bg-[#6B50FF] w-full rounded-[2rem] px-12 py-3 text-center hover:scale-105 duration-300">
           <a href="https://platform.siml.ai/" target="_blank">
             <div className="font-bold text-xl lg:text-4xl">

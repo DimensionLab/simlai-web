@@ -8,6 +8,7 @@ import IntroParent from "./main-components/IntroParent";
 import EngagementCardsParent from "./main-components/EngagementCardsParent";
 import ShowcaseCard from "./main-components/cards/ShowcaseCard";
 import { Stats } from "./main-components/Stats";
+import TalkToTeam from "./main-components/TalkToTeam";
 
 const MainWrapper = styled.main<{ style: { display: string }, children: any }>`
   ${tw`
@@ -54,6 +55,7 @@ const Main = (props: MainProps) => {
       <div className="width-limited max-w-5xl">
         <SignUp/>
         <Stats/>
+        <TalkToTeam />
         <Features/>
         <Product/>
         <ShowcaseCard

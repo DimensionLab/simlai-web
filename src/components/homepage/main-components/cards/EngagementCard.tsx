@@ -19,7 +19,7 @@ const EngagementCard = (props: EngagementCardProps) => {
 
 
     return (
-        <section className="flex w-full h-full">
+        <section className="flex w-full">
             <BgWrapper bgColor={props.bgColor}>
                 <main className="flex flex-col gap-y-8 py-16 px-8 w-full justify-between h-full">
                     <h1 className="text-3xl font-bold lg:text-4xl">{props.title}</h1>

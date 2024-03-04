@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import DropdownMenu from "./main-components/mobile-components/DropdownMenu";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const HeaderWrapper = styled.header<{ className: string, children: any }>`
   ${tw`
@@ -180,6 +181,9 @@ const Header = (props: HeaderProps) => {
 
   return (
     <HeaderWrapper className="sticky top-0 left-0">
+      <Head>
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/26843925.js"></script>
+      </Head>
       <div className={`all-container ${isScrolled ? `pt-4` : `pt-14`}`}>
         <div className="logo">
           <a href="../">

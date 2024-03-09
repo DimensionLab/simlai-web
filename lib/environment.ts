@@ -1,4 +1,4 @@
-export const environment = process.env.ENVIRONMENT;
+export const environment = process.env.NEXT_PUBLIC_ENVIRONMENT;
 
 export const getOriginUrl = () => {
   switch (environment) {

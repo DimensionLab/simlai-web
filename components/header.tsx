@@ -42,11 +42,17 @@ const menuItems = [
 ]
 
 export default function Header() {
-  const originUrl = window.location.origin;
+  const [originUrl, setOriginUrl] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
+
+  useEffect(() => {
+    if (window) {
+      setOriginUrl(window.location.origin);
+    }
+  }, [])
 
   useEffect(() => {
     if (menuOpen) {

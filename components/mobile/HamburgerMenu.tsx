@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import SocialsRow from "../SocialsRow";
+import { useEffect, useState } from "react";
 
 const linksData = [
   {
@@ -41,7 +42,13 @@ const linksData = [
 ];
 
 export default function HamburgerMenu( { className, toggleMenu }: { className: string, toggleMenu: () => void } ){
-  const originUrl = window.location.origin;
+  const [originUrl, setOriginUrl] = useState("");
+
+  useEffect(() => {
+    if (window) {
+      setOriginUrl(window.location.origin);
+    }
+  }, [])
   return (
     <div className={cn(`absolute top-0 left-0 flex h-screen w-screen flex-col justify-between bg-darkBg ${className}`)}>
       <section className="flex flex-col gap-y-12">

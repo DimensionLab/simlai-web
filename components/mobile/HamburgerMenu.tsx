@@ -4,20 +4,19 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import SocialsRow from "../SocialsRow";
-import { getOriginUrl } from "@/lib/environment";
 
 const linksData = [
   {
     name: "FEATURES",
-    href: getOriginUrl() + "/#features",
+    href: "/#features",
   },
   {
     name: "MODEL ENGINEER",
-    href: getOriginUrl() + "#model-engineer",
+    href: "#model-engineer",
   },
   {
     name: "SIMULATION STUDIO",
-    href: getOriginUrl() + "#simulation-studio",
+    href: "#simulation-studio",
   },
   {
     name: "DOCS",
@@ -25,15 +24,15 @@ const linksData = [
   },
   {
     name: "PRICING",
-    href: getOriginUrl() + "/pricing",
+    href: "/pricing",
   },
   {
     name: "LEARN",
-    href: getOriginUrl() + "/university",
+    href: "/university",
   },
   {
     name: "BLOG",
-    href: getOriginUrl() + "/blog",
+    href: "/blog",
   },
   {
     name: "BOOK A DEMO",
@@ -42,6 +41,7 @@ const linksData = [
 ];
 
 export default function HamburgerMenu( { className, toggleMenu }: { className: string, toggleMenu: () => void } ){
+  const originUrl = window.location.origin;
   return (
     <div className={cn(`absolute top-0 left-0 flex h-screen w-screen flex-col justify-between bg-darkBg ${className}`)}>
       <section className="flex flex-col gap-y-12">
@@ -63,7 +63,7 @@ export default function HamburgerMenu( { className, toggleMenu }: { className: s
         <ul className="w-full px-10 flex flex-col gap-y-6">
           {linksData.map((link, index) => (
             <li key={index} className="font-bold text-xl text-muted hover:text-white duration-300">
-              <Link href={link.href} onClick={() => toggleMenu()}>
+              <Link href={link.href.includes("https://") ? link.href : originUrl + link.href} onClick={() => toggleMenu()} replace target={link.href.includes("https://") ? "_blank" : ""}>
                 <span>{link.name}</span>
               </Link>
             </li>

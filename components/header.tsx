@@ -5,20 +5,19 @@ import Link from "next/link";
 import TrackingWrapper from "./tracking/TrackingWrapper";
 import { useEffect, useState } from "react";
 import HamburgerMenu from "./mobile/HamburgerMenu";
-import { getOriginUrl } from "@/lib/environment";
 
 const menuItems = [
   {
     label: "FEATURES",
-    href: getOriginUrl() + "/#features"
+    href: "/#features"
   },
   {
     label: "MODEL ENGINEER",
-    href: getOriginUrl() + "/#model-engineer"
+    href: "/#model-engineer"
   },
   {
     label: "SIMULATION STUDIO",
-    href: getOriginUrl() + "/#simulation-studio"
+    href: "/#simulation-studio"
   },
   {
     label: "DOCS",
@@ -26,15 +25,15 @@ const menuItems = [
   },
   {
     label: "PRICING",
-    href: getOriginUrl() + "/pricing"
+    href: "/pricing"
   },
   {
     label: "LEARN",
-    href: getOriginUrl() + "/university"
+    href: "/university"
   },
   {
     label: "BLOG",
-    href: getOriginUrl() + "/blog"
+    href: "/blog"
   },
   {
     label: "BOOK A DEMO",
@@ -43,6 +42,7 @@ const menuItems = [
 ]
 
 export default function Header() {
+  const originUrl = window.location.origin;
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -55,19 +55,18 @@ export default function Header() {
       document.body.style.overflow = 'auto';
     }
   }, [menuOpen])
-
   return (
     <div className="w-full px-4 sticky top-0 left-0 bg-darkBg z-30 xl:pr-0">
       <TrackingWrapper />
       <nav className="flex py-4 justify-between w-full xl:py-0">
-        <Link href={getOriginUrl() + "#"} className="flex">
+        <Link href={originUrl + "/#"} className="flex">
           <Image src={"/assets/simlai/simlai-logo-header.svg"} alt="Siml.ai" width={23} height={23} />
         </Link>
         <div className="flex gap-x-4">
           <ul className="max-xl:hidden flex flex-row gap-x-4 items-center text-muted font-bold text-sm">
             { menuItems.map((item, index) => (
               <li key={index}>
-                <Link href={item.href} target={item.href.includes("https://") ? "_blank" : ""}>
+                <Link  href={item.href.includes("https://") ? item.href : originUrl + item.href} replace target={item.href.includes("https://") ? "_blank" : ""}>
                   <span>{item.label}</span>
                 </Link>
               </li>

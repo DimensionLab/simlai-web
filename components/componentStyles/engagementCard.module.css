@@ -1,0 +1,13 @@
+.engagementCardWrapper {
+  border-radius: 0.8rem;
+  width: 100%;
+  height: 100%;
+}
+
+.variable {
+  background: linear-gradient(90deg, #6B50FF 0%, #C063F9 100%);
+}
+
+.darker {
+  background: linear-gradient(90deg, #C063F9 0%, #59137D 100%);
+}

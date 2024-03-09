@@ -1,0 +1,15 @@
+.relative {
+  background: linear-gradient(180deg, #8B7CFF 0%, #6B50FF 100%);
+  padding: 6px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.visualEditorImg {
+  background: linear-gradient(180deg, #8B7CFF 0%, #6B50FF 100%);
+  padding: 6px;
+  border-radius: 10px;
+  display: flex;
+}

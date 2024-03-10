@@ -27,5 +27,5 @@ const fetchData = (slug: string) => {
     version: storyblokVersion,
   }
 
-  return getStoryblokApi().get(`cdn/stories/blog/${slug}`, params, { cache: "no-cache" });
+  return getStoryblokApi().get(`cdn/stories/blog/${slug}`, params);
 }

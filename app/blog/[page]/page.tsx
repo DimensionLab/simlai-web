@@ -85,8 +85,6 @@ async function fetchData(page: string = "1") {
     per_page: 10,
     page: nPage,
   };
-  const response = await storyblokApi.get(`cdn/stories/`, params, {
-    cache: "no-store",
-  });
+  const response = await storyblokApi.get(`cdn/stories/`, params);
   return response;
 }

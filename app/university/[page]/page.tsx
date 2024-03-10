@@ -74,6 +74,7 @@ async function fetchData(page: string = "1") {
     is_startpage: false,
     per_page: 10,
     page: nPage,
+    sort_by: "first_published_at:desc",
   };
   const response = await storyblokApi.get(`cdn/stories/`, params);
   return response;

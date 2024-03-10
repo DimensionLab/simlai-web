@@ -1,18 +1,9 @@
-"use client";
-
-import { useEffect } from "react";
-
+import Script from "next/script";
 export default function TrackingWrapper() {
-  useEffect(() => {
-    // @ts-ignore
-    window._mfq = window._mfq || [];
-    (function() {
-      var mf = document.createElement("script");
-      mf.type = "text/javascript"; mf.defer = true;
-      mf.src = process.env.NEXT_PUBLIC_MOUSEFLOW_URL as string;
-      document.getElementsByTagName("head")[0].appendChild(mf);
-    })();
-  }, [])
-
-  return null;
+  return (
+    <>
+      <Script type ="text/javascript" src={process.env.NEXT_PUBLIC_MOUSEFLOW_URL as string} defer></Script>
+      <Script type="text/javascript" id="hs-script-loader" async defer src={process.env.NEXT_PUBLIC_HUBSPOT_URL as string}></Script>
+    </>
+  )
 }

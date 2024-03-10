@@ -17,6 +17,23 @@ export const metadata: Metadata = {
       url: "/assets/simlai/simlai-logo.svg",
     },
   ],
+  openGraph: {
+    title: "Siml.ai - Platform for fast AI-driven physics simulations",
+    description: "Platform for fast AI-driven physics simulations",
+    images: [
+      {
+        url: "https://siml.ai/assets/simlai/url-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Siml.ai - Platform for fast AI-driven physics simulations",
+      },
+    ],
+    url: "https://siml.ai/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@siml_ai",
+  },
 };
 
 export default function RootLayout({

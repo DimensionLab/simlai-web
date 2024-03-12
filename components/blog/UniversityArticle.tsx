@@ -1,18 +1,17 @@
 "use client";
 
-import { renderRichText } from "@storyblok/react";
+import { renderRichText, storyblokEditable } from "@storyblok/react/rsc";
 import "prismjs/themes/prism-twilight.css";
 import Prism from "prismjs";
 import { useEffect, useState } from "react";
 import css from "@/components/componentStyles/blogArticle.module.css";
 import { UniversityPostCard } from "@/types/blog";
-import Image from "next/image";
 
-export default function UniversityArticle({ story }: { story: UniversityPostCard }) {
+export default function UniversityArticle({ blok, firstPublishedAt }: { blok: UniversityPostCard["content"], firstPublishedAt: string }) {
   const [videoData, setVideoData] = useState<{ url: string, title: string } | null>(null);
   useEffect(() => {
     Prism.highlightAll();
-  }, [story.content.description_content]);
+  }, [blok.description_content]);
 
   useEffect(() => {
     const getVideoData = async (videoLinkUrl: string) => {
@@ -37,26 +36,26 @@ export default function UniversityArticle({ story }: { story: UniversityPostCard
       return info;
     }
 
-    getVideoData(story.content.video_link.url).then((data) => {
+    getVideoData(blok.video_link.url).then((data) => {
       setVideoData(data);
     });
   }, []);
 
-  const date = new Date(story.first_published_at).toLocaleDateString();
+  const date = new Date(firstPublishedAt).toDateString();
   
   return (
-    <article>
+    <article {...storyblokEditable(blok._editable)}>
       <div className="w-full flex items-center justify-center">
         <div className="article-content flex flex-col gap-y-8 items-center">
           <h1
             className="font-bold text-3xl md:text-4xl lg:text-5xl max-w-5xl flex self-start"
           >
-            {story.content.title}
+            {blok.title}
           </h1>
           <div className="grid w-full pt-8 self-start -mt-10 gap-x-2 grid-cols-3 max-w-md text-sm md:text-lg">
             <div className="w-full flex flex-col">
               <span className="text-[#454853]">Date:</span>
-              <span className="text-[#7C7F8B]">{date}</span>
+              <span className="text-[#7C7F8B]" suppressHydrationWarning>{date}</span>
             </div>
             <div className="w-full flex flex-col">
               <span className="text-[#454853]">Category:</span>
@@ -73,7 +72,7 @@ export default function UniversityArticle({ story }: { story: UniversityPostCard
             </section>
           </div>
           <div className="article-text text-md w-full max-w-4xl flex flex-col gap-y-10 items-center">
-            <section className={css.richTextContent} dangerouslySetInnerHTML={{ __html: renderRichText(story.content.description_content) }} />
+            <section className={css.richTextContent} dangerouslySetInnerHTML={{ __html: renderRichText(blok.description_content) }} />
           </div>
         </div>
       </div>

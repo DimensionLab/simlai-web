@@ -15,10 +15,12 @@ const config: Config = {
     },
     colors: {
       darkBg: '#0D101B',
-      btnPurple: '#6B50FF',
+      btnPurple: 'rgba(107, 80, 255, 1)',
+      skPurple: "rgba(129, 110, 205, 0.25)",
       muted: "rgb(152, 155, 167)",
       white: "white",
       lightBg: "#222530",
+      shadcnMuted: "hsl(210, 40%, 96.1%)",
     }
   },
   plugins: [],

@@ -5,6 +5,8 @@ import Link from "next/link";
 import TrackingWrapper from "./tracking/TrackingWrapper";
 import { useEffect, useState } from "react";
 import HamburgerMenu from "./mobile/HamburgerMenu";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   {
@@ -42,6 +44,8 @@ const menuItems = [
 ]
 
 export default function Header() {
+  const pathname = usePathname();
+  console.log(pathname)
   const [originUrl, setOriginUrl] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -61,6 +65,17 @@ export default function Header() {
       document.body.style.overflow = 'auto';
     }
   }, [menuOpen])
+
+  const doHighlight = (label: string) => {
+    if (
+      pathname.includes(label.toLowerCase()) ||
+      (pathname.includes("university") && label === "LEARN")
+    ) {
+      return "text-white";
+    } else {
+      return "text-muted";
+    }
+  }
   return (
     <div className="w-full px-4 sticky top-0 left-0 bg-darkBg z-30 xl:pr-0">
       <TrackingWrapper />
@@ -73,7 +88,7 @@ export default function Header() {
             { menuItems.map((item, index) => (
               <li key={index}>
                 <Link  href={item.href.includes("https://") ? item.href : originUrl + item.href} replace target={item.href.includes("https://") ? "_blank" : ""}>
-                  <span>{item.label}</span>
+                  <span className={cn(`${doHighlight(item.label)} hover:text-white duration-300`)}>{item.label}</span>
                 </Link>
               </li>
             ))}

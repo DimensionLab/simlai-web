@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import fetchMorePosts from "./fetchMorePosts";
 import Link from "next/link";
 import { STORIES_PER_PAGE } from "./constants";
+import SkeletonCard from "@/components/blog/skeletonCard";
 
 export default function BlogRootPage() {
   const [storiesObjects, setStoriesObjects] = useState<BlogPostCard[]>([]);
@@ -21,11 +22,13 @@ export default function BlogRootPage() {
     });
   }, [])
 
+  const mockArray = Array.from({ length: STORIES_PER_PAGE }, (_, i) => i);
+
   return (
     <section className="flex flex-col w-full h-full gap-y-12">
       <h1 className="text-4xl font-bold">Blog</h1>
       <ul className="flex flex-col gap-y-12 items-center w-full">
-        {storiesObjects.map((blogPost) => {
+        {storiesObjects?.length > 0 ? storiesObjects.map((blogPost) => {
           return (
             <li key={blogPost._uid} className={cn("max-w-6xl")}>
               <Link href={`/blog/${blogPost.slug}`}>
@@ -33,7 +36,14 @@ export default function BlogRootPage() {
               </Link>
             </li>
           );
-        })}
+        }) : (
+          mockArray.map((_, i) => {
+            return (
+              <SkeletonCard key={i} />
+            )
+          })
+        )}
+        
       </ul>
       {(total >= (currPage - 1) * STORIES_PER_PAGE) && <section className="flex justify-center">
         <div className="flex flex-row items-center justify-center w-full gap-x-10 max-w-2xl">

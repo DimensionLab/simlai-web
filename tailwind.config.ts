@@ -19,6 +19,7 @@ const config: Config = {
       muted: "rgb(152, 155, 167)",
       white: "white",
       lightBg: "#222530",
+      shadcnMuted: "hsl(210, 40%, 96.1%)"
     }
   },
   plugins: [],

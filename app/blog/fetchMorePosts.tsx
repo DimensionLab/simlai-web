@@ -12,7 +12,6 @@ storyblokInit({
 
 export default async function fetchMorePosts (page: number = 1) {
   const response = await fetchData((page).toString());
-  console.log("res total: ", response.total)
   const { stories }: { stories: BlogStory[] } = response.data;
   const newStories: BlogPostCard[] = stories.map((blogPost) => {
     return {

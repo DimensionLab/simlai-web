@@ -1,0 +1,7 @@
+.messageWrapper {
+  background: linear-gradient(90deg, #4B8AFF 0%, #6B50FF 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,6 +2,7 @@ import CTAbuttons from "@/components/CTAbuttons";
 import EngagementCardsParent from "@/components/EngagementCardParent";
 import Features from "@/components/features";
 import IntroParent from "@/components/IntroParent";
+import MailchimpForm from "@/components/MailchimpForm";
 import MainLayoutWrapper from "@/components/MainLayoutWrapper";
 import Memo from "@/components/Memo";
 import Message from "@/components/Message";
@@ -34,6 +35,7 @@ export default function Home() {
       </MainLayoutWrapper>
       <MainLayoutWrapper isPadding>
         <EngagementCardsParent />
+        <MailchimpForm />
       </MainLayoutWrapper>
     </section>
   );

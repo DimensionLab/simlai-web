@@ -41,7 +41,9 @@ export default function UniversityLayout({ children }: { children: ReactNode }) 
   return (
     <main className="w-full h-full">
       <StoryblokProvider>
-        {children}
+        <main className="px-4 py-10">
+          {children}
+        </main>
       </StoryblokProvider>
     </main>
   )

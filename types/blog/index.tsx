@@ -94,8 +94,8 @@ export type BlogPostCard = {
 export type UniversityStory = {
   title: string;
   published_at: string;
-  slug: 'how-to-build-parameterized-ai-driven-simulators-in-siml-ai',
-  _uid: '6c8f2a32-af7e-4475-888d-04713595c8fa',
+  slug: string,
+  _uid: string,
 }
 
 export type UniversityPostCard = {

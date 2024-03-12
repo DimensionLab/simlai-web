@@ -45,7 +45,6 @@ const menuItems = [
 
 export default function Header() {
   const pathname = usePathname();
-  console.log(pathname)
   const [originUrl, setOriginUrl] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {

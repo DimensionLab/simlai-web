@@ -1,3 +1,5 @@
+import { SbBlokData } from "@storyblok/react";
+
 export type RootStory = {
   name: string;
   created_at: string;
@@ -58,7 +60,7 @@ export type BlogStory = {
     category: any[];
     keywords: string;
     component: string;
-    _editable: string;
+    _editable: SbBlokData;
   };
   slug: string;
   full_slug: string;
@@ -117,7 +119,7 @@ export type UniversityPostCard = {
       title: string,
     },
     description_content: any,
-    _editable: string,
+    _editable: SbBlokData,
   },
   slug: string,
   full_slug: string;

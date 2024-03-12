@@ -1,7 +1,6 @@
-import Article from "@/components/blog/Article";
 import { storyblokVersion } from "@/lib/environment";
 import { BlogStory } from "@/types/blog";
-import { ISbStoryParams, getStoryblokApi } from "@storyblok/react";
+import { ISbStoryParams, StoryblokStory, getStoryblokApi } from "@storyblok/react/rsc";
 import { redirect } from "next/navigation";
 
 export default async function BlogPostPage({ params }: { params: { slug: string[] } }) {
@@ -17,9 +16,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string[
 
   return (
     <section className="flex flex-col items-center">
-      <Article story={story} />
+      <StoryblokStory story={story} firstPublishedAt={story.first_published_at}/>
     </section>
-  )
+)
 }
 
 const fetchData = (slug: string) => {

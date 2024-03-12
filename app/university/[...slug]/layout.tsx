@@ -1,10 +1,22 @@
 import { ReactNode } from "react";
 import StoryblokProvider from "@/app/blog/StoryblokProvider";
 import { apiPlugin, storyblokInit } from "@storyblok/react";
+import Grid from "@/components/storyblok/Grid";
+import Feature from "@/components/storyblok/Feature";
+import Page from "@/components/storyblok/Page";
+import UniversityArticle from "@/components/blog/UniversityArticle";
+
+const components = {
+  grid: Grid,
+  feature: Feature,
+  page: Page,
+  "uni-post": UniversityArticle
+}
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
   use: [apiPlugin],
+  components
 })
 
 export default function UniversityPostLayout({ children }: { children: ReactNode }) {

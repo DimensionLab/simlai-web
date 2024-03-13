@@ -31,7 +31,7 @@ const ShowcaseCard = (props: ShowcaseCardProps) => {
             {props.txtData.map((data, index) => {
               return (
                 <div key={index}>
-                  <h3 className="font-bold text-xl">{data[0]}</h3>
+                  <h3 className="font-bold text-lg">{data[0]}</h3>
                   <span
                     className="text-[16px]"
                     dangerouslySetInnerHTML={{ __html: data[1] }}

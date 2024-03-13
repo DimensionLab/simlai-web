@@ -12,7 +12,7 @@ const socialsData = [
   },
   {
     icon: "/assets/li-logo.svg",
-    href: "https://www.linkedin.com/company/simlai",
+    href: "https://www.linkedin.com/company/dimensionlab",
   },
   {
     icon: "/assets/ig-logo.svg",

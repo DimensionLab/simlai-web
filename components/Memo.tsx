@@ -1,10 +1,10 @@
 import Image from "next/image";
 import TryPlatformButton from "./TryPlatformButton";
-import MailchimpForm from "./MailchimpForm";
+import Link from "next/link";
 
 export default function Memo() {
   return (
-    <section className="flex flex-col lg:flex-row lg:gap-x-10">
+    <section className="flex flex-col gap-y-12 lg:flex-row lg:gap-x-10">
       <div className="flex flex-col gap-y-6 max-w-xl">
         <div className="flex gap-x-4 items-baseline">
           <Image
@@ -20,12 +20,12 @@ export default function Memo() {
         </p>
         <TryPlatformButton />
       </div>
-      <div className="max-xl:hidden">
+      <div className="">
         <p className="text">
           Vast majority of technologies in the world come to life through months or years of extensive simulation during their development. <br/> <br/>
           High-performance computing, parallel processing and GPUs helped push the computation time from months to weeks. With the help of applied machine learning, we are seeing a reduction from weeks to days. We think that&apos;s not enough. <br/> <br/>
-          At <strong className="text-btnPurple"><a href="https://dimensionlab.org">DimensionLab</a></strong>, we are building tools for engineers and researchers to tame the physics of their projects in hours. Collectively, they make up a cohesive platform we call Siml.ai. <br/> <br/>
-          Under the hood, Siml.ai consists of two parts - <strong className="text-btnPurple"><a href="#model-engineer">Model Engineer</a></strong> and <strong className="text-btnPurple"><a href="#simulation-studio">Simulation Studio</a></strong>.
+          At <strong className="text-btnPurple"><Link href="https://dimensionlab.org" target="_blank">DimensionLab</Link></strong>, we are building tools for engineers and researchers to tame the physics of their projects in hours. Collectively, they make up a cohesive platform we call Siml.ai. <br/> <br/>
+          Under the hood, Siml.ai consists of two parts - <strong className="text-btnPurple"><Link href="#model-engineer">Model Engineer</Link></strong> and <strong className="text-btnPurple"><Link href="#simulation-studio">Simulation Studio</Link></strong>.
         </p>
       </div>
     </section>

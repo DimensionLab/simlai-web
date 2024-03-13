@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useState } from "react";
 import EngagementCardsParent from "../EngagementCardParent";
 import PricingCard from "./PricingCard";
+import Link from "next/link";
 
 
 const Pricing = () => {
@@ -83,16 +84,6 @@ const Pricing = () => {
     }
   }
 
-  const [isOpen, setIsOpen] = useState(true);
-
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  }
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-  }
-
   return (
     <>
       <Head>
@@ -132,9 +123,9 @@ const Pricing = () => {
                     We&apos;re also giving out 
                     <strong> 100% discount for 1 month </strong> 
                     for everybody who completes our 
-                    <a href="https://dmloc3fzh7g.typeform.com/to/LjYAfoxp" className="text-[#8B7CFF]"> Siml.ai Early Adopter Survey</a>
+                    <Link href="https://dmloc3fzh7g.typeform.com/to/LjYAfoxp" className="text-[#8B7CFF]" target="_blank"> Siml.ai Early Adopter Survey</Link>
                     - you can get more information in our community Discord, which you can join 
-                    <a href="https://discord.gg/UxQyC9PEqt" className="text-[#8B7CFF]"> here</a>.
+                    <Link href="https://discord.gg/UxQyC9PEqt" className="text-[#8B7CFF]" target="_blank"> here</Link>.
                   </span>
                   {/* <form className="flex flex-col w-full xl:h-full xl:w-[40%]" onSubmit={handleSubmit}>
                     <label className="text-xs text-[#D0D2DF] sm:pt-16 xl:pt-0">Apply your Siml.ai Early Adopter discount code:</label>

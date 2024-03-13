@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import css from "./componentStyles/engagementCard.module.css";
+import Link from "next/link";
 
 interface EngagementCardProps {
     title: string,
@@ -18,7 +19,7 @@ const EngagementCard = (props: EngagementCardProps) => {
         <main className="flex flex-col gap-y-8 py-16 px-8 w-full justify-between h-full">
           <h1 className="text-3xl font-bold lg:text-4xl">{props.title}</h1>
           <h2 className="text-xl">{props.subtitle}</h2>
-          <a href={props.buttonHref} className="text-sm px-4 py-[11px] border rounded w-fit font-bold hover:bg-white hover:text-black duration-[0.6s]">{props.buttonText}</a>
+          <Link href={props.buttonHref} className="text-sm px-4 py-[11px] border rounded w-fit font-bold hover:bg-white hover:text-black duration-[0.6s]" target="_blank">{props.buttonText}</Link>
         </main>
       </div>
     </section>

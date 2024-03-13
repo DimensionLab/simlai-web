@@ -17,7 +17,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
-  const { data } = await fetchData(slug);
+  const response = await fetchData(slug);
+  const data = await response.json();
   const { story }: { story: UniversityPostCard } = data;
 
   return {
@@ -49,7 +50,8 @@ export default async function UniversityPostPage({ params }: { params: { slug: s
     return redirect("/university");
   }
 
-  const { data } = await fetchData(slug);
+  const response = await fetchData(slug);
+  const data = await response.json();
 
   const { story }: { story: UniversityPostCard } = data;
 
@@ -62,11 +64,8 @@ export default async function UniversityPostPage({ params }: { params: { slug: s
 }
 
 const fetchData = (slug: string) => {
-  const params: ISbStoryParams = {
-    version: storyblokVersion,
-  }
-
-  return getStoryblokApi().get(`cdn/stories/university/${slug}`, params);
+  const url = `https://api.storyblok.com/v2/cdn/stories/university/${slug}?version=${storyblokVersion}&token=${process.env.storyblokApiToken}`
+  return fetch(url, { next: { revalidate: 300 }})
 }
 
 export async function generateStaticParams() {

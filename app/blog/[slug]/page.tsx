@@ -1,6 +1,6 @@
 import { storyblokVersion } from "@/lib/environment";
 import { BlogStory } from "@/types/blog";
-import { ISbStoryParams, StoryblokStory, getStoryblokApi } from "@storyblok/react/rsc";
+import { StoryblokStory } from "@storyblok/react/rsc";
 import type { Metadata, ResolvingMetadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -14,7 +14,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
-  const { data } = await fetchData(slug);
+  const response = await fetchData(slug);
+  const data = await response.json();
   const { story }: { story: BlogStory } = data;
 
   return {
@@ -46,7 +47,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     return redirect("/blog");
   }
 
-  const { data } = await fetchData(slug);
+  const response = await fetchData(slug);
+  const data = await response.json();
 
   const { story }: { story: BlogStory } = data;
 
@@ -58,11 +60,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 }
 
 const fetchData = (slug: string) => {
-  const params: ISbStoryParams = {
-    version: storyblokVersion,
-  }
-
-  return getStoryblokApi().get(`cdn/stories/blog/${slug}`, params);
+  const url = `https://api.storyblok.com/v2/cdn/stories/blog/${slug}?version=${storyblokVersion}&token=${process.env.storyblokApiToken}`
+  return fetch(url, { next: { revalidate: 300 }})
 }
 
 export async function generateStaticParams() {

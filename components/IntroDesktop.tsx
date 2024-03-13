@@ -29,9 +29,8 @@ const IntroDesktop = () => {
             Tame the physics <br />
             of your projects in hours!
           </div>
-          <div className="text-[#B4B6C3] text-xl">
-            Siml.ai is a software platform for working <br /> with
-            high-performance AI-based numerical simulators.
+          <div className="text-[#B4B6C3] text-xl break-words">
+            Siml.ai is a software platform for working with high-performance AI-based numerical simulators.
           </div>
           <TryPlatformButton />
           <div className="-mt-6 flex flex-row gap-x-2">

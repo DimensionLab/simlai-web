@@ -10,8 +10,8 @@ const txtDataModelEngineer = [
     "Quickly develop the model architecture for the simulators&apos;s desired capabilities and physical constraints. Customizable to the bone through code editor.",
   ],
   [
-    "High performance computing, automated",
-    "One-click A100 GPUs. Train and aggressively optimize learnable simulators in high-performance, GPU-powered cloud or HPC centers without the need to deal with the complexities of managing the cloud infrastructure.",
+    "Automated high-performance computing",
+    "One-click A100 GPUs. Train and optimize learnable simulators in high-performance, GPU-powered cloud or HPC centers without dealing with the complexities of managing the cloud infrastructure.",
   ],
 ];
 
@@ -26,7 +26,7 @@ const txtDataSimulationStudio = [
   ],
   [
     "Unreal rendering performance",
-    "High-fidelity visualization rendering is achieved by leveraging the powerful Unreal Engine under the hood.",
+    "High-fidelity visualization rendering is achieved by leveraging the powerful Unreal Engine under the hood. Our 3D graphics enable a cutting-edge visual representation of data.",
   ],
 ];
 

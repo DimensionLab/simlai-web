@@ -7,7 +7,7 @@ interface Props {
 
 export default function BlogPost({ uniPost }: Props) {
   const { content, published_at} = uniPost;
-  const parsedDate = new Date(published_at);
+  const parsedDate = new Date(published_at).toDateString();
   const thumbnail = content.thumbnail;
   return (
     <article className="flex flex-col bg-lightBg rounded-lg xl:flex-row xl:w-full">
@@ -23,7 +23,7 @@ export default function BlogPost({ uniPost }: Props) {
       <div className="flex flex-col px-4 py-4 gap-y-2 xl:1/4 xl:justify-between xl:min-w-[288px]">
         <div className="flex flex-col gap-y-4">
           <h2 className="text-xl">{content.title}</h2>
-          <h3 className="text-muted text-sm">{parsedDate.toLocaleDateString()}</h3>
+          <h3 className="text-muted text-sm">{parsedDate}</h3>
         </div>
         <div className="flex flex-row justify-between">
           <p className="text-muted font-light text-lg">{"University"}</p>

@@ -1,16 +1,22 @@
 "use client";
 
-import { UniversityPostCard, UniversityStory } from "@/types/blog";
-import { ISbStoriesParams, getStoryblokApi } from "@storyblok/react/rsc";
+import { UniversityPostCard } from "@/types/blog";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import UniversityPost from "@/components/blog/UniversityPost";
-import { storyblokVersion } from "@/lib/environment";
 import { useEffect, useState } from "react";
 import fetchMoreUniPosts from "./fetchMoreUniPosts";
 import SkeletonCard from "@/components/blog/skeletonCard";
+import { STORIES_PER_PAGE } from "../blog/constants";
 
-const STORIES_PER_PAGE = 10;
+interface CachedArticles {
+  articles: UniversityPostCard[];
+  time: number;
+  total: number;
+  page: number;
+}
+
+const CACHE_INVALIDATION_TIME = 1000 * 20 * 5; // 5 minutes
 
 export default function UniversityRootPage(){
   const [storiesObjects, setStoriesObjects] = useState<UniversityPostCard[]>([]);
@@ -18,8 +24,32 @@ export default function UniversityRootPage(){
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
+    const localStorage = window.localStorage;
+    const uniArticles = localStorage.getItem("uniArticles");
+
+    if (uniArticles !== null && uniArticles !== undefined) {
+      const parsedArticles: CachedArticles = JSON.parse(uniArticles);
+
+      // use cached only if tiem is less than 5 minutes
+      if ( parsedArticles.time + CACHE_INVALIDATION_TIME > Date.now()) {
+        setStoriesObjects(parsedArticles.articles);
+        setTotal(parsedArticles.total);
+        setCurrPage(parsedArticles.page);
+        return;
+      }
+      // if time is more than 5 minutes, fetch new ones (goes to fetchMorePosts below)
+    }
+
     fetchMoreUniPosts(currPage).then((newStories) => {
       setStoriesObjects(newStories.data);
+      const obj: CachedArticles = {
+        articles: newStories.data,
+        time: Date.now(),
+        total: newStories.total,
+        page: currPage + 1
+      }
+
+      localStorage.setItem("uniArticles", JSON.stringify(obj))
       setCurrPage(currPage + 1);
       setTotal(newStories.total);
     });
@@ -56,8 +86,14 @@ export default function UniversityRootPage(){
                 const { data } = newStories;
                 const oldStoryIdSet = new Set(storiesObjects.map((story) => story.uuid));
                 const storiesArray = data.filter((story) => !oldStoryIdSet.has(story.uuid)); // remove duplicates
-                const arr = storiesObjects.concat(storiesArray);
-                setStoriesObjects(arr);
+                const obj: CachedArticles = {
+                  articles: storiesObjects.concat(storiesArray),
+                  time: Date.now(),
+                  total: newStories.total,
+                  page: currPage + 1
+                }
+                setStoriesObjects(obj.articles);
+                localStorage.setItem("uniArticles", JSON.stringify("obj"))
                 setCurrPage(currPage + 1);
               })}}
           >

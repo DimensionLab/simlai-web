@@ -9,14 +9,47 @@ import Link from "next/link";
 import { STORIES_PER_PAGE } from "./constants";
 import SkeletonCard from "@/components/blog/skeletonCard";
 
+interface CachedArticles {
+  articles: BlogPostCard[];
+  time: number;
+  total: number;
+  page: number;
+}
+
+const CACHE_INVALIDATION_TIME = 1000 * 20 * 5; // 5 minutes
+
 export default function BlogRootPage() {
   const [storiesObjects, setStoriesObjects] = useState<BlogPostCard[]>([]);
   const [currPage, setCurrPage] = useState(1);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
+    const localStorage = window.localStorage;
+    const blogArticles = localStorage.getItem("blogArticles");
+
+    if (blogArticles !== null && blogArticles !== undefined) {
+      const parsedArticles: CachedArticles = JSON.parse(blogArticles);
+
+      // use cached only if time is less than 5 minutes
+      if (parsedArticles.time + CACHE_INVALIDATION_TIME > Date.now()) {
+        setStoriesObjects(parsedArticles.articles);
+        setTotal(parsedArticles.total);
+        setCurrPage(parsedArticles.page);
+        return;
+      }
+      // if time is more than 5 minutes, fetch new ones (goes to "fetchMorePosts" below)
+    }
+
     fetchMorePosts(currPage).then((newStories) => {
       setStoriesObjects(newStories.data);
+      const obj = {
+        articles: newStories.data,
+        time: Date.now(),
+        total: newStories.total,
+        page: currPage + 1,
+      };
+
+      localStorage.setItem("blogArticles", JSON.stringify(obj));
       setCurrPage(currPage + 1);
       setTotal(newStories.total);
     });
@@ -54,8 +87,16 @@ export default function BlogRootPage() {
                 const { data } = newStories;
                 const oldStoryIdSet = new Set(storiesObjects.map((story) => story._uid));
                 const storiesArray = data.filter((story) => !oldStoryIdSet.has(story._uid)); // remove duplicates
-                const arr = storiesObjects.concat(storiesArray);
-                setStoriesObjects(arr);
+                const obj = {
+                  articles: storiesObjects.concat(storiesArray),
+                  time: Date.now(),
+                  total: newStories.total,
+                  page: currPage + 1,
+                };
+                setStoriesObjects(obj.articles);
+
+                const localStorage = window.localStorage;
+                localStorage.setItem("blogArticles", JSON.stringify(obj));
                 setCurrPage(currPage + 1);
               })}}
           >

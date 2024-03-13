@@ -42,8 +42,8 @@ export async function generateMetadata(
   }
 }
 
-export default async function UniversityPostPage({ params }: { params: { slug: string[] } }) {
-  const slug = params.slug.pop();
+export default async function UniversityPostPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
   
   if (!slug) {
     return redirect("/university");
@@ -68,3 +68,32 @@ const fetchData = (slug: string) => {
 
   return getStoryblokApi().get(`cdn/stories/university/${slug}`, params);
 }
+
+export async function generateStaticParams() {
+  const url = `https://api.storyblok.com/v2/cdn/links/?starts_with=university/&version=${storyblokVersion}&per_page=100&token=${process.env.storyblokApiToken}`;
+  const response = await fetch(url, { next: { revalidate: 300 }});
+  const data = await response.json();
+  let paths: string[] = [];
+  Object.keys(data.links).forEach((linkKey) => {
+    const slug = data.links[linkKey].slug;
+    
+    if(slug.includes('blog/')) {
+      return;
+    }
+
+    if(data.links[linkKey].is_folder) {
+      return;
+    }
+
+    let splittedSlug = slug.split('/');
+    const slugAtEnd = splittedSlug.pop();
+    if (slugAtEnd) {
+      paths.push(slugAtEnd);
+    }
+  });  
+
+  return paths.map((path) => ({
+    slug: path,
+  }))
+}
+export const dynamicParams = true;

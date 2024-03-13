@@ -1,6 +1,9 @@
+"use client";
+
 import Image from 'next/image'
 import SocialsRow from './SocialsRow';
-
+import Link from 'next/link';
+import useClientOrigin from '@/lib/useClientOrigin';
 
 const mainPoints = ["PRODUCT", "COMPANY"];
 
@@ -43,6 +46,7 @@ const companyLinks = [
 ];
 
 export default function Footer() {
+  const origin = useClientOrigin();
   return (
     <footer className="bg-lightBg w-full">
       <section className="flex flex-col py-12 gap-y-6 px-4 lg:items-center">
@@ -59,9 +63,9 @@ export default function Footer() {
                 <ul className="flex flex-col pt-2">
                   {productLinks.map((link, index) => (
                     <li key={index} className="text-md text-white">
-                      <a href={link.href}>
+                      <Link href={link.href.startsWith("https://") || link.href.startsWith("mailto:") ? link.href : origin + link.href} target={link.href.startsWith("https://") ? "_blank" : ""}>
                         <span>{link.name}</span>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -69,9 +73,9 @@ export default function Footer() {
                 <ul className="flex flex-col pt-2">
                   {companyLinks.map((link, index) => (
                     <li key={index} className="text-md text-white">
-                      <a href={link.href}>
+                      <Link href={link.href.startsWith("https://") || link.href.startsWith("mailto:") ? link.href : origin + link.href} target={link.href.startsWith("https://") ? "_blank" : ""} >
                         <span>{link.name}</span>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

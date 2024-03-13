@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import HamburgerMenu from "./mobile/HamburgerMenu";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import useClientOrigin from "@/lib/useClientOrigin";
 
 const menuItems = [
   {
@@ -45,17 +46,11 @@ const menuItems = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [originUrl, setOriginUrl] = useState("");
+  const originUrl = useClientOrigin();
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
-
-  useEffect(() => {
-    if (window) {
-      setOriginUrl(window.location.origin);
-    }
-  }, [])
 
   useEffect(() => {
     if (menuOpen) {

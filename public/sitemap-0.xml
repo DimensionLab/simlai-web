@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:3000/pricing</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/university</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/blog</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.siml.ai</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://meetings-eu1.hubspot.com/michal-bujnak</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.dimensionlab.org/terms-and-conditions.html</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.dimensionlab.org/privacy-policy.html</loc><lastmod>2024-03-13T15:28:01.653Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/pricing</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/university</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/multi-scale-cfd-simulations-challenges-and-opportunities-in-bridging-micro-to-macro-scales</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/geometry-informed-neural-operators-transforming-3d-fluid-dynamics-simulations</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/enter-siml-ai-v0-5</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/enhancing-user-experience-automatic-notification-for-completed-training-simulations</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/identifying-wind-turbine-dynamics-exploration-of-simulation</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/revolutionizing-climate-modeling-how-sfno-enhances-weather-forecasting-on-a-global-scale</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/dimensionlab-at-web-summit-2023-lisbon-spreading-the-word-about-siml-ai</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/introducing-compute-credits</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/siml-ai-v0-3-released-custom-equations-and-plugins</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/announcing-siml-ai-beta-on-the-road-to-the-future-of-ai-driven-numerical-simulation</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/dimensionlab-at-slovakiatech-2023-spreading-the-word-about-physicsml</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/mycrunchgpt-a-chatgpt-framework-for-scientific-machine-learning</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/laplace-neural-operator</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/harnessing-ai-the-new-frontier-in-physics-simulation</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/introducing-simlai-alpha</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/earthquake-hypocenter-localization-with-x-deeponet</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.siml.ai</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://meetings-eu1.hubspot.com/michal-bujnak</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.dimensionlab.org/terms-and-conditions.html</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.dimensionlab.org/privacy-policy.html</loc><lastmod>2024-03-13T17:20:04.731Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

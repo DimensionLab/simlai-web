@@ -1,0 +1,71 @@
+.simlLoadingContainer {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.simlLoadingItem {
+  position: absolute;
+}
+
+@keyframes siml-loading-1 {
+  0%, 25% {
+    opacity: 1;
+  }
+  26%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes siml-loading-2 {
+  0%, 25% {
+    opacity: 0;
+  }
+  26%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes siml-loading-3 {
+  0%, 50% {
+    opacity: 0;
+  }
+  51%, 75% {
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes siml-loading-4 {
+  0%, 75% {
+    opacity: 0;
+  }
+  76%, 100% {
+    opacity: 1;
+  }
+}
+
+#loadingPhase1 {
+  animation: siml-loading-1 .7s ease-in-out infinite; /* Adjust duration as needed */
+}
+
+#loadingPhase2 {
+  animation: siml-loading-2 .7s ease-in-out infinite;
+}
+
+#loadingPhase3 {
+  animation: siml-loading-3 .7s ease-in-out infinite;
+}
+
+#loadingPhase4 {
+  animation: siml-loading-4 .7s ease-in-out infinite;
+}

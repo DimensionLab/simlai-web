@@ -21,7 +21,11 @@ const config: Config = {
       white: "white",
       lightBg: "#222530",
       shadcnMuted: "hsl(210, 40%, 96.1%)",
-    }
+    },
+    linearBorderGradients: {
+      colors: ['#C063F9', '#8B7CFF'],
+      directions: ['to top'],
+    },
   },
   plugins: [],
 };

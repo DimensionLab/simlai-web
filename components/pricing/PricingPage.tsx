@@ -5,7 +5,7 @@ import { useState } from "react";
 import EngagementCardsParent from "../EngagementCardParent";
 import PricingCard from "./PricingCard";
 import Link from "next/link";
-
+import ClientPricingModal from "./ClientPricingModal";
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -140,6 +140,7 @@ const Pricing = () => {
           </div>
         </div>
         <EngagementCardsParent/>
+        <ClientPricingModal />
       </section>
     </>
   );

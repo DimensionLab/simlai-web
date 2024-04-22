@@ -37,7 +37,7 @@ const linksData = [
   },
   {
     name: "BOOK A DEMO",
-    href: "https://meetings-eu1.hubspot.com/michal-bujnak",
+    href: "https://meetings-eu1.hubspot.com/peter-macinsky",
   }
 ];
 

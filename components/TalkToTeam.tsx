@@ -2,7 +2,7 @@ export default function TalkToTeam() {
   const data = [
     {
       title: "BOOK A DEMO",
-      href: "https://meetings-eu1.hubspot.com/michal-bujnak",
+      href: "https://meetings-eu1.hubspot.com/peter-macinsky",
     },
     {
       title: "COMPLETE SURVEY TO GET FREE 14-DAYS TRIAL",

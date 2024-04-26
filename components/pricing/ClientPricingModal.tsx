@@ -26,7 +26,7 @@ export default function ClientPricingModal() {
           </DialogDescription>
         </DialogHeader>
         <section className="flex flex-col gap-y-4 gap-x-4 mx-auto">
-          <Link href="https://meetings-eu1.hubspot.com/michal-bujnak" className="text-cyan-400 flex gap-x-2" target="_blank">
+          <Link href="https://meetings-eu1.hubspot.com/peter-macinsky" className="text-cyan-400 flex gap-x-2" target="_blank">
             <Icon path={mdiCursorDefaultClick} size={1}/>
             Schedule a personal meeting 
           </Link>

@@ -40,8 +40,8 @@ const IntroDesktop = () => {
         <section className="flex w-full">
           <div className={css.relative}>
             <Image
-              src="/assets/simlai/simulation-studio-image.png"
-              alt="model engineer screenshot"
+              src="/assets/simlai/simulation-studio-image.webp"
+              alt="Simulation Studio"
               className=""
               id="cover-img"
               width={960}
@@ -52,7 +52,7 @@ const IntroDesktop = () => {
             />
             <Image
               src="/assets/simlai/model_engineer_cover_image.png"
-              alt="screenshot from siml"
+              alt="Model Engineer"
               className={`absolute -left-[7%] -bottom-[20%] ${css.visualEditorImg}`}
               width={300 * 1.56}
               height={300}
@@ -62,7 +62,7 @@ const IntroDesktop = () => {
             />
             <Image
               src="/assets/simlai/desktop-intro-pics/rotate2.png"
-              alt="screenshot from siml"
+              alt="Siml.ai platform"
               className="absolute left-[45%] -bottom-[20%]"
               width={200 * 1.4}
               height={200}
@@ -72,7 +72,7 @@ const IntroDesktop = () => {
             />
             <Image
               src="/assets/simlai/desktop-intro-pics/rotate1.png"
-              alt="screenshot from siml"
+              alt="Siml.ai platform"
               className="absolute -right-[10%] -bottom-[10%]"
               width={200 * 1.4}
               height={200}

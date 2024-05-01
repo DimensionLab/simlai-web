@@ -73,12 +73,12 @@ export default function Header() {
   return (
     <div className="w-full px-4 sticky top-0 left-0 bg-darkBg z-30 xl:pr-0">
       <TrackingWrapper />
-      <nav className="flex py-4 justify-between w-full xl:py-0">
-        <Link href={originUrl + "/#"} className="flex">
+      <nav className="flex max-w-[1400px] mx-auto w-full py-4 justify-between xl:py-0 mx-auto">
+        <Link href={originUrl + "/#"} className="flex pt-2">
           <Image src={"/assets/simlai/simlai-logo-header.svg"} alt="Siml.ai" width={23} height={23} />
         </Link>
         <div className="flex gap-x-4">
-          <ul className="max-xl:hidden flex flex-row gap-x-4 items-center text-muted font-bold text-sm">
+          <ul className="max-xl:hidden flex flex-row gap-x-6 items-center text-muted font-bold text-sm">
             { menuItems.map((item, index) => (
               <li key={index}>
                 <Link  href={item.href.includes("https://") ? item.href : originUrl + item.href} replace target={item.href.includes("https://") ? "_blank" : ""}>

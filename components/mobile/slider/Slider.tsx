@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const Slider = () => {
   const imgPaths = [
     "/assets/simlai/model_engineer_cover_image.png",
-    "/assets/simlai/simulation-studio-image.png",
+    "/assets/simlai/simulation-studio-image.webp",
   ];
   const [index, setIndex] = useState(0);
 

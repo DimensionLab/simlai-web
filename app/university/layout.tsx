@@ -1,17 +1,20 @@
 import { ReactNode } from "react";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc"
+import Image from "next/image";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/app/blog/StoryblokProvider";
 import type { Metadata } from "next";
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
   use: [apiPlugin],
-})
+});
 
 export const metadata: Metadata = {
   title: "Siml.ai - University",
-  description: "Learn everything about Siml.ai and find out how to utilize it to achieve incredible things!",
-  keywords: "physics, simulations, AI, machine learning, deep learning, university, siml.ai university",
+  description:
+    "Learn everything about Siml.ai and find out how to utilize it to achieve incredible things!",
+  keywords:
+    "physics, simulations, AI, machine learning, deep learning, university, siml.ai university",
   icons: [
     {
       rel: "icon",
@@ -20,7 +23,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Siml.ai - University",
-    description: "Learn everything about Siml.ai and find out how to utilize it to achieve incredible things!",
+    description:
+      "Learn everything about Siml.ai and find out how to utilize it to achieve incredible things!",
     images: [
       {
         url: "https://siml.ai/assets/simlai/url-preview.png",
@@ -37,14 +41,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function UniversityLayout({ children }: { children: ReactNode }) {
+export default function UniversityLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
-    <main className="w-full h-full">
+    <div className="w-full h-full">
+      <div
+        className="absolute top-0 w-full bg-cover bg-center bg-no-repeat text-center z-[-1]"
+        style={{
+          backgroundImage:
+            "url('/assets/simlai/page-bg-transparent.webp')",
+          height: "100%",
+        }}
+      ></div>
       <StoryblokProvider>
-        <main className="px-4 py-10">
-          {children}
-        </main>
+        <main className="px-4 py-10">{children}</main>
       </StoryblokProvider>
-    </main>
-  )
+    </div>
+  );
 }

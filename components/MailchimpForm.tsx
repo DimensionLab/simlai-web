@@ -41,8 +41,8 @@ export default function MailchimpForm() {
         handleSubmit(fields)
       }}>
         <div className="text-3xl lg:text-5xl font-bold col-span-2">Join our newsletter</div>
-        <div className="text-lg lg:text-3xl font-bold text-muted">Digital Twin</div>
-        <div className="flex flex-row">
+        <div className="text-lg lg:text-3xl font-bold text-muted">Digital Twin: The Siml.ai Insider</div>
+        <div className="flex flex-row py-4">
           <input 
             type="email" 
             name="" 

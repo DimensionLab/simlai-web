@@ -1,17 +1,18 @@
 import { ReactNode } from "react";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc"
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./StoryblokProvider";
 import type { Metadata } from "next";
 
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
   use: [apiPlugin],
-})
+});
 
 export const metadata: Metadata = {
   title: "Siml.ai - Blog",
   description: "Read the latest articles from Siml.ai blog!",
-  keywords: "physics, simulations, AI, machine learning, deep learning, blog, articles",
+  keywords:
+    "physics, simulations, AI, machine learning, deep learning, blog, articles",
   icons: [
     {
       rel: "icon",
@@ -40,11 +41,16 @@ export const metadata: Metadata = {
 export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <main className="w-full h-full">
+      <div
+        className="absolute top-0 w-full bg-cover bg-center bg-no-repeat text-center z-[-1]"
+        style={{
+          backgroundImage: "url('/assets/simlai/page-bg-transparent.webp')",
+          height: "100%",
+        }}
+      ></div>
       <StoryblokProvider>
-        <main className="px-4 py-10">
-          {children}
-        </main>
+        <main className="px-4 py-10">{children}</main>
       </StoryblokProvider>
     </main>
-  )
+  );
 }

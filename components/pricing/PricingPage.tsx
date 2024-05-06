@@ -99,8 +99,8 @@ const Pricing = () => {
       </Head>
       <section className="w-full flex flex-col px-4 max-w-[1400px] py-10">
         <div className="flex flex-col gap-y-3 pt-6">
-          <h1 className="font-bold text-2xl sm:text-5xl">Our Plans and Pricing</h1>
-          <p className="text-[#B4B6C3] font-normal text-xl lg:line-clamp-2">We have plans and prices that fit your business perfectly. <br/> Make your client site a success with our products.</p>
+          <h1 className="font-bold text-2xl sm:text-5xl mx-auto">Our Plans and Pricing</h1>
+          <p className="text-[#B4B6C3] font-normal text-xl lg:line-clamp-2 mx-auto text-center">We have plans and prices that fit your business perfectly. <br/> Make your client site a success with our products.</p>
         </div>
         <div className="flex flex-col w-full items-center">
           {/* <div className="font-bold text-[#8B7CFF] text-2xl w-full flex justify-center py-6">14-days trial!</div> */}

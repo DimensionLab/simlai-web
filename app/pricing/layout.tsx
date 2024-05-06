@@ -33,6 +33,14 @@ export const metadata: Metadata = {
 export default function PricingLayout({ children }: { children: ReactNode }) {
   return (
     <>
+    <div
+        className="absolute top-0 w-full bg-cover bg-center bg-no-repeat text-center z-[-1]"
+        style={{
+          backgroundImage:
+            "url('/assets/simlai/page-bg-transparent.webp')",
+          height: "100%",
+        }}
+      ></div>
       {children}
     </>
   )

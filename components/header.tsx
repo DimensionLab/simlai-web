@@ -34,6 +34,10 @@ const menuItems = [
     label: "LEARN",
     href: "/university"
   },
+  // {
+  //   label: "CASE STUDIES",
+  //   href: "/case-studies"
+  // },
   {
     label: "BLOG",
     href: "/blog"
@@ -44,13 +48,32 @@ const menuItems = [
   }
 ]
 
+
 export default function Header() {
+  const TOP_OFFSET = 50;
   const pathname = usePathname();
   const originUrl = useClientOrigin();
+  const [showBackground, setShowBackground] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= TOP_OFFSET) {
+        setShowBackground(true)
+      } else {
+        setShowBackground(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -71,7 +94,7 @@ export default function Header() {
     }
   }
   return (
-    <div className="w-full px-4 sticky top-0 left-0 bg-darkBg z-30 xl:pr-0">
+    <div className={`w-full px-4 sticky top-0 left-0 py-2 z-30 xl:pr-0 duration-200 ${showBackground ? "bg-darkBg" : "bg-transparent"}`}>
       <TrackingWrapper />
       <nav className="flex max-w-[1400px] mx-auto w-full py-4 justify-between xl:py-0 mx-auto">
         <Link href={originUrl + "/#"} className="flex pt-2">

@@ -4,6 +4,7 @@ import "./globals.css";
 import CoverLayout from "@/components/coverLayout";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,6 +48,7 @@ export default function RootLayout({
         <CoverLayout>
           {children}
         </CoverLayout>
+        <CookieConsent />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -35,7 +35,7 @@ export default function Home() {
           }
       });
       setIsHbFormOpen(true);
-    }, 10000);
+    }, 30000);
 
     return () => {
       clearTimeout(timeout);

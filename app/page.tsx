@@ -24,7 +24,9 @@ export default function Home() {
       document.body.appendChild(script);
     
       script.addEventListener('load', () => {
+        // @ts-ignore
           if(window.hbspt) {
+            // @ts-ignore
             window.hbspt.forms.create({
                 portalId: '26843925',
                 formId: '06c9217c-4f1a-42cf-97c4-504d2081937e',

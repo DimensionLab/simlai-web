@@ -42,9 +42,13 @@ export default function Home() {
     }
   }, [])
 
+  const handleClose = () => {
+    setIsHbFormOpen(false);
+  }
+
   return (
     <>
-    <SimlDialog open={isHbFormOpen} title="Interested in downloading our whitepaper?">
+    <SimlDialog open={isHbFormOpen} title="Interested in downloading our whitepaper?" onClose={handleClose}>
       <div className="flex w-full h-full bg-darkBg items-center justify-center max-h-[80vh] overflow-auto">
         <div id="hubspotForm" className="overflow-hidden justify-center items-center flex-col w-full flex"></div>
       </div>

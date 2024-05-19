@@ -4,13 +4,15 @@ import { apiPlugin, storyblokInit } from "@storyblok/react";
 import Grid from "@/components/storyblok/Grid";
 import Feature from "@/components/storyblok/Feature";
 import Page from "@/components/storyblok/Page";
-import Article from "@/components/blog/Article";
+import Caption from "@/components/storyblok/Caption";
+import CaseStudyArticle from "@/components/case-studies/CaseStudyArticle";
 
 const components = {
   grid: Grid,
   feature: Feature,
   page: Page,
-  "article": Article
+  caption: Caption,
+  "case-study": CaseStudyArticle
 }
 
 storyblokInit({

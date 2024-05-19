@@ -27,6 +27,8 @@ const config: Config = {
       directions: ['to top'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 };
 export default config;

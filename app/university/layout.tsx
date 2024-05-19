@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import StoryblokProvider from "@/app/blog/StoryblokProvider";
+import StoryblokProvider from "@/components/StoryblokProvider";
 import type { Metadata } from "next";
 
 storyblokInit({

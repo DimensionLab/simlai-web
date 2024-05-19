@@ -34,10 +34,10 @@ const menuItems = [
     label: "LEARN",
     href: "/university"
   },
-  // {
-  //   label: "CASE STUDIES",
-  //   href: "/case-studies"
-  // },
+  {
+    label: "CASE STUDIES",
+    href: "/case-studies"
+  },
   {
     label: "BLOG",
     href: "/blog"

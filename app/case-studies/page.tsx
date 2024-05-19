@@ -60,7 +60,7 @@ export default function BlogRootPage() {
     <section className="flex flex-col w-full h-full gap-y-12 my-10">
       <h1 className="font-bold text-2xl sm:text-5xl mx-auto">Case studies</h1>
       <h3 className="text-[#B4B6C3] font-normal text-xl lg:line-clamp-2 mx-auto text-center">
-        Articles that explore the application of AI in engineering and science, by Siml.ai team
+        Read how Siml.ai is used across the industry
       </h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-4 mt-10 mx-auto">
         {storiesObjects?.length > 0 ? storiesObjects.map((caseStudyPost) => {

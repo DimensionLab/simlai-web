@@ -9,10 +9,10 @@ storyblokInit({
 });
 
 export const metadata: Metadata = {
-  title: "Siml.ai - Blog",
-  description: "Read the latest articles from Siml.ai blog!",
+  title: "Siml.ai - Case Studies",
+  description: "Read how Siml.ai is used across the industry",
   keywords:
-    "physics, simulations, AI, machine learning, deep learning, blog, articles",
+    "physics, simulations, AI, machine learning, deep learning, case studies, articles",
   icons: [
     {
       rel: "icon",
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "Siml.ai - Blog",
-    description: "Read the latest articles from Siml.ai blog!",
+    title: "Siml.ai - Case Studies",
+    description: "Read how Siml.ai is used across the industry",
     images: [
       {
         url: "https://siml.ai/assets/simlai/url-preview.png",
         width: 1200,
         height: 630,
-        alt: "Siml.ai - Blog",
+        alt: "Siml.ai - Case Studies",
       },
     ],
     url: "https://siml.ai/",
@@ -38,7 +38,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogLayout({ children }: { children: ReactNode }) {
+export default function CaseStudiesLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <main className="w-full h-full">
       <div

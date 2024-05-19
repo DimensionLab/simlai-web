@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import StoryblokProvider from "@/app/blog/StoryblokProvider";
+import StoryblokProvider from "@/components/StoryblokProvider";
 import { apiPlugin, storyblokInit } from "@storyblok/react";
 import Grid from "@/components/storyblok/Grid";
 import Feature from "@/components/storyblok/Feature";

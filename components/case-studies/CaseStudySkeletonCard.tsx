@@ -1,6 +1,6 @@
 export default function SkeletonCard() {
   return (
-    <section className="flex flex-col w-full max-w-6xl bg-lightBg rounded-lg text-transparent xl:flex-ro card w-96">
+    <section className="max-w-6xl bg-lightBg rounded-lg text-transparent xl:flex-row card w-96">
       <div className="flex flex-col px-4 py-4 gap-y-2 xl:w-full">
         <div className="flex flex-col gap-y-4">
           <h2 className="text-xl animate-pulse bg-skPurple rounded-lg min-h-[250px]">

@@ -1,0 +1,1 @@
+export const CASE_STUDIES_PER_PAGE = 6;

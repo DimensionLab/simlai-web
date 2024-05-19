@@ -7,7 +7,6 @@ import {
 import "prismjs/themes/prism-twilight.css";
 import Prism from "prismjs";
 import { useEffect } from "react";
-import css from "@/components/componentStyles/blogArticle.module.css";
 import { CaseStudyStory } from "@/types/case-study";
 import { customRichTextSchema } from "@/lib/richTextSchema";
 import cx from "classnames";
@@ -22,8 +21,6 @@ const CaseStudyArticle = ({
   useEffect(() => {
     Prism.highlightAll();
   }, [blok.content]);
-
-  const date = new Date(firstPublishedAt).toDateString();
 
   const renderedRichText = renderRichText(
     blok.content,

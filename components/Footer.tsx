@@ -21,6 +21,10 @@ const productLinks = [
     href: "#simulation-studio",
   },
   {
+    name: "Case Studies",
+    href: "https://siml.ai/case-studies"
+  },
+  {
     name: "Docs",
     href: "https://docs.siml.ai",
   },

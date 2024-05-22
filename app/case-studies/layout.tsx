@@ -10,7 +10,7 @@ storyblokInit({
 
 export const metadata: Metadata = {
   title: "Siml.ai - Case Studies",
-  description: "Read how Siml.ai is used across the industry",
+  description: "Read how Siml.ai is used across the industries",
   keywords:
     "physics, simulations, AI, machine learning, deep learning, case studies, articles",
   icons: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Siml.ai - Case Studies",
-    description: "Read how Siml.ai is used across the industry",
+    description: "Read how Siml.ai is used across the industries",
     images: [
       {
         url: "https://siml.ai/assets/simlai/url-preview.png",

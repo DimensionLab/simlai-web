@@ -20,10 +20,10 @@ export async function generateMetadata(
 
   return {
     title: story.name,
-    description: `Read how Siml.ai is used across the industry`,
+    description: story.content?.description || `Read how Siml.ai is used across the industries`,
     openGraph: {
       title: story.name,
-      description: `Read how Siml.ai is used across the industry`,
+      description: story.content?.description || `Read how Siml.ai is used across the industries`,
       type: "article",
       url: `https://siml.ai/case-studies/${story.slug}`,
       images: [

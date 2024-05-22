@@ -28,6 +28,10 @@ const linksData = [
     href: "/pricing",
   },
   {
+    name: "CASE STUDIES",
+    href: "/case-studies"
+  },
+  {
     name: "LEARN",
     href: "/university",
   },

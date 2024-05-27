@@ -2,7 +2,7 @@ export default function Stats() {
   const data = [
     ["90%+ ", "costs saved"],
     ['700+ ', "hours saved"],
-    ["1,000+ ", "users"]
+    ["1,200+ ", "users"]
   ]
   return (
     <section className="flex flex-row w-full justify-center px-4 gap-x-2 sm:justify-between"> 

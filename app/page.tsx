@@ -63,7 +63,6 @@ export default function Home() {
           <CTAbuttons />
         </div>
         <Stats />
-        <TalkToTeam />
         <Features />
         <div className="flex flex-col items-center">
           <Memo />

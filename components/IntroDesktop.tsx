@@ -2,6 +2,8 @@ import Image from "next/image";
 import css from "./componentStyles/introParent.module.css";
 import CTAbuttons from "./CTAbuttons";
 import TryPlatformButton from "./TryPlatformButton";
+import TalkToTeam from "./TalkToTeam";
+import { cn } from "@/lib/utils";
 
 const IntroDesktop = () => {
   return (
@@ -34,15 +36,15 @@ const IntroDesktop = () => {
           </div>
           <TryPlatformButton />
           <div className="-mt-6 flex flex-row gap-x-2">
-            <CTAbuttons />
+            <TalkToTeam />
           </div>
         </div>
         <section className="flex w-full">
-          <div className={css.relative}>
+          <div className={cn(css.relative, "-mt-16")}>
             <Image
               src="/assets/simlai/simulation-studio-image.webp"
               alt="Simulation Studio"
-              className=""
+              className="object-cover"
               id="cover-img"
               width={960}
               height={640}
@@ -53,19 +55,9 @@ const IntroDesktop = () => {
             <Image
               src="/assets/simlai/model_engineer_cover_image.png"
               alt="Model Engineer"
-              className={`absolute -left-[7%] -bottom-[20%] ${css.visualEditorImg}`}
-              width={300 * 1.56}
+              className={`absolute -left-[15%] -bottom-[70%] ${css.visualEditorImg}`}
+              width={300 * 1.8}
               height={300}
-              priority
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMss3nyn4EIwDiqkL4KAX5SGd1NFAjQAAAAAElFTkSuQmCC"
-              placeholder="blur"
-            />
-            <Image
-              src="/assets/simlai/desktop-intro-pics/rotate2.png"
-              alt="Siml.ai platform"
-              className="absolute left-[45%] -bottom-[20%]"
-              width={200 * 1.4}
-              height={200}
               priority
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMss3nyn4EIwDiqkL4KAX5SGd1NFAjQAAAAAElFTkSuQmCC"
               placeholder="blur"
@@ -73,7 +65,17 @@ const IntroDesktop = () => {
             <Image
               src="/assets/simlai/desktop-intro-pics/rotate1.png"
               alt="Siml.ai platform"
-              className="absolute -right-[10%] -bottom-[10%]"
+              className="absolute left-[45%] -bottom-[60%]"
+              width={200 * 2.6}
+              height={200}
+              priority
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mMss3nyn4EIwDiqkL4KAX5SGd1NFAjQAAAAAElFTkSuQmCC"
+              placeholder="blur"
+            />
+            <Image
+              src="/assets/simlai/desktop-intro-pics/rotate2.png"
+              alt="Siml.ai platform"
+              className="absolute -right-[19%] bottom-[4%]"
               width={200 * 1.4}
               height={200}
               priority

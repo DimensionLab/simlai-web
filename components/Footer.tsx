@@ -41,11 +41,11 @@ const companyLinks = [
   },
   {
     name: "Terms & Conditions",
-    href: "https://www.dimensionlab.org/terms-and-conditions.html",
+    href: "https://www.dimensionlab.org/terms-and-conditions",
   },
   {
     name: "Privacy Policy",
-    href: "https://www.dimensionlab.org/privacy-policy.html",
+    href: "https://www.dimensionlab.org/privacy-policy",
   }
 ];
 
